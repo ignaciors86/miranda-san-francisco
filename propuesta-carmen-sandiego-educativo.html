@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miranda San Francisco - Aprender con Estilo</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&family=Montserrat:wght@600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FF3366;
+            --secondary: #2D3436;
+            --accent: #00B894;
+            --background: #0A0A0A;
+            --surface: #1A1A1A;
+            --text: #FFFFFF;
+            --text-secondary: rgba(255, 255, 255, 0.7);
+            --title-font: 'Playfair Display', serif;
+            --subtitle-font: 'Montserrat', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255, 51, 102, 0.2), rgba(0, 184, 148, 0.2));
+            z-index: 1;
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+            padding: 2rem;
+            max-width: 800px;
+        }
+
+        h1 {
+            font-family: var(--title-font);
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            font-family: var(--subtitle-font);
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            letter-spacing: 0.02em;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            aspect-ratio: 16/9;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .features {
+            padding: 6rem 2rem;
+            background: var(--surface);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .feature-card h3 {
+            font-family: var(--subtitle-font);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            letter-spacing: 0.01em;
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+        }
+
+        .flow {
+            padding: 6rem 2rem;
+            background: var(--background);
+        }
+
+        .flow-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .flow-step {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            margin-bottom: 4rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .flow-step.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .flow-step:last-child {
+            margin-bottom: 0;
+        }
+
+        .step-number {
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--primary);
+            opacity: 0.5;
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .step-content h3 {
+            font-family: var(--subtitle-font);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+            letter-spacing: 0.01em;
+        }
+
+        .step-content p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            .flow-step {
+                flex-direction: column;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .step-number {
+                font-size: 3rem;
+            }
+        }
+
+        /* Animaciones */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate {
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        .characters {
+            padding: 6rem 2rem;
+            background: var(--background);
+        }
+
+        .characters-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .characters-container h2 {
+            font-family: var(--title-font);
+            text-align: center;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 4rem;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.02em;
+        }
+
+        .characters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .character-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .character-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .character-card h3 {
+            font-family: var(--subtitle-font);
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+            letter-spacing: 0.01em;
+        }
+
+        .character-role {
+            color: var(--accent);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .character-card p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .characters-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .character-selector {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+
+        .character-select {
+            padding: 0.8rem 1.5rem;
+            border-radius: 10px;
+            border: 2px solid var(--primary);
+            background: var(--surface);
+            color: var(--text);
+            font-family: var(--subtitle-font);
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 250px;
+        }
+
+        .character-select:hover {
+            background: var(--primary);
+            color: var(--background);
+        }
+
+        .character-select:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(255, 51, 102, 0.3);
+        }
+
+        .adventure-steps {
+            width: 100vw;
+            padding: 2rem;
+            margin: 2rem 0;
+            overflow: hidden;
+        }
+
+        .steps-container {
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+            padding: 2rem 0;
+            min-width: max-content;
+            position: relative;
+            justify-content: flex-start;
+        }
+
+        .steps-container::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--accent);
+            z-index: 1;
+            opacity: 0.3;
+        }
+
+        .step {
+            display: flex;
+            flex-direction: column;
+            background: var(--background);
+            border: 2px solid var(--accent);
+            border-radius: 15px;
+            padding: 1.5rem;
+            width: 250px;
+            position: relative;
+            z-index: 2;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .step.active {
+            background: var(--accent);
+            color: var(--background);
+        }
+
+        .step.completed {
+            background: rgba(0, 184, 148, 0.1);
+        }
+
+        .step.completed::after {
+            content: '✓';
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: var(--accent);
+            color: var(--background);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .step-number {
+            font-family: var(--title-font);
+            font-size: 2.5rem;
+            color: var(--accent);
+            opacity: 0.7;
+            min-width: 60px;
+            text-align: center;
+        }
+
+        .step.active .step-number {
+            color: var(--background);
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .step-content h3 {
+            font-family: var(--subtitle-font);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .step.active .step-content h3 {
+            color: var(--background);
+        }
+
+        .step-content p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .step.active .step-content p {
+            color: var(--background);
+        }
+
+        .step-arrow {
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--accent);
+            font-size: 1.5rem;
+            display: none;
+        }
+
+        .step.active .step-arrow {
+            display: block;
+        }
+
+        .adventure-title {
+            margin-top: 4rem;
+            text-align: center;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.02em;
+        }
+
+        .case-details {
+            width: 100%;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .case-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--text);
+            font-family: var(--title-font);
+        }
+
+        .locations-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .location-card {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 15px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            width: 100%;
+        }
+
+        .location-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .location-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: var(--background);
+        }
+
+        .location-description {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .witness-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .witness-card {
+            border-left: 3px solid var(--accent);
+            padding-left: 1rem;
+        }
+
+        .witness-card h5 {
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .witness-testimony {
+            font-style: italic;
+            color: var(--text-secondary);
+            margin: 1rem 0;
+            line-height: 1.6;
+        }
+
+        .clues-section {
+            margin: 1.5rem 0;
+        }
+
+        .clues-section h6 {
+            color: var(--text);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .clues-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .clues-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-secondary);
+        }
+
+        .clues-list li:last-child {
+            border-bottom: none;
+        }
+
+        .next-location {
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .next-location h6 {
+            color: var(--text);
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .location-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .location-option {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .location-option:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .location-option.correct {
+            border-color: var(--accent);
+        }
+
+        .location-option.incorrect {
+            border-color: var(--primary);
+            opacity: 0.7;
+        }
+
+        .location-option h6 {
+            color: var(--text);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .location-option p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .location-feedback {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .location-feedback.correct {
+            background: rgba(0, 184, 148, 0.1);
+            border: 1px solid var(--accent);
+            color: var(--accent);
+        }
+
+        .location-feedback.incorrect {
+            background: rgba(255, 51, 102, 0.1);
+            border: 1px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .location-feedback.victory {
+            background: linear-gradient(45deg, rgba(0, 184, 148, 0.2), rgba(255, 51, 102, 0.2));
+            border: 2px solid var(--accent);
+            color: var(--text);
+            padding: 2rem;
+            margin: 2rem 0;
+            font-size: 1.2rem;
+            font-family: var(--title-font);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            animation: victoryPulse 2s infinite;
+        }
+
+        @keyframes victoryPulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(0, 184, 148, 0.4);
+            }
+
+            70% {
+                transform: scale(1.02);
+                box-shadow: 0 0 0 20px rgba(0, 184, 148, 0);
+            }
+
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(0, 184, 148, 0);
+            }
+        }
+
+        .victory-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .victory-message {
+            width: 100%;
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: linear-gradient(45deg, rgba(0, 184, 148, 0.2), rgba(255, 51, 102, 0.2));
+            border: 2px solid var(--accent);
+            border-radius: 15px;
+            text-align: center;
+            animation: victoryPulse 2s infinite;
+        }
+
+        .victory-message .victory-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .victory-message .victory-title {
+            font-family: var(--title-font);
+            font-size: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .victory-message .victory-subtitle {
+            font-size: 1.2rem;
+            color: var(--text);
+            margin-bottom: 1rem;
+        }
+
+        .victory-message .victory-details {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        @keyframes victoryPulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(0, 184, 148, 0.4);
+            }
+
+            70% {
+                transform: scale(1.02);
+                box-shadow: 0 0 0 20px rgba(0, 184, 148, 0);
+            }
+
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(0, 184, 148, 0);
+            }
+        }
+
+        .wrong-location {
+            background: rgba(255, 51, 102, 0.1);
+            border: 1px solid var(--primary);
+            margin: 2rem 0;
+        }
+
+        .wrong-location .location-icon {
+            background: var(--primary);
+        }
+
+        .return-button {
+            background: var(--primary);
+            color: var(--background);
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-family: var(--subtitle-font);
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+            width: 100%;
+        }
+
+        .return-button:hover {
+            background: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .return-button:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(255, 51, 102, 0.3);
+        }
+
+        .location-info {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .location-info p {
+            margin: 0.5rem 0;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .location-info strong {
+            color: var(--accent);
+            font-family: var(--subtitle-font);
+        }
+
+        .location-option .location-info {
+            margin-top: 1rem;
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .location-option.correct .location-info {
+            border-color: var(--accent);
+        }
+
+        .location-option.incorrect .location-info {
+            border-color: var(--primary);
+        }
+
+        .travel-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .travel-animation.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .travel-content {
+            text-align: center;
+            color: var(--text);
+            padding: 2rem;
+        }
+
+        .travel-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: travelPulse 1s infinite;
+        }
+
+        .travel-title {
+            font-family: var(--title-font);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .travel-details {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        @keyframes travelPulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .sub-locations {
+            margin: 2rem 0;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .sub-locations h6 {
+            color: var(--text);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            font-family: var(--subtitle-font);
+        }
+
+        .sub-locations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .sub-location-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .sub-location-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .sub-location-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .sub-location-icon {
+            width: 24px;
+            height: 24px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            color: var(--background);
+        }
+
+        .sub-location-description {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .sub-location-clue {
+            background: rgba(0, 184, 148, 0.1);
+            border: 1px solid var(--accent);
+            border-radius: 6px;
+            padding: 0.8rem;
+            margin: 1rem 0;
+        }
+
+        .sub-location-clue h6 {
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .sub-location-clue p {
+            color: var(--text);
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+
+        .visit-button {
+            background: var(--primary);
+            color: var(--background);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-family: var(--subtitle-font);
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .visit-button:hover:not(:disabled) {
+            background: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .visit-button:disabled {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-secondary);
+            cursor: not-allowed;
+        }
+
+        .sub-location-card[data-visited="true"] {
+            border-color: var(--accent);
+            background: rgba(0, 184, 148, 0.05);
+        }
+
+        .sub-location-card[data-visited="true"] .sub-location-icon {
+            background: var(--accent);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="travel-animation" id="travelAnimation">
+        <div class="travel-content">
+            <div class="travel-icon">✈️</div>
+            <div class="travel-title">Viajando...</div>
+            <div class="travel-details">
+                <p id="travelFrom"></p>
+                <p id="travelTo"></p>
+            </div>
+        </div>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Miranda San Francisco</h1>
+            <p class="subtitle">Aprende mientras resuelves misterios</p>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/dL-13NZAXuE" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="features-grid">
+            <!-- Las características se cargarán dinámicamente -->
+        </div>
+    </section>
+
+    <section class="characters">
+        <div class="characters-container">
+            <h2>Personajes del Juego</h2>
+            <div class="characters-grid">
+                <!-- Los personajes se cargarán dinámicamente -->
+            </div>
+            <h2 class="adventure-title">Tu Aventura Educativa</h2>
+            <div class="character-selector">
+                <select id="criminalSelect" class="character-select">
+                    <option value="genio-matematico">El Genio de las Matemáticas</option>
+                    <option value="maestro-historia">El Maestro de la Historia</option>
+                    <option value="cientifico-loco">El Científico Loco</option>
+                    <option value="falsificador-arte">El Falsificador de Arte</option>
+                    <option value="hacker-creativo">El Hacker Creativo</option>
+                    <option value="influencer-falso">La Influencer Falsa</option>
+                    <option value="miranda">Miranda San Francisco</option>
+                </select>
+            </div>
+            <div class="adventure-steps">
+                <div class="steps-container">
+                    <!-- Los pasos se cargarán dinámicamente -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="flow">
+        <div class="flow-container">
+            <!-- Los pasos del flujo se cargarán dinámicamente -->
+        </div>
+    </section>
+
+    <script type="module">
+        try {
+            console.log('Iniciando carga de módulos...');
+            
+            const features = await import('./src/data/features.js').then(m => m.features);
+            console.log('Features cargadas:', features);
+            
+            const flowSteps = await import('./src/data/flowSteps.js').then(m => m.flowSteps);
+            console.log('Flow steps cargados:', flowSteps);
+            
+            const characters = await import('./src/data/characters.js').then(m => m.characters);
+            console.log('Personajes cargados:', characters);
+
+            // Renderizar características
+            const featuresGrid = document.querySelector('.features-grid');
+            if (featuresGrid) {
+                features.forEach(feature => {
+                    const featureCard = document.createElement('div');
+                    featureCard.className = 'feature-card animate';
+                    featureCard.innerHTML = `
+                        <h3>${feature.title}</h3>
+                        <p>${feature.description}</p>
+                    `;
+                    featuresGrid.appendChild(featureCard);
+                });
+            } else {
+                console.error('No se encontró el contenedor de características');
+            }
+
+            // Renderizar pasos del flujo
+            const flowContainer = document.querySelector('.flow-container');
+            if (flowContainer) {
+                flowSteps.forEach(step => {
+                    const flowStep = document.createElement('div');
+                    flowStep.className = 'flow-step';
+                    flowStep.innerHTML = `
+                        <div class="step-number">${step.number}</div>
+                        <div class="step-content">
+                            <h3>${step.title}</h3>
+                            <p>${step.description}</p>
+                        </div>
+                    `;
+                    flowContainer.appendChild(flowStep);
+                });
+            } else {
+                console.error('No se encontró el contenedor de pasos del flujo');
+            }
+
+            // Renderizar personajes
+            const charactersGrid = document.querySelector('.characters-grid');
+            if (charactersGrid) {
+                characters.forEach(character => {
+                    const characterCard = document.createElement('div');
+                    characterCard.className = 'character-card animate';
+                    characterCard.innerHTML = `
+                        <h3>${character.name}</h3>
+                        <p class="character-role">${character.role}</p>
+                        <p>${character.description}</p>
+                    `;
+                    charactersGrid.appendChild(characterCard);
+                });
+            } else {
+                console.error('No se encontró el contenedor de personajes');
+            }
+
+            // Observador de intersección para animaciones
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            // Observar los pasos del flujo
+            document.querySelectorAll('.flow-step').forEach(step => {
+                observer.observe(step);
+            });
+
+        } catch (error) {
+            console.error('Error al cargar los módulos:', error);
+        }
+    </script>
+</body>
+
+</html>
