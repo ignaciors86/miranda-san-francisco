@@ -1329,3 +1329,23 @@ p {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
+
+.witness-id {
+  font-weight: bold;
+  color: var(--primary);
+  margin-bottom: 0.3rem;
+  font-size: 1.05rem;
+}
+.witness-id strong {
+  color: var(--primary);
+}
+.clue-text {
+  background: rgba(0, 184, 148, 0.08);
+  border-radius: 6px;
+  padding: 0.7rem 1rem;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  margin-top: 0.2rem;
+  font-style: italic;
+  display: block;
+}

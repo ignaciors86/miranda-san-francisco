@@ -982,14 +982,14 @@ function showLocation(location) {
                 <div class="witnesses">
                     ${location.witnesses.map(witness => `
                         <div class="witness">
-                            <h5>${witness.name} - ${witness.role}</h5>
-                            <p class="testimony">${witness.testimony}</p>
+                            <h5>${witness.area}</h5>
                             <div class="clues-section">
                                 <button class="clue-button" onclick="this.nextElementSibling.style.display = 'block'; this.style.display = 'none'">
                                     Ver Pista
                                 </button>
                                 <div class="clue-content" style="display: none;">
-                                    ${witness.clue}
+                                    <div class="witness-id"><strong>${witness.name}</strong> - ${witness.role}</div>
+                                    <div class="clue-text">${witness.clue}</div>
                                 </div>
                             </div>
                         </div>
@@ -1085,14 +1085,14 @@ function showWrongLocation(optionElement) {
                 <div class="witnesses">
                     ${witnesses.map(witness => `
                         <div class="witness">
-                            <h5>${witness.name}</h5>
-                            <p class="witness-role">${witness.role}</p>
+                            <h5>${witness.area}</h5>
                             <div class="clues-section">
                                 <button class="clue-button" onclick="this.nextElementSibling.style.display = 'block'; this.style.display = 'none'">
                                     Ver Pista
                                 </button>
                                 <div class="clue-content" style="display: none;">
-                                    ${witness.clue}
+                                    <div class="witness-id"><strong>${witness.name}</strong> - ${witness.role}</div>
+                                    <div class="clue-text">${witness.clue}</div>
                                 </div>
                             </div>
                         </div>
@@ -1333,4 +1333,77 @@ document.addEventListener('DOMContentLoaded', () => {
             showCaseDetailsBtn.style.display = 'none';
         });
     }
-}); 
+});
+
+// ASIGNACIÓN DE ZONAS PERSONALIZADAS Y REVISIÓN DE TEXTOS DE TESTIGOS
+(function() {
+    // Diccionario de zonas personalizadas por lugar
+    const zonasPorLugar = {
+        // Genio matemático
+        'Biblioteca Nacional de El Cairo': ['Recepción', 'Sala de Manuscritos', 'Archivo Antiguo'],
+        'Observatorio de Greenwich': ['Cúpula Principal', 'Sala de Telescopios', 'Archivo Astronómico'],
+        'Jardín Botánico de Singapur': ['Entrada', 'Invernadero Tropical', 'Zona de Investigación'],
+        // Maestro historia
+        'Museo Británico': ['Vestíbulo', 'Galería Romana', 'Archivo Histórico'],
+        // Científico loco
+        'Laboratorio Central': ['Recepción', 'Laboratorio de Energía', 'Sala de Planos'],
+        // Falsificador arte
+        'Museo de Arte Moderno': ['Sala de Exposiciones', 'Taller de Restauración', 'Archivo de Obras'],
+        // Hacker creativo
+        'Centro de Datos Global': ['Recepción', 'Sala de Servidores', 'Oficina de Seguridad'],
+        // Influencer falso
+        'Agencia de Publicidad': ['Recepción', 'Sala de Creatividad', 'Oficina de Cuentas'],
+        // Miranda
+        'Residencia de Miranda': ['Vestíbulo', 'Despacho', 'Jardín Interior'],
+        // Otros posibles lugares erróneos
+        'Museo del Louvre': ['Galería Principal', 'Sala de Esculturas', 'Archivo de Arte'],
+        'Academia de Ciencias de Beijing': ['Entrada Principal', 'Sala de Conferencias', 'Laboratorio de Investigación'],
+        'Museo de Historia Natural': ['Vestíbulo', 'Sala de Fósiles', 'Archivo Científico'],
+        'Acuario de Okinawa': ['Entrada', 'Tanque Principal', 'Laboratorio Marino'],
+        'Museo de Ciencias de Tokio': ['Vestíbulo', 'Sala de Matemáticas', 'Archivo de Modelos'],
+        'Centro de Investigación de Berlín': ['Recepción', 'Laboratorio de Matemáticas', 'Biblioteca'],
+        'Museo del Prado': ['Vestíbulo', 'Galería de Pintura', 'Archivo de Obras'],
+        'Galería Uffizi': ['Entrada', 'Sala Renacentista', 'Archivo de Arte'],
+        'Museo de Arte de São Paulo': ['Vestíbulo', 'Galería Latinoamericana', 'Archivo de Arte'],
+        'Universidad de Cambridge': ['Entrada', 'Sala de Informática', 'Archivo Académico'],
+        'Instituto Politécnico de Milán': ['Vestíbulo', 'Laboratorio de Ingeniería', 'Archivo Técnico'],
+        'Universidad de Buenos Aires': ['Recepción', 'Sala de Tecnología', 'Archivo de Proyectos'],
+        'Agencia de Medios de París': ['Recepción', 'Sala de Campañas', 'Oficina Creativa'],
+        'Estudios de TV Globo': ['Vestíbulo', 'Plató Principal', 'Archivo de Medios'],
+        'Galería de la Academia': ['Entrada', 'Sala Veneciana', 'Archivo de Arte'],
+        'Museo de Orsay': ['Vestíbulo', 'Galería Impresionista', 'Archivo de Obras'],
+        'Centro de Investigación de París': ['Recepción', 'Laboratorio de Física', 'Archivo Experimental'],
+        'Instituto Tecnológico de Tokio': ['Vestíbulo', 'Laboratorio de Tecnología', 'Archivo de Innovación'],
+        'Universidad de Harvard': ['Entrada', 'Sala de Ciencias', 'Archivo Académico'],
+        'Museo Egipcio': ['Vestíbulo', 'Sala Egipcia', 'Archivo de Antigüedades'],
+        'Museo de Arte Moderno de Nueva York': ['Vestíbulo', 'Galería Moderna', 'Archivo de Arte'],
+        'Oficinas de Instagram': ['Recepción', 'Sala de Redes', 'Oficina de Estrategia']
+    };
+    // Asignar zonas a caseDetails
+    Object.values(caseDetails).forEach(caso => {
+        if (caso.travels) {
+            caso.travels.forEach(travel => {
+                travel.locations.forEach(location => {
+                    let zonas = zonasPorLugar[location.name] || ['Zona 1', 'Zona 2', 'Zona 3'];
+                    if (Array.isArray(location.witnesses)) {
+                        location.witnesses.forEach((w, i) => {
+                            w.area = zonas[i % zonas.length];
+                        });
+                    }
+                });
+            });
+        }
+    });
+    // Asignar zonas a wrongLocationResponses
+    Object.values(wrongLocationResponses).forEach(casos => {
+        Object.entries(casos).forEach(([lugar, datos]) => {
+            let zonas = zonasPorLugar[lugar] || ['Zona 1', 'Zona 2', 'Zona 3'];
+            if (Array.isArray(datos.witnesses)) {
+                datos.witnesses.forEach((w, i) => {
+                    w.area = zonas[i % zonas.length];
+                });
+            }
+        });
+    });
+    // Revisión de textos: aquí podrías añadir más lógica para ajustar testimonios y pistas si detectas repeticiones o incoherencias.
+})(); 
