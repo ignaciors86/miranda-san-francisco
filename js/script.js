@@ -981,17 +981,11 @@ function showLocation(location) {
             <div class="witnesses-container">
                 <div class="witnesses">
                     ${location.witnesses.map(witness => `
-                        <div class="witness">
-                            <h5>${witness.area}</h5>
-                            <div class="clues-section">
-                                <button class="clue-button" onclick="this.nextElementSibling.style.display = 'block'; this.style.display = 'none'">
-                                    Ver Pista
-                                </button>
-                                <div class="clue-content" style="display: none;">
-                                    <div class="witness-id"><strong>${witness.name}</strong> - ${witness.role}</div>
-                                    <div class="clue-text">${witness.clue}</div>
-                                </div>
-                            </div>
+                        <div class="witness-card">
+                            <div class="witness-area"><i class="fas fa-map-marker-alt"></i> ${witness.area}</div>
+                            <button class="clue-button" onclick="showClueModal(${JSON.stringify(witness).replace(/\"/g, '&quot;')})" aria-label="Ver pista">
+                                <img src="assets/lightbulb.svg" alt="Pista" width="32" height="32" style="display:block;margin:auto;" />
+                            </button>
                         </div>
                     `).join('')}
                 </div>
@@ -1084,17 +1078,11 @@ function showWrongLocation(optionElement) {
             <div class="witnesses-container">
                 <div class="witnesses">
                     ${witnesses.map(witness => `
-                        <div class="witness">
-                            <h5>${witness.area}</h5>
-                            <div class="clues-section">
-                                <button class="clue-button" onclick="this.nextElementSibling.style.display = 'block'; this.style.display = 'none'">
-                                    Ver Pista
-                                </button>
-                                <div class="clue-content" style="display: none;">
-                                    <div class="witness-id"><strong>${witness.name}</strong> - ${witness.role}</div>
-                                    <div class="clue-text">${witness.clue}</div>
-                                </div>
-                            </div>
+                        <div class="witness-card">
+                            <div class="witness-area"><i class="fas fa-map-marker-alt"></i> ${witness.area}</div>
+                            <button class="clue-button" onclick="showClueModal(${JSON.stringify(witness).replace(/\"/g, '&quot;')})" aria-label="Ver pista">
+                                <img src="assets/lightbulb.svg" alt="Pista" width="32" height="32" style="display:block;margin:auto;" />
+                            </button>
                         </div>
                     `).join('')}
                 </div>
@@ -1459,4 +1447,26 @@ document.addEventListener('DOMContentLoaded', () => {
             datos.travelDescription = descripcionesViaje[lugar] || '';
         });
     });
-})(); 
+})();
+
+// Crear función para mostrar modal de pista
+function showClueModal(witness) {
+    // Eliminar cualquier modal anterior
+    const oldModal = document.getElementById('clue-modal');
+    if (oldModal) oldModal.remove();
+    // Crear overlay
+    const overlay = document.createElement('div');
+    overlay.id = 'clue-modal';
+    overlay.className = 'clue-modal-overlay';
+    overlay.innerHTML = `
+      <div class='clue-modal-card'>
+        <button class='clue-modal-close' aria-label='Cerrar' onclick='document.getElementById("clue-modal").remove()'>×</button>
+        <div class='witness-area'><i class='fas fa-map-marker-alt'></i> ${witness.area}</div>
+        <div class='witness-id'><strong>${witness.name}</strong> <span class='witness-role'>- ${witness.role}</span></div>
+        <div class='testimony'><i class='fas fa-quote-left'></i> ${witness.testimony}</div>
+        <div class='clue-text'>${witness.clue}</div>
+      </div>
+    `;
+    document.body.appendChild(overlay);
+    setTimeout(() => overlay.classList.add('show'), 10);
+} 

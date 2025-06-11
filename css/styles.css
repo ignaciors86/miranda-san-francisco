@@ -1071,53 +1071,59 @@ p {
 }
 
 .clue-button {
-    background: var(--primary);
-    color: var(--text);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--dossier-color), var(--dossier-accent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1.2rem auto 0 auto;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
     border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
     cursor: pointer;
-    margin: 5px 0;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    transition: all 0.3s ease;
+    transition: transform 0.15s;
+    animation: cluePulse 1.2s infinite alternate;
 }
-
 .clue-button:hover {
-    background: #ff1a4f;
-    box-shadow: 0 4px 12px rgba(255, 51, 102, 0.3);
-    transform: translateY(-2px);
+    transform: scale(1.08);
+    filter: brightness(1.1);
+}
+@keyframes cluePulse {
+    0% { box-shadow: 0 0 0 0 var(--dossier-accent, #00B894, 0.18); }
+    100% { box-shadow: 0 0 0 12px rgba(0,184,148,0); }
+}
+.clue-button img {
+    width: 40px;
+    height: 40px;
+    display: block;
 }
 
 .clue-content {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 15px;
-    border-radius: 4px;
-    margin: 5px 0;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: var(--text-secondary);
+    animation: none;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.4s, transform 0.4s;
 }
 
-.restart-button {
-    background-color: var(--primary);
+.clue-content.show {
+    animation: clueReveal 0.5s cubic-bezier(.4,1,.3,1);
+    opacity: 1;
+    transform: scale(1);
+}
+
+@keyframes clueReveal {
+    0% { opacity: 0; transform: scale(0.85); }
+    60% { opacity: 1; transform: scale(1.05); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+.witness-id strong, .witness-role, .location-info strong {
+    color: var(--dossier-accent);
+}
+
+.clue-text, .testimony, .location-description, .case-title, .case-details, .location-card {
     color: var(--text);
-    padding: 12px 24px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 20px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
-}
-
-.restart-button:hover {
-    background-color: #ff1a4f;
-    box-shadow: 0 4px 12px rgba(255, 51, 102, 0.3);
-    transform: translateY(-2px);
 }
 
 /* Estilos para mensajes de estado */
@@ -1314,7 +1320,9 @@ p {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 1.5rem;
+    gap: 2.2rem 1.5rem;
+    justify-content: center;
+    width: 100%;
 }
 
 .witness {
@@ -1334,10 +1342,12 @@ p {
 }
 
 .witness-id {
-  font-weight: bold;
-  color: var(--primary);
-  margin-bottom: 0.3rem;
-  font-size: 1.05rem;
+  font-family: var(--subtitle-font);
+  font-weight: 700;
+  color: var(--dossier-color);
+  font-size: 1.08rem;
+  margin-bottom: 0.2rem;
+  text-align: center;
 }
 .witness-id strong {
   color: var(--primary);
@@ -1351,4 +1361,227 @@ p {
   margin-top: 0.2rem;
   font-style: italic;
   display: block;
+}
+
+/* Títulos y cabeceras con color de aventura */
+.case-title, .location-header h4 {
+  color: var(--dossier-color);
+}
+.location-header .location-icon {
+  color: var(--dossier-accent);
+}
+
+/* Tarjeta de testigo/pista visualmente atractiva */
+.witness-card {
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0.7rem 0.5rem 1.2rem 0.5rem;
+  margin: 0 0.5rem;
+  min-width: 240px;
+  max-width: 340px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: none;
+  transition: none;
+}
+.witness-card:last-child {
+  border-bottom: none;
+}
+
+.witness-area {
+  font-family: var(--title-font);
+  font-weight: 700;
+  color: var(--dossier-accent);
+  font-size: 1.13rem;
+  margin-bottom: 0.7rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  letter-spacing: 0.01em;
+}
+.witness-area i {
+  font-size: 1.1rem;
+  color: var(--dossier-color);
+}
+.clue-content {
+  background: linear-gradient(135deg, rgba(0,184,148,0.10), rgba(255,51,102,0.10));
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+  padding: 1.1rem 1rem 1.2rem 1rem;
+  margin-top: 1.1rem;
+  width: 100%;
+  opacity: 0;
+  transform: scale(0.95);
+  pointer-events: none;
+  position: absolute;
+  left: 0;
+  top: 60px;
+  z-index: 2;
+  transition: opacity 0.4s, transform 0.4s;
+}
+.clue-content.show {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: all;
+  animation: clueReveal 0.5s cubic-bezier(.4,1,.3,1);
+}
+@keyframes clueReveal {
+  0% { opacity: 0; transform: scale(0.85); }
+  60% { opacity: 1; transform: scale(1.05); }
+  100% { opacity: 1; transform: scale(1); }
+}
+.witness-id {
+  font-weight: bold;
+  color: var(--dossier-color);
+  font-size: 1.08rem;
+  margin-bottom: 0.2rem;
+  text-align: center;
+}
+.witness-role {
+  color: var(--dossier-accent);
+  font-size: 1rem;
+  font-weight: 500;
+}
+.testimony {
+  font-style: italic;
+  color: var(--text-secondary);
+  margin: 0.7rem 0 0.8rem 0;
+  font-size: 1.08rem;
+  text-align: center;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4rem;
+}
+.testimony i {
+  color: var(--dossier-accent);
+  font-size: 1.1rem;
+  margin-right: 0.3rem;
+}
+.clue-text {
+  background: rgba(255,255,255,0.13);
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  color: var(--dossier-color);
+  font-size: 1.05rem;
+  font-style: italic;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 0.2rem;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.07);
+}
+.witnesses {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.2rem 1.2rem;
+  justify-content: center;
+}
+
+/* Modal de pista elegante */
+.clue-modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(10,10,10,0.72);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+.clue-modal-overlay.show {
+  opacity: 1;
+  pointer-events: all;
+}
+.clue-modal-card {
+  background: linear-gradient(135deg, rgba(0,184,148,0.18), rgba(255,51,102,0.18), rgba(30,30,30,0.97) 90%);
+  border-radius: 22px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.28);
+  padding: 2.2rem 2.1rem 2.5rem 2.1rem;
+  min-width: 320px;
+  max-width: 95vw;
+  max-height: 90vh;
+  color: var(--text);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: modalPopIn 0.5s cubic-bezier(.4,1,.3,1);
+}
+@keyframes modalPopIn {
+  0% { opacity: 0; transform: scale(0.85) translateY(40px); }
+  60% { opacity: 1; transform: scale(1.05) translateY(-8px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+.clue-modal-close {
+  position: absolute;
+  top: 1.1rem;
+  right: 1.1rem;
+  background: none;
+  border: none;
+  color: var(--dossier-color);
+  font-size: 2.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.2s;
+  z-index: 2;
+  line-height: 1;
+}
+.clue-modal-close:hover {
+  color: var(--dossier-accent);
+}
+.clue-modal-card .witness-area {
+  font-size: 1.13rem;
+  color: var(--dossier-accent);
+  font-weight: 700;
+  margin-bottom: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.clue-modal-card .witness-area i {
+  font-size: 1.2rem;
+  color: var(--dossier-color);
+}
+.clue-modal-card .witness-id {
+  font-weight: bold;
+  color: var(--dossier-color);
+  font-size: 1.18rem;
+  margin-bottom: 0.3rem;
+  text-align: center;
+}
+.clue-modal-card .witness-role {
+  color: var(--dossier-accent);
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+.clue-modal-card .testimony {
+  font-style: italic;
+  color: var(--text-secondary);
+  margin: 0.8rem 0 1.1rem 0;
+  font-size: 1.13rem;
+  text-align: center;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4rem;
+}
+.clue-modal-card .testimony i {
+  color: var(--dossier-accent);
+  font-size: 1.15rem;
+  margin-right: 0.3rem;
+}
+.clue-modal-card .clue-text {
+  background: rgba(255,255,255,0.16);
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+  color: var(--dossier-color);
+  font-size: 1.13rem;
+  font-style: italic;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 0.2rem;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.10);
 }
