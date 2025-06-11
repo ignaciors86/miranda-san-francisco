@@ -946,6 +946,12 @@ function updateCaseDetails() {
 }
 
 function startTravel() {
+    // Ocultar el botón 'Iniciar Viaje' si existe
+    const travelBtn = document.querySelector('.travel-button');
+    if (travelBtn) {
+        travelBtn.style.display = 'none';
+    }
+
     const selectedCriminal = document.getElementById('criminalSelect').value;
     const data = caseDetails[selectedCriminal];
     
@@ -972,21 +978,23 @@ function showLocation(location) {
     let witnessesHTML = '';
     if (location.witnesses && Array.isArray(location.witnesses)) {
         witnessesHTML = `
-            <div class="witnesses">
-                ${location.witnesses.map(witness => `
-                    <div class="witness">
-                        <h5>${witness.name} - ${witness.role}</h5>
-                        <p class="testimony">${witness.testimony}</p>
-                        <div class="clues-section">
-                            <button class="clue-button" onclick="this.nextElementSibling.style.display = 'block'; this.style.display = 'none'">
-                                Ver Pista
-                            </button>
-                            <div class="clue-content" style="display: none;">
-                                ${witness.clue}
+            <div class="witnesses-container">
+                <div class="witnesses">
+                    ${location.witnesses.map(witness => `
+                        <div class="witness">
+                            <h5>${witness.name} - ${witness.role}</h5>
+                            <p class="testimony">${witness.testimony}</p>
+                            <div class="clues-section">
+                                <button class="clue-button" onclick="this.nextElementSibling.style.display = 'block'; this.style.display = 'none'">
+                                    Ver Pista
+                                </button>
+                                <div class="clue-content" style="display: none;">
+                                    ${witness.clue}
+                                </div>
                             </div>
                         </div>
-                    </div>
-                `).join('')}
+                    `).join('')}
+                </div>
             </div>
         `;
     }
@@ -1001,18 +1009,20 @@ function showLocation(location) {
             optionsHTML = `
                 <div class="location-options">
                     <h6>¿A dónde irás ahora?</h6>
-                    <div class="options-grid">
-                        ${shuffleArray([...availableOptions]).map(option => `
-                            <div class="location-option ${option.isCorrect ? 'correct' : 'incorrect'}" onclick="selectLocation(this)">
-                                <h6>${option.name}</h6>
-                                <p>${option.description}</p>
-                                <div class="location-info">
-                                    <p><strong>Ciudad:</strong> ${option.city}</p>
-                                    <p><strong>País:</strong> ${option.country}</p>
-                                    <p><strong>Año:</strong> ${option.year}</p>
+                    <div class="options-container">
+                        <div class="options-grid">
+                            ${shuffleArray([...availableOptions]).map(option => `
+                                <div class="location-option ${option.isCorrect ? 'correct' : 'incorrect'}" onclick="selectLocation(this)">
+                                    <h6>${option.name}</h6>
+                                    <p>${option.description}</p>
+                                    <div class="location-info">
+                                        <p><strong>Ciudad:</strong> ${option.city}</p>
+                                        <p><strong>País:</strong> ${option.country}</p>
+                                        <p><strong>Año:</strong> ${option.year}</p>
+                                    </div>
                                 </div>
-                            </div>
-                        `).join('')}
+                            `).join('')}
+                        </div>
                     </div>
                 </div>
             `;
@@ -1067,23 +1077,14 @@ function showWrongLocation(optionElement) {
     
     const wrongLocationCard = document.createElement('div');
     wrongLocationCard.className = 'location-card wrong';
-    wrongLocationCard.innerHTML = `
-        <div class="location-header">
-            <div class="location-icon">❌</div>
-            <h4>${wrongLocation ? wrongLocation.name : 'Ubicación Incorrecta'}</h4>
-        </div>
-        <p class="location-description">${wrongLocation ? wrongLocation.description : 'Esta no es la ubicación correcta. Revisa las pistas nuevamente y elige otra opción.'}</p>
-        <div class="location-info">
-            <p><strong>Ciudad:</strong> ${wrongLocation ? wrongLocation.city : destCity}</p>
-            <p><strong>País:</strong> ${wrongLocation ? wrongLocation.country : destCountry}</p>
-            <p><strong>Año:</strong> ${wrongLocation ? wrongLocation.year : '2024'}</p>
-        </div>
-        ${witnesses.length > 0 ? `
-            <div class="witness-section">
-                <h6>Testigos:</h6>
-                <div class="witness-cards">
+    
+    let witnessesHTML = '';
+    if (witnesses.length > 0) {
+        witnessesHTML = `
+            <div class="witnesses-container">
+                <div class="witnesses">
                     ${witnesses.map(witness => `
-                        <div class="witness-card">
+                        <div class="witness">
                             <h5>${witness.name}</h5>
                             <p class="witness-role">${witness.role}</p>
                             <div class="clues-section">
@@ -1098,7 +1099,21 @@ function showWrongLocation(optionElement) {
                     `).join('')}
                 </div>
             </div>
-        ` : ''}
+        `;
+    }
+    
+    wrongLocationCard.innerHTML = `
+        <div class="location-header">
+            <div class="location-icon">🏛️</div>
+            <h4>${wrongLocation ? wrongLocation.name : 'Ubicación Incorrecta'}</h4>
+        </div>
+        <p class="location-description">${wrongLocation ? wrongLocation.description : 'Esta no es la ubicación correcta. Revisa las pistas nuevamente y elige otra opción.'}</p>
+        <div class="location-info">
+            <p><strong>Ciudad:</strong> ${wrongLocation ? wrongLocation.city : destCity}</p>
+            <p><strong>País:</strong> ${wrongLocation ? wrongLocation.country : destCountry}</p>
+            <p><strong>Año:</strong> ${wrongLocation ? wrongLocation.year : '2024'}</p>
+        </div>
+        ${witnessesHTML}
     `;
     
     const locationsGrid = document.querySelector('.locations-grid');
@@ -1117,18 +1132,20 @@ function showWrongLocation(optionElement) {
         if (availableOptions.length > 0) {
             optionsSection.innerHTML = `
                 <h6>¿A dónde irás ahora?</h6>
-                <div class="options-grid">
-                    ${shuffleArray([...availableOptions]).map(option => `
-                        <div class="location-option ${option.isCorrect ? 'correct' : 'incorrect'}" onclick="selectLocation(this)">
-                            <h6>${option.name}</h6>
-                            <p>${option.description}</p>
-                            <div class="location-info">
-                                <p><strong>Ciudad:</strong> ${option.city}</p>
-                                <p><strong>País:</strong> ${option.country}</p>
-                                <p><strong>Año:</strong> ${option.year}</p>
+                <div class="options-container">
+                    <div class="options-grid">
+                        ${shuffleArray([...availableOptions]).map(option => `
+                            <div class="location-option ${option.isCorrect ? 'correct' : 'incorrect'}" onclick="selectLocation(this)">
+                                <h6>${option.name}</h6>
+                                <p>${option.description}</p>
+                                <div class="location-info">
+                                    <p><strong>Ciudad:</strong> ${option.city}</p>
+                                    <p><strong>País:</strong> ${option.country}</p>
+                                    <p><strong>Año:</strong> ${option.year}</p>
+                                </div>
                             </div>
-                        </div>
-                    `).join('')}
+                        `).join('')}
+                    </div>
                 </div>
             `;
         } else {

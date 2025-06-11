@@ -534,11 +534,10 @@ p {
 
 .locations-grid {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: 1rem;
-    max-height: 600px;
-    overflow-y: auto;
-    padding: 1rem;
+    margin-top: 1.5rem;
 }
 
 .location-card {
@@ -548,79 +547,151 @@ p {
     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
     transition: all 0.3s ease;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    width: 100%;
+    margin-bottom: 2rem;
 }
 
 .location-card.correct {
+    background: linear-gradient(135deg, rgba(0, 184, 148, 0.05), rgba(0, 184, 148, 0.02));
     border-left: 4px solid var(--accent);
 }
 
 .location-card.wrong {
+    background: linear-gradient(135deg, rgba(255, 51, 102, 0.05), rgba(255, 51, 102, 0.02));
     border-left: 4px solid var(--primary);
 }
 
-.location-card h4 {
-    margin: 0 0 0.5rem 0;
-    color: var(--text);
+.location-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
 }
 
-.location-details {
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
+.location-icon {
+    font-size: 2.5rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.location-card:hover .location-icon {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.location-card h4 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: var(--text);
+    font-family: var(--title-font);
+    max-width: 70%;
 }
 
 .location-description {
-    margin-bottom: 1.5rem;
+    margin: 1rem 0;
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+.location-info {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1rem;
+    border-radius: 6px;
+    margin: 1rem 0;
+}
+
+.location-info p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
     color: var(--text-secondary);
 }
 
-.witnesses {
-    margin-top: 1rem;
-}
-
-.witness {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 1rem;
-    border-radius: 4px;
-    margin-bottom: 1rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+.location-info strong {
+    color: var(--text);
+    font-size: 1.1rem;
 }
 
 .witness h5 {
     margin: 0 0 0.5rem 0;
     color: var(--text);
+    font-size: 1.3rem;
+    font-family: var(--subtitle-font);
+}
+
+.witness-role {
+    color: var(--accent);
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .testimony {
     font-style: italic;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
     color: var(--text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.5;
 }
 
-.clue {
-    color: var(--accent);
-    font-weight: 500;
+.location-options {
+    width: 100%;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2));
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.options {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-    margin-top: 1.5rem;
+.location-options h6 {
+    font-size: 1.4rem;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+    font-family: var(--subtitle-font);
+    text-align: center;
 }
 
-.option {
+.options-container {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.options-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.location-option {
+    flex: 0 1 calc(33.333% - 1.5rem);
+    min-width: 300px;
     background: rgba(255, 255, 255, 0.05);
-    padding: 1rem;
-    border-radius: 4px;
+    padding: 1.5rem;
+    border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.option:hover {
+.location-option.correct {
+    background: linear-gradient(135deg, rgba(0, 184, 148, 0.1), rgba(0, 184, 148, 0.05));
+    border: 1px solid rgba(0, 184, 148, 0.2);
+}
+
+.location-option.incorrect {
+    background: linear-gradient(135deg, rgba(255, 51, 102, 0.1), rgba(255, 51, 102, 0.05));
+    border: 1px solid rgba(255, 51, 102, 0.2);
+}
+
+.location-option:hover {
     background: rgba(255, 255, 255, 0.1);
     transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .wrong-message {
@@ -788,24 +859,6 @@ p {
 .return-button:focus {
     outline: none;
     box-shadow: 0 0 0 3px rgba(255, 51, 102, 0.3);
-}
-
-.location-info {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 15px;
-    border-radius: 4px;
-    margin-top: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.location-info p {
-    margin: 5px 0;
-    color: var(--text-secondary);
-}
-
-.location-info strong {
-    color: var(--accent);
-    font-family: var(--subtitle-font);
 }
 
 .location-option .location-info {
@@ -1241,6 +1294,38 @@ p {
 
 .start-travel-btn:hover {
     background: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.witnesses-container {
+    width: 100%;
+    margin-top: 1.5rem;
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.witnesses {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.witness {
+    flex: 1;
+    min-width: 300px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.witness:hover {
+    background: rgba(255, 255, 255, 0.08);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
