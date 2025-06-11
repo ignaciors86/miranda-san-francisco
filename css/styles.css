@@ -541,25 +541,28 @@ p {
 }
 
 .location-card {
-    background: var(--surface);
+    background: rgba(255,255,255,0.05);
     border-radius: 8px;
     padding: 1.5rem;
     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
     transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255,255,255,0.10) !important;
     position: relative;
     width: 100%;
     margin-bottom: 2rem;
 }
 
-.location-card.correct {
-    background: linear-gradient(135deg, rgba(0, 184, 148, 0.05), rgba(0, 184, 148, 0.02));
-    border-left: 4px solid var(--accent);
+.location-card.correct,
+.location-card.wrong {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.10) !important;
 }
 
+.location-card.correct {
+    border: 1px solid rgba(255,255,255,0.10) !important;
+}
 .location-card.wrong {
-    background: linear-gradient(135deg, rgba(255, 51, 102, 0.05), rgba(255, 51, 102, 0.02));
-    border-left: 4px solid var(--primary);
+    border: 1px solid rgba(255,255,255,0.10) !important;
 }
 
 .location-header {

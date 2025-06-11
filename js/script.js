@@ -1406,4 +1406,57 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     // Revisión de textos: aquí podrías añadir más lógica para ajustar testimonios y pistas si detectas repeticiones o incoherencias.
+})();
+
+(function() {
+    // Diccionario de descripciones culturales por lugar
+    const descripcionesViaje = {
+        'Biblioteca Nacional de El Cairo': 'La Biblioteca Nacional de El Cairo resguarda manuscritos milenarios y es un tesoro de la historia árabe.',
+        'Observatorio de Greenwich': 'Desde el Observatorio de Greenwich se define el meridiano cero y se estudian los cielos desde hace siglos.',
+        'Jardín Botánico de Singapur': 'El Jardín Botánico de Singapur es famoso por su colección de orquídeas y su biodiversidad tropical.',
+        'Museo Británico': 'El Museo Británico alberga más de ocho millones de objetos de todo el mundo.',
+        'Laboratorio Central': 'El Laboratorio Central es pionero en investigaciones sobre energías renovables y tecnología avanzada.',
+        'Museo de Arte Moderno': 'El Museo de Arte Moderno de Nueva York exhibe obras de los artistas más influyentes del siglo XX.',
+        'Centro de Datos Global': 'El Centro de Datos Global en Silicon Valley almacena información crítica para empresas de todo el planeta.',
+        'Agencia de Publicidad': 'La Agencia de Publicidad de Los Ángeles diseña campañas para las marcas más reconocidas.',
+        'Residencia de Miranda': 'La residencia de Miranda en Venecia está llena de secretos y pasadizos ocultos.',
+        'Museo del Louvre': 'El Museo del Louvre en París es el hogar de la Mona Lisa y miles de obras maestras.',
+        'Academia de Ciencias de Beijing': 'La Academia de Ciencias de Beijing lidera la investigación científica en China.',
+        'Museo de Historia Natural': 'El Museo de Historia Natural de Nueva York es famoso por sus esqueletos de dinosaurios y exposiciones interactivas.',
+        'Acuario de Okinawa': 'El Acuario de Okinawa alberga el tanque de agua más grande de Japón y especies marinas únicas.',
+        'Museo de Ciencias de Tokio': 'El Museo de Ciencias de Tokio inspira a jóvenes científicos con sus exhibiciones interactivas.',
+        'Centro de Investigación de Berlín': 'El Centro de Investigación de Berlín es referente en matemáticas y física en Europa.',
+        'Museo del Prado': 'El Museo del Prado en Madrid es conocido por su colección de pinturas de Goya y Velázquez.',
+        'Galería Uffizi': 'La Galería Uffizi de Florencia es una de las pinacotecas más antiguas y famosas del mundo.',
+        'Museo de Arte de São Paulo': 'El MASP destaca por su arquitectura moderna y su colección de arte latinoamericano.',
+        'Universidad de Cambridge': 'La Universidad de Cambridge ha formado a algunos de los científicos más importantes de la historia.',
+        'Instituto Politécnico de Milán': 'El Politécnico de Milán es líder en ingeniería y diseño en Europa.',
+        'Universidad de Buenos Aires': 'La UBA es una de las universidades más prestigiosas de América Latina.',
+        'Agencia de Medios de París': 'La Agencia de Medios de París crea campañas digitales para toda Europa.',
+        'Estudios de TV Globo': 'TV Globo es el mayor productor de televisión de Brasil.',
+        'Galería de la Academia': 'La Galería de la Academia en Venecia alberga obras maestras del arte veneciano.',
+        'Museo de Orsay': 'El Museo de Orsay en París es famoso por su colección de arte impresionista.',
+        'Centro de Investigación de París': 'El Centro de Investigación de París impulsa la innovación científica en Francia.',
+        'Instituto Tecnológico de Tokio': 'El Instituto Tecnológico de Tokio es referente en robótica y tecnología.',
+        'Universidad de Harvard': 'Harvard es la universidad más antigua de Estados Unidos y un centro de excelencia académica.',
+        'Museo Egipcio': 'El Museo Egipcio de El Cairo alberga la mayor colección de antigüedades faraónicas.',
+        'Museo de Arte Moderno de Nueva York': 'El MoMA es un icono del arte contemporáneo mundial.',
+        'Oficinas de Instagram': 'Las oficinas de Instagram en San Francisco son el corazón de la red social visual más popular.'
+    };
+    // Añadir travelDescription a caseDetails
+    Object.values(caseDetails).forEach(caso => {
+        if (caso.travels) {
+            caso.travels.forEach(travel => {
+                travel.locations.forEach(location => {
+                    location.travelDescription = descripcionesViaje[location.name] || '';
+                });
+            });
+        }
+    });
+    // Añadir travelDescription a wrongLocationResponses
+    Object.values(wrongLocationResponses).forEach(casos => {
+        Object.entries(casos).forEach(([lugar, datos]) => {
+            datos.travelDescription = descripcionesViaje[lugar] || '';
+        });
+    });
 })(); 
