@@ -3,23 +3,23 @@ const maestroHistoria = {
     adventure: {
         step1: {
             title: "El robo en la Biblioteca Nacional",
-            description: "¡Alerta máxima en la Biblioteca Nacional! Un manuscrito medieval, clave para entender la historia de España, ha desaparecido bajo misteriosas circunstancias. El Maestro de la Historia ha dejado pistas enigmáticas y solo los más valientes podrán seguir el rastro a través de los siglos. ¿Te atreves a sumergirte en una aventura donde el pasado y el presente se entrelazan? ¡La historia te necesita!"
+            description: "¡Alerta máxima en la Biblioteca Nacional! Un manuscrito medieval del siglo XIII, clave para entender la historia de España, ha desaparecido bajo misteriosas circunstancias. El documento, escrito en latín y árabe, contiene los secretos de la Escuela de Traductores de Toledo, donde sabios cristianos, judíos y musulmanes trabajaban juntos. El Maestro de la Historia ha dejado pistas enigmáticas y solo los más valientes podrán seguir el rastro a través de los siglos. ¿Te atreves a sumergirte en una aventura donde el pasado y el presente se entrelazan? ¡La historia te necesita!"
         },
         step2: {
             title: "Pistas en el Museo del Prado",
-            description: "Las pistas te llevan al Museo del Prado, donde 'Las Meninas' de Velázquez esconde un mensaje cifrado. El cuadro, pintado en 1656, representa la corte del rey Felipe IV y es clave para entender el Siglo de Oro español. El Maestro de la Historia ha dejado pistas que conectan el arte barroco con la historia de la Reconquista. Tu objetivo: analizar los símbolos artísticos y descubrir cómo se relacionan con los eventos históricos de la época."
+            description: "Las pistas te llevan al Museo del Prado, donde 'Las Meninas' de Velázquez esconde un mensaje cifrado. El cuadro, pintado en 1656, representa la corte del rey Felipe IV y es clave para entender el Siglo de Oro español. El Maestro de la Historia ha dejado pistas que conectan el arte barroco con la historia de la Reconquista, utilizando símbolos alquímicos y referencias a la Escuela de Traductores de Toledo. Tu objetivo: analizar los símbolos artísticos y descubrir cómo se relacionan con los eventos históricos de la época."
         },
         step3: {
             title: "El enigma de la Alhambra",
-            description: "La investigación te lleva a la Alhambra de Granada, último bastión del reino nazarí hasta 1492. El palacio, construido entre los siglos XIII y XIV, es un tesoro de la arquitectura islámica y un símbolo de la convivencia entre culturas. El Maestro de la Historia ha escondido un fragmento del manuscrito en la Sala de los Reyes, donde los techos decorados con los siete reyes nazaríes guardan secretos sobre la astronomía árabe. Tu tarea: descifrar los símbolos matemáticos y astronómicos que conectan la cultura árabe con la cristiana."
+            description: "La investigación te lleva a la Alhambra de Granada, último bastión del reino nazarí hasta 1492. El palacio, construido entre los siglos XIII y XIV, es un tesoro de la arquitectura islámica y un símbolo de la convivencia entre culturas. El Maestro de la Historia ha escondido un fragmento del manuscrito en la Sala de los Reyes, donde los techos decorados con los siete reyes nazaríes guardan secretos sobre la astronomía árabe. Tu tarea: descifrar los símbolos matemáticos y astronómicos que conectan la cultura árabe con la cristiana, siguiendo las enseñanzas de los sabios de la Escuela de Traductores."
         },
         step4: {
             title: "Viaje a Atenas",
-            description: "El rastro histórico te lleva hasta el Partenón de Atenas, construido en el siglo V a.C. El manuscrito robado contiene referencias a cómo los sabios medievales españoles estudiaron la democracia ateniense y la adaptaron a sus necesidades. El Maestro de la Historia busca manipular estos conocimientos para reescribir la historia de la democracia en España. Tu misión: analizar las conexiones entre la democracia ateniense y los sistemas políticos medievales españoles."
+            description: "El rastro histórico te lleva hasta el Partenón de Atenas, construido en el siglo V a.C. El manuscrito robado contiene referencias a cómo los sabios medievales españoles estudiaron la democracia ateniense y la adaptaron a sus necesidades. El Maestro de la Historia busca manipular estos conocimientos para reescribir la historia de la democracia en España. Tu misión: analizar las conexiones entre la democracia ateniense y los sistemas políticos medievales españoles, siguiendo las huellas de los traductores de Toledo."
         },
         step5: {
             title: "Desenlace en la Universidad de Salamanca",
-            description: "La investigación culmina en la Universidad de Salamanca, fundada en 1218, donde el Maestro de la Historia planea subastar el manuscrito. La universidad, una de las más antiguas de Europa, fue crucial en la transmisión del conocimiento durante la Edad Media. Tu objetivo final: utilizar todos los conocimientos históricos recopilados para exponer la manipulación histórica y recuperar el manuscrito original."
+            description: "La investigación culmina en la Universidad de Salamanca, fundada en 1218, donde el Maestro de la Historia planea subastar el manuscrito. La universidad, una de las más antiguas de Europa, fue crucial en la transmisión del conocimiento durante la Edad Media. Tu objetivo final: utilizar todos los conocimientos históricos recopilados para exponer la manipulación histórica y recuperar el manuscrito original, preservando así el legado de la Escuela de Traductores de Toledo."
         }
     },
     case: {
@@ -28,28 +28,28 @@ const maestroHistoria = {
             city: "Madrid",
             country: "España",
             year: "1974",
-            description: "La Biblioteca Nacional de Madrid, un templo del saber donde el tiempo parece detenerse entre manuscritos y secretos. Hoy, sin embargo, la rutina se ve alterada por un robo que puede cambiar la historia. ¿Te atreves a cruzar sus puertas y sumergirte en una investigación que te llevará a través de los siglos?",
+            description: "La Biblioteca Nacional de Madrid, fundada en 1712 por Felipe V, es un templo del saber donde el tiempo parece detenerse entre manuscritos y secretos. Su impresionante fachada neoclásica, construida en 1892, alberga más de 30 millones de documentos. Hoy, sin embargo, la rutina se ve alterada por un robo que puede cambiar la historia. ¿Te atreves a cruzar sus puertas y sumergirte en una investigación que te llevará a través de los siglos?",
             witnesses: [
                 {
                     name: "Doña Pilar",
                     role: "Directora de la biblioteca",
                     area: "Recepción",
-                    testimony: "Esta mañana, al abrir la sala de manuscritos, noté que uno de los documentos más valiosos había desaparecido. Nadie ha visto nada, pero el ladrón sabía exactamente lo que buscaba.",
-                    clue: "Encontré una pluma antigua junto a la vitrina vacía. Tiene grabados que parecen medievales."
+                    testimony: "Esta mañana, al abrir la sala de manuscritos, noté que uno de los documentos más valiosos había desaparecido. Se trata de un códice del siglo XIII que contiene las traducciones de la Escuela de Traductores de Toledo. Nadie ha visto nada, pero el ladrón sabía exactamente lo que buscaba.",
+                    clue: "Encontré una pluma antigua junto a la vitrina vacía. Tiene grabados que parecen medievales y símbolos alquímicos que se usaban en la Escuela de Traductores."
                 },
                 {
                     name: "Javier",
                     role: "Estudiante de historia",
                     area: "Sala de lectura",
-                    testimony: "Vi a un hombre con gabardina revisando libros antiguos. Parecía muy interesado en los mapas y crónicas de la Reconquista.",
-                    clue: "En su mesa quedó un papel con símbolos extraños y una lista de ciudades históricas."
+                    testimony: "Vi a un hombre con gabardina revisando libros antiguos. Parecía muy interesado en los mapas y crónicas de la Reconquista, especialmente en los documentos relacionados con la Escuela de Traductores de Toledo. Estaba tomando notas sobre las traducciones del árabe al latín.",
+                    clue: "En su mesa quedó un papel con símbolos extraños y una lista de ciudades históricas. Los símbolos parecen ser una mezcla de escritura árabe y latina, similar a la que usaban los traductores medievales."
                 },
                 {
                     name: "Don Ernesto",
                     role: "Vigilante",
                     area: "Pasillo principal",
-                    testimony: "Anoche escuché pasos y vi una sombra moverse entre las estanterías. Cuando fui a mirar, ya no había nadie, pero la puerta trasera estaba entreabierta.",
-                    clue: "En el suelo encontré una huella de barro y un trozo de pergamino antiguo."
+                    testimony: "Anoche escuché pasos y vi una sombra moverse entre las estanterías. Cuando fui a mirar, ya no había nadie, pero la puerta trasera estaba entreabierta. Lo más extraño es que encontré restos de tinta medieval, del tipo que se usaba en los scriptoriums.",
+                    clue: "En el suelo encontré una huella de barro y un trozo de pergamino antiguo. El pergamino tiene marcas de escritura en árabe y latín, típicas de los documentos de la Escuela de Traductores."
                 }
             ]
         },
@@ -63,28 +63,28 @@ const maestroHistoria = {
                         city: "Madrid",
                         country: "España",
                         year: "1974",
-                        description: "Sala especial con ambiente controlado para preservar documentos antiguos. Hay una visita guiada para escolares.",
+                        description: "Sala especial con ambiente controlado para preservar documentos antiguos. Las vitrinas contienen manuscritos medievales, incluyendo traducciones de la Escuela de Traductores de Toledo. Hay una visita guiada para escolares sobre la importancia de la transmisión del conocimiento en la Edad Media.",
                         witnesses: [
                             {
                                 name: "Bibliotecario",
                                 role: "Jefe de sala",
                                 area: "Mostrador",
-                                testimony: "El profesor Martínez viene a menudo a consultar manuscritos medievales. Últimamente ha estado muy interesado en documentos sobre la Reconquista.",
-                                clue: "Encontré una nota con coordenadas geográficas en un libro sobre la Reconquista."
+                                testimony: "El profesor Martínez viene a menudo a consultar manuscritos medievales. Últimamente ha estado muy interesado en documentos sobre la Reconquista y la Escuela de Traductores. Estaba especialmente fascinado con las traducciones del árabe al latín.",
+                                clue: "Encontré una nota con coordenadas geográficas en un libro sobre la Reconquista. Las coordenadas parecen señalar lugares importantes de la Escuela de Traductores."
                             },
                             {
                                 name: "Estudiante",
                                 role: "Investigador",
                                 area: "Sala de lectura",
-                                testimony: "El profesor Martínez me ayudó a encontrar información sobre la Reconquista. Parecía muy emocionado con algo que había descubierto.",
-                                clue: "Vi un mapa antiguo con marcas en varios lugares de España."
+                                testimony: "El profesor Martínez me ayudó a encontrar información sobre la Reconquista. Parecía muy emocionado con algo que había descubierto sobre las traducciones medievales. Mencionó algo sobre símbolos alquímicos en los manuscritos.",
+                                clue: "Vi un mapa antiguo con marcas en varios lugares de España. Las marcas coinciden con las rutas de los traductores medievales."
                             },
                             {
                                 name: "Guardia de seguridad",
                                 role: "Vigilante",
                                 area: "Entrada",
-                                testimony: "El profesor Martínez salió ayer tarde con una carpeta grande. Parecía nervioso.",
-                                clue: "Encontré un plano del museo con marcas en varias salas."
+                                testimony: "El profesor Martínez salió ayer tarde con una carpeta grande. Parecía nervioso y llevaba guantes blancos, como los que usamos para manejar documentos antiguos.",
+                                clue: "Encontré un plano del museo con marcas en varias salas. Las marcas forman símbolos alquímicos medievales."
                             }
                         ]
                     },
@@ -94,28 +94,28 @@ const maestroHistoria = {
                         city: "Madrid",
                         country: "España",
                         year: "1974",
-                        description: "Cafetería para investigadores y estudiantes. Hoy hay un descuento especial en el menú del día.",
+                        description: "Cafetería para investigadores y estudiantes, ubicada en el antiguo claustro de la biblioteca. Las paredes conservan frescos del siglo XVIII que representan escenas de la vida académica. Hoy hay un descuento especial en el menú del día.",
                         witnesses: [
                             {
                                 name: "Camarero",
                                 role: "Personal",
                                 area: "Barra",
-                                testimony: "Aquí solo vienen estudiantes y profesores a tomar café. Nada de misterios.",
-                                clue: "Todo normal en la cafetería."
+                                testimony: "Aquí solo vienen estudiantes y profesores a tomar café. Nada de misterios, aunque noté a alguien estudiando un libro antiguo sobre alquimia medieval.",
+                                clue: "Todo normal en la cafetería, pero encontré una nota con símbolos alquímicos en una mesa."
                             },
                             {
                                 name: "Estudiante",
                                 role: "Cliente",
                                 area: "Mesa",
-                                testimony: "Solo vengo a estudiar. No he visto nada raro.",
-                                clue: "Aquí solo se habla de exámenes."
+                                testimony: "Solo vengo a estudiar. No he visto nada raro, aunque alguien dejó un libro sobre la Escuela de Traductores de Toledo.",
+                                clue: "Aquí solo se habla de exámenes, pero el libro tiene marcas en páginas sobre símbolos medievales."
                             },
                             {
                                 name: "Profesor",
                                 role: "Cliente",
                                 area: "Esquina",
-                                testimony: "Lugar tranquilo para preparar clases. Nada más.",
-                                clue: "Solo vengo a trabajar."
+                                testimony: "Lugar tranquilo para preparar clases. Nada más, aunque noté a alguien muy interesado en los frescos del techo.",
+                                clue: "Solo vengo a trabajar, pero los frescos representan escenas de la vida académica medieval."
                             }
                         ]
                     },
@@ -125,28 +125,28 @@ const maestroHistoria = {
                         city: "Madrid",
                         country: "España",
                         year: "1974",
-                        description: "Jardines históricos junto a la biblioteca. Esta tarde hay un concierto de música clásica.",
+                        description: "Jardines históricos junto a la biblioteca, diseñados en el siglo XIX. Los árboles centenarios y las fuentes neoclásicas crean un ambiente de estudio y reflexión. Esta tarde hay un concierto de música clásica.",
                         witnesses: [
                             {
                                 name: "Jardinero",
                                 role: "Personal",
                                 area: "Rosaleda",
-                                testimony: "Solo veo paseantes y turistas. Nada fuera de lo normal.",
-                                clue: "Todo tranquilo en los jardines."
+                                testimony: "Solo veo paseantes y turistas. Nada fuera de lo normal, aunque alguien dejó un libro sobre jardines medievales.",
+                                clue: "Todo tranquilo en los jardines, pero el libro tiene marcas en páginas sobre jardines árabes."
                             },
                             {
                                 name: "Paseante",
                                 role: "Vecino",
                                 area: "Paseo central",
-                                testimony: "Lugar agradable para pasear. Nada más que contar.",
-                                clue: "Solo vengo a disfrutar del día."
+                                testimony: "Lugar agradable para pasear. Nada más que contar, aunque vi a alguien estudiando un mapa antiguo.",
+                                clue: "Solo vengo a disfrutar del día, pero el mapa parece ser de la época medieval."
                             },
                             {
                                 name: "Turista",
                                 role: "Visitante",
                                 area: "Fuente",
-                                testimony: "Hermosos jardines. Nada más que decir.",
-                                clue: "Solo vengo a hacer fotos."
+                                testimony: "Hermosos jardines. Nada más que decir, aunque alguien dejó una nota con símbolos extraños.",
+                                clue: "Solo vengo a hacer fotos, pero la nota tiene símbolos alquímicos medievales."
                             }
                         ]
                     }
@@ -161,28 +161,28 @@ const maestroHistoria = {
                         city: "Madrid",
                         country: "España",
                         year: "1974",
-                        description: "El museo más importante de España. Hoy hay una visita guiada especial sobre Velázquez.",
+                        description: "El museo más importante de España, fundado en 1819. Sus salas albergan obras maestras del Siglo de Oro español. Hoy hay una visita guiada especial sobre Velázquez y su influencia en el arte barroco.",
                         witnesses: [
                             {
                                 name: "Guía del museo",
                                 role: "Personal",
                                 area: "Sala Velázquez",
-                                testimony: "El profesor Martínez ha estado estudiando Las Meninas. Dice que ha encontrado algo importante sobre la Reconquista.",
-                                clue: "Encontré una nota con símbolos medievales en la sala de Velázquez."
+                                testimony: "El profesor Martínez ha estado estudiando Las Meninas. Dice que ha encontrado algo importante sobre la Reconquista y la Escuela de Traductores. Estaba especialmente interesado en los símbolos ocultos en el cuadro.",
+                                clue: "Encontré una nota con símbolos medievales en la sala de Velázquez. Los símbolos parecen ser una mezcla de escritura árabe y latina."
                             },
                             {
                                 name: "Restaurador",
                                 role: "Personal",
                                 area: "Taller",
-                                testimony: "El profesor Martínez me mostró unos documentos antiguos. Parecía muy emocionado con un descubrimiento.",
-                                clue: "Vi un mapa con marcas en varios lugares de España."
+                                testimony: "El profesor Martínez me mostró unos documentos antiguos. Parecía muy emocionado con un descubrimiento sobre las técnicas de pintura medieval. Mencionó algo sobre pigmentos y símbolos alquímicos.",
+                                clue: "Vi un mapa con marcas en varios lugares de España. Las marcas forman símbolos alquímicos medievales."
                             },
                             {
                                 name: "Guardia de seguridad",
                                 role: "Vigilante",
                                 area: "Entrada",
-                                testimony: "El profesor Martínez viene a menudo a ver Las Meninas. Últimamente ha estado tomando muchas notas.",
-                                clue: "Encontré un plano del museo con marcas en varias salas."
+                                testimony: "El profesor Martínez viene a menudo a ver Las Meninas. Últimamente ha estado tomando muchas notas sobre los símbolos ocultos en el cuadro. Parece obsesionado con encontrar mensajes secretos.",
+                                clue: "Encontré un plano del museo con marcas en varias salas. Las marcas coinciden con las rutas de los traductores medievales."
                             }
                         ]
                     }
@@ -197,28 +197,28 @@ const maestroHistoria = {
                         city: "Granada",
                         country: "España",
                         year: "2023",
-                        description: "Una de las salas más emblemáticas de la Alhambra, decorada con pinturas medievales.",
+                        description: "Una de las salas más emblemáticas de la Alhambra, decorada con pinturas medievales que representan a los siete reyes nazaríes. Los techos están decorados con símbolos astronómicos y matemáticos árabes, que los sabios medievales estudiaron en la Escuela de Traductores.",
                         witnesses: [
                             {
                                 name: "Ahmed",
                                 role: "Guía turístico",
                                 area: "Entrada",
-                                testimony: "Vi a una persona tomando notas frente a los frescos de los reyes nazaríes.",
-                                clue: "Buscaba símbolos ocultos en las pinturas."
+                                testimony: "Vi a una persona tomando notas frente a los frescos de los reyes nazaríes. Estaba especialmente interesado en los símbolos astronómicos del techo, que son similares a los que se encuentran en los manuscritos de la Escuela de Traductores.",
+                                clue: "Buscaba símbolos ocultos en las pinturas, especialmente en las representaciones de constelaciones árabes."
                             },
                             {
                                 name: "Lucía",
                                 role: "Visitante",
                                 area: "Banco central",
-                                testimony: "Alguien dejó un papel con palabras en griego antiguo.",
-                                clue: "El papel menciona 'Atenas' y 'democracia'."
+                                testimony: "Alguien dejó un papel con palabras en griego antiguo. El papel menciona la conexión entre la astronomía árabe y la griega, un tema que los traductores medievales estudiaron en profundidad.",
+                                clue: "El papel menciona 'Atenas' y 'democracia', y tiene símbolos astronómicos árabes."
                             },
                             {
                                 name: "Manuel",
                                 role: "Vigilante",
                                 area: "Pasillo lateral",
-                                testimony: "Vi a una figura encapuchada salir apresurada hacia la salida este.",
-                                clue: "Llevaba un libro antiguo bajo el brazo."
+                                testimony: "Vi a una figura encapuchada salir apresurada hacia la salida este. Llevaba un libro antiguo bajo el brazo, con símbolos que parecen ser de la Escuela de Traductores.",
+                                clue: "Llevaba un libro antiguo bajo el brazo, con marcas en páginas sobre astronomía árabe."
                             }
                         ]
                     },
@@ -228,59 +228,28 @@ const maestroHistoria = {
                         city: "Granada",
                         country: "España",
                         year: "2023",
-                        description: "El patio más famoso de la Alhambra, con su fuente central y columnas."
-                        ,witnesses: [
+                        description: "El patio más famoso de la Alhambra, con su fuente central y columnas. Los leones de la fuente representan los doce signos del zodíaco árabe, un tema que los traductores medievales estudiaron en profundidad.",
+                        witnesses: [
                             {
                                 name: "Rosa",
                                 role: "Guía",
                                 area: "Fuente",
-                                testimony: "Solo he visto turistas haciéndose fotos. Nadie sospechoso.",
-                                clue: "Aquí no ha pasado nada raro."
+                                testimony: "Solo he visto turistas haciéndose fotos. Nadie sospechoso, aunque alguien dejó un libro sobre astronomía árabe.",
+                                clue: "Aquí no ha pasado nada raro, pero el libro tiene marcas en páginas sobre constelaciones árabes."
                             },
                             {
                                 name: "Javier",
                                 role: "Turista",
                                 area: "Columna norte",
-                                testimony: "He estado admirando la arquitectura. No he visto nada extraño.",
-                                clue: "Solo turistas y guías."
+                                testimony: "He estado admirando la arquitectura. No he visto nada extraño, aunque noté a alguien estudiando los símbolos de las columnas.",
+                                clue: "Solo turistas y guías, pero los símbolos de las columnas son similares a los de los manuscritos medievales."
                             },
                             {
                                 name: "Antonio",
                                 role: "Vigilante",
                                 area: "Puerta sur",
-                                testimony: "Todo tranquilo en el patio. Nadie con libros antiguos."
-                                ,clue: "Quizá deberías buscar en otra sala."
-                            }
-                        ]
-                    },
-                    {
-                        name: "Mirador de San Nicolás",
-                        target: false,
-                        city: "Granada",
-                        country: "España",
-                        year: "2023",
-                        description: "Famoso mirador con vistas a la Alhambra y Sierra Nevada.",
-                        witnesses: [
-                            {
-                                name: "Paco",
-                                role: "Músico callejero",
-                                area: "Plaza",
-                                testimony: "He tocado la guitarra toda la tarde. Solo turistas y vecinos."
-                                ,clue: "No he visto a nadie sospechoso."
-                            },
-                            {
-                                name: "Marina",
-                                role: "Vendedora ambulante",
-                                area: "Puesto de artesanía",
-                                testimony: "He vendido pulseras y collares, nada fuera de lo común.",
-                                clue: "Solo turistas y músicos."
-                            },
-                            {
-                                name: "Sergio",
-                                role: "Turista",
-                                area: "Banco de piedra",
-                                testimony: "He estado sacando fotos. No he visto nada raro.",
-                                clue: "Todo normal en el mirador."
+                                testimony: "Todo normal por aquí. Solo turistas admirando la arquitectura, aunque alguien dejó una nota con símbolos astronómicos.",
+                                clue: "Nada fuera de lo común, pero la nota tiene símbolos que parecen ser de la Escuela de Traductores."
                             }
                         ]
                     }
