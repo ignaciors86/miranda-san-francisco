@@ -19,6 +19,9 @@ let currentLocation = 0;
 let visitedLocations = new Set();
 let currentStep = 1;
 
+// Variable global para el modo de pistas de color
+window.showColorHints = true;
+
 // Función para mezclar un array
 function shuffleArray(array) {
     const newArray = [...array];
@@ -452,6 +455,33 @@ document.addEventListener('DOMContentLoaded', () => {
             startTravel();
             showCaseDetailsBtn.style.display = 'none';
         });
+    }
+
+    // Lógica del switch
+    const toggleColorHints = document.getElementById('toggleColorHints');
+    const colorHintsText = document.getElementById('colorHintsText');
+    if (toggleColorHints && colorHintsText) {
+        toggleColorHints.addEventListener('change', function() {
+            window.showColorHints = this.checked;
+            colorHintsText.textContent = this.checked ? 'Mostrar pistas de color' : 'Ocultar pistas de color';
+            document.body.classList.toggle('no-hints', !this.checked);
+            if (typeof renderCurrentOptions === 'function') renderCurrentOptions();
+        });
+    }
+
+    // Mostrar el switch solo cuando el dossier esté visible
+    const colorHintsSwitch = document.getElementById('colorHintsSwitch');
+    if (colorHintsSwitch && book) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    colorHintsSwitch.classList.add('visible');
+                } else {
+                    colorHintsSwitch.classList.remove('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        observer.observe(book);
     }
 });
 

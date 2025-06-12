@@ -1645,3 +1645,101 @@ p {
     text-align: center;
     width: 90%;
 }
+
+/* Switch fijo para mostrar/ocultar pistas de color */
+.color-hints-switch {
+    display: none;
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    z-index: 9999;
+    background: rgba(30,30,30,0.97);
+    border-radius: 32px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+    padding: 0.7rem 1.5rem 0.7rem 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-family: var(--subtitle-font);
+    font-size: 1.1rem;
+    color: var(--text);
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.color-hints-switch.visible {
+    display: flex;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 52px;
+    height: 28px;
+}
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: #ccc;
+    border-radius: 28px;
+    transition: .4s;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 3px;
+    bottom: 3px;
+    background: var(--primary);
+    border-radius: 50%;
+    transition: .4s;
+}
+input:checked + .slider {
+    background: var(--accent);
+}
+input:checked + .slider:before {
+    transform: translateX(24px);
+    background: var(--dossier-accent);
+}
+
+#colorHintsText {
+    user-select: none;
+    font-weight: 600;
+}
+
+@media (max-width: 600px) {
+    .color-hints-switch {
+        bottom: 12px;
+        right: 12px;
+        font-size: 0.95rem;
+        padding: 0.5rem 1rem 0.5rem 0.7rem;
+    }
+    .switch {
+        width: 40px;
+        height: 22px;
+    }
+    .slider:before {
+        height: 16px;
+        width: 16px;
+        left: 3px;
+        bottom: 3px;
+    }
+}
+
+body.no-hints .location-option.correct,
+body.no-hints .location-option.incorrect {
+    background: var(--surface) !important;
+    border-color: var(--surface) !important;
+    color: var(--text) !important;
+    transition: background 0.4s, border-color 0.4s, color 0.4s;
+}
+
+.location-option {
+    transition: background 0.4s, border-color 0.4s, color 0.4s;
+}
