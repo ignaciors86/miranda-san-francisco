@@ -1880,3 +1880,11 @@ body.no-hints .location-option.incorrect {
     font-size: 1.7rem;
   }
 }
+
+.adventure {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

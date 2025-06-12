@@ -105,103 +105,65 @@
         </div>
     </section>
 
-    <section class="characters">
-        <div class="characters-container">
-            <h2>Personajes del Juego</h2>
-
-            <div class="characters-grid">
-                <div class="character-card">
-                    <h3>Miranda San Francisco</h3>
-                    <p class="character-role">Jefa de los Ladrones</p>
-                    <p>Una brillante criminal que lidera una red de ladrones especializados. Cada uno de sus secuaces es
-                        experto en un área diferente, y juntos planean robos elaborados. Para atraparla, primero deberás
-                        descubrir y detener a cada uno de sus secuaces, reuniendo las pistas que te llevarán hasta ella.
-                    </p>
-                </div>
-                <div class="character-card">
-                    <h3>El Jefe</h3>
-                    <p class="character-role">Mentor</p>
-                    <p>Director de ACME, una organización dedicada a resolver misterios educativos. Proporciona las
-                        misiones iniciales y ofrece pistas cuando los estudiantes se quedan atascados. Su vasto
-                        conocimiento es una valiosa fuente de información.</p>
-                </div>
-                <div class="character-card">
-                    <h3>Los Ladrones</h3>
-                    <p class="character-role">Antagonistas</p>
-                    <p>Cada ladrón tiene una personalidad única y una especialidad distinta. Desde el "Genio de las
-                        Matemáticas" hasta el "Maestro de la Historia", cada uno deja su propia firma en sus crímenes.
-                        Los estudiantes deben aprender sus patrones y debilidades para atraparlos.</p>
-                </div>
-                <div class="character-card">
-                    <h3>Personajes Locales</h3>
-                    <p class="character-role">Aliados</p>
-                    <p>En cada ciudad, los estudiantes encontrarán personajes únicos como científicos, historiadores,
-                        matemáticos y expertos en diferentes campos. Cada uno tiene información valiosa que puede ayudar
-                        en la investigación.</p>
-                </div>
-            </div>
-
-            <h2 class="adventure-title">Tu Aventura Educativa</h2>
-
-            <div class="character-selector">
-                <select id="criminalSelect" class="character-select">
-                    <option value="genio-matematico">El Genio de las Matemáticas</option>
-                    <option value="maestro-historia">El Maestro de la Historia</option>
-                    <option value="cientifico-loco">El Científico Loco</option>
-                    <option value="falsificador-arte">El Falsificador de Arte</option>
-                    <option value="hacker-creativo">El Hacker Creativo</option>
-                    <option value="influencer-falso">La Influencer Falsa</option>
-                    <option value="miranda">Miranda San Francisco</option>
-                </select>
-            </div>
-
-            <div class="adventure-steps">
-                <div class="steps-container">
-                    <div class="book">
-                        <div class="bookmark-container">
-                            <div class="bookmark" data-type="matematicas" data-step="1">Caso</div>
-                            <div class="bookmark" data-type="historia" data-step="2">Pistas</div>
-                            <div class="bookmark" data-type="ciencias" data-step="3">Análisis</div>
-                            <div class="bookmark" data-type="arte" data-step="4">Plan</div>
-                            <div class="bookmark" data-type="tecnologia" data-step="5">Captura</div>
-                        </div>
-                        <div class="pages">
-                            <div class="page active" data-step="1">
-                                <div class="step-content">
-                                    <div class="case-details" id="caseDetails">
-                                        <h3 class="case-title">Detalles del Caso</h3>
-                                        <div class="case-map">
-                                            <div class="locations-grid">
-                                                <!-- Las ubicaciones y pistas se cargarán dinámicamente -->
-                                            </div>
+    <section class="adventure">
+        <h2 class="adventure-title">Tu Aventura Educativa</h2>
+        <div class="character-selector">
+            <select id="criminalSelect" class="character-select">
+                <option value="genio-matematico">El Genio de las Matemáticas</option>
+                <option value="maestro-historia">El Maestro de la Historia</option>
+                <option value="cientifico-loco">El Científico Loco</option>
+                <option value="falsificador-arte">El Falsificador de Arte</option>
+                <option value="hacker-creativo">El Hacker Creativo</option>
+                <option value="influencer-falso">La Influencer Falsa</option>
+                <option value="miranda">Miranda San Francisco</option>
+            </select>
+        </div>
+        <div class="adventure-steps">
+            <div class="steps-container">
+                <div class="book">
+                    <div class="bookmark-container">
+                        <div class="bookmark" data-type="matematicas" data-step="1">Caso</div>
+                        <div class="bookmark" data-type="historia" data-step="2">Pistas</div>
+                        <div class="bookmark" data-type="ciencias" data-step="3">Análisis</div>
+                        <div class="bookmark" data-type="arte" data-step="4">Plan</div>
+                        <div class="bookmark" data-type="tecnologia" data-step="5">Captura</div>
+                    </div>
+                    <div class="pages">
+                        <div class="page active" data-step="1">
+                            <div class="step-content">
+                                <div class="case-details" id="caseDetails">
+                                    <h3 class="case-title">Detalles del Caso</h3>
+                                    <div class="case-map">
+                                        <div class="locations-grid">
+                                            <!-- Las ubicaciones y pistas se cargarán dinámicamente -->
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="page" data-step="2">
-                                <div class="step-content">
-                                    <h3 id="step2Title">Recolección de Pistas</h3>
-                                    <p id="step2Description">En cada ciudad, visita diferentes ubicaciones para encontrar pistas.</p>
-                                </div>
+                        </div>
+                        <div class="page" data-step="2">
+                            <div class="step-content">
+                                <h3 id="step2Title">Recolección de Pistas</h3>
+                                <p id="step2Description">En cada ciudad, visita diferentes ubicaciones para encontrar pistas.</p>
                             </div>
-                            <div class="page" data-step="3">
-                                <div class="step-content">
-                                    <h3 id="step3Title">Análisis de Sospechosos</h3>
-                                    <p id="step3Description">Con cada pista que recopiles, podrás descartar sospechosos.</p>
-                                </div>
+                        </div>
+                        <div class="page" data-step="3">
+                            <div class="step-content">
+                                <h3 id="step3Title">Análisis de Sospechosos</h3>
+                                <p id="step3Description">Con cada pista que recopiles, podrás descartar sospechosos.</p>
                             </div>
-                            <div class="page" data-step="4">
-                                <div class="step-content">
-                                    <h3 id="step4Title">Orden de Detención</h3>
-                                    <p id="step4Description">Una vez que hayas reunido suficientes pruebas, podrás solicitar una orden de detención.</p>
-                                </div>
+                        </div>
+                        <div class="page" data-step="4">
+                            <div class="step-content">
+                                <h3 id="step4Title">Orden de Detención</h3>
+                                <p id="step4Description">Una vez que hayas reunido suficientes pruebas, podrás solicitar una orden de detención.</p>
                             </div>
-                            <div class="page" data-step="5">
-                                <div class="step-content">
-                                    <h3 id="step5Title">Resolución</h3>
-                                    <div id="suspectsSelector" class="suspects-selector"></div>
-                                    <p id="step5Description">Con la orden de detención en mano, deberás interceptar al ladrón.</p>
-                                </div>
+                        </div>
+                        <div class="page" data-step="5">
+                            <div class="step-content">
+                                <h3 id="step5Title">Resolución</h3>
+                                <div id="suspectsSelector" class="suspects-selector"></div>
+                                <p id="step5Description">Con la orden de detención en mano, deberás interceptar al ladrón.</p>
                             </div>
                         </div>
                     </div>
