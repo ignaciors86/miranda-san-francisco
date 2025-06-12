@@ -296,17 +296,33 @@ function selectLocation(optionElement) {
 }
 
 function showCaseComplete() {
+    const selectedCriminal = document.getElementById('criminalSelect').value;
+    const data = cases[selectedCriminal];
+    const nombreCulpable = data.culpable;
+
     const completeCard = document.createElement('div');
     completeCard.className = 'location-card complete';
-    completeCard.innerHTML = `
-        <div class="location-header">
-            <div class="location-icon">🎉</div>
-            <h5>¡Caso Resuelto!</h5>
-        </div>
-        <p class="location-description">¡Felicidades! Has resuelto el caso y capturado al ladrón.</p>
-        <button class="restart-button" onclick="restartCase()">Iniciar Nuevo Caso</button>
-    `;
-    
+
+    if (window.selectedSuspect === nombreCulpable) {
+        completeCard.innerHTML = `
+            <div class="location-header">
+                <div class="location-icon">🎉</div>
+                <h5>¡Caso Resuelto!</h5>
+            </div>
+            <p class="location-description">¡Felicidades! Has resuelto el caso y capturado al ladrón.</p>
+            <button class="restart-button" onclick="restartCase()">Iniciar Nuevo Caso</button>
+        `;
+    } else {
+        completeCard.innerHTML = `
+            <div class="location-header">
+                <div class="location-icon">❌</div>
+                <h5>¡Has fallado!</h5>
+            </div>
+            <p class="location-description">No has seleccionado al sospechoso correcto. El verdadero culpable ha escapado...</p>
+            <button class="restart-button" onclick="restartCase()">Intentar de nuevo</button>
+        `;
+    }
+
     const locationsGrid = document.querySelector('.locations-grid');
     locationsGrid.appendChild(completeCard);
     completeCard.scrollIntoView({ behavior: 'smooth' });
@@ -348,6 +364,10 @@ function goToStep(stepNumber) {
                 page.classList.add('active');
             }
         });
+        // Mostrar sospechosos si es la pestaña 5
+        if (stepNumber === 5 && typeof renderSuspects === 'function') {
+            renderSuspects();
+        }
     });
 }
 

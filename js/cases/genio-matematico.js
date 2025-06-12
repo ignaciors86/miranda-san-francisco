@@ -1,4 +1,5 @@
 const genioMatematico = {
+    culpable: "Don Pablo",
     adventure: {
         step1: {
             title: "Un nuevo lío en San Genaro",
@@ -458,77 +459,79 @@ const genioMatematico = {
     wrongLocations: {
         "Bar San Genaro": {
             witnesses: [
-                {
-                    name: "Tinín",
-                    role: "Tabernero",
-                    area: "Barra",
-                    testimony: "Aquí solo se habla de fútbol y de la quiniela. No he visto a nadie con papeles ni maletines.",
-                    clue: "No hay nada sospechoso por aquí, solo la vida normal del barrio."
-                },
-                {
-                    name: "Josete",
-                    role: "Amigo de Carlos",
-                    area: "Mesa",
-                    testimony: "Si alguien viene a hacer negocios, no sería aquí. Aquí solo se habla de fútbol y de la quiniela.",
-                    clue: "No he visto a nadie con traje ni maletín por aquí."
-                },
-                {
-                    name: "Mariano",
-                    role: "Cliente habitual",
-                    area: "Barra",
-                    testimony: "Aquí solo se habla de fútbol y de la quiniela. Nadie viene a hacer negocios.",
-                    clue: "No hay nada raro por aquí, solo la vida normal del barrio."
-                }
+                { name: "Tinín", role: "Tabernero", area: "Barra", testimony: "Aquí solo se habla de fútbol y de la quiniela. Si buscas a alguien misterioso, tendrás que probar en otro sitio.", clue: "No he visto a nadie con pinta de estafador por aquí." },
+                { name: "Mariano", role: "Cliente habitual", area: "Mesa del fondo", testimony: "Hoy solo hemos tenido parroquianos de siempre. Nadie con maletín ni prisas.", clue: "Quizá tu sospechoso prefiera otro ambiente." },
+                { name: "Josete", role: "Amigo de Carlos", area: "Máquina de tabaco", testimony: "Si buscas aventuras, este no es el lugar. Todo tranquilo.", clue: "Aquí solo se habla de fútbol y tapas." }
+            ]
+        },
+        "Parroquia de San Genaro": {
+            witnesses: [
+                { name: "Herminia", role: "Feligresa", area: "Banco central", testimony: "Solo he visto a los vecinos rezando. Nadie extraño se ha acercado hoy.", clue: "Quizá deberías buscar en un sitio más bullicioso." },
+                { name: "Don Anselmo", role: "Sacerdote", area: "Sacristía", testimony: "No ha venido nadie nuevo a confesarse ni a pedir ayuda.", clue: "Todo está en calma en la iglesia." },
+                { name: "Pili", role: "Monaguilla", area: "Altar", testimony: "Hoy solo hemos preparado misas y flores. Ningún forastero.", clue: "Aquí no hay misterios, solo rezos." }
             ]
         },
         "Mercado de San Genaro": {
             witnesses: [
-                {
-                    name: "Mercedes Alcántara",
-                    role: "Esposa de Antonio",
-                    area: "Puesto de verduras",
-                    testimony: "Aquí solo se habla de recetas y precios. No he visto a nadie con papeles ni maletines.",
-                    clue: "No hay nada sospechoso por aquí, solo la compra diaria."
-                },
-                {
-                    name: "Herminia",
-                    role: "Abuela",
-                    area: "Banco del mercado",
-                    testimony: "Si alguien viene a hacer negocios, no sería aquí. Aquí solo se habla de precios y recetas.",
-                    clue: "No he visto a nadie con traje ni maletín por aquí."
-                },
-                {
-                    name: "Sra. Carmen",
-                    role: "Vendedora",
-                    area: "Puesto de frutas",
-                    testimony: "Aquí solo se habla de precios y recetas. Nadie viene a hacer negocios.",
-                    clue: "No hay nada raro por aquí, solo la compra diaria."
-                }
+                { name: "Mercedes", role: "Vendedora de verduras", area: "Puesto 7", testimony: "Por aquí solo han pasado las clientas de siempre. Nadie raro ni con prisas.", clue: "Quizá tu sospechoso prefiera otro sitio para esconderse." },
+                { name: "Don Tomás", role: "Carnicero", area: "Carnicería", testimony: "Hoy solo he vendido filetes y chuletas. Ningún desconocido.", clue: "Todo está normal en el mercado." },
+                { name: "Sra. Carmen", role: "Frutera", area: "Frutería", testimony: "Si buscas a alguien especial, aquí no lo vas a encontrar.", clue: "Solo fruta fresca y vecinos charlando." }
+            ]
+        },
+        "El Escorial": {
+            witnesses: [
+                { name: "Guía turística", role: "Guía", area: "Entrada", testimony: "Hoy solo he enseñado el monasterio a turistas. Nadie sospechoso en la visita.", clue: "Quizá tu sospechoso prefiera perderse en la ciudad." },
+                { name: "Vigilante", role: "Seguridad", area: "Patio", testimony: "He visto a muchos, pero ninguno con la descripción que das.", clue: "Nada fuera de lo común por aquí." },
+                { name: "María", role: "Turista", area: "Jardines", testimony: "Solo he hecho fotos y paseado. Nadie misterioso a la vista.", clue: "Todo está tranquilo en El Escorial." }
+            ]
+        },
+        "Toledo": {
+            witnesses: [
+                { name: "Pedro", role: "Guía local", area: "Puente de San Martín", testimony: "Hoy solo turistas y vecinos paseando. Nadie con pinta de estafador.", clue: "Quizá deberías buscar en otra ciudad." },
+                { name: "Lola", role: "Vendedora de recuerdos", area: "Zocodover", testimony: "He vendido pulseras y postales, pero no he visto a nadie sospechoso.", clue: "Nada raro en la plaza." },
+                { name: "Agente Ruiz", role: "Policía", area: "Catedral", testimony: "Todo está en orden. Si buscas a alguien, aquí no ha pasado.", clue: "Solo turistas y rezos hoy." }
+            ]
+        },
+        "Hotel Palace": {
+            witnesses: [
+                { name: "Recepcionista", role: "Recepción", area: "Mostrador", testimony: "Hoy solo han llegado huéspedes habituales. Nadie con prisas ni maletines.", clue: "Todo está tranquilo en el hotel." },
+                { name: "Botones", role: "Botones", area: "Hall", testimony: "He subido maletas, pero ninguna sospechosa.", clue: "Nadie raro ha pasado por aquí." },
+                { name: "Camarera de pisos", role: "Camarera", area: "Cafetería", testimony: "Solo he servido cafés y tostadas. Ningún forastero.", clue: "Todo en orden en la cafetería." }
+            ]
+        },
+        "Aeropuerto de Barajas": {
+            witnesses: [
+                { name: "Empleado de facturación", role: "Empleado", area: "Mostrador de facturación", testimony: "Solo pasajeros con billete y maletas. Nadie sospechoso.", clue: "Quizá tu sospechoso vuele desde otro sitio." },
+                { name: "Guardia Civil", role: "Guardia de seguridad", area: "Control de acceso", testimony: "He revisado equipajes, pero no he visto a nadie con la descripción que das.", clue: "Todo normal en el aeropuerto." },
+                { name: "Azafata", role: "Azafata", area: "Puerta de embarque", testimony: "Solo he llamado a los pasajeros de siempre. Ningún desconocido.", clue: "Todo está normal en la terminal." }
+            ]
+        },
+        "Puerto de Barcelona": {
+            witnesses: [
+                { name: "Estibador", role: "Estibador", area: "Muelle", testimony: "Solo barcos y mercancías habituales. Nadie sospechoso.", clue: "Quizá tu sospechoso prefiera otro puerto." },
+                { name: "Marinero", role: "Marinero", area: "Barco", testimony: "He visto a la tripulación de siempre. Ningún forastero.", clue: "Nada fuera de lo común en el puerto." },
+                { name: "Turista francesa", role: "Turista", area: "Terminal", testimony: "Solo he hecho fotos y comprado recuerdos. Nadie raro.", clue: "Todo está tranquilo en la terminal." }
             ]
         },
         "Estadio Santiago Bernabéu": {
             witnesses: [
-                {
-                    name: "Carlos Alcántara",
-                    role: "Hijo",
-                    area: "Grada",
-                    testimony: "Aquí solo se habla de fútbol. No he visto a nadie con papeles ni maletines.",
-                    clue: "No hay nada sospechoso por aquí, solo el fútbol."
-                },
-                {
-                    name: "Desi",
-                    role: "Vecino y amigo",
-                    area: "Puerta",
-                    testimony: "Si alguien viene a hacer negocios, no sería aquí. Aquí solo se habla de fútbol.",
-                    clue: "No he visto a nadie con traje ni maletín por aquí."
-                },
-                {
-                    name: "Josete",
-                    role: "Amigo de Carlos",
-                    area: "Grada",
-                    testimony: "Aquí solo se habla de fútbol. Nadie viene a hacer negocios.",
-                    clue: "No hay nada raro por aquí, solo el fútbol."
-                }
+                { name: "Vigilante nocturno", role: "Vigilante", area: "Puerta principal", testimony: "Solo aficionados al fútbol y empleados. Nadie con pinta de estafador.", clue: "Nada raro en el estadio." },
+                { name: "Pepe", role: "Aficionado", area: "Grada", testimony: "He animado al equipo, pero no he visto a nadie sospechoso.", clue: "Solo fútbol y cánticos hoy." },
+                { name: "Camarero del bar", role: "Camarero", area: "Bar del estadio", testimony: "He servido bocadillos y refrescos. Ningún forastero.", clue: "Todo está normal en el bar." }
+            ]
+        },
+        "Cafetería de la Estación": {
+            witnesses: [
+                { name: "Camarero Julián", role: "Camarero", area: "Barra", testimony: "Solo clientes habituales y algún viajero despistado. Nadie sospechoso.", clue: "Nada fuera de lo común en la cafetería." },
+                { name: "Cliente habitual", role: "Cliente", area: "Mesa", testimony: "He leído el periódico y tomado café. No he visto a nadie raro.", clue: "Todo está tranquilo en la sala." },
+                { name: "Encargada", role: "Encargada", area: "Cocina", testimony: "Solo he preparado menús del día. Ningún forastero.", clue: "Todo está normal en la cocina." }
+            ]
+        },
+        "Andén 1": {
+            witnesses: [
+                { name: "Revisor", role: "Revisor", area: "Andén", testimony: "Solo trenes y pasajeros habituales. Nadie con prisas ni maletines.", clue: "Nada raro en el andén." },
+                { name: "Viajera", role: "Viajera", area: "Banco", testimony: "He esperado mi tren y leído un libro. No he visto a nadie sospechoso.", clue: "Todo está normal en el banco." },
+                { name: "Vendedor de prensa", role: "Vendedor", area: "Puesto de prensa", testimony: "Solo he vendido periódicos y revistas. Ningún forastero.", clue: "Todo está normal en el puesto." }
             ]
         }
     }

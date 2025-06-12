@@ -47,4 +47,38 @@ const suspects = {
             "Especialista en evadir a la guardia civil"
         ]
     }
-}; 
+};
+
+// Variable global para el sospechoso seleccionado
+window.selectedSuspect = window.selectedSuspect || null;
+
+// Función para renderizar los sospechosos en el selector
+function renderSuspects() {
+    const suspectsSelector = document.getElementById('suspectsSelector');
+    if (!suspectsSelector) return;
+
+    suspectsSelector.innerHTML = '';
+    
+    Object.values(suspects).forEach(suspect => {
+        const suspectElement = document.createElement('div');
+        suspectElement.className = 'suspect-card';
+        suspectElement.innerHTML = `
+            <div class="suspect-image" style="background-image: url('assets/suspects/${suspect.name.toLowerCase().replace(' ', '-')}.jpg')">
+                <div class="suspect-name">${suspect.name}</div>
+            </div>
+        `;
+        // Marcar si es el seleccionado
+        if (window.selectedSuspect === suspect.name) {
+            suspectElement.classList.add('selected');
+        }
+        suspectElement.addEventListener('click', () => {
+            document.querySelectorAll('.suspect-card').forEach(card => card.classList.remove('selected'));
+            suspectElement.classList.add('selected');
+            window.selectedSuspect = suspect.name;
+        });
+        suspectsSelector.appendChild(suspectElement);
+    });
+}
+
+// Llamar a renderSuspects cuando se carga la página
+document.addEventListener('DOMContentLoaded', renderSuspects); 
