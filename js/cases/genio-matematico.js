@@ -2,24 +2,24 @@ const genioMatematico = {
     culpable: "Don Pablo",
     adventure: {
         step1: {
-            title: "El gran engaño de Don Pablo",
-            description: "¡Bienvenido a San Genaro, 1974! La tranquilidad del barrio se ve sacudida cuando Don Pablo, un supuesto genio de las finanzas, promete a todos riqueza fácil. Pero algo huele a chamusquina: contratos misteriosos, cuentas imposibles y promesas de oro. ¿Serás capaz de desenmascarar al estafador y salvar a la familia Alcántara antes de que sea demasiado tarde? ¡La aventura matemática comienza!"
+            title: "El misterio de los números perdidos",
+            description: "San Genaro, 1974. Un extraño caso sacude el barrio: han desaparecido los libros de matemáticas del colegio y los ahorros de la hucha de Carlos. Los Alcántara sospechan que alguien está usando trucos matemáticos para engañar a los vecinos. ¿Podrás ayudarles a descubrir la verdad y devolver la tranquilidad al barrio? ¡Comienza la aventura!"
         },
         step2: {
-            title: "Sospechas en la imprenta",
-            description: "La imprenta del barrio se ha convertido en el centro de operaciones de Don Pablo. Aquí está imprimiendo documentos falsos que incluyen: contratos con números de cuenta inventados, facturas con cálculos de intereses fraudulentos, y prospectos de inversión con proyecciones matemáticas manipuladas. Los vecinos han notado un aumento en el movimiento de maletines y papeles oficiales. Tu objetivo: analizar los documentos y encontrar inconsistencias en los cálculos financieros que revelen la estafa."
+            title: "Pistas en la imprenta",
+            description: "La imprenta del barrio está imprimiendo panfletos con acertijos y anuncios de inversiones milagrosas. Los vecinos reciben cartas con sumas imposibles y promesas de dinero fácil. Tu misión: analizar los papeles, resolver los acertijos y descubrir quién está detrás de la confusión matemática."
         },
         step3: {
-            title: "El rastro del dinero",
-            description: "Las pistas matemáticas te llevan a una sucursal bancaria donde se han detectado patrones sospechosos en las transferencias. Don Pablo está utilizando conceptos financieros complejos como interés compuesto y amortizaciones para hacer parecer legítima su estafa. Tu tarea: analizar los movimientos bancarios, identificar patrones matemáticos sospechosos y descubrir cómo está manipulando los números para engañar a los inversores."
+            title: "El enigma del banco",
+            description: "En la sucursal bancaria, los movimientos de cuentas no cuadran. Don Pablo, el supuesto genio matemático, utiliza palabras difíciles y gráficos para despistar a todos. Deberás revisar los extractos, identificar errores y explicar a los vecinos cómo funcionan realmente los intereses y los ahorros."
         },
         step4: {
-            title: "Viaje a Sagrillas",
-            description: "La investigación te lleva a Sagrillas, el pueblo de los Alcántara. Don Pablo está utilizando cálculos de valoración de terrenos y proyecciones de plusvalías para convencer a los inversores. Ha creado una compleja red de documentos que incluyen: cálculos de rentabilidad, tablas de amortización y proyecciones de crecimiento. Tu misión: verificar los cálculos matemáticos, comparar los valores reales con los presentados y encontrar las discrepancias que prueben la estafa."
+            title: "Viaje a Sagrillas: la verdad sale a la luz",
+            description: "Las pistas llevan a Sagrillas, donde Don Pablo intenta convencer a los agricultores de invertir en un proyecto dudoso. Utiliza gráficos y tablas para impresionar, pero algo no encaja. Tu reto: comparar los datos reales con los que presenta Don Pablo y ayudar a los vecinos a tomar decisiones informadas."
         },
         step5: {
             title: "Desenlace en la Feria del Campo",
-            description: "Don Pablo planea su golpe final en la Feria del Campo de Madrid. Ha preparado una presentación con gráficos, estadísticas y proyecciones financieras falsas para convencer a más inversores. Tu objetivo final: utilizar todas las pruebas matemáticas y financieras recopiladas para exponer la estafa antes de que más personas inviertan en el proyecto fraudulento."
+            description: "En la Feria del Campo, Don Pablo prepara su último truco: una charla sobre inversiones con fórmulas y estadísticas falsas. Solo tú puedes desenmascararlo resolviendo el gran acertijo final y mostrando a todos la importancia de pensar con lógica y no dejarse engañar por promesas vacías."
         }
     },
     case: {
@@ -28,28 +28,28 @@ const genioMatematico = {
             city: "San Genaro",
             country: "España",
             year: "1974",
-            description: "En el corazón de San Genaro, la familia Alcántara vive días de esperanza y esfuerzo. Pero hoy, la calma se rompe: papeles misteriosos han desaparecido y rumores de una gran estafa recorren el barrio. ¿Te atreves a entrar en la casa donde todo comenzó y descubrir el secreto que puede cambiar el destino de todos?",
-                        witnesses: [
-                            {
+            description: "La familia Alcántara se reúne preocupada: han desaparecido los libros de matemáticas y la hucha de Carlos. Antonio sospecha que alguien quiere confundir a los vecinos con números y promesas falsas. ¿Te atreves a investigar desde el corazón del barrio?",
+            witnesses: [
+                {
                     name: "Antonio Alcántara",
                     role: "Padre de familia",
                     area: "Despacho",
-                    testimony: "Esta mañana, al revisar mis papeles, noté que faltaban los documentos más importantes. Sin ellos, no puedo demostrar la estafa de Don Pablo. Alguien ha entrado en casa sin que nos diéramos cuenta.",
-                    clue: "Encontré una huella de barro cerca de la ventana. Parece que alguien entró anoche mientras todos dormíamos."
+                    testimony: "Esta mañana, al revisar mis cuentas, noté que faltaban los papeles más importantes. Sin ellos, no puedo demostrar que Don Pablo está engañando a los vecinos.",
+                    clue: "Encontré una hoja con sumas mal hechas y una dirección de la imprenta local."
                 },
                 {
                     name: "Mercedes Alcántara",
                     role: "Madre de familia",
-                                area: "Cocina",
-                    testimony: "Antonio estaba muy nervioso. Dijo que esos papeles podían salvar a muchos vecinos. Anoche escuché ruidos en el patio, pero pensé que era el viento.",
-                    clue: "Vi una sombra moverse por el patio trasero. Llevaba un maletín y se marchó en silencio."
-                            },
-                            {
-                                name: "Carlos Alcántara",
-                                role: "Hijo",
+                    area: "Cocina",
+                    testimony: "Antonio está muy preocupado. Anoche escuché ruidos en el patio y vi una sombra con un maletín. Seguro que tiene que ver con los papeles desaparecidos.",
+                    clue: "Vi una carta con acertijos matemáticos y el sello de la imprenta."
+                },
+                {
+                    name: "Carlos Alcántara",
+                    role: "Hijo",
                     area: "Entrada",
-                    testimony: "Esta mañana, al salir para el colegio, vi que la puerta del despacho estaba entreabierta. Papá nunca la deja así. Algo raro ha pasado.",
-                    clue: "En el felpudo encontré un trozo de papel con el nombre de una imprenta local. Quizá allí sepan algo." 
+                    testimony: "Hoy, al ir al colegio, vi que la hucha estaba vacía y la puerta del despacho abierta. Papá nunca la deja así.",
+                    clue: "En el felpudo encontré un trozo de papel con números y un logotipo de la imprenta."
                 }
             ]
         },
@@ -63,28 +63,28 @@ const genioMatematico = {
                         city: "San Genaro",
                         country: "España",
                         year: "1974",
-                        description: "Imprenta local especializada en documentos oficiales. Hoy hay una demostración de técnicas de impresión para estudiantes.",
+                        description: "La imprenta del barrio está llena de panfletos con acertijos y anuncios de inversiones. Hoy hay una demostración de impresión para los niños del colegio.",
                         witnesses: [
                             {
                                 name: "Desi",
                                 role: "Vecino y amigo de Antonio",
                                 area: "Mostrador",
-                                testimony: "Vi a un hombre trajeado discutiendo con el dueño. Estaban revisando unos documentos con muchos números y gráficos. Hablaban de terrenos y de cálculos de rentabilidad.",
-                                clue: "Uno de los papeles tenía un plano de una sucursal bancaria del centro de Madrid, con anotaciones sobre transferencias y cálculos de intereses."
+                                testimony: "Vi a un hombre trajeado discutiendo con el dueño. Revisaban papeles llenos de números y gráficos. Hablaban de inversiones y de cómo ganar dinero fácil.",
+                                clue: "Uno de los papeles tenía un acertijo matemático y la dirección de un banco en Madrid."
                             },
                             {
                                 name: "Mercedes Alcántara",
                                 role: "Esposa de Antonio",
                                 area: "Oficina",
-                                testimony: "Antonio estaba muy nervioso con esos papeles. Me explicó que había descubierto inconsistencias en los cálculos financieros de Don Pablo. Ayer vi a un hombre con traje caro merodeando por el portal.",
-                                clue: "Encontré una factura de imprenta con un sello oficial que no reconozco. Incluía cálculos de intereses que no cuadraban con las tasas bancarias actuales."
+                                testimony: "Antonio está convencido de que los papeles de la imprenta son la clave. Ayer vi a un hombre con traje caro merodeando por el portal.",
+                                clue: "Encontré una factura con sumas incorrectas y un sello sospechoso."
                             },
                             {
                                 name: "Tinín",
                                 role: "Tabernero",
                                 area: "Entrada",
-                                testimony: "Un señor con traje viene mucho por aquí últimamente. Siempre trae papeles llenos de números y gráficos, y habla por teléfono en voz baja sobre 'proyecciones' y 'rentabilidad'.",
-                                clue: "Vi un recibo de un banco del centro de Madrid en la papelera. Los números de las transferencias no seguían el patrón normal de las cuentas bancarias."
+                                testimony: "Un señor con traje viene mucho últimamente. Siempre trae papeles con números y habla de inversiones milagrosas.",
+                                clue: "Vi un recibo de banco con operaciones que no cuadran."
                             }
                         ]
                     },
@@ -94,14 +94,14 @@ const genioMatematico = {
                         city: "San Genaro",
                         country: "España",
                         year: "1974",
-                        description: "El bar más popular del barrio. Esta noche hay partido de fútbol en la tele.",
+                        description: "El bar más popular del barrio. Hoy hay partido de fútbol y charla sobre la quiniela.",
                         witnesses: [
                             {
                                 name: "Tinín",
                                 role: "Tabernero",
                                 area: "Barra",
-                                testimony: "Aquí solo se habla de fútbol y de la quiniela. Si buscas a alguien misterioso, tendrás que probar en otro sitio.",
-                                clue: "No he visto a nadie con pinta de estafador por aquí."
+                                testimony: "Aquí solo se habla de fútbol y tapas. Si buscas a alguien misterioso, tendrás que probar en otro sitio.",
+                                clue: "No he visto a nadie con papeles raros por aquí."
                             },
                             {
                                 name: "Mariano",
@@ -125,11 +125,11 @@ const genioMatematico = {
                         city: "San Genaro",
                         country: "España",
                         year: "1974",
-                        description: "La iglesia del barrio. Esta tarde hay misa de difuntos.",
+                        description: "La iglesia del barrio. Hoy hay misa y reunión de vecinos.",
                         witnesses: [
                             {
                                 name: "Herminia",
-                                role: "Feligresa",
+                                role: "Abuela",
                                 area: "Banco central",
                                 testimony: "Solo he visto a los vecinos rezando. Nadie extraño se ha acercado hoy.",
                                 clue: "Quizá deberías buscar en un sitio más bullicioso."
@@ -161,28 +161,28 @@ const genioMatematico = {
                         city: "Madrid",
                         country: "España",
                         year: "1974",
-                        description: "Sucursal bancaria en el centro de Madrid. Hoy hay una presentación sobre nuevos servicios de inversión.",
+                        description: "Sucursal bancaria en el centro de Madrid. Hoy hay una charla sobre ahorro y cuentas para jóvenes.",
                         witnesses: [
                             {
                                 name: "Toni Alcántara",
                                 role: "Hijo mayor, periodista",
                                 area: "Vestíbulo",
-                                testimony: "He conseguido ver los movimientos de una cuenta sospechosa. Hay transferencias a nombre de una finca en un pueblo de La Mancha.",
-                                clue: "Un recibo bancario tiene el nombre de un pueblo escrito a mano."
+                                testimony: "He conseguido ver los movimientos de una cuenta sospechosa. Hay transferencias a nombre de un pueblo de La Mancha.",
+                                clue: "Un recibo bancario tiene sumas que no cuadran y el nombre de Sagrillas."
                             },
                             {
                                 name: "Paquita",
                                 role: "Cuñada de Antonio",
                                 area: "Cajero",
                                 testimony: "Vi a un hombre con traje oscuro hablando con el director del banco. Parecían muy serios.",
-                                clue: "Escuché que mencionaban un pueblo de La Mancha y terrenos."
+                                clue: "Escuché que mencionaban inversiones y terrenos en Sagrillas."
                             },
                             {
                                 name: "Herminia",
                                 role: "Abuela",
                                 area: "Sala de espera",
                                 testimony: "No me gusta nada ese banco, siempre pasan cosas raras. Un señor salió de allí con una sonrisa sospechosa.",
-                                clue: "Llevaba un sobre con el nombre de un pueblo escrito a mano."
+                                clue: "Llevaba un sobre con números y gráficos extraños."
                             }
                         ]
                     },
@@ -198,53 +198,53 @@ const genioMatematico = {
                                 name: "Mercedes Alcántara",
                                 role: "Vendedora de verduras",
                                 area: "Puesto 7",
-                                testimony: "Por aquí solo han pasado las clientas de siempre. Nadie raro ni con prisas.",
-                                clue: "Quizá tu sospechoso prefiera otro sitio para esconderse."
+                                testimony: "Hoy solo he vendido patatas y tomates. Nadie ha preguntado por inversiones ni ha traído papeles raros.",
+                                clue: "Aquí no hay pistas, solo verduras frescas."
                             },
                             {
-                                name: "Don Tomás",
-                                role: "Carnicero",
-                                area: "Carnicería",
-                                testimony: "Hoy solo he vendido filetes y chuletas. Ningún desconocido.",
-                                clue: "Todo está normal en el mercado."
+                                name: "Desi",
+                                role: "Vecino",
+                                area: "Puesto de embutidos",
+                                testimony: "He visto a Don Pablo pasar por aquí, pero no se ha parado a hablar con nadie.",
+                                clue: "Quizá deberías buscar en el banco."
                             },
                             {
-                                name: "Sra. Carmen",
-                                role: "Frutera",
-                                area: "Frutería",
-                                testimony: "Si buscas a alguien especial, aquí no lo vas a encontrar.",
-                                clue: "Solo fruta fresca y vecinos charlando."
+                                name: "Josete",
+                                role: "Ayudante",
+                                area: "Carrito de la compra",
+                                testimony: "He ayudado a Mercedes a llevar la compra, pero no he visto nada raro.",
+                                clue: "Todo tranquilo en el mercado."
                             }
                         ]
                     },
                     {
-                        name: "El Escorial",
+                        name: "Colegio San Genaro",
                         target: false,
-                        city: "Madrid",
+                        city: "San Genaro",
                         country: "España",
                         year: "1974",
-                        description: "Municipio histórico cerca de Madrid, famoso por su monasterio y palacio real. Todo está tranquilo últimamente.",
+                        description: "El colegio del barrio. Hoy hay clase de matemáticas y juegos en el patio.",
                         witnesses: [
                             {
-                                name: "Guía turística",
-                                role: "Guía",
-                                area: "Entrada",
-                                testimony: "Hoy solo he enseñado el monasterio a turistas. Nadie sospechoso en la visita.",
-                                clue: "Quizá tu sospechoso prefiera perderse en la ciudad."
+                                name: "Carlos Alcántara",
+                                role: "Alumno",
+                                area: "Aula de matemáticas",
+                                testimony: "Hoy la profe ha dicho que faltan los libros de matemáticas. Sin ellos, no podemos hacer los ejercicios.",
+                                clue: "Quizá los libros estén en otro sitio."
                             },
                             {
-                                name: "Vigilante",
-                                role: "Seguridad",
+                                name: "Pili",
+                                role: "Compañera de clase",
                                 area: "Patio",
-                                testimony: "He visto a muchos, pero ninguno con la descripción que das.",
-                                clue: "Nada fuera de lo común por aquí."
+                                testimony: "Hoy hemos jugado a las canicas, pero nadie ha hablado de inversiones ni de bancos.",
+                                clue: "Aquí solo hay juegos y risas."
                             },
                             {
-                                name: "María",
-                                role: "Turista",
-                                area: "Jardines",
-                                testimony: "Solo he hecho fotos y paseado. Nadie misterioso a la vista.",
-                                clue: "Todo está tranquilo en El Escorial."
+                                name: "Herminia",
+                                role: "Abuela",
+                                area: "Puerta del colegio",
+                                testimony: "He venido a recoger a Carlos, pero no he visto nada raro.",
+                                clue: "Todo normal en el colegio."
                             }
                         ]
                     }
@@ -254,95 +254,95 @@ const genioMatematico = {
             {
                 locations: [
                     {
-                        name: "Sagrillas",
+                        name: "Sagrillas - Plaza Mayor",
                         target: true,
                         city: "Sagrillas",
                         country: "España",
                         year: "1974",
-                        description: "Pueblo típico de La Mancha, con su plaza mayor y la iglesia parroquial como centro de la vida social. Últimamente hay rumores de inversiones.",
+                        description: "La plaza del pueblo de los Alcántara. Hoy hay mercado y reunión de agricultores.",
                         witnesses: [
                             {
                                 name: "Antonio Alcántara",
-                                role: "Protagonista",
-                                area: "Plaza del pueblo",
-                                testimony: "Un señor con traje me ofreció participar en un negocio de terrenos. No me fío, pero parece que ha convencido a varios vecinos.",
-                                clue: "Me enseñó un folleto de la Feria del Campo de Madrid."
+                                role: "Padre de familia",
+                                area: "Ayuntamiento",
+                                testimony: "Don Pablo está intentando convencer a los agricultores con gráficos y tablas. Pero los números no cuadran.",
+                                clue: "Encontré una tabla con errores y sumas imposibles."
                             },
                             {
-                                name: "Don Pablo",
-                                role: "Empresario",
-                                area: "Ayuntamiento",
-                                testimony: "Estoy organizando una inversión para modernizar el pueblo. Todo legal, por supuesto.",
-                                clue: "Tengo todos los papeles en regla para la feria de Madrid."
+                                name: "Mercedes Alcántara",
+                                role: "Madre de familia",
+                                area: "Puesto de flores",
+                                testimony: "Los vecinos están confundidos con tantos papeles. Nadie entiende nada.",
+                                clue: "Vi un gráfico con datos inventados."
                             },
+                            {
+                                name: "Desi",
+                                role: "Vecino",
+                                area: "Fuente",
+                                testimony: "Don Pablo habla muy bien, pero sus cuentas no convencen a nadie.",
+                                clue: "Un agricultor encontró un error en los cálculos de Don Pablo."
+                            }
+                        ]
+                    },
+                    {
+                        name: "Casa de Herminia",
+                        target: false,
+                        city: "Sagrillas",
+                        country: "España",
+                        year: "1974",
+                        description: "La casa de la abuela Herminia. Hoy hay merienda y charla familiar.",
+                        witnesses: [
                             {
                                 name: "Herminia",
                                 role: "Abuela",
-                                area: "Iglesia",
-                                testimony: "He oído a los vecinos hablar de un negocio grande, pero no me fío de ese hombre.",
-                                clue: "Vi a Don Pablo con un maletín lleno de papeles."
+                                area: "Cocina",
+                                testimony: "Aquí solo se habla de recetas y recuerdos. Nada de bancos ni de inversiones.",
+                                clue: "Aquí no hay pistas, solo bizcocho."
+                            },
+                            {
+                                name: "Carlos Alcántara",
+                                role: "Nieto",
+                                area: "Salón",
+                                testimony: "He jugado con mis primos toda la tarde. Nadie ha hablado de Don Pablo.",
+                                clue: "Todo tranquilo en casa de la abuela."
+                            },
+                            {
+                                name: "Pili",
+                                role: "Nieta",
+                                area: "Patio",
+                                testimony: "Hoy hemos jugado al escondite. Nadie ha traído papeles raros.",
+                                clue: "Aquí solo hay juegos y risas."
                             }
                         ]
                     },
                     {
-                        name: "Estadio Santiago Bernabéu",
+                        name: "Estación de tren",
                         target: false,
-                        city: "Madrid",
+                        city: "Sagrillas",
                         country: "España",
                         year: "1974",
-                        description: "El estadio de fútbol más famoso de Madrid. Solo hay partidos y entrenamientos estos días.",
+                        description: "La estación de tren del pueblo. Hoy llegan visitantes para la feria.",
                         witnesses: [
                             {
-                                name: "Vigilante nocturno",
-                                role: "Vigilante",
-                                area: "Puerta principal",
-                                testimony: "Solo aficionados al fútbol y empleados. Nadie con pinta de estafador.",
-                                clue: "Nada raro en el estadio."
+                                name: "Don Anselmo",
+                                role: "Sacerdote",
+                                area: "Andén",
+                                testimony: "He visto llegar a mucha gente, pero nadie con maletines ni papeles sospechosos.",
+                                clue: "Todo normal en la estación."
                             },
                             {
-                                name: "Pepe",
-                                role: "Aficionado",
-                                area: "Grada",
-                                testimony: "He animado al equipo, pero no he visto a nadie sospechoso.",
-                                clue: "Solo fútbol y cánticos hoy."
+                                name: "Desi",
+                                role: "Vecino",
+                                area: "Taquilla",
+                                testimony: "He comprado un billete para Madrid, pero no he visto nada raro.",
+                                clue: "Nadie sospechoso en la taquilla."
                             },
                             {
-                                name: "Camarero del bar",
-                                role: "Camarero",
-                                area: "Bar del estadio",
-                                testimony: "He servido bocadillos y refrescos. Ningún forastero.",
-                                clue: "Todo está normal en el bar."
-                            }
-                        ]
-                    },
-                    {
-                        name: "Toledo",
-                        target: false,
-                        city: "Toledo",
-                        country: "España",
-                        year: "1974",
-                        description: "Ciudad monumental famosa por su catedral y su casco histórico amurallado. Mucho turismo, pero nada sospechoso.",
-                        witnesses: [
-                            {
-                                name: "Pedro",
-                                role: "Guía local",
-                                area: "Puente de San Martín",
-                                testimony: "Hoy solo turistas y vecinos paseando. Nadie con pinta de estafador.",
-                                clue: "Quizá deberías buscar en otra ciudad."
-                            },
-                            {
-                                name: "Lola",
-                                role: "Vendedora de recuerdos",
-                                area: "Zocodover",
-                                testimony: "He vendido pulseras y postales, pero no he visto a nadie sospechoso.",
-                                clue: "Nada raro en la plaza."
-                            },
-                            {
-                                name: "Agente Ruiz",
-                                role: "Policía",
-                                area: "Catedral",
-                                testimony: "Todo está en orden. Si buscas a alguien, aquí no ha pasado.",
-                                clue: "Solo turistas y rezos hoy."
+                                name: "Paquita",
+                                role: "Vecina",
+                                area: "Sala de espera",
+                                testimony: "Solo he visto a familias y viajeros. Nadie con gráficos ni papeles.",
+                                clue: "Todo tranquilo en la estación."
                             }
                         ]
                     }
@@ -352,193 +352,95 @@ const genioMatematico = {
             {
                 locations: [
                     {
-                        name: "Feria del Campo de Madrid",
+                        name: "Feria del Campo - Madrid",
                         target: true,
                         city: "Madrid",
                         country: "España",
                         year: "1974",
-                        description: "Gran recinto ferial con stands de empresas y zonas de exposición al aire libre. Aquí se va a cerrar la gran estafa.",
+                        description: "La gran feria agrícola y ganadera. Hoy hay una charla sobre inversiones y tecnología.",
                         witnesses: [
+                            {
+                                name: "Don Pablo",
+                                role: "Sospechoso principal",
+                                area: "Escenario principal",
+                                testimony: "Presenta gráficos y fórmulas para impresionar a los asistentes. Habla de inversiones milagrosas y ganancias rápidas.",
+                                clue: "Sus fórmulas tienen errores y los datos no coinciden con la realidad."
+                            },
+                            {
+                                name: "Antonio Alcántara",
+                                role: "Padre de familia",
+                                area: "Zona de expositores",
+                                testimony: "He revisado los papeles de Don Pablo y he encontrado muchas inconsistencias.",
+                                clue: "Las sumas y los porcentajes no cuadran."
+                            },
                             {
                                 name: "Mercedes Alcántara",
-                                role: "Esposa de Antonio",
-                                area: "Stand de la feria",
-                                testimony: "He visto a un hombre con traje repartiendo contratos y prometiendo el oro y el moro. Hay que pararle los pies.",
-                                clue: "Uno de los contratos tiene una firma falsificada."
-                            },
-                            {
-                                name: "Toni Alcántara",
-                                role: "Hijo mayor, periodista",
-                                area: "Zona de prensa",
-                                testimony: "Estoy cubriendo la feria para el periódico. He conseguido pruebas de la estafa.",
-                                clue: "Tengo fotos de un hombre con traje entregando sobres a los inversores."
-                            },
-                            {
-                                name: "Desi",
-                                role: "Vecino y amigo",
-                                area: "Entrada",
-                                testimony: "He avisado a la policía. Espero que lleguen a tiempo para pillar al estafador con las manos en la masa.",
-                                clue: "Vi a un hombre con maletín intentando salir por la puerta de atrás."
-                    }
-                ]
-            },
-                    {
-                        name: "Hotel Palace",
-                        target: false,
-                        city: "Madrid",
-                        country: "España",
-                        year: "1974",
-                        description: "Hotel de lujo donde podría estar escondido el estafador. Sin embargo, todo está en calma.",
-                        witnesses: [
-                            {
-                                name: "Recepcionista",
-                                role: "Recepción",
-                                area: "Mostrador",
-                                testimony: "Hoy solo han llegado huéspedes habituales. Nadie con prisas ni maletines.",
-                                clue: "Todo está tranquilo en el hotel."
-                            },
-                            {
-                                name: "Botones",
-                                role: "Botones",
-                                area: "Hall",
-                                testimony: "He subido maletas, pero ninguna sospechosa.",
-                                clue: "Nadie raro ha pasado por aquí."
-                            },
-                            {
-                                name: "Camarera de pisos",
-                                role: "Camarera",
-                                area: "Cafetería",
-                                testimony: "Solo he servido cafés y tostadas. Ningún forastero.",
-                                clue: "Todo en orden en la cafetería."
+                                role: "Madre de familia",
+                                area: "Pabellón de alimentos",
+                                testimony: "Los vecinos están confundidos con tantos números. Hay que explicarles la verdad.",
+                                clue: "Un gráfico muestra ganancias imposibles."
                             }
                         ]
                     },
                     {
-                        name: "Cafetería de la Estación",
+                        name: "Museo de Ciencias",
                         target: false,
-                                        city: "Madrid",
-                                        country: "España",
-                                        year: "1974",
-                        description: "Establecimiento de restauración con terraza y vistas a los andenes. Solo clientes habituales y algún viajero despistado.",
-                        witnesses: [
-                            {
-                                name: "Camarero Julián",
-                                role: "Camarero",
-                                area: "Barra",
-                                testimony: "Solo clientes habituales y algún viajero despistado. Nadie sospechoso.",
-                                clue: "Nada fuera de lo común en la cafetería."
-                            },
-                            {
-                                name: "Cliente habitual",
-                                role: "Cliente",
-                                area: "Mesa",
-                                testimony: "He leído el periódico y tomado café. No he visto a nadie raro.",
-                                clue: "Todo está tranquilo en la sala."
-                            },
-                            {
-                                name: "Encargada",
-                                role: "Encargada",
-                                area: "Cocina",
-                                testimony: "Solo he preparado menús del día. Ningún forastero.",
-                                clue: "Todo está normal en la cocina."
-                            }
-                        ]
-                    }
-                ]
-            },
-            // Paso 5 (resolución)
-            {
-                locations: [
-                    {
-                        name: "Estación de Atocha",
-                        target: true,
                         city: "Madrid",
                         country: "España",
                         year: "1974",
-                        description: "La policía ha rodeado la estación. El estafador está atrapado, pero aún no lo han encontrado.",
+                        description: "El museo de ciencias de Madrid. Hoy hay una exposición sobre inventos y matemáticas divertidas.",
                         witnesses: [
-                            {
-                                name: "Desi",
-                                role: "Vecino y amigo",
-                                area: "Vestíbulo",
-                                testimony: "¡Lo he visto! Se ha escondido en los baños con su maletín.",
-                                clue: "Dejó caer un sobre con documentos importantes y una llave de los baños de la estación."
-                            },
                             {
                                 name: "Carlos Alcántara",
                                 role: "Hijo",
-                                area: "Taquillas",
-                                testimony: "La policía está por todas partes. No puede escapar.",
-                                clue: "Vi a un hombre con traje entrar en los baños muy rápido. Llevaba una llave especial de los baños de la estación."
+                                area: "Sala de inventos",
+                                testimony: "He aprendido mucho sobre matemáticas y ciencia, pero no he visto a Don Pablo.",
+                                clue: "Aquí solo hay experimentos y juegos."
+                            },
+                            {
+                                name: "Pili",
+                                role: "Compañera de clase",
+                                area: "Taller de matemáticas",
+                                testimony: "Hoy hemos hecho juegos de lógica y acertijos, pero nadie ha hablado de inversiones.",
+                                clue: "Aquí solo hay diversión y aprendizaje."
                             },
                             {
                                 name: "Herminia",
                                 role: "Abuela",
-                                area: "Sala de espera",
-                                testimony: "¡Qué lío! La policía está por todas partes buscando a alguien.",
-                                clue: "Oí que alguien entró corriendo en los baños y cerró la puerta con llave."
+                                area: "Cafetería",
+                                testimony: "He tomado un chocolate caliente y he charlado con otras abuelas. Nada de bancos ni de papeles raros.",
+                                clue: "Todo tranquilo en el museo."
                             }
                         ]
                     },
                     {
-                        name: "Puerto de Barcelona",
-                        target: false,
-                        city: "Barcelona",
-                        country: "España",
-                        year: "1974",
-                        description: "Puerto comercial y turístico. Solo barcos y mercancías habituales. Nadie sospechoso últimamente.",
-            witnesses: [
-                {
-                                name: "Estibador",
-                                role: "Estibador",
-                                area: "Muelle",
-                                testimony: "Solo barcos y mercancías habituales. Nadie sospechoso.",
-                                clue: "Quizá tu sospechoso prefiera otro puerto."
-                            },
-                            {
-                                name: "Marinero",
-                                role: "Marinero",
-                                area: "Barco",
-                                testimony: "He visto a la tripulación de siempre. Ningún forastero.",
-                                clue: "Nada fuera de lo común en el puerto."
-                            },
-                            {
-                                name: "Turista francesa",
-                                role: "Turista",
-                                area: "Terminal",
-                                testimony: "Solo he hecho fotos y comprado recuerdos. Nadie raro.",
-                                clue: "Todo está tranquilo en la terminal."
-                            }
-                        ]
-                    },
-                    {
-                        name: "Andén 1",
+                        name: "Parque del Retiro",
                         target: false,
                         city: "Madrid",
                         country: "España",
                         year: "1974",
-                        description: "Andén principal de la estación, con salidas a destinos nacionales. Solo trenes y pasajeros habituales.",
-            witnesses: [
-                {
-                                name: "Revisor",
-                                role: "Revisor",
-                                area: "Andén",
-                                testimony: "Solo trenes y pasajeros habituales. Nadie con prisas ni maletines.",
-                                clue: "Nada raro en el andén."
+                        description: "El parque más famoso de Madrid. Hoy hay juegos y paseos en barca.",
+                        witnesses: [
+                            {
+                                name: "Desi",
+                                role: "Vecino",
+                                area: "Lago",
+                                testimony: "He dado un paseo en barca, pero no he visto nada raro.",
+                                clue: "Aquí solo hay patos y barcas."
                             },
                             {
-                                name: "Viajera",
-                                role: "Viajera",
-                                area: "Banco",
-                                testimony: "He esperado mi tren y leído un libro. No he visto a nadie sospechoso.",
-                                clue: "Todo está normal en el banco."
+                                name: "Josete",
+                                role: "Amigo de Carlos",
+                                area: "Zona de juegos",
+                                testimony: "Hoy hemos jugado al fútbol y a las canicas. Nada de bancos ni de inversiones.",
+                                clue: "Solo juegos y diversión en el parque."
                             },
                             {
-                                name: "Vendedor de prensa",
-                                role: "Vendedor",
-                                area: "Puesto de prensa",
-                                testimony: "Solo he vendido periódicos y revistas. Ningún forastero.",
-                                clue: "Todo está normal en el puesto."
+                                name: "Paquita",
+                                role: "Vecina",
+                                area: "Paseo de coches",
+                                testimony: "He paseado con mi hijo, pero no he visto a Don Pablo ni a nadie sospechoso.",
+                                clue: "Todo normal en el Retiro."
                             }
                         ]
                     }

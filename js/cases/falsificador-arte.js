@@ -545,5 +545,124 @@ const falsificadorArte = {
                 ]
             }
         ]
+    },
+    title: 'El Misterio del Cuadro Viviente',
+    description: 'Un famoso cuadro ha cobrado vida y está causando estragos en el museo. ¿Quién podría estar detrás de este fenómeno?',
+    difficulty: 'alta',
+    timeLimit: 20,
+    location: 'Museo de Arte Moderno, Valencia',
+    suspects: [
+        {
+            id: 'artista-digital',
+            name: 'Luna "La Píxel" Vega',
+            description: 'Una artista digital que cree que el arte debe ser interactivo y vivo. Lleva un pendrive con forma de pincel que brilla con colores cambiantes.',
+            image: 'artista-digital.jpg',
+            motive: 'Quiere demostrar que el arte digital puede ser tan valioso como el tradicional',
+            alibi: 'Estaba dando una charla sobre arte digital en la universidad',
+            clues: [
+                'Su pendrive-pincel brilla con colores cambiantes',
+                'Tiene un portátil con stickers de obras de arte famosas',
+                'Lleva una camiseta con el logo de un programa de edición de imágenes',
+                'Tiene un tatuaje de un código QR en la muñeca',
+                'Su mochila tiene un diseño de píxeles animados'
+            ]
+        }
+    ],
+    witnesses: [
+        {
+            id: 'conservador',
+            name: 'Conservador del Museo',
+            description: 'Un experto en conservación de arte que ha notado cambios extraños en los cuadros',
+            testimony: 'Los cuadros... ¡se mueven! Y no es una ilusión óptica. He visto píxeles flotando alrededor de las obras.',
+            clues: [
+                'Menciona que los cuadros tienen un brillo digital',
+                'Dice que ha visto píxeles flotando',
+                'Notó que las obras tienen un aura digital'
+            ]
+        },
+        {
+            id: 'tecnico',
+            name: 'Técnico de Sistemas',
+            description: 'El encargado de la tecnología del museo',
+            testimony: 'He detectado una señal WiFi extraña que viene de los cuadros. ¡Como si estuvieran conectados a internet!',
+            clues: [
+                'Ha detectado señales WiFi anómalas',
+                'Menciona que los cuadros emiten datos',
+                'Dice que hay píxeles flotando en el aire'
+            ]
+        },
+        {
+            id: 'visitante',
+            name: 'Visitante del Museo',
+            description: 'Una turista que grababa el museo con su teléfono',
+            testimony: '¡En mi video se ve cómo los cuadros cobran vida! Y hay una chica con un pincel digital que parece controlarlos.',
+            clues: [
+                'Tiene un video de los cuadros moviéndose',
+                'Menciona a una chica con un pincel digital',
+                'Dice que los cuadros tienen efectos digitales'
+            ]
+        }
+    ],
+    clues: [
+        {
+            id: 'pendrive-pincel',
+            name: 'Pendrive-Pincel',
+            description: 'Un pendrive con forma de pincel que brilla con colores cambiantes. ¿Qué contiene?',
+            location: 'En la mochila de Luna',
+            type: 'objeto',
+            difficulty: 'facil',
+            hint: 'Los colores cambiantes podrían ser datos...',
+            solution: 'El pendrive contiene el código que da vida a los cuadros'
+        },
+        {
+            id: 'portatil-stickers',
+            name: 'Portátil con Stickers',
+            description: 'Un portátil lleno de stickers de obras de arte famosas. ¿Qué programas tiene instalados?',
+            location: 'En la mesa de Luna',
+            type: 'objeto',
+            difficulty: 'media',
+            hint: 'Los stickers podrían ser pistas de los programas...',
+            solution: 'El portátil tiene programas de edición y animación digital'
+        },
+        {
+            id: 'camiseta-logo',
+            name: 'Camiseta con Logo',
+            description: 'Una camiseta con el logo de un programa de edición de imágenes. ¿Qué significa?',
+            location: 'En el armario de Luna',
+            type: 'objeto',
+            difficulty: 'facil',
+            hint: 'El logo podría ser una pista del programa usado...',
+            solution: 'La camiseta indica el programa usado para animar los cuadros'
+        },
+        {
+            id: 'tatuaje-qr',
+            name: 'Tatuaje QR',
+            description: 'Un tatuaje de código QR en la muñeca. ¿Qué información contiene?',
+            location: 'En la muñeca de Luna',
+            type: 'fisico',
+            difficulty: 'dificil',
+            hint: 'El código QR podría contener instrucciones...',
+            solution: 'El código QR contiene las instrucciones para animar los cuadros'
+        },
+        {
+            id: 'mochila-pixeles',
+            name: 'Mochila de Píxeles',
+            description: 'Una mochila con diseño de píxeles animados. ¿Qué esconde?',
+            location: 'En el suelo junto a Luna',
+            type: 'objeto',
+            difficulty: 'media',
+            hint: 'Los píxeles podrían ser parte del código...',
+            solution: 'La mochila contiene herramientas digitales para el arte'
+        }
+    ],
+    solution: {
+        explanation: 'Luna Vega, una artista digital, ha desarrollado una tecnología que permite animar cuadros tradicionales usando realidad aumentada y programación. Su pendrive-pincel contiene el código que da vida a las obras, el portátil tiene los programas necesarios, la camiseta indica el software usado, el tatuaje QR contiene las instrucciones, y la mochila guarda las herramientas digitales. Su objetivo es demostrar que el arte digital puede ser tan valioso como el tradicional.',
+        steps: [
+            'Luna usó su pendrive-pincel para animar los cuadros',
+            'El portátil contiene los programas de edición',
+            'La camiseta indica el software usado',
+            'El tatuaje QR tiene las instrucciones',
+            'La mochila guarda las herramientas digitales'
+        ]
     }
 }; 
