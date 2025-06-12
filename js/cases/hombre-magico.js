@@ -3,53 +3,53 @@ const hombreMagico = {
     adventure: {
         step1: {
             title: "El misterio del Hombre Mágico desaparecido",
-            description: "El Hombre Mágico ha desaparecido justo antes de la hora de irse a la cama. Los presentadores están desesperados porque el programa se está yendo al traste. ¡Tienes que encontrarlo antes de las 22:00 o el programa será un desastre total! Y lo peor: Jorge Ponce anda suelto por el plató con una sonrisa sospechosa..."
+            description: "En el Teatro Real de Madrid, durante una gala benéfica de magia, el famoso ilusionista ha desaparecido. El evento, que recauda fondos para la restauración del teatro histórico, está en peligro. Jorge Ponce, un coleccionista de artefactos mágicos históricos, fue visto merodeando por los camerinos con un libro antiguo sobre magia española del siglo XIX."
         },
         step2: {
-            title: "Pistas en el plató",
-            description: "El plató de La Revuelta está patas arriba. Hay pistas por todas partes: un sombrero de mago, una varita mágica rota y... ¿son esas huellas de zapatillas de deporte? ¡Jorge Ponce siempre lleva zapatillas! Y los presentadores están cada vez más nerviosos..."
+            title: "Pistas en el teatro",
+            description: "El Teatro Real, construido en 1850, guarda secretos en cada rincón. Encontramos un sombrero de copa del siglo XIX, una varita mágica con inscripciones en latín y... ¿son esas huellas de botas de montar? ¡Jorge Ponce es conocido por su colección de antigüedades! Y los organizadores están cada vez más nerviosos..."
         },
         step3: {
             title: "El enigma del camerino",
-            description: "En el camerino del Hombre Mágico hay un mapa extraño. Parece que Jorge Ponce ha planeado algo grande. ¡Y solo quedan 30 minutos antes de las 22:00! Los presentadores ya están empezando a improvisar..."
+            description: "En el camerino histórico, decorado con espejos venecianos del siglo XIX, hay un mapa extraño. Parece ser un plano del teatro con marcas que coinciden con los puntos donde se realizaban los trucos de magia más famosos de la época. ¡Y solo quedan 30 minutos antes de que comience la gala! Los organizadores ya están empezando a improvisar..."
         },
         step4: {
-            title: "La búsqueda en el almacén",
-            description: "Las pistas llevan al almacén de RTVE. Jorge Ponce ha escondido al Hombre Mágico entre los decorados. ¡Hay que encontrarlo antes de que el programa se vaya al traste! Y los presentadores están desesperados..."
+            title: "La búsqueda en los archivos",
+            description: "Las pistas llevan a los archivos históricos del teatro. Jorge Ponce ha estado investigando sobre los trucos de magia que se realizaban en el siglo XIX, cuando el teatro era el centro de la magia en España. ¡Hay que encontrar al mago antes de que la gala sea un desastre! Y los organizadores están desesperados..."
         },
         step5: {
             title: "¡Rescate a tiempo!",
-            description: "¡Solo quedan 5 minutos! Jorge Ponce está a punto de conseguir su objetivo: que el programa sea un desastre. ¿Podrás rescatar al Hombre Mágico y salvar La Revuelta antes de que sea demasiado tarde?"
+            description: "¡Solo quedan 5 minutos! Jorge Ponce está a punto de conseguir su objetivo: robar los secretos de la magia histórica española. ¿Podrás rescatar al mago y salvar la gala benéfica antes de que sea demasiado tarde?"
         }
     },
     case: {
         startingLocation: {
-            name: "Plató de La Revuelta",
+            name: "Teatro Real de Madrid",
             city: "Madrid",
             country: "España",
             year: "2024",
-            description: "El plató está en caos. Los presentadores están desesperados y el Hombre Mágico ha desaparecido. ¡Solo quedan 45 minutos antes de las 22:00!",
+            description: "El majestuoso Teatro Real, construido en 1850, está en caos. Los organizadores de la gala benéfica están desesperados y el mago ha desaparecido. ¡Solo quedan 45 minutos antes de que comience el espectáculo!",
             witnesses: [
                 {
                     name: "David Broncano",
-                    role: "Presentador",
+                    role: "Organizador de la gala",
                     area: "Escenario principal",
-                    testimony: "¡Esto es un desastre! El Hombre Mágico tenía que aparecer hace 10 minutos. El programa se está yendo al traste y los espectadores se van a quedar sin su momento mágico antes de irse a la cama. ¡Necesitamos encontrarlo antes de las 22:00!",
-                    clue: "Vi a Jorge Ponce merodeando por el camerino del Hombre Mágico con una sonrisa sospechosa."
+                    testimony: "¡Esto es un desastre! El mago tenía que realizar un truco histórico que no se ha visto desde el siglo XIX. La gala benéfica para restaurar el teatro se está yendo al traste. ¡Necesitamos encontrarlo antes de que comience el espectáculo!",
+                    clue: "Vi a Jorge Ponce merodeando por los archivos históricos con un libro antiguo sobre magia española."
                 },
                 {
                     name: "Grison",
-                    role: "Presentador",
-                    area: "Cocina",
-                    testimony: "Estaba preparando un truco mágico con el Hombre Mágico, pero desapareció. Y ahora el programa se está yendo al traste. ¡Necesitamos encontrarlo antes de que sea demasiado tarde!",
-                    clue: "Encontré una nota con la letra de Jorge Ponce y manchas de polvo mágico."
+                    role: "Director del teatro",
+                    area: "Camerino histórico",
+                    testimony: "Estaba revisando los documentos históricos con el mago, pero desapareció. Y ahora la gala se está yendo al traste. ¡Necesitamos encontrarlo antes de que sea demasiado tarde!",
+                    clue: "Encontré una nota con la letra de Jorge Ponce y manchas de tinta antigua."
                 },
                 {
                     name: "Ricardo Castella",
-                    role: "Presentador",
-                    area: "Zona de juegos",
-                    testimony: "Los presentadores están completamente fuera de control. Ya están empezando a improvisar. ¡Necesitamos al Hombre Mágico para salvar el programa!",
-                    clue: "Vi huellas de zapatillas de deporte cerca del camerino. ¡Son las de Jorge Ponce!"
+                    role: "Conservador del teatro",
+                    area: "Archivos históricos",
+                    testimony: "Los organizadores están completamente fuera de control. Ya están empezando a improvisar. ¡Necesitamos al mago para salvar la gala!",
+                    clue: "Vi huellas de botas de montar cerca de los archivos. ¡Son las de Jorge Ponce!"
                 }
             ]
         },
@@ -58,94 +58,94 @@ const hombreMagico = {
             {
                 locations: [
                     {
-                        name: "Camerino del Hombre Mágico",
+                        name: "Camerino histórico",
                         target: true,
                         city: "Madrid",
                         country: "España",
                         year: "2024",
-                        description: "El camerino está revuelto. Hay pistas por todas partes: un sombrero de mago, una varita rota y... ¿son esas las zapatillas de Jorge Ponce?",
+                        description: "El camerino histórico, decorado con espejos venecianos del siglo XIX, está revuelto. Hay pistas por todas partes: un sombrero de copa antiguo, una varita con inscripciones en latín y... ¿son esas las botas de montar de Jorge Ponce?",
                         witnesses: [
                             {
                                 name: "Jorge Ponce",
-                                role: "Sospechoso principal",
-                                area: "Espejo",
-                                testimony: "Yo solo vine a... eh... revisar mi peinado. ¿Qué? ¿No puedo preocuparme por mi imagen?",
-                                clue: "Sus zapatillas tienen manchas de polvo mágico y una sonrisa sospechosa."
+                                role: "Coleccionista de antigüedades",
+                                area: "Espejo veneciano",
+                                testimony: "Yo solo vine a... eh... estudiar la historia de la magia en este teatro. ¿Qué? ¿No puedo ser un apasionado de la historia?",
+                                clue: "Sus botas tienen manchas de tinta antigua y una sonrisa sospechosa."
                             },
                             {
                                 name: "Sergio Bezos",
-                                role: "Presentador",
-                                area: "Armario",
-                                testimony: "Aquí guardaba el Hombre Mágico sus trucos. Algo no cuadra... ¡Falta el mapa de los decorados!",
-                                clue: "Hay una nota con números y símbolos mágicos."
+                                role: "Archivista",
+                                area: "Armario histórico",
+                                testimony: "Aquí guardábamos los trucos históricos. Algo no cuadra... ¡Falta el libro de magia del siglo XIX!",
+                                clue: "Hay una nota con números romanos y símbolos alquímicos."
                             },
                             {
                                 name: "Pablo Ibarburu",
-                                role: "Colaborador",
-                                area: "Silla de maquillaje",
-                                testimony: "El Hombre Mágico nunca deja sus cosas así de desordenadas. ¡Y mira, hay polvo mágico por todas partes!",
-                                clue: "Las huellas de zapatillas llevan hacia el almacén."
+                                role: "Restaurador",
+                                area: "Silla de época",
+                                testimony: "El mago nunca deja sus cosas así de desordenadas. ¡Y mira, hay tinta antigua por todas partes!",
+                                clue: "Las huellas de botas llevan hacia los archivos."
                             }
                         ]
                     },
                     {
-                        name: "Cocina de La Revuelta",
+                        name: "Sala de ensayo",
                         target: false,
                         city: "Madrid",
                         country: "España",
                         year: "2024",
-                        description: "La cocina está llena de presentadores desesperados. Sin el Hombre Mágico, nadie puede salvar el programa.",
+                        description: "La sala de ensayo, con su piano de cola histórico, está llena de organizadores desesperados. Sin el mago, nadie puede salvar la gala.",
                         witnesses: [
                             {
                                 name: "Grison",
-                                role: "Presentador",
-                                area: "Nevera",
-                                testimony: "Estaba buscando algo para el truco mágico, pero... ¡Todo está lleno de polvo mágico!",
-                                clue: "Hay una receta de magia en la alacena."
+                                role: "Director del teatro",
+                                area: "Piano histórico",
+                                testimony: "Estaba revisando los documentos históricos, pero... ¡Todo está lleno de tinta antigua!",
+                                clue: "Hay una partitura antigua en el atril."
                             },
                             {
                                 name: "David Broncano",
-                                role: "Presentador",
-                                area: "Fogones",
-                                testimony: "No puedo presentar con tanto alboroto. ¡El programa se está yendo al traste!",
+                                role: "Organizador",
+                                area: "Escenario",
+                                testimony: "No puedo presentar con tanto alboroto. ¡La gala se está yendo al traste!",
                                 clue: "Hay una nota con la letra de Jorge Ponce."
                             },
                             {
                                 name: "Ernesto Sevilla",
-                                role: "Colaborador",
-                                area: "Alacena",
-                                testimony: "Necesitamos al Hombre Mágico para salvar el programa. ¡Ya estamos improvisando!",
-                                clue: "Hay polvo mágico en los estantes."
+                                role: "Conservador",
+                                area: "Archivos",
+                                testimony: "Necesitamos al mago para salvar la gala. ¡Ya estamos improvisando!",
+                                clue: "Hay tinta antigua en los documentos."
                             }
                         ]
                     },
                     {
-                        name: "Zona de juegos",
+                        name: "Biblioteca histórica",
                         target: false,
                         city: "Madrid",
                         country: "España",
                         year: "2024",
-                        description: "Los presentadores están completamente fuera de control. Ya están empezando a improvisar.",
+                        description: "La biblioteca histórica, con sus estanterías de madera tallada del siglo XIX, está en caos.",
                         witnesses: [
                             {
                                 name: "Ricardo Castella",
-                                role: "Presentador",
-                                area: "Colchonetas",
-                                testimony: "¡Esto es un desastre! Los presentadores están cada vez más nerviosos. ¡Necesitamos al Hombre Mágico!",
-                                clue: "Hay huellas de zapatillas en las colchonetas."
+                                role: "Conservador",
+                                area: "Estanterías",
+                                testimony: "¡Esto es un desastre! Los organizadores están cada vez más nerviosos. ¡Necesitamos al mago!",
+                                clue: "Hay huellas de botas en el polvo de los libros."
                             },
                             {
                                 name: "Sergio Bezos",
-                                role: "Presentador",
-                                area: "Juegos",
-                                testimony: "No puedo controlar la situación. ¡El programa se está yendo al traste!",
-                                clue: "Hay polvo mágico en los juguetes."
+                                role: "Archivista",
+                                area: "Mesa de lectura",
+                                testimony: "No puedo controlar la situación. ¡La gala se está yendo al traste!",
+                                clue: "Hay tinta antigua en los documentos."
                             },
                             {
                                 name: "Pablo Ibarburu",
-                                role: "Colaborador",
-                                area: "Pizarra",
-                                testimony: "Los presentadores están dibujando símbolos mágicos en la pizarra. ¡Necesitamos al Hombre Mágico!",
+                                role: "Restaurador",
+                                area: "Archivos",
+                                testimony: "Los organizadores están dibujando símbolos alquímicos en los documentos. ¡Necesitamos al mago!",
                                 clue: "Hay una nota con la letra de Jorge Ponce."
                             }
                         ]
@@ -156,33 +156,33 @@ const hombreMagico = {
             {
                 locations: [
                     {
-                        name: "Almacén de RTVE",
+                        name: "Archivos históricos",
                         target: true,
                         city: "Madrid",
                         country: "España",
                         year: "2024",
-                        description: "El almacén está lleno de decorados y objetos mágicos. ¡Solo quedan 20 minutos!",
+                        description: "Los archivos históricos están llenos de documentos antiguos y objetos mágicos. ¡Solo quedan 20 minutos!",
                         witnesses: [
                             {
                                 name: "Jorge Ponce",
-                                role: "Sospechoso principal",
+                                role: "Coleccionista",
                                 area: "Sección de magia",
-                                testimony: "Yo solo vine a... eh... revisar los decorados. ¿Qué? ¿No puedo ser meticuloso?",
-                                clue: "Tiene un mapa con marcas rojas y una sonrisa sospechosa."
+                                testimony: "Yo solo vine a... eh... estudiar la historia de la magia. ¿Qué? ¿No puedo ser un erudito?",
+                                clue: "Tiene un mapa antiguo con marcas rojas y una sonrisa sospechosa."
                             },
                             {
                                 name: "David Broncano",
-                                role: "Presentador",
-                                area: "Cajas de trucos",
-                                testimony: "Aquí guardamos todos los trucos del Hombre Mágico. ¡Falta la caja principal!",
-                                clue: "Hay polvo mágico por todas partes."
+                                role: "Organizador",
+                                area: "Cajas de documentos",
+                                testimony: "Aquí guardamos todos los documentos históricos. ¡Falta el libro principal de magia!",
+                                clue: "Hay tinta antigua por todas partes."
                             },
                             {
                                 name: "Ernesto Sevilla",
-                                role: "Colaborador",
-                                area: "Sección de disfraces",
-                                testimony: "Los presentadores están cada vez más nerviosos. ¡Necesitamos al Hombre Mágico!",
-                                clue: "Hay un disfraz de mago escondido."
+                                role: "Conservador",
+                                area: "Sección de mapas",
+                                testimony: "Los organizadores están cada vez más nerviosos. ¡Necesitamos al mago!",
+                                clue: "Hay un mapa antiguo escondido."
                             }
                         ]
                     },
@@ -192,59 +192,59 @@ const hombreMagico = {
                         city: "Madrid",
                         country: "España",
                         year: "2024",
-                        description: "La sala de control está llena de cámaras. ¡Podemos ver todo el plató!",
+                        description: "La sala de control, con sus antiguos sistemas de iluminación, está llena de cámaras. ¡Podemos ver todo el teatro!",
                         witnesses: [
                             {
                                 name: "Grison",
-                                role: "Presentador",
+                                role: "Director",
                                 area: "Pantallas",
-                                testimony: "¡Mira! ¡Jorge Ponce está en el almacén!",
+                                testimony: "¡Mira! ¡Jorge Ponce está en los archivos!",
                                 clue: "Hay una nota con la letra de Jorge Ponce."
                             },
                             {
                                 name: "Ricardo Castella",
-                                role: "Presentador",
+                                role: "Conservador",
                                 area: "Controles",
-                                testimony: "Los presentadores están cada vez más nerviosos. ¡Necesitamos al Hombre Mágico!",
-                                clue: "Hay polvo mágico en los controles."
+                                testimony: "Los organizadores están cada vez más nerviosos. ¡Necesitamos al mago!",
+                                clue: "Hay tinta antigua en los controles."
                             },
                             {
                                 name: "Sergio Bezos",
-                                role: "Presentador",
+                                role: "Archivista",
                                 area: "Micrófonos",
-                                testimony: "¡Escucha! ¡Los presentadores están improvisando!",
-                                clue: "Hay huellas de zapatillas en el suelo."
+                                testimony: "¡Escucha! ¡Los organizadores están improvisando!",
+                                clue: "Hay huellas de botas en el suelo."
                             }
                         ]
                     },
                     {
-                        name: "Vestuario",
+                        name: "Vestuario histórico",
                         target: false,
                         city: "Madrid",
                         country: "España",
                         year: "2024",
-                        description: "El vestuario está lleno de disfraces y objetos mágicos.",
+                        description: "El vestuario histórico está lleno de trajes de época y objetos mágicos.",
                         witnesses: [
                             {
                                 name: "David Broncano",
-                                role: "Presentador",
+                                role: "Organizador",
                                 area: "Armarios",
-                                testimony: "¡Mira! ¡Falta el disfraz del Hombre Mágico!",
+                                testimony: "¡Mira! ¡Falta el traje histórico del mago!",
                                 clue: "Hay una nota con la letra de Jorge Ponce."
                             },
                             {
                                 name: "Grison",
-                                role: "Presentador",
+                                role: "Director",
                                 area: "Espejos",
-                                testimony: "Los presentadores están cada vez más nerviosos. ¡Necesitamos al Hombre Mágico!",
-                                clue: "Hay polvo mágico en los espejos."
+                                testimony: "Los organizadores están cada vez más nerviosos. ¡Necesitamos al mago!",
+                                clue: "Hay tinta antigua en los espejos."
                             },
                             {
                                 name: "Pablo Ibarburu",
-                                role: "Colaborador",
+                                role: "Restaurador",
                                 area: "Sillas",
-                                testimony: "¡Mira! ¡Hay huellas de zapatillas!",
-                                clue: "Las huellas llevan hacia el almacén."
+                                testimony: "¡Mira! ¡Hay huellas de botas!",
+                                clue: "Las huellas llevan hacia los archivos."
                             }
                         ]
                     }

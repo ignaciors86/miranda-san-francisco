@@ -3,23 +3,23 @@ const falsificadorArte = {
     adventure: {
         step1: {
             title: "El robo en el Museo del Louvre",
-            description: "¡París amanece conmocionada! Una obra maestra ha sido sustituida por una copia tan perfecta que ni los expertos pueden distinguirla. El director del Louvre sospecha de una red internacional de falsificadores. ¿Te atreves a seguir el rastro del arte perdido y descubrir los secretos que se esconden tras los lienzos? ¡El mundo del arte te espera!"
+            description: "¡París amanece conmocionada! Una obra maestra ha sido sustituida por una copia tan perfecta que ni los expertos pueden distinguirla. El director del Louvre sospecha de una red internacional de falsificadores que utiliza técnicas antiguas de los maestros renacentistas. ¿Te atreves a seguir el rastro del arte perdido y descubrir los secretos que se esconden tras los lienzos? ¡El mundo del arte te espera!"
         },
         step2: {
             title: "Pistas en el Museo del Prado",
-            description: "Se ha detectado una falsificación en una sala de Velázquez. Los expertos buscan pistas en los pigmentos y firmas."
+            description: "Se ha detectado una falsificación en una sala de Velázquez. Los expertos buscan pistas en los pigmentos y firmas. El falsificador ha utilizado técnicas del siglo XVII, incluyendo el uso de bermellón y azurita, pigmentos que Velázquez usaba en sus obras."
         },
         step3: {
             title: "El misterio en Florencia",
-            description: "Una escultura renacentista ha sido reemplazada por una réplica. El culpable deja mensajes en clave en las etiquetas de las obras."
+            description: "Una escultura renacentista ha sido reemplazada por una réplica. El culpable deja mensajes en clave en las etiquetas de las obras, utilizando símbolos alquímicos del siglo XV que indican la composición de los materiales utilizados."
         },
         step4: {
             title: "Viaje a Nueva York",
-            description: "El rastro lleva hasta el MoMA, donde se prepara una subasta de arte moderno. El falsificador planea vender varias copias."
+            description: "El rastro lleva hasta el MoMA, donde se prepara una subasta de arte moderno. El falsificador planea vender varias copias, utilizando técnicas de los maestros impresionistas del siglo XIX, como el uso de colores puros y pinceladas sueltas."
         },
         step5: {
             title: "Desenlace en el Museo Reina Sofía",
-            description: "El Falsificador de Arte planea exponer su obra en una galería clandestina. Hay que desenmascararlo antes de que engañe a los expertos."
+            description: "El Falsificador de Arte planea exponer su obra en una galería clandestina. Hay que desenmascararlo antes de que engañe a los expertos. Sus últimas falsificaciones imitan el estilo de los maestros del siglo XX, incluyendo técnicas de Picasso y Dalí."
         }
     },
     case: {
@@ -28,28 +28,28 @@ const falsificadorArte = {
             city: "París",
             country: "Francia",
             year: "2023",
-            description: "El Museo del Louvre, guardián de tesoros artísticos y testigo de miles de historias, despierta hoy con un escándalo: una obra maestra ha sido sustituida por una copia perfecta. Entre pasillos llenos de arte y misterio, tu aventura para descubrir la verdad está a punto de comenzar. ¿Te atreves a entrar?",
+            description: "El Museo del Louvre, antiguo palacio real construido en el siglo XII y transformado en museo durante la Revolución Francesa, despierta hoy con un escándalo: una obra maestra ha sido sustituida por una copia perfecta. Entre pasillos llenos de arte y misterio, tu aventura para descubrir la verdad está a punto de comenzar. ¿Te atreves a entrar?",
             witnesses: [
                 {
                     name: "Marie",
                     role: "Guía del museo",
                     area: "Entrada principal",
-                    testimony: "Esta mañana, al abrir la sala, noté que la Mona Lisa parecía... diferente. El marco estaba ligeramente torcido y el cristal tenía una huella extraña.",
-                    clue: "Encontré una etiqueta de equipaje con destino Madrid cerca de la puerta de servicio."
+                    testimony: "Esta mañana, al abrir la sala, noté que la Mona Lisa parecía... diferente. El marco, que data del siglo XVI, estaba ligeramente torcido y el cristal tenía una huella extraña. Además, los pigmentos del sfumato, la técnica característica de Leonardo, parecen haber sido alterados.",
+                    clue: "Encontré una etiqueta de equipaje con destino Madrid cerca de la puerta de servicio, junto a un frasco de barniz de almáciga, un material que Leonardo usaba para proteger sus obras."
                 },
                 {
                     name: "Jean",
                     role: "Vigilante nocturno",
                     area: "Pasillo lateral",
-                    testimony: "Anoche vi a una figura encapuchada merodeando por los pasillos. Cuando me acerqué, desapareció entre las sombras.",
-                    clue: "En el suelo quedó un trozo de tela con restos de pintura fresca."
+                    testimony: "Anoche vi a una figura encapuchada merodeando por los pasillos. Cuando me acerqué, desapareció entre las sombras. Lo más extraño es que llevaba un maletín con el símbolo de la Escuela de Bellas Artes de Florencia, fundada en 1563.",
+                    clue: "En el suelo quedó un trozo de tela con restos de pintura fresca. El análisis químico revela que contiene lapislázuli, un pigmento ultramarino que solo los maestros renacentistas podían permitirse."
                 },
                 {
                     name: "Sophie",
                     role: "Visitante",
                     area: "Tienda de recuerdos",
-                    testimony: "Vi a un hombre tomar notas sobre la técnica de Leonardo y comprar varios libros de arte. Parecía muy interesado en los detalles.",
-                    clue: "Dejó olvidado un cuaderno con bocetos de cuadros famosos y fórmulas químicas."
+                    testimony: "Vi a un hombre tomar notas sobre la técnica de Leonardo y comprar varios libros de arte. Parecía muy interesado en los detalles, especialmente en el uso del sfumato y la perspectiva aérea, técnicas que Leonardo perfeccionó en el siglo XV.",
+                    clue: "Dejó olvidado un cuaderno con bocetos de cuadros famosos y fórmulas químicas. Las fórmulas corresponden a recetas de pigmentos del Renacimiento, incluyendo la composición del bermellón y el azurita."
                 }
             ]
         },
@@ -63,28 +63,28 @@ const falsificadorArte = {
                         city: "París",
                         country: "Francia",
                         year: "2023",
-                        description: "Donde se expone la obra más famosa de Leonardo da Vinci.",
+                        description: "La sala que alberga la obra más famosa de Leonardo da Vinci, pintada entre 1503 y 1519. El cuadro ha sobrevivido a la Revolución Francesa y a dos guerras mundiales, pero ahora enfrenta su mayor desafío.",
                         witnesses: [
                             {
                                 name: "Marie",
                                 role: "Guía del museo",
                                 area: "Frente a la Mona Lisa",
-                                testimony: "Vi a alguien con guantes y una lupa revisando el marco del cuadro.",
-                                clue: "El cristal tenía una huella dactilar sospechosa."
+                                testimony: "Vi a alguien con guantes y una lupa revisando el marco del cuadro. Lo más extraño es que llevaba un pincel de pelo de marta, el mismo tipo que Leonardo usaba para aplicar el sfumato.",
+                                clue: "El cristal tenía una huella dactilar sospechosa y restos de barniz de almáciga, un material que solo se usaba en el Renacimiento."
                             },
                             {
                                 name: "Jean",
                                 role: "Vigilante",
                                 area: "Puerta lateral",
-                                testimony: "Las cámaras captaron a una figura encapuchada saliendo con un tubo de lienzo.",
-                                clue: "El tubo tenía una etiqueta con destino Madrid."
+                                testimony: "Las cámaras captaron a una figura encapuchada saliendo con un tubo de lienzo. Lo más extraño es que el tubo tenía el sello de la Academia de Bellas Artes de Florencia, fundada en 1563.",
+                                clue: "El tubo tenía una etiqueta con destino Madrid y restos de pigmentos históricos, incluyendo lapislázuli y bermellón."
                             },
                             {
                                 name: "Sophie",
                                 role: "Visitante",
                                 area: "Banco central",
-                                testimony: "Vi a un hombre tomar notas sobre la técnica de Leonardo.",
-                                clue: "Anotaba detalles sobre el sfumato y los pigmentos."
+                                testimony: "Vi a un hombre tomar notas sobre la técnica de Leonardo. Estaba especialmente interesado en el sfumato y la perspectiva aérea, técnicas que Leonardo perfeccionó en el siglo XV.",
+                                clue: "Anotaba detalles sobre el sfumato y los pigmentos, incluyendo fórmulas químicas de colores que solo se usaban en el Renacimiento."
                             }
                         ]
                     },
@@ -94,28 +94,28 @@ const falsificadorArte = {
                         city: "París",
                         country: "Francia",
                         year: "2023",
-                        description: "Zona de descanso para visitantes y trabajadores.",
+                        description: "La cafetería, ubicada en el antiguo patio del palacio real, es una zona de descanso para visitantes y trabajadores. Sus paredes conservan frescos del siglo XVII.",
                         witnesses: [
                             {
                                 name: "Pierre",
                                 role: "Camarero",
                                 area: "Barra",
-                                testimony: "Hoy solo han venido turistas y escolares. Nadie sospechoso.",
-                                clue: "No he visto a nadie con tubos de lienzo."
+                                testimony: "Hoy solo han venido turistas y escolares. Nadie sospechoso, aunque noté a alguien estudiando los frescos del techo con mucha atención.",
+                                clue: "No he visto a nadie con tubos de lienzo, pero encontré un pincel de pelo de marta en el baño."
                             },
                             {
                                 name: "Isabel",
                                 role: "Turista",
                                 area: "Mesa central",
-                                testimony: "He estado todo el rato con mi grupo. No he visto nada raro.",
-                                clue: "Quizá deberías buscar en la sala de la Mona Lisa."
+                                testimony: "He estado todo el rato con mi grupo. No he visto nada raro, aunque noté a alguien tomando notas sobre los frescos del techo.",
+                                clue: "Quizá deberías buscar en la sala de la Mona Lisa. Vi a alguien muy interesado en las técnicas de pintura al fresco."
                             },
                             {
                                 name: "Tomás",
                                 role: "Profesor",
                                 area: "Terraza",
-                                testimony: "Solo he visto a mis alumnos y a otros profesores.",
-                                clue: "Nada fuera de lo común en la cafetería."
+                                testimony: "Solo he visto a mis alumnos y a otros profesores. Aunque noté a alguien estudiando los frescos del patio con una lupa.",
+                                clue: "Nada fuera de lo común en la cafetería, pero los frescos del patio son del siglo XVII."
                             }
                         ]
                     },
@@ -125,28 +125,28 @@ const falsificadorArte = {
                         city: "París",
                         country: "Francia",
                         year: "2023",
-                        description: "Donde se venden recuerdos y libros de arte.",
+                        description: "La tienda, ubicada en una antigua sala del palacio, vende recuerdos y libros de arte. Sus estanterías están decoradas con reproducciones de obras maestras.",
                         witnesses: [
                             {
                                 name: "Carmen",
                                 role: "Dependienta",
                                 area: "Caja",
-                                testimony: "He vendido muchos libros de arte hoy, pero nada raro.",
-                                clue: "Nadie ha preguntado por técnicas de Leonardo."
+                                testimony: "He vendido muchos libros de arte hoy, pero nada raro. Aunque noté a alguien muy interesado en los libros sobre técnicas de pintura renacentista.",
+                                clue: "Nadie ha preguntado por técnicas de Leonardo, pero alguien compró todos los libros sobre pigmentos históricos."
                             },
                             {
                                 name: "Luis",
                                 role: "Cliente",
                                 area: "Estantería de libros",
-                                testimony: "Buscaba un regalo para mi hijo. No he visto nada extraño.",
-                                clue: "Solo libros y recuerdos."
+                                testimony: "Buscaba un regalo para mi hijo. No he visto nada extraño, aunque noté a alguien estudiando los libros sobre técnicas de pintura al fresco.",
+                                clue: "Solo libros y recuerdos, pero los libros sobre técnicas históricas están desordenados."
                             },
                             {
                                 name: "Patricia",
                                 role: "Turista",
                                 area: "Mostrador",
-                                testimony: "He comprado una guía de París. No he visto a nadie sospechoso.",
-                                clue: "Todo normal en la tienda."
+                                testimony: "He comprado una guía de París. No he visto a nadie sospechoso, aunque noté a alguien muy interesado en los libros sobre pigmentos históricos.",
+                                clue: "Todo normal en la tienda, pero los libros sobre técnicas renacentistas están desordenados."
                             }
                         ]
                     }
@@ -161,28 +161,28 @@ const falsificadorArte = {
                         city: "Madrid",
                         country: "España",
                         year: "2023",
-                        description: "Donde cuelgan las grandes obras de Velázquez.",
+                        description: "La sala que alberga las grandes obras de Velázquez, incluyendo Las Meninas, pintada en 1656. El museo, fundado en 1819, conserva la mayor colección de obras del maestro sevillano.",
                         witnesses: [
                             {
                                 name: "María",
                                 role: "Guía del museo",
                                 area: "Frente a Las Meninas",
-                                testimony: "Vi a alguien dejar una copia junto al cuadro original.",
-                                clue: "La copia tenía una firma falsa."
+                                testimony: "Vi a alguien dejar una copia junto al cuadro original. Lo más extraño es que usó los mismos pigmentos que Velázquez: bermellón, azurita y lapislázuli.",
+                                clue: "La copia tenía una firma falsa y restos de barniz de almáciga, un material que solo se usaba en el siglo XVII."
                             },
                             {
                                 name: "Javier",
                                 role: "Visitante",
                                 area: "Sala lateral",
-                                testimony: "Un hombre encapuchado preguntó por los pigmentos originales de Velázquez.",
-                                clue: "Buscaba información sobre la composición de los colores."
+                                testimony: "Un hombre encapuchado preguntó por los pigmentos originales de Velázquez. Estaba especialmente interesado en el bermellón y el azurita, pigmentos que el maestro usaba en sus obras.",
+                                clue: "Buscaba información sobre la composición de los colores, especialmente sobre los pigmentos históricos del siglo XVII."
                             },
                             {
                                 name: "Elena",
                                 role: "Conservadora",
                                 area: "Despacho",
-                                testimony: "Faltan folletos sobre la historia de la pintura española.",
-                                clue: "Alguien se llevó todos los folletos de la sala."
+                                testimony: "Faltan folletos sobre la historia de la pintura española. Lo más extraño es que solo faltan los que hablan sobre las técnicas y pigmentos del siglo XVII.",
+                                clue: "Alguien se llevó todos los folletos de la sala, especialmente los que detallan las técnicas de Velázquez."
                             }
                         ]
                     },
@@ -192,28 +192,28 @@ const falsificadorArte = {
                         city: "Madrid",
                         country: "España",
                         year: "2023",
-                        description: "Zona de descanso para visitantes.",
+                        description: "La cafetería, ubicada en el antiguo claustro del museo, es una zona de descanso para visitantes. Sus paredes conservan frescos del siglo XIX.",
                         witnesses: [
                             {
                                 name: "Raúl",
                                 role: "Camarero",
                                 area: "Barra",
-                                testimony: "Hoy solo han venido turistas y escolares. Nadie sospechoso.",
-                                clue: "No he visto a nadie dejar copias de cuadros."
+                                testimony: "Hoy solo han venido turistas y escolares. Nadie sospechoso, aunque noté a alguien estudiando los frescos del techo con mucha atención.",
+                                clue: "No he visto a nadie dejar copias de cuadros, pero encontré un pincel de pelo de marta en el baño."
                             },
                             {
                                 name: "Isabel",
                                 role: "Turista",
                                 area: "Mesa central",
-                                testimony: "He estado todo el rato con mi grupo. No he visto nada raro.",
-                                clue: "Quizá deberías buscar en la sala de los cuadros."
+                                testimony: "He estado todo el rato con mi grupo. No he visto nada raro, aunque noté a alguien tomando notas sobre los frescos del techo.",
+                                clue: "Quizá deberías buscar en la sala de los cuadros. Vi a alguien muy interesado en las técnicas de pintura al fresco."
                             },
                             {
                                 name: "Tomás",
                                 role: "Profesor",
                                 area: "Terraza",
-                                testimony: "Solo he visto a mis alumnos y a otros profesores.",
-                                clue: "Nada fuera de lo común en la cafetería."
+                                testimony: "Solo he visto a mis alumnos y a otros profesores. Aunque noté a alguien estudiando los frescos del patio con una lupa.",
+                                clue: "Nada fuera de lo común en la cafetería, pero los frescos del patio son del siglo XIX."
                             }
                         ]
                     },
@@ -223,28 +223,28 @@ const falsificadorArte = {
                         city: "Madrid",
                         country: "España",
                         year: "2023",
-                        description: "Donde se venden recuerdos y libros de arte.",
+                        description: "La tienda, ubicada en una antigua sala del museo, vende recuerdos y libros de arte. Sus estanterías están decoradas con reproducciones de obras maestras.",
                         witnesses: [
                             {
                                 name: "Carmen",
                                 role: "Dependienta",
                                 area: "Caja",
-                                testimony: "He vendido muchos libros de arte hoy, pero nada raro.",
-                                clue: "Nadie ha preguntado por técnicas de Velázquez."
+                                testimony: "He vendido muchos libros de arte hoy, pero nada raro. Aunque noté a alguien muy interesado en los libros sobre técnicas de pintura del siglo XVII.",
+                                clue: "Nadie ha preguntado por técnicas de Velázquez, pero alguien compró todos los libros sobre pigmentos históricos."
                             },
                             {
                                 name: "Luis",
                                 role: "Cliente",
                                 area: "Estantería de libros",
-                                testimony: "Buscaba un regalo para mi hijo. No he visto nada extraño.",
-                                clue: "Solo libros y recuerdos."
+                                testimony: "Buscaba un regalo para mi hijo. No he visto nada extraño, aunque noté a alguien estudiando los libros sobre técnicas de pintura al fresco.",
+                                clue: "Solo libros y recuerdos, pero los libros sobre técnicas históricas están desordenados."
                             },
                             {
                                 name: "Patricia",
                                 role: "Turista",
                                 area: "Mostrador",
-                                testimony: "He comprado una guía de Madrid. No he visto a nadie sospechoso.",
-                                clue: "Todo normal en la tienda."
+                                testimony: "He comprado una guía de Madrid. No he visto a nadie sospechoso, aunque noté a alguien muy interesado en los libros sobre pigmentos históricos.",
+                                clue: "Todo normal en la tienda, pero los libros sobre técnicas del siglo XVII están desordenados."
                             }
                         ]
                     }
