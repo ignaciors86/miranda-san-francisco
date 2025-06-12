@@ -1888,3 +1888,57 @@ body.no-hints .location-option.incorrect {
   align-items: center;
   justify-content: center;
 }
+
+.audio-control {
+    position: fixed;
+    top: 1.2rem;
+    right: 1.2rem;
+    z-index: 20000;
+    background: var(--primary);
+    border: none;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    color: white;
+    outline: none;
+    transform: scale(1);
+}
+
+.audio-control:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+    background: var(--accent);
+}
+
+.audio-control:active {
+    transform: scale(0.95);
+}
+
+#audioIcon {
+    font-size: 1.5rem;
+    pointer-events: none;
+    transition: transform 0.3s ease;
+}
+
+.audio-control:hover #audioIcon {
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .audio-control {
+        top: 1rem;
+        right: 1rem;
+        width: 40px;
+        height: 40px;
+    }
+    
+    #audioIcon {
+        font-size: 1.2rem;
+    }
+}

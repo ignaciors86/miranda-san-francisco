@@ -458,6 +458,55 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { threshold: 0.1 });
         observer.observe(book);
     }
+
+    // Control de música de fondo
+    const audio = document.getElementById('bgMusic');
+    const audioBtn = document.getElementById('audioControlBtn');
+    const audioIcon = document.getElementById('audioIcon');
+    let isPlaying = false;
+
+    if (audio && audioBtn && audioIcon) {
+        // Precargar el audio
+        audio.load();
+
+        audioBtn.addEventListener('click', async () => {
+            try {
+                if (isPlaying) {
+                    await audio.pause();
+                    audioIcon.textContent = '▶';
+                } else {
+                    await audio.play();
+                    audioIcon.textContent = '⏸';
+                }
+                isPlaying = !isPlaying;
+            } catch (error) {
+                console.error('Error al reproducir el audio:', error);
+            }
+        });
+
+        // Manejar eventos del audio
+        audio.addEventListener('ended', () => {
+            isPlaying = false;
+            audioIcon.textContent = '▶';
+        });
+
+        audio.addEventListener('pause', () => {
+            isPlaying = false;
+            audioIcon.textContent = '▶';
+        });
+
+        audio.addEventListener('play', () => {
+            isPlaying = true;
+            audioIcon.textContent = '⏸';
+        });
+
+        // Manejar errores de audio
+        audio.addEventListener('error', (e) => {
+            console.error('Error en el audio:', e);
+            audioIcon.textContent = '▶';
+            isPlaying = false;
+        });
+    }
 });
 
 // Crear función para mostrar modal de pista
