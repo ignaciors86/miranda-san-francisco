@@ -1071,8 +1071,8 @@ p {
 }
 
 .clue-button {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     background: linear-gradient(135deg, var(--dossier-color), var(--dossier-accent));
     display: flex;
@@ -1092,6 +1092,10 @@ p {
 @keyframes cluePulse {
     0% { box-shadow: 0 0 0 0 var(--dossier-accent, #00B894, 0.18); }
     100% { box-shadow: 0 0 0 12px rgba(0,184,148,0); }
+}
+.clue-button.opened {
+    animation: none !important;
+    box-shadow: none !important;
 }
 .clue-button img {
     width: 40px;
