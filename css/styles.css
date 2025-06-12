@@ -1743,3 +1743,50 @@ body.no-hints .location-option.incorrect {
 .location-option {
     transition: background 0.4s, border-color 0.4s, color 0.4s;
 }
+
+/* Superposición verde y check para el sospechoso correcto en modo pistas de color */
+.suspect-card.is-correct-suspect::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 184, 148, 0.25);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 2;
+}
+.suspect-card.is-correct-suspect .suspect-image::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 12px; right: 12px;
+    width: 38px; height: 38px;
+    background: url('assets/check-green.svg') no-repeat center center / contain;
+    z-index: 3;
+}
+
+/* Pegatina WANTED para el sospechoso seleccionado */
+.suspect-card.selected .suspect-image::before {
+    content: 'WANTED';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-18deg);
+    background: #FFD600;
+    color: #222;
+    font-family: 'Impact', 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 0.3rem 1.2rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    letter-spacing: 0.15em;
+    border: 2px solid #bfa800;
+    z-index: 4;
+    text-shadow: 1px 1px 2px #fff8, 0 1px 0 #bfa800;
+    opacity: 0.92;
+    pointer-events: none;
+}
+
+.suspect-card .suspect-image {
+    position: relative;
+}

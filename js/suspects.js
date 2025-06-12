@@ -58,10 +58,17 @@ function renderSuspects() {
     if (!suspectsSelector) return;
 
     suspectsSelector.innerHTML = '';
-    
+    const selectedCriminal = document.getElementById('criminalSelect')?.value;
+    let correctSuspect = null;
+    if (window.showColorHints && selectedCriminal && window.cases && window.cases[selectedCriminal] && window.cases[selectedCriminal].culpable) {
+        correctSuspect = window.cases[selectedCriminal].culpable;
+    }
     Object.values(suspects).forEach(suspect => {
         const suspectElement = document.createElement('div');
         suspectElement.className = 'suspect-card';
+        if (window.showColorHints && correctSuspect && suspect.name === correctSuspect) {
+            suspectElement.classList.add('is-correct-suspect');
+        }
         suspectElement.innerHTML = `
             <div class="suspect-image" style="background-image: url('assets/suspects/${suspect.name.toLowerCase().replace(' ', '-')}.jpg')">
                 <div class="suspect-name">${suspect.name}</div>
@@ -75,6 +82,7 @@ function renderSuspects() {
             document.querySelectorAll('.suspect-card').forEach(card => card.classList.remove('selected'));
             suspectElement.classList.add('selected');
             window.selectedSuspect = suspect.name;
+            renderSuspects(); // Para actualizar la pegatina WANTED
         });
         suspectsSelector.appendChild(suspectElement);
     });
