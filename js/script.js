@@ -157,6 +157,7 @@ window.handleClueClick = function(btn, locationName) {
     const idx = parseInt(btn.getAttribute('data-idx'));
     const witness = location.witnesses[idx];
     showClueModal(witness);
+    
     // Si es la primera vez que se abre una pista en este lugar, mostrar las opciones
     const locationCards = document.querySelectorAll('.location-card');
     let thisCard = null;
@@ -165,6 +166,7 @@ window.handleClueClick = function(btn, locationName) {
             thisCard = card;
         }
     });
+    
     if (thisCard && thisCard.dataset.pistaAbierta !== 'true') {
         thisCard.dataset.pistaAbierta = 'true';
         // Mostrar las opciones de siguientes lugares SOLO si quedan lugares por visitar
@@ -212,6 +214,9 @@ window.handleClueClick = function(btn, locationName) {
             }
         }, 300);
     }
+    
+    // Marcar el botón de pista como abierto
+    btn.classList.add('opened');
 }
 
 function showCaseComplete() {

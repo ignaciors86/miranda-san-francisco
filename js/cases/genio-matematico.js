@@ -3,23 +3,23 @@ const genioMatematico = {
     adventure: {
         step1: {
             title: "Un nuevo lío en San Genaro",
-            description: "San Genaro está revolucionado: Don Pablo, el empresario sin escrúpulos, ha puesto en marcha una nueva trama de inversiones inmobiliarias. Un documento importante ha desaparecido del despacho de Antonio Alcántara."
+            description: "¡Alerta en San Genaro! Don Pablo, un astuto empresario, ha puesto en marcha una compleja estafa financiera basada en inversiones inmobiliarias. Su plan: convencer a los vecinos de invertir en terrenos inexistentes usando documentos falsos. El primer paso de su plan fue robar documentos importantes del despacho de Antonio Alcántara, que contenían cálculos y proyecciones financieras que podrían exponer su estafa. Tu misión: seguir el rastro matemático y financiero para desenmascarar la estafa antes de que más personas pierdan sus ahorros."
         },
         step2: {
             title: "Sospechas en la imprenta",
-            description: "La imprenta de Don Pablo en el barrio ha recibido pedidos extraños de papeles y sellos. Los vecinos comentan que hay mucho movimiento de maletines y papeles oficiales."
+            description: "La imprenta del barrio se ha convertido en el centro de operaciones de Don Pablo. Aquí está imprimiendo documentos falsos que incluyen: contratos con números de cuenta inventados, facturas con cálculos de intereses fraudulentos, y prospectos de inversión con proyecciones matemáticas manipuladas. Los vecinos han notado un aumento en el movimiento de maletines y papeles oficiales. Tu objetivo: analizar los documentos y encontrar inconsistencias en los cálculos financieros que revelen la estafa."
         },
         step3: {
             title: "El rastro del dinero",
-            description: "Las pistas llevan a una sucursal bancaria donde se han detectado movimientos sospechosos de cuentas y cheques relacionados con la trama."
+            description: "Las pistas matemáticas te llevan a una sucursal bancaria donde se han detectado patrones sospechosos en las transferencias. Don Pablo está utilizando conceptos financieros complejos como interés compuesto y amortizaciones para hacer parecer legítima su estafa. Tu tarea: analizar los movimientos bancarios, identificar patrones matemáticos sospechosos y descubrir cómo está manipulando los números para engañar a los inversores."
         },
         step4: {
             title: "Viaje a Sagrillas",
-            description: "La investigación apunta a Sagrillas, el pueblo de los Alcántara, donde Don Pablo busca terrenos para su estafa."
+            description: "La investigación te lleva a Sagrillas, el pueblo de los Alcántara. Don Pablo está utilizando cálculos de valoración de terrenos y proyecciones de plusvalías para convencer a los inversores. Ha creado una compleja red de documentos que incluyen: cálculos de rentabilidad, tablas de amortización y proyecciones de crecimiento. Tu misión: verificar los cálculos matemáticos, comparar los valores reales con los presentados y encontrar las discrepancias que prueben la estafa."
         },
         step5: {
             title: "Desenlace en la Feria del Campo",
-            description: "Don Pablo intentará cerrar su gran estafa en la Feria del Campo de Madrid, donde reunirá a los inversores para el golpe final."
+            description: "Don Pablo planea su golpe final en la Feria del Campo de Madrid. Ha preparado una presentación con gráficos, estadísticas y proyecciones financieras falsas para convencer a más inversores. Tu objetivo final: utilizar todas las pruebas matemáticas y financieras recopiladas para exponer la estafa antes de que más personas inviertan en el proyecto fraudulento."
         }
     },
     case: {
@@ -28,7 +28,7 @@ const genioMatematico = {
             city: "San Genaro",
             country: "España",
             year: "1974",
-            description: "Vivienda familiar en un barrio obrero de Madrid, con un pequeño despacho en la parte trasera."
+            description: "Vivienda familiar en un barrio obrero de Madrid. En el despacho trasero, Antonio Alcántara mantenía meticulosos registros financieros y cálculos matemáticos que exponían la estafa de Don Pablo. Los documentos robados incluían: análisis de rentabilidad, cálculos de intereses, y proyecciones financieras que demostraban la falsedad de las promesas de Don Pablo."
         },
         travels: [
             // Paso 1
@@ -40,28 +40,28 @@ const genioMatematico = {
                         city: "San Genaro",
                         country: "España",
                         year: "1974",
-                        description: "La imprenta donde se imprimen documentos oficiales y contratos. Últimamente ha recibido pedidos inusuales.",
+                        description: "Imprenta local especializada en documentos oficiales. Hoy hay una demostración de técnicas de impresión para estudiantes.",
                         witnesses: [
                             {
                                 name: "Desi",
                                 role: "Vecino y amigo de Antonio",
                                 area: "Mostrador",
-                                testimony: "Vi a un hombre trajeado discutiendo con el dueño. Hablaban de terrenos y de mucho dinero.",
-                                clue: "Uno de los papeles tenía un plano de una sucursal bancaria del centro de Madrid."
+                                testimony: "Vi a un hombre trajeado discutiendo con el dueño. Estaban revisando unos documentos con muchos números y gráficos. Hablaban de terrenos y de cálculos de rentabilidad.",
+                                clue: "Uno de los papeles tenía un plano de una sucursal bancaria del centro de Madrid, con anotaciones sobre transferencias y cálculos de intereses."
                             },
                             {
                                 name: "Mercedes Alcántara",
                                 role: "Esposa de Antonio",
                                 area: "Oficina",
-                                testimony: "Antonio estaba muy nervioso con esos papeles. Ayer vi a un hombre con traje caro merodeando por el portal.",
-                                clue: "Encontré una factura de imprenta con un sello oficial que no reconozco."
+                                testimony: "Antonio estaba muy nervioso con esos papeles. Me explicó que había descubierto inconsistencias en los cálculos financieros de Don Pablo. Ayer vi a un hombre con traje caro merodeando por el portal.",
+                                clue: "Encontré una factura de imprenta con un sello oficial que no reconozco. Incluía cálculos de intereses que no cuadraban con las tasas bancarias actuales."
                             },
                             {
                                 name: "Tinín",
                                 role: "Tabernero",
                                 area: "Entrada",
-                                testimony: "Un señor con traje viene mucho por aquí últimamente. Siempre trae papeles y habla por teléfono en voz baja.",
-                                clue: "Vi un recibo de un banco del centro de Madrid en la papelera."
+                                testimony: "Un señor con traje viene mucho por aquí últimamente. Siempre trae papeles llenos de números y gráficos, y habla por teléfono en voz baja sobre 'proyecciones' y 'rentabilidad'.",
+                                clue: "Vi un recibo de un banco del centro de Madrid en la papelera. Los números de las transferencias no seguían el patrón normal de las cuentas bancarias."
                             }
                         ]
                     },
@@ -71,7 +71,7 @@ const genioMatematico = {
                         city: "San Genaro",
                         country: "España",
                         year: "1974",
-                        description: "El bar de Tinín, centro de cotilleos del barrio.",
+                        description: "El bar más popular del barrio. Esta noche hay partido de fútbol en la tele.",
                         witnesses: [
                             {
                                 name: "Tinín",
@@ -102,7 +102,7 @@ const genioMatematico = {
                         city: "San Genaro",
                         country: "España",
                         year: "1974",
-                        description: "La iglesia del barrio, donde Herminia va a rezar.",
+                        description: "La iglesia del barrio. Esta tarde hay misa de difuntos.",
                         witnesses: [
                             {
                                 name: "Herminia",
@@ -138,7 +138,7 @@ const genioMatematico = {
                         city: "Madrid",
                         country: "España",
                         year: "1974",
-                        description: "Sucursal bancaria en el centro de Madrid, con amplios ventanales y una gran cúpula de cristal. Se han detectado movimientos sospechosos de cuentas y cheques.",
+                        description: "Sucursal bancaria en el centro de Madrid. Hoy hay una presentación sobre nuevos servicios de inversión.",
                         witnesses: [
                             {
                                 name: "Toni Alcántara",

@@ -1,11 +1,12 @@
 // Importar todos los casos
+// eslint-disable-next-line no-unused-vars
+// Los archivos de casos deben estar incluidos vía <script> en el HTML principal
 const cases = {
     "genio-matematico": genioMatematico,
-    // Aquí se añadirán los demás casos cuando se creen sus archivos
-    // "maestro-historia": maestroHistoria,
-    // "cientifico-loco": cientificoLoco,
-    // "falsificador-arte": falsificadorArte,
-    // "hacker-creativo": hackerCreativo,
-    // "influencer-falso": influencerFalso,
-    // "miranda": miranda
+    "maestro-historia": maestroHistoria,
+    "cientifico-loco": cientificoLoco,
+    "falsificador-arte": falsificadorArte,
+    "hacker-creativo": hackerCreativo,
+    "influencer-falso": influencerFalso,
+    "miranda": miranda
 }; 
