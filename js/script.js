@@ -15,9 +15,7 @@ document.querySelectorAll('.flow-step').forEach(step => {
 
 // Variables globales
 let currentTravel = 0;
-let currentLocation = 0;
 let visitedLocations = new Set();
-let currentStep = 1;
 
 // Variable global para el modo de pistas de color
 window.showColorHints = true;
@@ -36,11 +34,7 @@ function updateCaseDetails() {
     const selectedCriminal = document.getElementById('criminalSelect').value;
     const locationsGrid = document.querySelector('.locations-grid');
     const data = cases[selectedCriminal].case;
-    
-    // Limpiar el grid de ubicaciones
     locationsGrid.innerHTML = '';
-    
-    // Mostrar la ubicación inicial
     const startingLocation = document.createElement('div');
     startingLocation.className = 'location-card';
     startingLocation.innerHTML = `
@@ -56,49 +50,75 @@ function updateCaseDetails() {
         </div>
         <button class="travel-button" onclick="startTravel()">Iniciar Viaje</button>
     `;
-    
     locationsGrid.appendChild(startingLocation);
+    currentTravel = 0;
+    visitedLocations.clear();
 }
 
 function startTravel() {
-    // Ocultar el botón 'Iniciar Viaje' si existe
     const travelBtn = document.querySelector('.travel-button');
-    if (travelBtn) {
-        travelBtn.style.display = 'none';
-    }
+    if (travelBtn) travelBtn.style.display = 'none';
+    showTravelOptions();
+}
 
+function showTravelOptions() {
     const selectedCriminal = document.getElementById('criminalSelect').value;
     const data = cases[selectedCriminal].case;
-    
-    if (!data || !data.travels || !data.travels[currentTravel]) {
-        console.error('No hay datos de viaje disponibles');
-        return;
-    }
-
     const travel = data.travels[currentTravel];
-    const location = travel.locations[currentLocation];
-    
-    if (location) {
-        showLocation(location);
-    } else {
-        console.error('No hay ubicación disponible');
-    }
+    const locationsGrid = document.querySelector('.locations-grid');
+    // No limpiar el historial
+    // Filtrar lugares no visitados en este paso
+    const availableLocations = travel.locations.filter(location => !visitedLocations.has(`${currentTravel}|${location.name}`));
+    if (availableLocations.length === 0) return; // No mostrar nada si no quedan opciones
+    const optionsSection = document.createElement('div');
+    optionsSection.className = 'location-options';
+    optionsSection.innerHTML = `
+        <h6>¿A dónde irás ahora?</h6>
+        <div class="options-container">
+            <div class="options-grid">
+                ${shuffleArray([...availableLocations]).map(location => `
+                    <div class="location-option ${location.target ? 'correct' : 'incorrect'}" onclick="selectLocation('${location.name.replace(/'/g, "\\'")}')">
+                        <h6>${location.name}</h6>
+                        <p>${location.description}</p>
+                        <div class="location-info">
+                            <p><strong>Ciudad:</strong> ${location.city}</p>
+                            <p><strong>País:</strong> ${location.country}</p>
+                            <p><strong>Año:</strong> ${location.year}</p>
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+    `;
+    locationsGrid.appendChild(optionsSection);
+    optionsSection.scrollIntoView({ behavior: 'smooth' });
+}
+
+window.selectLocation = function(locationName) {
+    const selectedCriminal = document.getElementById('criminalSelect').value;
+    const data = cases[selectedCriminal].case;
+    const travel = data.travels[currentTravel];
+    const location = travel.locations.find(loc => loc.name === locationName);
+    if (!location) return;
+    // Marcar como visitado
+    visitedLocations.add(`${currentTravel}|${location.name}`);
+    showLocation(location);
 }
 
 function showLocation(location) {
     const locationsGrid = document.querySelector('.locations-grid');
+    // No limpiar el historial
     const locationElement = document.createElement('div');
-    locationElement.className = 'location-card correct';
-    
+    locationElement.className = `location-card ${location.target ? 'correct' : 'wrong'}`;
     let witnessesHTML = '';
     if (location.witnesses && Array.isArray(location.witnesses)) {
         witnessesHTML = `
             <div class="witnesses-container">
                 <div class="witnesses">
-                    ${location.witnesses.map(witness => `
+                    ${location.witnesses.map((witness, idx) => `
                         <div class="witness-card">
                             <div class="witness-area"><i class="fas fa-map-marker-alt"></i> ${witness.area}</div>
-                            <button class="clue-button" onclick="showClueModal(${JSON.stringify(witness).replace(/\"/g, '&quot;')})" aria-label="Ver pista">
+                            <button class="clue-button" data-location="${location.name}" data-idx="${idx}" onclick="handleClueClick(this, '${location.name}')" aria-label="Ver pista">
                                 <img src="assets/lightbulb.svg" alt="Pista" width="32" height="32" style="display:block;margin:auto;" />
                             </button>
                         </div>
@@ -107,43 +127,6 @@ function showLocation(location) {
             </div>
         `;
     }
-
-    let optionsHTML = '';
-    if (location.witnesses && location.witnesses[0] && location.witnesses[0].options) {
-        const availableOptions = location.witnesses[0].options.filter(option => 
-            !visitedLocations.has(`${option.name}-${option.city}-${option.country}`)
-        );
-        
-        if (availableOptions.length > 0) {
-            optionsHTML = `
-                <div class="location-options">
-                    <h6>¿A dónde irás ahora?</h6>
-                    <div class="options-container">
-                        <div class="options-grid">
-                            ${shuffleArray([...availableOptions]).map(option => `
-                                <div class="location-option ${option.isCorrect ? 'correct' : 'incorrect'}" onclick="selectLocation(this)">
-                                    <h6>${option.name}</h6>
-                                    <p>${option.description}</p>
-                                    <div class="location-info">
-                                        <p><strong>Ciudad:</strong> ${option.city}</p>
-                                        <p><strong>País:</strong> ${option.country}</p>
-                                        <p><strong>Año:</strong> ${option.year}</p>
-                                    </div>
-                                </div>
-                            `).join('')}
-                        </div>
-                    </div>
-                </div>
-            `;
-        } else {
-            optionsHTML = `
-                <div class="location-options">
-                    <h6>No hay más lugares disponibles para visitar</h6>
-                </div>
-            `;
-        }
-    }
-
     locationElement.innerHTML = `
         <div class="location-header">
             <div class="location-icon">🏛️</div>
@@ -156,145 +139,78 @@ function showLocation(location) {
             <p><strong>Año:</strong> ${location.year}</p>
         </div>
         ${witnessesHTML}
-        ${optionsHTML}
+        <div class="next-options-container" id="nextOptions-${location.name.replace(/'/g, "")}"></div>
     `;
-    
     locationsGrid.appendChild(locationElement);
-    visitedLocations.add(`${location.name}-${location.city}-${location.country}`);
     locationElement.scrollIntoView({ behavior: 'smooth' });
+    // Si es el correcto, permitir avanzar (pero solo tras abrir una pista)
+    locationElement.dataset.pistaAbierta = 'false';
 }
 
-function showWrongLocation(optionElement) {
-    const selectedCriminal = document.getElementById('criminalSelect').value;
-    const data = cases[selectedCriminal];
-    let travel = data.case.travels[currentTravel];
-    let wrongLocation = null;
-    let witnesses = [];
-    
-    // Obtener datos del destino seleccionado
-    const destName = optionElement.querySelector('h6').textContent.replace(' (actual)', '').trim();
-    const destCity = optionElement.querySelector('.location-info p:nth-child(1)').textContent.replace('Ciudad:', '').trim();
-    const destCountry = optionElement.querySelector('.location-info p:nth-child(2)').textContent.replace('País:', '').trim();
-    
-    if (travel && travel.locations[currentLocation]) {
-        const options = travel.locations[currentLocation].witnesses[0].options;
-        wrongLocation = options.find(opt => opt.name === destName);
-        if (wrongLocation && data.wrongLocations && data.wrongLocations[wrongLocation.name]) {
-            witnesses = data.wrongLocations[wrongLocation.name].witnesses || [];
-        }
-    }
-    
-    const wrongLocationCard = document.createElement('div');
-    wrongLocationCard.className = 'location-card wrong';
-    
-    let witnessesHTML = '';
-    if (witnesses.length > 0) {
-        witnessesHTML = `
-            <div class="witnesses-container">
-                <div class="witnesses">
-                    ${witnesses.map(witness => `
-                        <div class="witness-card">
-                            <div class="witness-area"><i class="fas fa-map-marker-alt"></i> ${witness.area}</div>
-                            <button class="clue-button" onclick="showClueModal(${JSON.stringify(witness).replace(/\"/g, '&quot;')})" aria-label="Ver pista">
-                                <img src="assets/lightbulb.svg" alt="Pista" width="32" height="32" style="display:block;margin:auto;" />
-                            </button>
-                        </div>
-                    `).join('')}
-                </div>
-            </div>
-        `;
-    }
-    
-    wrongLocationCard.innerHTML = `
-        <div class="location-header">
-            <div class="location-icon">🏛️</div>
-            <h4>${wrongLocation ? wrongLocation.name : 'Ubicación Incorrecta'}</h4>
-        </div>
-        <p class="location-description">${wrongLocation ? wrongLocation.description : 'Esta no es la ubicación correcta. Revisa las pistas nuevamente y elige otra opción.'}</p>
-        <div class="location-info">
-            <p><strong>Ciudad:</strong> ${wrongLocation ? wrongLocation.city : destCity}</p>
-            <p><strong>País:</strong> ${wrongLocation ? wrongLocation.country : destCountry}</p>
-            <p><strong>Año:</strong> ${wrongLocation ? wrongLocation.year : '2024'}</p>
-        </div>
-        ${witnessesHTML}
-    `;
-    
-    const locationsGrid = document.querySelector('.locations-grid');
-    locationsGrid.appendChild(wrongLocationCard);
-    visitedLocations.add(`${destName}-${destCity}-${destCountry}`);
-    wrongLocationCard.scrollIntoView({ behavior: 'smooth' });
-
-    // Mostrar las opciones restantes
-    if (travel && travel.locations[currentLocation] && travel.locations[currentLocation].witnesses[0].options) {
-        const optionsSection = document.createElement('div');
-        optionsSection.className = 'location-options';
-        const availableOptions = travel.locations[currentLocation].witnesses[0].options.filter(option => 
-            !visitedLocations.has(`${option.name}-${option.city}-${option.country}`)
-        );
-        
-        if (availableOptions.length > 0) {
-            optionsSection.innerHTML = `
-                <h6>¿A dónde irás ahora?</h6>
-                <div class="options-container">
-                    <div class="options-grid">
-                        ${shuffleArray([...availableOptions]).map(option => `
-                            <div class="location-option ${option.isCorrect ? 'correct' : 'incorrect'}" onclick="selectLocation(this)">
-                                <h6>${option.name}</h6>
-                                <p>${option.description}</p>
-                                <div class="location-info">
-                                    <p><strong>Ciudad:</strong> ${option.city}</p>
-                                    <p><strong>País:</strong> ${option.country}</p>
-                                    <p><strong>Año:</strong> ${option.year}</p>
-                                </div>
-                            </div>
-                        `).join('')}
-                    </div>
-                </div>
-            `;
-        } else {
-            optionsSection.innerHTML = `
-                <h6>No hay más lugares disponibles para visitar</h6>
-            `;
-        }
-        locationsGrid.appendChild(optionsSection);
-    }
-}
-
-function selectLocation(optionElement) {
-    const isCorrect = optionElement.classList.contains('correct');
+window.handleClueClick = function(btn, locationName) {
+    // Mostrar la pista normalmente
     const selectedCriminal = document.getElementById('criminalSelect').value;
     const data = cases[selectedCriminal].case;
     const travel = data.travels[currentTravel];
-    const currentLoc = travel.locations[currentLocation];
-    
-    // Obtener datos del destino
-    const destName = optionElement.querySelector('h6').textContent.replace(' (actual)', '').trim();
-    const destCity = optionElement.querySelector('.location-info p:nth-child(1)').textContent.replace('Ciudad:', '').trim();
-    const destCountry = optionElement.querySelector('.location-info p:nth-child(2)').textContent.replace('País:', '').trim();
-    
-    // Si el destino es el lugar actual, no hacer nada
-    if (
-        destName === currentLoc.name &&
-        destCity === currentLoc.city &&
-        destCountry === currentLoc.country
-    ) {
-        return;
-    }
-    
-    if (isCorrect) {
-        currentLocation++;
-        if (currentLocation >= data.travels[currentTravel].locations.length) {
-            currentTravel++;
-            currentLocation = 0;
-            if (currentTravel >= data.travels.length) {
-                // Caso completado
-                showCaseComplete();
-                return;
-            }
+    const location = travel.locations.find(loc => loc.name === locationName);
+    if (!location) return;
+    const idx = parseInt(btn.getAttribute('data-idx'));
+    const witness = location.witnesses[idx];
+    showClueModal(witness);
+    // Si es la primera vez que se abre una pista en este lugar, mostrar las opciones
+    const locationCards = document.querySelectorAll('.location-card');
+    let thisCard = null;
+    locationCards.forEach(card => {
+        if (card.querySelector('h4') && card.querySelector('h4').textContent === locationName) {
+            thisCard = card;
         }
-        startTravel();
-    } else {
-        showWrongLocation(optionElement);
+    });
+    if (thisCard && thisCard.dataset.pistaAbierta !== 'true') {
+        thisCard.dataset.pistaAbierta = 'true';
+        // Mostrar las opciones de siguientes lugares SOLO si quedan lugares por visitar
+        setTimeout(() => {
+            if (location.target) {
+                // Si es el correcto, avanzar tras abrir la pista
+                setTimeout(() => {
+                    currentTravel++;
+                    const selectedCriminal = document.getElementById('criminalSelect').value;
+                    if (currentTravel >= cases[selectedCriminal].case.travels.length) {
+                        showCaseComplete();
+                    } else {
+                        showTravelOptions();
+                    }
+                }, 1200);
+            } else {
+                // Si es erróneo, mostrar opciones restantes en el contenedor de este lugar
+                const nextOptions = thisCard.querySelector('.next-options-container');
+                if (nextOptions) {
+                    const travel = data.travels[currentTravel];
+                    const availableLocations = travel.locations.filter(loc => !visitedLocations.has(`${currentTravel}|${loc.name}`));
+                    if (availableLocations.length > 0) {
+                        nextOptions.innerHTML = `
+                            <div class="location-options">
+                                <h6>¿A dónde irás ahora?</h6>
+                                <div class="options-container">
+                                    <div class="options-grid">
+                                        ${shuffleArray([...availableLocations]).map(loc => `
+                                            <div class="location-option ${loc.target ? 'correct' : 'incorrect'}" onclick="selectLocation('${loc.name.replace(/'/g, "\\'")}')">
+                                                <h6>${loc.name}</h6>
+                                                <p>${loc.description}</p>
+                                                <div class="location-info">
+                                                    <p><strong>Ciudad:</strong> ${loc.city}</p>
+                                                    <p><strong>País:</strong> ${loc.country}</p>
+                                                    <p><strong>Año:</strong> ${loc.year}</p>
+                                                </div>
+                                            </div>
+                                        `).join('')}
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    }
+                }
+            }
+        }, 300);
     }
 }
 
@@ -333,7 +249,6 @@ function showCaseComplete() {
 
 function restartCase() {
     currentTravel = 0;
-    currentLocation = 0;
     visitedLocations.clear(); // Limpiar las ubicaciones visitadas al reiniciar
     updateCaseDetails();
 }
@@ -413,7 +328,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     criminalSelect.addEventListener('change', () => {
         currentTravel = 0;
-        currentLocation = 0;
         visitedLocations.clear();
 
         // Clonar el dossier actual
