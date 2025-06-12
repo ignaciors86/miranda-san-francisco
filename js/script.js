@@ -44,15 +44,146 @@ function updateCaseDetails() {
         </div>
         <p class="location-description">${data.startingLocation.description}</p>
         <div class="location-info">
-            <p><strong>Ciudad:</strong> ${data.startingLocation.city}</p>
-            <p><strong>País:</strong> ${data.startingLocation.country}</p>
-            <p><strong>Año:</strong> ${data.startingLocation.year}</p>
+            <p><i class="fas fa-map-marker-alt"></i> ${data.startingLocation.city ? data.startingLocation.city : ''}${data.startingLocation.city && data.startingLocation.country ? ', ' : ''}${data.startingLocation.country ? data.startingLocation.country : ''}</p>
+            ${data.startingLocation.year && data.startingLocation.year !== 'null' ? `<p><strong>Año:</strong> ${data.startingLocation.year}</p>` : ''}
         </div>
-        <button class="travel-button" onclick="startTravel()">Iniciar Viaje</button>
+        <button class="travel-button" id="showStartWitnessesBtn">Iniciar Viaje</button>
+        <div id="startWitnessesContainer"></div>
+        <div class="next-options-container" id="nextOptions-startingLocation"></div>
     `;
     locationsGrid.appendChild(startingLocation);
     currentTravel = 0;
     visitedLocations.clear();
+
+    // Añadir evento para mostrar testigos solo al pulsar el botón
+    const showBtn = document.getElementById('showStartWitnessesBtn');
+    if (showBtn && data.startingLocation.witnesses && Array.isArray(data.startingLocation.witnesses)) {
+        showBtn.addEventListener('click', () => {
+            const container = document.getElementById('startWitnessesContainer');
+            if (container.innerHTML.trim() === '') {
+                container.innerHTML = `
+                    <div class=\"witnesses-container\">
+                        <div class=\"witnesses\">
+                            ${data.startingLocation.witnesses.map((witness, idx) => `
+                                <div class=\"witness-card\">
+                                    <div class=\"witness-area\"><i class=\"fas fa-map-marker-alt\"></i> ${witness.area}</div>
+                                    <button class=\"clue-button\" data-location=\"${data.startingLocation.name}\" data-idx=\"${idx}\" data-travel=\"-1\" onclick=\"handleClueClick(this, '${data.startingLocation.name}', -1)\" aria-label=\"Ver pista\">\n                                        <img src=\"assets/lightbulb.svg\" alt=\"Pista\" width=\"32\" height=\"32\" style=\"display:block;margin:auto;\" />\n                                    </button>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            }
+            showBtn.style.display = 'none';
+        });
+    }
+
+    // Lógica para mostrar destinos tras abrir una pista en startingLocation
+    window.handleClueClick = function(btn, locationName, travelIdx) {
+        // Mostrar la pista normalmente
+        const selectedCriminal = document.getElementById('criminalSelect').value;
+        const data = cases[selectedCriminal].case;
+        let location, travel;
+        if (travelIdx === -1) {
+            location = data.startingLocation;
+        } else {
+            travel = data.travels[travelIdx !== undefined ? travelIdx : currentTravel];
+            location = travel.locations.find(loc => loc.name === locationName);
+        }
+        if (!location) return;
+        const idx = parseInt(btn.getAttribute('data-idx'));
+        const witness = location.witnesses[idx];
+        showClueModal(witness);
+
+        // Mostrar destinos solo la primera vez que se abre cualquier pista en startingLocation
+        if (travelIdx === -1) {
+            const thisCard = document.querySelector('.location-card');
+            if (thisCard && thisCard.dataset.pistaAbierta !== 'true') {
+                thisCard.dataset.pistaAbierta = 'true';
+                setTimeout(() => {
+                    const nextOptions = document.getElementById('nextOptions-startingLocation');
+                    if (nextOptions) {
+                        const travel = data.travels[0];
+                        const availableLocations = travel.locations.filter(location => !visitedLocations.has(`0|${location.name}`));
+                        if (availableLocations.length > 0) {
+                            nextOptions.innerHTML = `
+                                <div class=\"location-options\">
+                                    <h6>¿A dónde irás ahora?</h6>
+                                    <div class=\"options-container\">
+                                        <div class=\"options-grid\">
+                                            ${shuffleArray([...availableLocations]).map(loc => `
+                                                <div class=\"location-option ${loc.target ? 'correct' : 'incorrect'}\" onclick=\"selectLocation('${loc.name.replace(/'/g, "\\'")}')\">
+                                                    <h6>${loc.name}${loc.country ? ', ' + loc.country : ''}</h6>
+                                                    <p>${loc.description}</p>
+                                                    <div class=\"location-info\">
+                                                        <p><i class='fas fa-map-marker-alt'></i> ${loc.city ? loc.city : ''}</p>
+                                                        ${loc.year && loc.year !== 'null' ? `<p><strong>Año:</strong> ${loc.year}</p>` : ''}
+                                                    </div>
+                                                </div>
+                                            `).join('')}
+                                        </div>
+                                    </div>
+                                </div>
+                            `;
+                        }
+                    }
+                }, 300);
+            }
+        } else {
+            // Lógica normal para el resto de localizaciones (ya implementada en el resto del código)
+            const locationCards = document.querySelectorAll('.location-card');
+            let thisCard = null;
+            locationCards.forEach(card => {
+                if (card.querySelector('h4') && card.querySelector('h4').textContent === locationName) {
+                    thisCard = card;
+                }
+            });
+            if (thisCard && thisCard.dataset.pistaAbierta !== 'true') {
+                thisCard.dataset.pistaAbierta = 'true';
+                setTimeout(() => {
+                    if (location.target) {
+                        setTimeout(() => {
+                            currentTravel++;
+                            const selectedCriminal = document.getElementById('criminalSelect').value;
+                            if (currentTravel >= cases[selectedCriminal].case.travels.length) {
+                                showCaseComplete();
+                            } else {
+                                showTravelOptions();
+                            }
+                        }, 1200);
+                    } else {
+                        const nextOptions = thisCard.querySelector('.next-options-container');
+                        if (nextOptions) {
+                            const travel = data.travels[currentTravel];
+                            const availableLocations = travel.locations.filter(loc => !visitedLocations.has(`${currentTravel}|${loc.name}`));
+                            if (availableLocations.length > 0) {
+                                nextOptions.innerHTML = `
+                                    <div class=\"location-options\">
+                                        <h6>¿A dónde irás ahora?</h6>
+                                        <div class=\"options-container\">
+                                            <div class=\"options-grid\">
+                                                ${shuffleArray([...availableLocations]).map(loc => `
+                                                    <div class=\"location-option ${loc.target ? 'correct' : 'incorrect'}\" onclick=\"selectLocation('${loc.name.replace(/'/g, "\\'")}')\">
+                                                        <h6>${loc.name}${loc.country ? ', ' + loc.country : ''}</h6>
+                                                        <p>${loc.description}</p>
+                                                        <div class=\"location-info\">
+                                                            <p><i class='fas fa-map-marker-alt'></i> ${loc.city ? loc.city : ''}</p>
+                                                            ${loc.year && loc.year !== 'null' ? `<p><strong>Año:</strong> ${loc.year}</p>` : ''}
+                                                        </div>
+                                                    </div>
+                                                `).join('')}
+                                            </div>
+                                        </div>
+                                    </div>
+                                `;
+                            }
+                        }
+                    }
+                }, 300);
+            }
+        }
+        btn.classList.add('opened');
+    }
 }
 
 function startTravel() {
@@ -78,12 +209,11 @@ function showTravelOptions() {
             <div class="options-grid">
                 ${shuffleArray([...availableLocations]).map(location => `
                     <div class="location-option ${location.target ? 'correct' : 'incorrect'}" onclick="selectLocation('${location.name.replace(/'/g, "\\'")}')">
-                        <h6>${location.name}</h6>
+                        <h6>${location.name}${location.country ? ', ' + location.country : ''}</h6>
                         <p>${location.description}</p>
                         <div class="location-info">
-                            <p><strong>Ciudad:</strong> ${location.city}</p>
-                            <p><strong>País:</strong> ${location.country}</p>
-                            <p><strong>Año:</strong> ${location.year}</p>
+                            <p><i class='fas fa-map-marker-alt'></i> ${location.city ? location.city : ''}</p>
+                            ${location.year && location.year !== 'null' ? `<p><strong>Año:</strong> ${location.year}</p>` : ''}
                         </div>
                     </div>
                 `).join('')}
@@ -102,10 +232,10 @@ window.selectLocation = function(locationName) {
     if (!location) return;
     // Marcar como visitado
     visitedLocations.add(`${currentTravel}|${location.name}`);
-    showLocation(location);
+    showLocation(location, currentTravel);
 }
 
-function showLocation(location) {
+function showLocation(location, travelIdx = currentTravel) {
     const locationsGrid = document.querySelector('.locations-grid');
     // No limpiar el historial
     const locationElement = document.createElement('div');
@@ -118,7 +248,7 @@ function showLocation(location) {
                     ${location.witnesses.map((witness, idx) => `
                         <div class="witness-card">
                             <div class="witness-area"><i class="fas fa-map-marker-alt"></i> ${witness.area}</div>
-                            <button class="clue-button" data-location="${location.name}" data-idx="${idx}" onclick="handleClueClick(this, '${location.name}')" aria-label="Ver pista">
+                            <button class="clue-button" data-location="${location.name}" data-idx="${idx}" data-travel="${travelIdx}" onclick="handleClueClick(this, '${location.name}', ${travelIdx})" aria-label="Ver pista">
                                 <img src="assets/lightbulb.svg" alt="Pista" width="32" height="32" style="display:block;margin:auto;" />
                             </button>
                         </div>
@@ -134,89 +264,15 @@ function showLocation(location) {
         </div>
         <p class="location-description">${location.description}</p>
         <div class="location-info">
-            <p><strong>Ciudad:</strong> ${location.city}</p>
-            <p><strong>País:</strong> ${location.country}</p>
-            <p><strong>Año:</strong> ${location.year}</p>
+            <p><i class="fas fa-map-marker-alt"></i> ${location.city ? location.city : ''}${location.city && location.country ? ', ' : ''}${location.country ? location.country : ''}</p>
+            ${location.year && location.year !== 'null' ? `<p><strong>Año:</strong> ${location.year}</p>` : ''}
         </div>
         ${witnessesHTML}
         <div class="next-options-container" id="nextOptions-${location.name.replace(/'/g, "")}"></div>
     `;
     locationsGrid.appendChild(locationElement);
     locationElement.scrollIntoView({ behavior: 'smooth' });
-    // Si es el correcto, permitir avanzar (pero solo tras abrir una pista)
     locationElement.dataset.pistaAbierta = 'false';
-}
-
-window.handleClueClick = function(btn, locationName) {
-    // Mostrar la pista normalmente
-    const selectedCriminal = document.getElementById('criminalSelect').value;
-    const data = cases[selectedCriminal].case;
-    const travel = data.travels[currentTravel];
-    const location = travel.locations.find(loc => loc.name === locationName);
-    if (!location) return;
-    const idx = parseInt(btn.getAttribute('data-idx'));
-    const witness = location.witnesses[idx];
-    showClueModal(witness);
-    
-    // Si es la primera vez que se abre una pista en este lugar, mostrar las opciones
-    const locationCards = document.querySelectorAll('.location-card');
-    let thisCard = null;
-    locationCards.forEach(card => {
-        if (card.querySelector('h4') && card.querySelector('h4').textContent === locationName) {
-            thisCard = card;
-        }
-    });
-    
-    if (thisCard && thisCard.dataset.pistaAbierta !== 'true') {
-        thisCard.dataset.pistaAbierta = 'true';
-        // Mostrar las opciones de siguientes lugares SOLO si quedan lugares por visitar
-        setTimeout(() => {
-            if (location.target) {
-                // Si es el correcto, avanzar tras abrir la pista
-                setTimeout(() => {
-                    currentTravel++;
-                    const selectedCriminal = document.getElementById('criminalSelect').value;
-                    if (currentTravel >= cases[selectedCriminal].case.travels.length) {
-                        showCaseComplete();
-                    } else {
-                        showTravelOptions();
-                    }
-                }, 1200);
-            } else {
-                // Si es erróneo, mostrar opciones restantes en el contenedor de este lugar
-                const nextOptions = thisCard.querySelector('.next-options-container');
-                if (nextOptions) {
-                    const travel = data.travels[currentTravel];
-                    const availableLocations = travel.locations.filter(loc => !visitedLocations.has(`${currentTravel}|${loc.name}`));
-                    if (availableLocations.length > 0) {
-                        nextOptions.innerHTML = `
-                            <div class="location-options">
-                                <h6>¿A dónde irás ahora?</h6>
-                                <div class="options-container">
-                                    <div class="options-grid">
-                                        ${shuffleArray([...availableLocations]).map(loc => `
-                                            <div class="location-option ${loc.target ? 'correct' : 'incorrect'}" onclick="selectLocation('${loc.name.replace(/'/g, "\\'")}')">
-                                                <h6>${loc.name}</h6>
-                                                <p>${loc.description}</p>
-                                                <div class="location-info">
-                                                    <p><strong>Ciudad:</strong> ${loc.city}</p>
-                                                    <p><strong>País:</strong> ${loc.country}</p>
-                                                    <p><strong>Año:</strong> ${loc.year}</p>
-                                                </div>
-                                            </div>
-                                        `).join('')}
-                                    </div>
-                                </div>
-                            </div>
-                        `;
-                    }
-                }
-            }
-        }, 300);
-    }
-    
-    // Marcar el botón de pista como abierto
-    btn.classList.add('opened');
 }
 
 function showCaseComplete() {
@@ -228,14 +284,14 @@ function showCaseComplete() {
     completeCard.className = 'location-card complete';
 
     if (window.selectedSuspect === nombreCulpable) {
-        completeCard.innerHTML = `
-            <div class="location-header">
-                <div class="location-icon">🎉</div>
-                <h5>¡Caso Resuelto!</h5>
-            </div>
-            <p class="location-description">¡Felicidades! Has resuelto el caso y capturado al ladrón.</p>
-            <button class="restart-button" onclick="restartCase()">Iniciar Nuevo Caso</button>
-        `;
+    completeCard.innerHTML = `
+        <div class="location-header">
+            <div class="location-icon">🎉</div>
+            <h5>¡Caso Resuelto!</h5>
+        </div>
+        <p class="location-description">¡Felicidades! Has resuelto el caso y capturado al ladrón.</p>
+        <button class="restart-button" onclick="restartCase()">Iniciar Nuevo Caso</button>
+    `;
     } else {
         completeCard.innerHTML = `
             <div class="location-header">
@@ -246,7 +302,7 @@ function showCaseComplete() {
             <button class="restart-button" onclick="restartCase()">Intentar de nuevo</button>
         `;
     }
-
+    
     const locationsGrid = document.querySelector('.locations-grid');
     locationsGrid.appendChild(completeCard);
     completeCard.scrollIntoView({ behavior: 'smooth' });

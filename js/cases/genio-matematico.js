@@ -2,8 +2,8 @@ const genioMatematico = {
     culpable: "Don Pablo",
     adventure: {
         step1: {
-            title: "Un nuevo lío en San Genaro",
-            description: "¡Alerta en San Genaro! Don Pablo, un astuto empresario, ha puesto en marcha una compleja estafa financiera basada en inversiones inmobiliarias. Su plan: convencer a los vecinos de invertir en terrenos inexistentes usando documentos falsos. El primer paso de su plan fue robar documentos importantes del despacho de Antonio Alcántara, que contenían cálculos y proyecciones financieras que podrían exponer su estafa. Tu misión: seguir el rastro matemático y financiero para desenmascarar la estafa antes de que más personas pierdan sus ahorros."
+            title: "El gran engaño de Don Pablo",
+            description: "¡Bienvenido a San Genaro, 1974! La tranquilidad del barrio se ve sacudida cuando Don Pablo, un supuesto genio de las finanzas, promete a todos riqueza fácil. Pero algo huele a chamusquina: contratos misteriosos, cuentas imposibles y promesas de oro. ¿Serás capaz de desenmascarar al estafador y salvar a la familia Alcántara antes de que sea demasiado tarde? ¡La aventura matemática comienza!"
         },
         step2: {
             title: "Sospechas en la imprenta",
@@ -28,7 +28,30 @@ const genioMatematico = {
             city: "San Genaro",
             country: "España",
             year: "1974",
-            description: "Vivienda familiar en un barrio obrero de Madrid. En el despacho trasero, Antonio Alcántara mantenía meticulosos registros financieros y cálculos matemáticos que exponían la estafa de Don Pablo. Los documentos robados incluían: análisis de rentabilidad, cálculos de intereses, y proyecciones financieras que demostraban la falsedad de las promesas de Don Pablo."
+            description: "En el corazón de San Genaro, la familia Alcántara vive días de esperanza y esfuerzo. Pero hoy, la calma se rompe: papeles misteriosos han desaparecido y rumores de una gran estafa recorren el barrio. ¿Te atreves a entrar en la casa donde todo comenzó y descubrir el secreto que puede cambiar el destino de todos?",
+                        witnesses: [
+                            {
+                    name: "Antonio Alcántara",
+                    role: "Padre de familia",
+                    area: "Despacho",
+                    testimony: "Esta mañana, al revisar mis papeles, noté que faltaban los documentos más importantes. Sin ellos, no puedo demostrar la estafa de Don Pablo. Alguien ha entrado en casa sin que nos diéramos cuenta.",
+                    clue: "Encontré una huella de barro cerca de la ventana. Parece que alguien entró anoche mientras todos dormíamos."
+                },
+                {
+                    name: "Mercedes Alcántara",
+                    role: "Madre de familia",
+                                area: "Cocina",
+                    testimony: "Antonio estaba muy nervioso. Dijo que esos papeles podían salvar a muchos vecinos. Anoche escuché ruidos en el patio, pero pensé que era el viento.",
+                    clue: "Vi una sombra moverse por el patio trasero. Llevaba un maletín y se marchó en silencio."
+                            },
+                            {
+                                name: "Carlos Alcántara",
+                                role: "Hijo",
+                    area: "Entrada",
+                    testimony: "Esta mañana, al salir para el colegio, vi que la puerta del despacho estaba entreabierta. Papá nunca la deja así. Algo raro ha pasado.",
+                    clue: "En el felpudo encontré un trozo de papel con el nombre de una imprenta local. Quizá allí sepan algo." 
+                }
+            ]
         },
         travels: [
             // Paso 1
@@ -356,9 +379,9 @@ const genioMatematico = {
                                 area: "Entrada",
                                 testimony: "He avisado a la policía. Espero que lleguen a tiempo para pillar al estafador con las manos en la masa.",
                                 clue: "Vi a un hombre con maletín intentando salir por la puerta de atrás."
-                            }
-                        ]
-                    },
+                    }
+                ]
+            },
                     {
                         name: "Hotel Palace",
                         target: false,
@@ -393,9 +416,9 @@ const genioMatematico = {
                     {
                         name: "Cafetería de la Estación",
                         target: false,
-                        city: "Madrid",
-                        country: "España",
-                        year: "1974",
+                                        city: "Madrid",
+                                        country: "España",
+                                        year: "1974",
                         description: "Establecimiento de restauración con terraza y vistas a los andenes. Solo clientes habituales y algún viajero despistado.",
                         witnesses: [
                             {
@@ -464,8 +487,8 @@ const genioMatematico = {
                         country: "España",
                         year: "1974",
                         description: "Puerto comercial y turístico. Solo barcos y mercancías habituales. Nadie sospechoso últimamente.",
-                        witnesses: [
-                            {
+            witnesses: [
+                {
                                 name: "Estibador",
                                 role: "Estibador",
                                 area: "Muelle",
@@ -495,8 +518,8 @@ const genioMatematico = {
                         country: "España",
                         year: "1974",
                         description: "Andén principal de la estación, con salidas a destinos nacionales. Solo trenes y pasajeros habituales.",
-                        witnesses: [
-                            {
+            witnesses: [
+                {
                                 name: "Revisor",
                                 role: "Revisor",
                                 area: "Andén",

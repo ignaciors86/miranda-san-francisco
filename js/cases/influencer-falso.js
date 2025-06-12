@@ -3,7 +3,7 @@ const influencerFalso = {
     adventure: {
         step1: {
             title: "El bulo viral en redes sociales",
-            description: "Un rumor falso sobre un famoso ha causado revuelo en las redes. La policía sospecha de una influencer con millones de seguidores."
+            description: "¡Las redes sociales arden! Un rumor falso sobre un famoso ha causado un auténtico terremoto digital. La policía sospecha de una influencer con millones de seguidores y un talento especial para el engaño. ¿Serás capaz de desenmascarar la verdad y restaurar la confianza en la información? ¡El mundo virtual necesita tu astucia!"
         },
         step2: {
             title: "Pistas en la redacción del periódico",
@@ -28,7 +28,30 @@ const influencerFalso = {
             city: "Madrid",
             country: "España",
             year: "2023",
-            description: "Periódico digital con periodistas expertos en verificación de noticias."
+            description: "La redacción de El Diario bulle de actividad, noticias y primicias. Pero hoy, el ambiente es diferente: un bulo viral ha puesto en jaque a periodistas y lectores. Solo un investigador audaz podrá desenredar la maraña de mentiras y devolver la verdad a la portada. ¿Te atreves a aceptar el reto?",
+            witnesses: [
+                {
+                    name: "Laura",
+                    role: "Jefa de redacción",
+                    area: "Oficina central",
+                    testimony: "Esta mañana, las redes sociales explotaron con un rumor falso. Nadie sabe quién lo inició, pero la noticia se propagó como la pólvora.",
+                    clue: "En la impresora encontré un correo anónimo con enlaces sospechosos y hashtags virales."
+                },
+                {
+                    name: "Carlos",
+                    role: "Periodista",
+                    area: "Sala de prensa",
+                    testimony: "Recibí un mensaje directo de una influencer famosa. Decía que tenía información exclusiva, pero algo no cuadraba.",
+                    clue: "El mensaje incluía una imagen manipulada y un número de teléfono extranjero."
+                },
+                {
+                    name: "Raúl",
+                    role: "Técnico de redes",
+                    area: "Cabina de servidores",
+                    testimony: "Detecté un pico de actividad inusual en las cuentas del periódico. Alguien programó bots para difundir el bulo.",
+                    clue: "En el registro de acceso aparece el nombre de usuario 'FakeStar'."
+                }
+            ]
         },
         travels: [
             // Paso 1
@@ -40,7 +63,7 @@ const influencerFalso = {
                         city: "Madrid",
                         country: "España",
                         year: "2023",
-                        description: "Donde se gestionan las cuentas y se monitorizan tendencias.",
+                        description: "Oficina donde se gestionan cuentas y tendencias en redes sociales.",
                         witnesses: [
                             {
                                 name: "Laura",
@@ -138,7 +161,7 @@ const influencerFalso = {
                         city: "Madrid",
                         country: "España",
                         year: "2023",
-                        description: "Donde se escriben y verifican las noticias.",
+                        description: "Redacción donde se escriben y verifican las noticias.",
                         witnesses: [
                             {
                                 name: "Dra. Ramos",
@@ -200,7 +223,7 @@ const influencerFalso = {
                         city: "Madrid",
                         country: "España",
                         year: "2023",
-                        description: "Donde se venden periódicos y revistas.",
+                        description: "Tienda de prensa con periódicos y revistas.",
                         witnesses: [
                             {
                                 name: "Carmen",

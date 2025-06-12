@@ -2,8 +2,8 @@ const cientificoLoco = {
     culpable: "Dr. Martínez",
     adventure: {
         step1: {
-            title: "Desaparición en el laboratorio central",
-            description: "¡Alerta en el Laboratorio Central de Biología! Un experimento revolucionario ha desaparecido: el 'Proyecto ADN Verde', una investigación que busca crear plantas capaces de limpiar la contaminación ambiental mediante modificación genética. El Dr. Vega, director del laboratorio, sospecha de un antiguo empleado que fue expulsado por intentar acelerar los experimentos sin seguir el método científico. Tu misión: seguir el rastro científico y tecnológico para recuperar el experimento antes de que sea utilizado de forma irresponsable."
+            title: "El experimento perdido",
+            description: "¡Peligro en el Laboratorio Central de Biología! Un experimento revolucionario ha desaparecido y el caos amenaza con desatarse. El Dr. Martínez, un científico brillante pero impredecible, podría estar detrás de todo. ¿Podrás descifrar los enigmas científicos y evitar una catástrofe ecológica? Ponte la bata, ajusta las gafas y prepárate para una investigación llena de sorpresas. ¡La ciencia está en tus manos!"
         },
         step2: {
             title: "Pistas en el Jardín Botánico",
@@ -28,7 +28,30 @@ const cientificoLoco = {
             city: "Madrid",
             country: "España",
             year: "1974",
-            description: "Centro de investigación biológica. Hoy hay una jornada de puertas abiertas para estudiantes."
+            description: "El Laboratorio Central de Biología es un hervidero de ideas, experimentos y descubrimientos. Pero hoy, la ciencia se mezcla con el misterio: un experimento crucial ha desaparecido y el futuro del medio ambiente está en juego. ¿Te atreves a entrar y descubrir qué mente brillante —o peligrosa— está detrás de todo?",
+            witnesses: [
+                {
+                    name: "Dra. Vega",
+                    role: "Directora del laboratorio",
+                    area: "Oficina principal",
+                    testimony: "Hoy, al llegar, noté que la caja fuerte donde guardábamos el proyecto más avanzado estaba abierta. Solo unos pocos conocían la combinación.",
+                    clue: "En el suelo encontré un guante de látex con una mancha de tinta verde."
+                },
+                {
+                    name: "Luis",
+                    role: "Técnico de laboratorio",
+                    area: "Sala de reactivos",
+                    testimony: "Ayer vi al Dr. Martínez revisando los cultivos de plantas modificadas. Parecía muy nervioso y anotaba cosas en una libreta.",
+                    clue: "En la mesa quedó una hoja con fórmulas químicas y un dibujo de un pez."
+                },
+                {
+                    name: "Marta",
+                    role: "Estudiante en prácticas",
+                    area: "Pasillo",
+                    testimony: "Escuché una discusión entre dos científicos sobre la seguridad del laboratorio. Después, vi a alguien salir apresurado por la puerta de emergencia.",
+                    clue: "Junto a la puerta encontré una tarjeta de acceso con las iniciales D.M."
+                }
+            ]
         },
         travels: [
             // Paso 1

@@ -3,7 +3,7 @@ const falsificadorArte = {
     adventure: {
         step1: {
             title: "El robo en el Museo del Louvre",
-            description: "Una obra maestra ha sido sustituida por una copia perfecta. El director sospecha de una red internacional de falsificadores."
+            description: "¡París amanece conmocionada! Una obra maestra ha sido sustituida por una copia tan perfecta que ni los expertos pueden distinguirla. El director del Louvre sospecha de una red internacional de falsificadores. ¿Te atreves a seguir el rastro del arte perdido y descubrir los secretos que se esconden tras los lienzos? ¡El mundo del arte te espera!"
         },
         step2: {
             title: "Pistas en el Museo del Prado",
@@ -28,7 +28,30 @@ const falsificadorArte = {
             city: "París",
             country: "Francia",
             year: "2023",
-            description: "El museo más famoso del mundo, hogar de la Mona Lisa y otras obras maestras."
+            description: "El Museo del Louvre, guardián de tesoros artísticos y testigo de miles de historias, despierta hoy con un escándalo: una obra maestra ha sido sustituida por una copia perfecta. Entre pasillos llenos de arte y misterio, tu aventura para descubrir la verdad está a punto de comenzar. ¿Te atreves a entrar?",
+            witnesses: [
+                {
+                    name: "Marie",
+                    role: "Guía del museo",
+                    area: "Entrada principal",
+                    testimony: "Esta mañana, al abrir la sala, noté que la Mona Lisa parecía... diferente. El marco estaba ligeramente torcido y el cristal tenía una huella extraña.",
+                    clue: "Encontré una etiqueta de equipaje con destino Madrid cerca de la puerta de servicio."
+                },
+                {
+                    name: "Jean",
+                    role: "Vigilante nocturno",
+                    area: "Pasillo lateral",
+                    testimony: "Anoche vi a una figura encapuchada merodeando por los pasillos. Cuando me acerqué, desapareció entre las sombras.",
+                    clue: "En el suelo quedó un trozo de tela con restos de pintura fresca."
+                },
+                {
+                    name: "Sophie",
+                    role: "Visitante",
+                    area: "Tienda de recuerdos",
+                    testimony: "Vi a un hombre tomar notas sobre la técnica de Leonardo y comprar varios libros de arte. Parecía muy interesado en los detalles.",
+                    clue: "Dejó olvidado un cuaderno con bocetos de cuadros famosos y fórmulas químicas."
+                }
+            ]
         },
         travels: [
             // Paso 1

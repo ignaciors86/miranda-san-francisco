@@ -3,7 +3,7 @@ const maestroHistoria = {
     adventure: {
         step1: {
             title: "El robo en la Biblioteca Nacional",
-            description: "¡Alerta en la Biblioteca Nacional! Un manuscrito medieval único ha desaparecido: 'Las Crónicas de Alfonso X', un documento del siglo XIII que contiene valiosos conocimientos sobre astronomía, matemáticas y la historia de la Reconquista. Este manuscrito es crucial para entender cómo los sabios medievales combinaban ciencia y cultura. El ladrón, conocido como 'El Maestro de la Historia', busca reunir documentos históricos para crear una versión manipulada de la historia de España. Tu misión: seguir el rastro histórico y cultural para recuperar el manuscrito antes de que sea alterado."
+            description: "¡Alerta máxima en la Biblioteca Nacional! Un manuscrito medieval, clave para entender la historia de España, ha desaparecido bajo misteriosas circunstancias. El Maestro de la Historia ha dejado pistas enigmáticas y solo los más valientes podrán seguir el rastro a través de los siglos. ¿Te atreves a sumergirte en una aventura donde el pasado y el presente se entrelazan? ¡La historia te necesita!"
         },
         step2: {
             title: "Pistas en el Museo del Prado",
@@ -28,7 +28,30 @@ const maestroHistoria = {
             city: "Madrid",
             country: "España",
             year: "1974",
-            description: "La biblioteca más importante de España. Hoy hay una exposición sobre manuscritos medievales."
+            description: "La Biblioteca Nacional de Madrid, un templo del saber donde el tiempo parece detenerse entre manuscritos y secretos. Hoy, sin embargo, la rutina se ve alterada por un robo que puede cambiar la historia. ¿Te atreves a cruzar sus puertas y sumergirte en una investigación que te llevará a través de los siglos?",
+            witnesses: [
+                {
+                    name: "Doña Pilar",
+                    role: "Directora de la biblioteca",
+                    area: "Recepción",
+                    testimony: "Esta mañana, al abrir la sala de manuscritos, noté que uno de los documentos más valiosos había desaparecido. Nadie ha visto nada, pero el ladrón sabía exactamente lo que buscaba.",
+                    clue: "Encontré una pluma antigua junto a la vitrina vacía. Tiene grabados que parecen medievales."
+                },
+                {
+                    name: "Javier",
+                    role: "Estudiante de historia",
+                    area: "Sala de lectura",
+                    testimony: "Vi a un hombre con gabardina revisando libros antiguos. Parecía muy interesado en los mapas y crónicas de la Reconquista.",
+                    clue: "En su mesa quedó un papel con símbolos extraños y una lista de ciudades históricas."
+                },
+                {
+                    name: "Don Ernesto",
+                    role: "Vigilante",
+                    area: "Pasillo principal",
+                    testimony: "Anoche escuché pasos y vi una sombra moverse entre las estanterías. Cuando fui a mirar, ya no había nadie, pero la puerta trasera estaba entreabierta.",
+                    clue: "En el suelo encontré una huella de barro y un trozo de pergamino antiguo."
+                }
+            ]
         },
         travels: [
             // Paso 1

@@ -3,7 +3,7 @@ const hackerCreativo = {
     adventure: {
         step1: {
             title: "Ataque al servidor escolar",
-            description: "El sistema informático del colegio ha sido hackeado. Alguien ha dejado un mensaje en código binario en la pantalla principal."
+            description: "¡Alarma digital en el Colegio San Isidro! Un misterioso hacker ha dejado un mensaje en código binario y ha puesto en jaque a todo el sistema informático. ¿Podrás descifrar los códigos, rastrear al genio informático y salvar la red antes de que el caos se apodere de la escuela? ¡Prepárate para una aventura llena de lógica, ingenio y tecnología!"
         },
         step2: {
             title: "Pistas en la biblioteca digital",
@@ -28,7 +28,30 @@ const hackerCreativo = {
             city: "Madrid",
             country: "España",
             year: "2023",
-            description: "Centro educativo con aulas digitales y laboratorio de informática."
+            description: "El Colegio San Isidro, pionero en tecnología educativa, se convierte hoy en el escenario de un misterio digital. Los pasillos zumban con rumores: alguien ha hackeado el sistema y ha dejado un reto para los más ingeniosos. ¿Serás tú quien descifre el enigma y devuelva la calma a la escuela?",
+            witnesses: [
+                {
+                    name: "Dra. López",
+                    role: "Responsable TIC",
+                    area: "Sala de servidores",
+                    testimony: "Esta mañana, al encender los ordenadores, apareció un mensaje en código binario. El sistema está bloqueado y nadie puede acceder a los archivos.",
+                    clue: "Encontré un USB con una pegatina de un robot y un papel con símbolos extraños."
+                },
+                {
+                    name: "Sergio",
+                    role: "Estudiante curioso",
+                    area: "Pasillo principal",
+                    testimony: "Vi a alguien con sudadera y portátil revisando los armarios de red. Se movía rápido y no era de mi clase.",
+                    clue: "En el suelo quedó una tarjeta de acceso con el nombre 'Neo'."
+                },
+                {
+                    name: "Elena",
+                    role: "Profesora de matemáticas",
+                    area: "Aula 3B",
+                    testimony: "Ayer, durante la última clase, noté que alguien había cambiado la contraseña de la red. Nadie reconoció el mensaje que apareció en la pizarra digital.",
+                    clue: "En la papelera encontré una hoja con ecuaciones y un dibujo de un candado."
+                }
+            ]
         },
         travels: [
             // Paso 1
@@ -40,7 +63,7 @@ const hackerCreativo = {
                         city: "Madrid",
                         country: "España",
                         year: "2023",
-                        description: "Donde se almacenan los datos y se gestiona la red escolar.",
+                        description: "Sala donde se almacenan los datos y se gestiona la red escolar.",
                         witnesses: [
                             {
                                 name: "Dra. López",
@@ -138,7 +161,7 @@ const hackerCreativo = {
                         city: "Madrid",
                         country: "España",
                         year: "2023",
-                        description: "Donde se almacenan los libros electrónicos y recursos digitales.",
+                        description: "Sala donde se almacenan los libros electrónicos y recursos digitales.",
                         witnesses: [
                             {
                                 name: "Dra. Ramos",
@@ -200,7 +223,7 @@ const hackerCreativo = {
                         city: "Madrid",
                         country: "España",
                         year: "2023",
-                        description: "Donde se venden libros y material escolar.",
+                        description: "Tienda de la biblioteca con libros y material escolar.",
                         witnesses: [
                             {
                                 name: "Carmen",

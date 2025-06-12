@@ -3,7 +3,7 @@ const miranda = {
     adventure: {
         step1: {
             title: "El enigma de los saberes",
-            description: "Un objeto misterioso ha sido robado del Museo de la Educación. Las pistas apuntan a una mente brillante que domina todas las materias."
+            description: "¡Un misterio desafía a los mejores cerebros! Un objeto legendario ha sido robado del Museo de la Educación y solo una mente brillante como la tuya podrá descifrar las pistas que Miranda San Francisco ha dejado en su huida. ¿Te atreves a enfrentarte a retos de todas las materias y convertirte en el héroe del conocimiento? ¡La aventura educativa definitiva comienza ahora!"
         },
         step2: {
             title: "Pistas en la Biblioteca Universal",
@@ -28,7 +28,30 @@ const miranda = {
             city: "Madrid",
             country: "España",
             year: "2023",
-            description: "Un museo interactivo que repasa la historia de la educación y el conocimiento."
+            description: "El Museo de la Educación, donde el conocimiento cobra vida, se despierta hoy con un misterio: un objeto legendario ha desaparecido y las pistas desafían a los más sabios. ¿Te atreves a cruzar sus puertas y convertirte en el héroe que salvará el saber universal? ¡La aventura comienza aquí!",
+            witnesses: [
+                {
+                    name: "Doña Pilar",
+                    role: "Guía principal",
+                    area: "Vestíbulo",
+                    testimony: "Esta mañana, al abrir el museo, noté que la vitrina central estaba vacía. El objeto más valioso ha desaparecido y nadie vio nada.",
+                    clue: "En el suelo encontré una nota con símbolos de matemáticas, historia y arte."
+                },
+                {
+                    name: "Miguel",
+                    role: "Estudiante visitante",
+                    area: "Sala de inventos",
+                    testimony: "Vi a una persona con gabardina tomando notas en todas las salas. Parecía saber mucho de todo.",
+                    clue: "Dejó olvidada una libreta con acertijos de varias materias."
+                },
+                {
+                    name: "Lucía",
+                    role: "Vigilante nocturna",
+                    area: "Pasillo de exposiciones",
+                    testimony: "Anoche escuché pasos y vi una sombra moverse entre los paneles. Cuando fui a mirar, ya no había nadie, pero la puerta trasera estaba abierta.",
+                    clue: "Junto a la puerta encontré una pluma estilográfica con las iniciales M.S.F." 
+                }
+            ]
         },
         travels: [
             // Paso 1
@@ -40,7 +63,7 @@ const miranda = {
                         city: "Madrid",
                         country: "España",
                         year: "2023",
-                        description: "Donde se exponen los grandes inventos de la humanidad.",
+                        description: "Sala donde se exponen inventos de la humanidad.",
                         witnesses: [
                             {
                                 name: "Doña Pilar",
@@ -102,7 +125,7 @@ const miranda = {
                         city: "Madrid",
                         country: "España",
                         year: "2023",
-                        description: "Parque junto al museo, con esculturas de grandes pensadores.",
+                        description: "Parque junto al museo, con esculturas de pensadores.",
                         witnesses: [
                             {
                                 name: "Don Julián",
@@ -138,7 +161,7 @@ const miranda = {
                         city: "Madrid",
                         country: "España",
                         year: "2023",
-                        description: "Donde se guardan los grandes tratados matemáticos.",
+                        description: "Sala donde se guardan tratados matemáticos.",
                         witnesses: [
                             {
                                 name: "María",
@@ -169,7 +192,7 @@ const miranda = {
                         city: "Madrid",
                         country: "España",
                         year: "2023",
-                        description: "Donde se guardan los grandes tratados históricos.",
+                        description: "Sala donde se guardan tratados históricos.",
                         witnesses: [
                             {
                                 name: "Raúl",
@@ -200,7 +223,7 @@ const miranda = {
                         city: "Madrid",
                         country: "España",
                         year: "2023",
-                        description: "Donde se guardan los grandes tratados artísticos.",
+                        description: "Sala donde se exponen obras de arte.",
                         witnesses: [
                             {
                                 name: "Carmen",
