@@ -1463,7 +1463,7 @@ p {
 .witness-area {
   font-family: var(--title-font);
   font-weight: 700;
-  color: var(--dossier-accent);
+  color: var(--accent);
   font-size: 1.13rem;
   margin-bottom: 0.7rem;
   display: flex;
