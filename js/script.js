@@ -48,7 +48,7 @@ function updateCaseDetails() {
             <p><i class="fas fa-map-marker-alt"></i> ${data.startingLocation.city ? data.startingLocation.city : ''}${data.startingLocation.city && data.startingLocation.country ? ', ' : ''}${data.startingLocation.country ? data.startingLocation.country : ''}</p>
             ${data.startingLocation.year && data.startingLocation.year !== 'null' ? `<p><strong>Año:</strong> ${data.startingLocation.year}</p>` : ''}
         </div>
-        <button class="travel-button" id="showStartWitnessesBtn">Iniciar Viaje</button>
+        <button class="travel-button" id="showStartWitnessesBtn">Comenzar</button>
         <div id="startWitnessesContainer"></div>
         <div class="next-options-container" id="nextOptions-startingLocation"></div>
     `;
