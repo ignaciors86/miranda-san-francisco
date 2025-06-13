@@ -127,20 +127,36 @@ const suspects = {
             "Especialista en herramientas de seguridad"
         ]
     },
-    "La Influencer": {
-        name: "La Influencer",
-        origin: "Black Mirror",
-        description: "Una estrella de las redes sociales que ha encontrado en los filtros la forma de transformar la realidad. Su obsesión por los likes le ha llevado a crear un mundo perfecto en Instagram que puede ser dañino para los niños.",
+    "El Hombre de Valor": {
+        name: "El Hombre de Valor",
+        origin: "Redes Sociales",
+        description: "Un gurú de la autoayuda que ha encontrado en la toxicidad masculina la fórmula del éxito. Su canal de YouTube y sus redes sociales promueven una visión distorsionada de la masculinidad que está afectando a los jóvenes del colegio.",
         distinctiveTraits: [
-            "Lleva ropa de marca y un anillo de luz",
-            "Siempre tiene un smartphone",
-            "Deja filtros por donde pasa"
+            "Lleva ropa de marca y gafas de sol",
+            "Siempre tiene un micrófono y una cámara",
+            "Deja frases motivacionales tóxicas por donde pasa"
         ],
-        motivation: "Cree que la imagen perfecta es lo más importante y está decidida a conseguirlo, incluso si eso significa crear expectativas irreales para los niños.",
+        motivation: "Cree que su visión de la masculinidad es la única correcta y está decidido a imponerla, incluso si eso significa crear conflictos y divisiones entre los estudiantes.",
         skills: [
-            "Experta en redes sociales",
-            "Conocedora de filtros y edición",
-            "Especialista en crear contenido viral"
+            "Experto en manipulación de audiencias jóvenes",
+            "Conocedor de técnicas de viralización",
+            "Especialista en crear contenido polémico"
+        ]
+    },
+    "La Manipuladora Digital": {
+        name: "La Manipuladora Digital",
+        origin: "Redes Sociales",
+        description: "Una experta en psicología digital que ha encontrado en los grupos de mensajería la forma perfecta de manipular a los estudiantes. Su conocimiento de la dinámica social en línea le permite crear divisiones y conflictos sin dejar rastro.",
+        distinctiveTraits: [
+            "Lleva ropa elegante y gafas de sol",
+            "Siempre tiene múltiples dispositivos",
+            "Deja mensajes anónimos por donde pasa"
+        ],
+        motivation: "Cree que la popularidad en redes sociales es el poder definitivo y está dispuesta a manipular a cualquiera para mantener su estatus, incluso si eso significa causar daño emocional a otros.",
+        skills: [
+            "Experta en psicología digital",
+            "Conocedora de dinámicas de grupo en línea",
+            "Especialista en crear controversia viral"
         ]
     },
     "Miranda San Francisco": {
