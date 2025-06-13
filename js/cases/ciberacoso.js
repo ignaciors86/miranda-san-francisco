@@ -275,22 +275,22 @@ const ciberacoso = {
                                 name: "Directora",
                                 role: "Autoridad",
                                 area: "Salón de Actos",
-                                testimony: "La tecnología debe usarse para unir, no para dividir. Por cierto, ¿has visto a ese influencer que siempre anda con su equipo de grabación? Parece que le encanta crear drama sin importar las consecuencias...",
-                                clue: "La verdad siempre sale a la luz"
+                                testimony: "Con toda la evidencia que has recopilado, estamos muy cerca de exponer al culpable. La asamblea será el momento perfecto para revelar la verdad y proteger a nuestros estudiantes...",
+                                clue: "Estás a punto de desenmascarar al responsable"
                             },
                             {
                                 name: "Psicólogo Escolar",
                                 role: "Profesional",
                                 area: "Despacho",
-                                testimony: "El impacto de este tipo de contenido en los jóvenes es devastador. Necesitamos actuar...",
-                                clue: "Las consecuencias psicológicas son graves"
+                                testimony: "Siento que finalmente vamos a atrapar a quien está causando tanto daño. Tus pruebas son sólidas, solo falta presentarlas correctamente...",
+                                clue: "El culpable está en la mira, casi lo tienes"
                             },
                             {
                                 name: "Experto en Educación",
                                 role: "Consultor",
                                 area: "Biblioteca",
-                                testimony: "Este tipo de situaciones requieren un enfoque educativo. Los estudiantes necesitan herramientas para enfrentarse a esto...",
-                                clue: "La educación es la mejor arma"
+                                testimony: "Después de toda tu investigación, puedo ver que estás muy cerca de resolver este caso. La asamblea será el golpe final...",
+                                clue: "La victoria está al alcance de tus manos"
                             }
                         ]
                     },
