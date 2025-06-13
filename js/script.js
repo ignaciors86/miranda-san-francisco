@@ -727,6 +727,19 @@ document.addEventListener('DOMContentLoaded', () => {
             adventureSection.style.setProperty('--dossier-accent', getComputedStyle(book).getPropertyValue('--dossier-accent'));
         }
     }
+
+    // Inicializar colores del caso
+    const bookElement = document.querySelector('.book');
+    
+    if (criminalSelect && bookElement) {
+        // Establecer el caso inicial
+        bookElement.setAttribute('data-criminal', criminalSelect.value);
+        
+        // Actualizar colores cuando se cambia de caso
+        criminalSelect.addEventListener('change', () => {
+            bookElement.setAttribute('data-criminal', criminalSelect.value);
+        });
+    }
 });
 
 // Crear función para mostrar overlay de pista

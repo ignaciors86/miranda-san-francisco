@@ -58,6 +58,10 @@
     --dossier-color: #2D3436;
     --dossier-accent: #FF3366;
 }
+.book[data-criminal="ciberacoso"] {
+    --dossier-color: #6B9ED9;
+    --dossier-accent: #FFD700;
+}
 
 * {
     margin: 0;
@@ -3464,11 +3468,22 @@ section {
 }
 
 .adventure.bg-animated-gradient {
-    --gradient1: var(--dossier-color);
-    --gradient2: var(--dossier-accent);
-    background: linear-gradient(120deg, var(--gradient1) 0%, var(--gradient2) 100%);
-    background-size: 200% 200%;
-    animation: animated-gradient-bg 12s ease-in-out infinite;
+    background: linear-gradient(135deg, var(--dossier-color) 0%, var(--dossier-accent) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.adventure.bg-animated-gradient::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+        rgba(255, 255, 255, 0.1) 0%, 
+        rgba(255, 255, 255, 0) 100%);
+    pointer-events: none;
 }
 
 @keyframes animated-gradient-bg {
