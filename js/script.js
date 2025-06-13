@@ -468,36 +468,117 @@ document.addEventListener('DOMContentLoaded', () => {
         currentTravel = 0;
         visitedLocations.clear();
 
-        // Clonar el dossier actual
-        const bookClone = book.cloneNode(true);
-        bookClone.classList.add('dossier-slide-out');
-        bookClone.style.position = 'absolute';
-        bookClone.style.top = book.offsetTop + 'px';
-        bookClone.style.left = book.offsetLeft + 'px';
-        bookClone.style.width = book.offsetWidth + 'px';
-        bookClone.style.height = book.offsetHeight + 'px';
-        bookClone.style.zIndex = 100;
-        bookClone.style.margin = 0;
-        bookClone.style.padding = 0;
-        book.parentNode.appendChild(bookClone);
+        // Función para animar pestañas al cerrar
+        function animateTabsOut(callback) {
+            const bookmarkContainer = book.querySelector('.bookmark-container');
+            const bookmarks = book.querySelectorAll('.bookmark');
+            
+            if (!bookmarkContainer || bookmarks.length === 0) {
+                callback();
+                return;
+            }
 
-        // Preparar el dossier real para la entrada
-        const selectedCriminal = criminalSelect.value;
-        book.setAttribute('data-criminal', selectedCriminal);
-        updateAdventureSteps();
-        updateCaseDetails();
-        book.classList.add('dossier-pre-enter');
+            const tl = gsap.timeline({
+                onComplete: callback
+            });
 
-        // Lanzar ambas animaciones a la vez
-        setTimeout(() => {
-            book.classList.remove('dossier-pre-enter');
-            book.classList.add('dossier-slide-in');
-        }, 10);
+            // Crear orden aleatorio para las pestañas (más rápido en cierre)
+            const shuffledBookmarks = [...bookmarks].sort(() => Math.random() - 0.5);
+            
+            // Primero animar pestañas desapareciendo hacia abajo (detrás de la línea) en orden aleatorio
+            shuffledBookmarks.forEach((bookmark, index) => {
+                tl.to(bookmark, {
+                    y: 60,
+                    opacity: 0,
+                    scale: 0.7,
+                    rotateX: 90,
+                    duration: 0.2,
+                    ease: "back.in(2)"
+                }, index * 0.05);
+            });
 
-        setTimeout(() => {
-            book.classList.remove('dossier-slide-in');
-            if (bookClone.parentNode) bookClone.parentNode.removeChild(bookClone);
-        }, 810);
+            // Después animar la línea (::before) deslizándose hacia la izquierda
+            tl.to(bookmarkContainer, {
+                x: -window.innerWidth - 100,
+                duration: 0.4,
+                ease: "power3.in"
+            }, "-=0.15");
+        }
+
+        // Función para animar pestañas al abrir
+        function animateTabsIn() {
+            const bookmarkContainer = book.querySelector('.bookmark-container');
+            const bookmarks = book.querySelectorAll('.bookmark');
+            
+            if (!bookmarkContainer || bookmarks.length === 0) {
+                return;
+            }
+
+            // Preparar estado inicial: línea fuera de pantalla, pestañas ocultas debajo
+            gsap.set(bookmarkContainer, { x: -window.innerWidth - 100 });
+            gsap.set(bookmarks, { y: 60, opacity: 0, scale: 0.7, rotateX: 90 });
+
+            const tl = gsap.timeline();
+
+            // Primero: línea entra deslizándose desde la izquierda
+            tl.to(bookmarkContainer, {
+                x: 0,
+                duration: 0.6,
+                ease: "power3.out"
+            });
+
+            // Después: pestañas aparecen en orden aleatorio asomando desde abajo (detrás de la línea)
+            const shuffledBookmarks = [...bookmarks].sort(() => Math.random() - 0.5);
+            shuffledBookmarks.forEach((bookmark, index) => {
+                tl.to(bookmark, {
+                    y: 0,
+                    opacity: 1,
+                    scale: 1,
+                    rotateX: 0,
+                    duration: 0.4,
+                    ease: "back.out(1.4)"
+                }, 0.4 + (index * 0.1));
+            });
+        }
+
+        // Ejecutar animación de cierre primero
+        animateTabsOut(() => {
+            // Clonar el dossier actual
+            const bookClone = book.cloneNode(true);
+            bookClone.classList.add('dossier-slide-out');
+            bookClone.style.position = 'absolute';
+            bookClone.style.top = book.offsetTop + 'px';
+            bookClone.style.left = book.offsetLeft + 'px';
+            bookClone.style.width = book.offsetWidth + 'px';
+            bookClone.style.height = book.offsetHeight + 'px';
+            bookClone.style.zIndex = 100;
+            bookClone.style.margin = 0;
+            bookClone.style.padding = 0;
+            book.parentNode.appendChild(bookClone);
+
+            // Preparar el dossier real para la entrada
+            const selectedCriminal = criminalSelect.value;
+            book.setAttribute('data-criminal', selectedCriminal);
+            updateAdventureSteps();
+            updateCaseDetails();
+            book.classList.add('dossier-pre-enter');
+
+            // Lanzar ambas animaciones a la vez
+            setTimeout(() => {
+                book.classList.remove('dossier-pre-enter');
+                book.classList.add('dossier-slide-in');
+                
+                // Animar pestañas después de que empiece la entrada del dossier
+                setTimeout(() => {
+                    animateTabsIn();
+                }, 100);
+            }, 10);
+
+            setTimeout(() => {
+                book.classList.remove('dossier-slide-in');
+                if (bookClone.parentNode) bookClone.parentNode.removeChild(bookClone);
+            }, 810);
+        });
     });
 
     // Mostrar detalles del caso al pulsar el botón
