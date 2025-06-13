@@ -667,6 +667,21 @@ document.addEventListener('DOMContentLoaded', () => {
         // Precargar el audio
         audio.load();
 
+        // Observador de intersección para el botón de audio
+        const heroSection = document.querySelector('.hero');
+        if (heroSection) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) {
+                        audioBtn.classList.add('hidden');
+                    } else {
+                        audioBtn.classList.remove('hidden');
+                    }
+                });
+            }, { threshold: 0.1 });
+            observer.observe(heroSection);
+        }
+
         audioBtn.addEventListener('click', async () => {
             try {
                 if (isPlaying) {
@@ -869,11 +884,19 @@ function showClueOverlay(witnessElement, witness) {
 function renderFoundClues() {
     const page = document.querySelector('.page[data-step="2"] .step-content');
     if (!page) return;
-    let html = '<h4>Pistas encontradas:</h4>';
+    let html = '<h3 id="step3Title">Pistas encontradas</h3>';
     if (foundClues.length === 0) {
         html += '<p class="no-clues">Aún no has encontrado ninguna pista relevante.</p>';
     } else {
-        html += '<ul class="clues-list">' + foundClues.map(clue => `<li><strong>${clue.location}:</strong> ${clue.text}</li>`).join('') + '</ul>';
+        html += '<div class="clues-cards-list">' + foundClues.map(clue => `
+            <div class="clue-card">
+                <div class="clue-card-icon">🔎</div>
+                <div class="clue-card-content">
+                    <div class="clue-card-location"><i class="fas fa-map-marker-alt"></i> <strong>${clue.location}</strong></div>
+                    <div class="clue-card-text">${clue.text}</div>
+                </div>
+            </div>
+        `).join('') + '</div>';
     }
     page.innerHTML = html;
 }

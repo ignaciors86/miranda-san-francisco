@@ -1870,6 +1870,7 @@ p {
     justify-content: center;
     background: var(--clan-lighter);
     box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    z-index: 1;
 }
 .suspect-name {
     position: absolute;
@@ -2246,7 +2247,16 @@ body.no-hints .location-option.incorrect {
   color: white;
   outline: none;
   transform: scale(1);
+  opacity: 1;
+  visibility: visible;
 }
+
+.audio-control.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.8);
+}
+
 #audioIcon {
   display: flex;
   align-items: center;
@@ -2259,6 +2269,7 @@ body.no-hints .location-option.incorrect {
   line-height: 1;
   text-align: center;
 }
+
 .hero-plane, .hero-boat, .hero-train, .hero-car {
   font-size: 7rem !important;
   z-index: 10;
@@ -3519,4 +3530,110 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.clues-cards-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin: 2rem 0 1rem 0;
+    justify-content: center;
+}
+.clue-card {
+    background: linear-gradient(135deg, var(--dossier-color), var(--dossier-accent));
+    color: var(--text-light);
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+    display: flex;
+    align-items: center;
+    min-width: 260px;
+    max-width: 350px;
+    padding: 1.2rem 1.5rem;
+    gap: 1.2rem;
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 2px solid var(--dossier-accent);
+    font-size: 1.1rem;
+}
+.clue-card:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+}
+.clue-card-icon {
+    font-size: 2.2rem;
+    background: rgba(0,0,0,0.10);
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+.clue-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+.clue-card-location {
+    font-weight: 600;
+    color: var(--dossier-accent);
+    font-size: 1.05rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+.clue-card-text {
+    color: var(--text-light);
+    font-size: 1.08rem;
+    font-style: italic;
+    margin-top: 0.2rem;
+}
+
+.suspect-info-btn {
+    position: absolute;
+    right: 50%;
+    bottom: 10px;
+    transform: translateX(50%);
+    background: #FFD600;
+    color: #1a237e;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2), 0 0 0 3px #fff8;
+    transition: all 0.3s ease;
+    pointer-events: auto;
+}
+
+.suspect-info-btn.selected {
+    background: #4CAF50;
+    color: white;
+    transform: translateX(50%) scale(1.1);
+    box-shadow: 0 4px 16px rgba(76,175,80,0.3), 0 0 0 3px #fff8;
+}
+
+.suspect-info-btn i {
+    font-size: 1.2rem;
+    pointer-events: none;
+}
+
+.suspect-info-btn:hover, .suspect-info-btn:focus {
+    background: #ff9800;
+    color: #fff;
+    transform: translateX(50%) scale(1.15);
+    outline: none;
+    box-shadow: 0 8px 24px rgba(255,152,0,0.25), 0 0 0 4px #fff8;
+}
+
+.suspect-info-btn.selected:hover, .suspect-info-btn.selected:focus {
+    background: #45a049;
+    transform: translateX(50%) scale(1.15);
+    box-shadow: 0 8px 24px rgba(76,175,80,0.4), 0 0 0 4px #fff8;
 }

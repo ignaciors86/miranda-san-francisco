@@ -201,18 +201,33 @@ function renderSuspects() {
             <div class="suspect-image" style="background-image: url('assets/suspects/${suspect.name.toLowerCase().replace(' ', '-')}.jpg')">
                 <div class="suspect-name">${suspect.name}</div>
             </div>
+            <button class="suspect-info-btn ${window.selectedSuspect === suspect.name ? 'selected' : ''}" aria-label="Seleccionar ${suspect.name}"><i class="fas fa-check"></i></button>
         `;
+        
         // Marcar si es el seleccionado
         if (window.selectedSuspect === suspect.name) {
             suspectElement.classList.add('selected');
         }
-        suspectElement.addEventListener('click', () => {
-            document.querySelectorAll('.suspect-card').forEach(card => card.classList.remove('selected'));
-            suspectElement.classList.add('selected');
-            window.selectedSuspect = suspect.name;
-            renderSuspects(); // Para actualizar la pegatina WANTED
-            showSuspectDetails(suspect); // Mostrar los detalles del sospechoso
+
+        // Click en la imagen para mostrar info
+        suspectElement.querySelector('.suspect-image').addEventListener('click', () => {
+            showSuspectDetails(suspect);
         });
+
+        // Click en el botón para seleccionar
+        const infoBtn = suspectElement.querySelector('.suspect-info-btn');
+        infoBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            document.querySelectorAll('.suspect-card').forEach(card => {
+                card.classList.remove('selected');
+                card.querySelector('.suspect-info-btn').classList.remove('selected');
+            });
+            window.selectedSuspect = suspect.name;
+            suspectElement.classList.add('selected');
+            infoBtn.classList.add('selected');
+        });
+
+        // Añadir el elemento al contenedor
         suspectsSelector.appendChild(suspectElement);
     });
 }
