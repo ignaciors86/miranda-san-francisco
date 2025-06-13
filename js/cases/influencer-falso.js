@@ -448,6 +448,7 @@ const influencerFalso = {
             },
             // Paso 5
             {
+                waitForAllClues: true,
                 locations: [
                     {
                         name: "Feria del Libro",

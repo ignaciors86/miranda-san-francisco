@@ -231,6 +231,7 @@ const cientificoLoco = {
                 ]
             },
             {
+                waitForAllClues: true,
                 locations: [
                     {
                         name: "Consulto a expertos en salud",

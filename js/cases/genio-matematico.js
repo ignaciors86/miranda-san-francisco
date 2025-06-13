@@ -231,6 +231,7 @@ const genioMatematico = {
                 ]
             },
             {
+                waitForAllClues: true,
                 locations: [
                     {
                         name: "Verifico la información financiera",

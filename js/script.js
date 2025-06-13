@@ -298,7 +298,7 @@ function showCaseComplete() {
                 <h5>¡Caso Resuelto!</h5>
             </div>
             <p class="location-description">¡Felicidades! Has resuelto el caso y capturado al ladrón.</p>
-            <button class="restart-button" onclick="restartCase()">Iniciar Nuevo Caso</button>
+            <button class="restart-button" onclick="restartCase()">🔄 Reiniciar</button>
         `;
     } else {
         completeCard.classList.add('failure');

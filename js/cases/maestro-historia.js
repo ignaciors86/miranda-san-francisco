@@ -355,6 +355,7 @@ const maestroHistoria = {
             },
             // Paso 5
             {
+                waitForAllClues: true,
                 locations: [
                     {
                         name: "Aula Magna, Universidad de Salamanca",

@@ -3116,3 +3116,63 @@ a:hover {
         padding: 0.8rem;
     }
 }
+
+/* Estilos para el botón de reiniciar */
+.restart-button {
+    background: linear-gradient(135deg, var(--accent) 0%, #00a884 100%);
+    color: var(--background);
+    border: none;
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-family: var(--subtitle-font);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgba(0, 184, 148, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 20px;
+    position: relative;
+    overflow: hidden;
+    min-width: 150px;
+}
+
+.restart-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.6s;
+}
+
+.restart-button:hover {
+    background: linear-gradient(135deg, #00a884 0%, var(--accent) 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 184, 148, 0.4);
+}
+
+.restart-button:hover::before {
+    left: 100%;
+}
+
+.restart-button:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 12px rgba(0, 184, 148, 0.3);
+}
+
+.restart-button:focus {
+    outline: none;
+    box-shadow: 0 4px 12px rgba(0, 184, 148, 0.3), 0 0 0 3px rgba(0, 184, 148, 0.2);
+}
+
+@media (max-width: 600px) {
+    .restart-button {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+        min-width: 120px;
+    }
+}

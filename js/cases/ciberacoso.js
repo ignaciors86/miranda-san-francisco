@@ -265,6 +265,7 @@ const ciberacoso = {
             {
                 name: "Paso 3: Enfrenta la Verdad",
                 description: "Has encontrado pruebas contundentes. ¿Qué haces?",
+                waitForAllClues: true,
                 locations: [
                     {
                         name: "Organizar asamblea",

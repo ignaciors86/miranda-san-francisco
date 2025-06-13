@@ -231,6 +231,7 @@ const hackerCreativo = {
                 ]
             },
             {
+                waitForAllClues: true,
                 locations: [
                     {
                         name: "Protejo mi dispositivo contra virus",

@@ -448,6 +448,7 @@ const falsificadorArte = {
             },
             // Paso 5
             {
+                waitForAllClues: true,
                 locations: [
                     {
                         name: "Galería clandestina, Museo Reina Sofía",

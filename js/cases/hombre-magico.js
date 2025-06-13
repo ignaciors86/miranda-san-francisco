@@ -212,6 +212,7 @@ const hombreMagico = {
             {
                 name: "Paso 3: Crea tu show",
                 description: "Estás en el escenario principal del Teatro Principal. ¿Qué haces?",
+                waitForAllClues: true,
                 locations: [
                     {
                         name: "Proponer show divertido",

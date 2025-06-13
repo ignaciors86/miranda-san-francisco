@@ -448,6 +448,7 @@ const miranda = {
             },
             // Paso 5
             {
+                waitForAllClues: true,
                 locations: [
                     {
                         name: "Gran Final Educativa",
