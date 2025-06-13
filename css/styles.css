@@ -178,7 +178,7 @@ p {
 
 .hero-plane, .hero-boat, .hero-train, .hero-car {
     font-size: 3.2rem !important;
-    z-index: 1;
+    z-index: 0;
     position: absolute;
     filter: drop-shadow(0 4px 16px #0006);
     pointer-events: none;
@@ -271,8 +271,8 @@ p {
 }
 .hero-plane {
     transform: scale(1.2) rotate(45deg);
-    top: 5%;
-    left: -10%;
+    top: -25%;
+    left: -40%;
     animation: flyPlane 8s linear infinite;
     animation-delay: 0s;
 }
@@ -281,6 +281,7 @@ p {
     transform: scale(1.1);
     bottom: 20%;
     right: -10%;
+    z-index: 1;
     animation: sailBoat 12s linear infinite;
     animation-delay: 2s;
 }
@@ -288,8 +289,8 @@ p {
 .hero-train {
     transform: scale(0.1);
     bottom: 0;
-    left: 0;
-    transform-origin: left center;
+    left: -10%;
+    transform-origin: center center;
     animation: driveTrain 15s linear infinite;
     animation-delay: 4s;
 }
@@ -298,6 +299,7 @@ p {
     transform: scale(1);
     bottom: 0;
     right: -10%;
+    z-index: 1;
     animation: driveCar 10s linear infinite;
     animation-delay: 6s;
 }
@@ -342,7 +344,7 @@ p {
 
 @keyframes driveTrain {
     0% {
-        transform: translate(0, 0) scale(0.1);
+        transform: translate(-50%, 0) scale(0.1);
         opacity: 0;
     }
     5% {
@@ -352,7 +354,7 @@ p {
         opacity: 1;
     }
     100% {
-        transform: translate(0, 0) scale(2);
+        transform: translate(-50%, 0) scale(6);
         opacity: 0;
     }
 }
@@ -443,7 +445,7 @@ p {
 
     @keyframes driveTrainMobile {
         0% {
-            transform: translate(0, 0) scale(0.1);
+            transform: translate(-50%, 0) scale(0.1);
             opacity: 0;
         }
         5% {
@@ -453,7 +455,7 @@ p {
             opacity: 1;
         }
         100% {
-            transform: translate(0, 0) scale(2);
+            transform: translate(-50%, 0) scale(6);
             opacity: 0;
         }
     }
@@ -2503,7 +2505,7 @@ body.no-hints .location-option.incorrect {
 
 .hero-plane, .hero-boat, .hero-train, .hero-car {
   font-size: 7rem !important;
-  z-index: 10;
+  z-index: 0;
   position: absolute;
   filter: drop-shadow(0 4px 16px #0006);
   pointer-events: none;
@@ -3759,7 +3761,6 @@ html {
 }
 .hero-plane, .hero-boat, .hero-train, .hero-car {
   font-size: 3.2rem !important;
-  z-index: 10;
   position: absolute;
   filter: drop-shadow(0 4px 16px #0006);
   pointer-events: none;
