@@ -23,6 +23,10 @@
     --dossier-color: #FF3366;
     --dossier-accent: #00B894;
     --dossier-border-thick: 3px;
+    --section3-color1: #23395d;
+    --section3-color2: #a18cd1;
+    --section4-color1: #355c7d;
+    --section4-color2: #43e97b;
 }
 
 /* Colores personalizados para cada aventura */
@@ -237,12 +241,13 @@ p {
     50% { transform: translateY(-18px) rotate(8deg); }
     100% { transform: translateY(0) rotate(-8deg); }
 }
-
+.steps-container{
+    background: #00000094;
+}
 /* Adventure Title Mejorado */
 .adventure-title-section {
     width: 100%;
     text-align: center;
-    margin: 0 0 2.5rem 0;
     padding: 2.5rem 0 1.5rem 0;
     background: linear-gradient(90deg, #23395d 60%, #1abc9c 100%);
     position: relative;
@@ -309,7 +314,6 @@ p {
 .feature-card h3 {
     font-family: var(--subtitle-font);
     font-size: 1.5rem;
-    margin: 5rem;
     color: var(--primary);
     letter-spacing: 0.01em;
 }
@@ -1847,14 +1851,65 @@ p {
 }
 
 .suspect-card {
-    width: 200px;
-    height: 200px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     overflow: hidden;
     cursor: pointer;
     position: relative;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 3px solid var(--clan-dark);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 2.5px solid var(--clan-dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--clan-lighter);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+.suspect-name {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #fff;
+    background: rgba(44, 75, 107, 0.45);
+    border-radius: 50%;
+    box-shadow: none;
+    text-shadow: 0 2px 8px #0005;
+    pointer-events: none;
+    z-index: 2;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 0.5em;
+}
+.suspect-details-modal .suspect-name {
+    position: static;
+    width: auto;
+    height: auto;
+    background: none;
+    color: inherit;
+    font-size: 1.5rem;
+    font-weight: 700;
+    border-radius: 0;
+    box-shadow: none;
+    text-shadow: none;
+    pointer-events: auto;
+    z-index: auto;
+    display: block;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+    padding: 0;
+    margin: 0.5em 0 0.5em 0;
+    text-align: left;
 }
 
 .suspect-card:hover {
@@ -1895,69 +1950,75 @@ p {
 
 /* Switch fijo para mostrar/ocultar pistas de color */
 .color-hints-switch {
-    display: none;
     position: fixed;
-    bottom: 32px;
-    right: 32px;
-    z-index: 9999;
-    background: rgba(30,30,30,0.97);
-    border-radius: 32px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
-    padding: 0.7rem 1.5rem 0.7rem 1.1rem;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px 20px;
+    border-radius: 20px;
     display: flex;
     align-items: center;
-    gap: 1rem;
-    font-family: var(--subtitle-font);
-    font-size: 1.1rem;
-    color: var(--text);
-    transition: opacity 0.3s, transform 0.3s;
+    gap: 10px;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .color-hints-switch.visible {
-    display: flex;
+    opacity: 1;
+    visibility: visible;
 }
 
 .switch {
     position: relative;
     display: inline-block;
-    width: 52px;
-    height: 28px;
+    width: 50px;
+    height: 24px;
 }
+
 .switch input {
     opacity: 0;
     width: 0;
     height: 0;
 }
+
 .slider {
     position: absolute;
     cursor: pointer;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: #ccc;
-    border-radius: 28px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
     transition: .4s;
+    border-radius: 24px;
 }
+
 .slider:before {
     position: absolute;
     content: "";
-    height: 22px;
-    width: 22px;
-    left: 3px;
-    bottom: 3px;
-    background: var(--primary);
-    border-radius: 50%;
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
     transition: .4s;
+    border-radius: 50%;
 }
+
 input:checked + .slider {
-    background: var(--accent);
+    background-color: var(--accent);
 }
+
 input:checked + .slider:before {
-    transform: translateX(24px);
-    background: var(--dossier-accent);
+    transform: translateX(26px);
 }
 
 #colorHintsText {
-    user-select: none;
-    font-weight: 600;
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 500;
 }
 
 @media (max-width: 600px) {
@@ -2162,24 +2223,43 @@ body.no-hints .location-option.incorrect {
 }
 
 .audio-control {
-    position: fixed;
-    top: 1.2rem;
-    right: 1.2rem;
-    z-index: 20000;
-    background: var(--primary);
-    border: none;
-    border-radius: 50%;
-    width: 48px;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    color: white;
-    outline: none;
-    transform: scale(1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 1.2rem;
+  right: 1.2rem;
+  z-index: 20000;
+  background: var(--primary);
+  border: none;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  color: white;
+  outline: none;
+  transform: scale(1);
+}
+#audioIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.4rem;
+  width: 2.4rem;
+  height: 2.4rem;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  text-align: center;
+}
+.hero-plane, .hero-boat, .hero-train, .hero-car {
+  font-size: 7rem !important;
+  z-index: 10;
+  position: absolute;
+  filter: drop-shadow(0 4px 16px #0006);
+  pointer-events: none;
 }
 
 .audio-control:hover {
@@ -2190,16 +2270,6 @@ body.no-hints .location-option.incorrect {
 
 .audio-control:active {
     transform: scale(0.95);
-}
-
-#audioIcon {
-    font-size: 1.5rem;
-    pointer-events: none;
-    transition: transform 0.3s ease;
-}
-
-.audio-control:hover #audioIcon {
-    transform: scale(1.1);
 }
 
 @media (max-width: 768px) {
@@ -3359,4 +3429,89 @@ section {
     .disclaimer-main { font-size: 1.3rem; }
     .disclaimer-big { font-size: 1.05rem; }
     .disclaimer-action { font-size: 1rem; }
+}
+
+.adventure-title-section.bg-animated-gradient {
+    --gradient1: var(--section3-color1);
+    --gradient2: var(--section3-color2);
+    background: linear-gradient(120deg, var(--gradient1) 0%, var(--gradient2) 100%);
+    background-size: 200% 200%;
+    animation: animated-gradient-bg 10s ease-in-out infinite;
+}
+
+.adventure.bg-animated-gradient {
+    --gradient1: var(--dossier-color);
+    --gradient2: var(--dossier-accent);
+    background: linear-gradient(120deg, var(--gradient1) 0%, var(--gradient2) 100%);
+    background-size: 200% 200%;
+    animation: animated-gradient-bg 12s ease-in-out infinite;
+}
+
+@keyframes animated-gradient-bg {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Scrollbar elegante y personalizado */
+::-webkit-scrollbar {
+  width: 12px;
+  background: var(--clan-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(120deg, var(--primary) 0%, var(--accent) 100%);
+  border-radius: 8px;
+  border: 2px solid var(--clan-dark);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(120deg, var(--accent) 0%, var(--primary) 100%);
+}
+::-webkit-scrollbar-corner {
+  background: var(--clan-dark);
+}
+
+/* Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary) var(--clan-dark);
+}
+
+.suspect-name {
+  white-space: normal !important;
+  word-break: break-word;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  padding: 0 0.5em;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #fff;
+  background: rgba(44, 75, 107, 0.45);
+  border-radius: 50%;
+  box-shadow: none;
+  text-shadow: 0 2px 8px #0005;
+  pointer-events: none;
+  z-index: 2;
+}
+.hero-plane, .hero-boat, .hero-train, .hero-car {
+  font-size: 3.2rem !important;
+  z-index: 10;
+  position: absolute;
+  filter: drop-shadow(0 4px 16px #0006);
+  pointer-events: none;
+}
+#audioIcon {
+  font-size: 1.6rem !important;
+  width: 1.6rem !important;
+  height: 1.6rem !important;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

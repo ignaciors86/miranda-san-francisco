@@ -38,6 +38,9 @@
                 <div class="hero-glow"></div>
                 <div class="hero-stars"></div>
                 <div class="hero-plane">✈️</div>
+                <div class="hero-boat">⛵</div>
+                <div class="hero-train">🚆</div>
+                <div class="hero-car">🚗</div>
             </div>
         </div>
     </section>
@@ -115,7 +118,7 @@
         </div>
     </section>
 
-    <section class="adventure-title-section">
+    <section class="adventure-title-section bg-animated-gradient">
         <h2 class="adventure-title gradient-title">Tu <span class="adventure-title-strong">Aventura</span> <span class="adventure-title-strong2">Educativa</span></h2>
         <div class="adventure-disclaimer">
             <p class="disclaimer-main">¡Prepárate para una experiencia única!</p>
@@ -124,7 +127,7 @@
         </div>
     </section>
 
-    <section class="adventure">
+    <section class="adventure bg-animated-gradient">
         <div class="character-selector">
             <select id="criminalSelect" class="character-select">
                 <option value="ciberacoso">El Caso del Ciberacoso</option>
@@ -166,23 +169,27 @@
                             <div class="step-content">
                                 <h3 id="step2Title">Recolección de Pistas</h3>
                                 <p id="step2Description">En cada ciudad, visita diferentes ubicaciones para encontrar pistas.</p>
+                                <div class="step-explanation">Analiza cuidadosamente cada pista que encuentres. Algunas pueden parecer irrelevantes, pero juntas te ayudarán a descartar sospechosos y acercarte a la verdad. ¡No subestimes ningún detalle!</div>
                             </div>
                         </div>
                         <div class="page" data-step="3">
                             <div class="step-content">
                                 <h3 id="step3Title">Análisis de Sospechosos</h3>
                                 <p id="step3Description">Con cada pista que recopiles, podrás descartar sospechosos.</p>
+                                <div class="step-explanation">Compara las pistas con los perfiles de los sospechosos. ¿Quién tiene coartada? ¿Quién encaja con las pruebas? El análisis minucioso es clave para no acusar a un inocente.</div>
                             </div>
                         </div>
                         <div class="page" data-step="4">
                             <div class="step-content">
                                 <h3 id="step4Title">Orden de Detención</h3>
                                 <p id="step4Description">Una vez que hayas reunido suficientes pruebas, podrás solicitar una orden de detención.</p>
+                                <div class="step-explanation">Solo puedes detener a un sospechoso si tienes pruebas sólidas. ¡Asegúrate de no dejar cabos sueltos antes de dar este paso!</div>
                             </div>
                         </div>
                         <div class="page" data-step="5">
                             <div class="step-content">
-                                <h3 id="step5Title">Resolución</h3>
+                                <h3 id="step5Title">Captura</h3>
+                                <div class="step-explanation">¡Ha llegado el momento de señalar al culpable! Observa bien los perfiles y elige con cuidado. Recuerda: solo uno es el verdadero malhechor. Si tienes dudas, revisa las pistas y los análisis anteriores antes de tomar tu decisión.</div>
                                 <div id="suspectsSelector" class="suspects-selector"></div>
                                 <p id="step5Description">Con la orden de detención en mano, deberás interceptar al ladrón.</p>
                             </div>
@@ -224,6 +231,7 @@
     <script src="js/caseDetails.js"></script>
     <script src="js/wrongLocationResponses.js"></script>
     <script src="js/suspectDetails.js"></script>
+    <script src="js/transportAnimations.js"></script>
     <script src="js/script.js"></script>
 </body>
 

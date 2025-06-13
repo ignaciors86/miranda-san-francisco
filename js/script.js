@@ -16,6 +16,7 @@ document.querySelectorAll('.flow-step').forEach(step => {
 // Variables globales
 let currentTravel = 0;
 let visitedLocations = new Set();
+let foundClues = [];
 
 // Variable global para el modo de pistas de color
 window.showColorHints = true;
@@ -54,6 +55,7 @@ function updateCaseDetails() {
     locationsGrid.appendChild(startingLocation);
     currentTravel = 0;
     visitedLocations.clear();
+    foundClues = [];
 
     // Añadir evento para mostrar testigos solo al pulsar el botón
     const showBtn = document.getElementById('showStartWitnessesBtn');
@@ -96,6 +98,18 @@ function updateCaseDetails() {
         const idx = parseInt(btn.getAttribute('data-idx'));
         const witness = location.witnesses[idx];
         showClueOverlay(btn, witness);
+
+        // Si la pista es de una localización correcta (target), añadirla al listado si no está
+        if ((location.target || travelIdx === -1) && witness.clue) {
+            if (!foundClues.some(c => c.text === witness.clue)) {
+                foundClues.push({
+                    text: witness.clue,
+                    location: location.name,
+                    step: travelIdx + 2 // +2 porque step 2 es Pistas
+                });
+                renderFoundClues();
+            }
+        }
 
         // Mostrar destinos solo la primera vez que se abre cualquier pista en startingLocation
         if (travelIdx === -1) {
@@ -191,6 +205,7 @@ function updateCaseDetails() {
             bombilla.classList.add('opened');
         }
     }
+    renderFoundClues();
 }
 
 function startTravel() {
@@ -448,6 +463,11 @@ function updateAdventureSteps() {
 
 // Event Listeners
 document.addEventListener('DOMContentLoaded', () => {
+    // Iniciar animaciones de vehículos
+    if (window.animateTransports) {
+        window.animateTransports();
+    }
+
     // Animación hero y título aventura educativa
     if (window.gsap) {
         gsap.set('.main-title', {opacity: 0, y: 60, scale: 0.95});
@@ -595,6 +615,7 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 book.classList.remove('dossier-slide-in');
                 if (bookClone.parentNode) bookClone.parentNode.removeChild(bookClone);
+                updateAdventureGradientVars();
             }, 810);
         });
     });
@@ -622,7 +643,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Mostrar el switch solo cuando el dossier esté visible
     const colorHintsSwitch = document.getElementById('colorHintsSwitch');
-    if (colorHintsSwitch && book) {
+    const adventureSection = document.querySelector('.adventure.bg-animated-gradient');
+    if (colorHintsSwitch && adventureSection) {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -632,7 +654,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         }, { threshold: 0.1 });
-        observer.observe(book);
+        observer.observe(adventureSection);
     }
 
     // Control de música de fondo
@@ -682,6 +704,13 @@ document.addEventListener('DOMContentLoaded', () => {
             audioIcon.textContent = '▶';
             isPlaying = false;
         });
+    }
+
+    function updateAdventureGradientVars() {
+        if (adventureSection && book) {
+            adventureSection.style.setProperty('--dossier-color', getComputedStyle(book).getPropertyValue('--dossier-color'));
+            adventureSection.style.setProperty('--dossier-accent', getComputedStyle(book).getPropertyValue('--dossier-accent'));
+        }
     }
 });
 
@@ -834,6 +863,31 @@ function showClueOverlay(witnessElement, witness) {
     overlay.addEventListener('click', (e) => {
         e.stopPropagation();
     });
+}
 
+// Función para renderizar las pistas encontradas en la pestaña 2 (Pistas)
+function renderFoundClues() {
+    const page = document.querySelector('.page[data-step="2"] .step-content');
+    if (!page) return;
+    let html = '<h4>Pistas encontradas:</h4>';
+    if (foundClues.length === 0) {
+        html += '<p class="no-clues">Aún no has encontrado ninguna pista relevante.</p>';
+    } else {
+        html += '<ul class="clues-list">' + foundClues.map(clue => `<li><strong>${clue.location}:</strong> ${clue.text}</li>`).join('') + '</ul>';
+    }
+    page.innerHTML = html;
+}
 
-} 
+// Lógica mejorada para mostrar el switch solo en la sección de juego
+// Reemplazar el observer de colorHintsSwitch por:
+function updateColorHintsSwitchVisibility() {
+    const colorHintsSwitch = document.getElementById('colorHintsSwitch');
+    const adventureSection = document.querySelector('.adventure.bg-animated-gradient');
+    if (!colorHintsSwitch || !adventureSection) return;
+    const rect = adventureSection.getBoundingClientRect();
+    const inView = rect.top < window.innerHeight && rect.bottom > 0;
+    colorHintsSwitch.classList.toggle('visible', inView);
+}
+window.addEventListener('scroll', updateColorHintsSwitchVisibility);
+window.addEventListener('resize', updateColorHintsSwitchVisibility);
+document.addEventListener('DOMContentLoaded', updateColorHintsSwitchVisibility); 
