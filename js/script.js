@@ -728,18 +728,55 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Inicializar colores del caso
+    // Inicialización de colores al cargar la página
     const bookElement = document.querySelector('.book');
+    const heroSection = document.querySelector('.hero');
     
-    if (criminalSelect && bookElement) {
-        // Establecer el caso inicial
-        bookElement.setAttribute('data-criminal', criminalSelect.value);
-        
-        // Actualizar colores cuando se cambia de caso
-        criminalSelect.addEventListener('change', () => {
-            bookElement.setAttribute('data-criminal', criminalSelect.value);
-        });
+    // Función para actualizar los colores
+    function updateColors(criminal) {
+        const colors = getCriminalColors(criminal);
+        if (colors) {
+            document.documentElement.style.setProperty('--dossier-color', colors.primary);
+            document.documentElement.style.setProperty('--dossier-accent', colors.accent);
+            document.documentElement.style.setProperty('--dossier-text', colors.text);
+            document.documentElement.style.setProperty('--dossier-highlight', colors.highlight);
+            document.documentElement.style.setProperty('--dossier-shadow', colors.shadow);
+            document.documentElement.style.setProperty('--dossier-glow', colors.glow);
+            document.documentElement.style.setProperty('--dossier-border', colors.border);
+            document.documentElement.style.setProperty('--dossier-hover', colors.hover);
+            document.documentElement.style.setProperty('--dossier-active', colors.active);
+            document.documentElement.style.setProperty('--dossier-focus', colors.focus);
+            document.documentElement.style.setProperty('--dossier-disabled', colors.disabled);
+            document.documentElement.style.setProperty('--dossier-error', colors.error);
+            document.documentElement.style.setProperty('--dossier-success', colors.success);
+            document.documentElement.style.setProperty('--dossier-warning', colors.warning);
+            document.documentElement.style.setProperty('--dossier-info', colors.info);
+            document.documentElement.style.setProperty('--dossier-background', colors.background);
+            document.documentElement.style.setProperty('--dossier-foreground', colors.foreground);
+            document.documentElement.style.setProperty('--dossier-muted', colors.muted);
+            document.documentElement.style.setProperty('--dossier-muted-foreground', colors.mutedForeground);
+            document.documentElement.style.setProperty('--dossier-popover', colors.popover);
+            document.documentElement.style.setProperty('--dossier-popover-foreground', colors.popoverForeground);
+            document.documentElement.style.setProperty('--dossier-card', colors.card);
+            document.documentElement.style.setProperty('--dossier-card-foreground', colors.cardForeground);
+            document.documentElement.style.setProperty('--dossier-border', colors.border);
+            document.documentElement.style.setProperty('--dossier-input', colors.input);
+            document.documentElement.style.setProperty('--dossier-ring', colors.ring);
+            document.documentElement.style.setProperty('--dossier-radius', colors.radius);
+        }
     }
+
+    // Establecer el caso inicial
+    const initialCriminal = criminalSelect.value;
+    bookElement.setAttribute('data-criminal', initialCriminal);
+    updateColors(initialCriminal);
+
+    // Actualizar cuando cambie el caso
+    criminalSelect.addEventListener('change', function() {
+        const selectedCriminal = this.value;
+        bookElement.setAttribute('data-criminal', selectedCriminal);
+        updateColors(selectedCriminal);
+    });
 });
 
 // Crear función para mostrar overlay de pista
