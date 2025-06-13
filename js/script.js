@@ -114,7 +114,7 @@ function updateCaseDetails() {
                                             ${shuffleArray([...availableLocations]).map(loc => `
                                                 <div class=\"location-option ${loc.target ? 'correct' : 'incorrect'}\" onclick=\"selectLocation('${loc.name.replace(/'/g, "\\'")}')\">
                                                     <h6>${loc.name}${loc.country ? ', ' + loc.country : ''}</h6>
-                                                    <p>${loc.description}</p>
+                                                    <p>${loc.descriptionTarget || ""}</p>
                                                     <div class=\"location-info\">
                                                         <p><i class='fas fa-map-marker-alt'></i> ${loc.city ? loc.city : ''}</p>
                                                         ${loc.year && loc.year !== 'null' ? `<p><strong>Año:</strong> ${loc.year}</p>` : ''}
@@ -165,7 +165,7 @@ function updateCaseDetails() {
                                                 ${shuffleArray([...availableLocations]).map(loc => `
                                                     <div class=\"location-option ${loc.target ? 'correct' : 'incorrect'}\" onclick=\"selectLocation('${loc.name.replace(/'/g, "\\'")}')\">
                                                         <h6>${loc.name}${loc.country ? ', ' + loc.country : ''}</h6>
-                                                        <p>${loc.description}</p>
+                                                        <p>${loc.descriptionTarget || ""}</p>
                                                         <div class=\"location-info\">
                                                             <p><i class='fas fa-map-marker-alt'></i> ${loc.city ? loc.city : ''}</p>
                                                             ${loc.year && loc.year !== 'null' ? `<p><strong>Año:</strong> ${loc.year}</p>` : ''}
@@ -210,7 +210,7 @@ function showTravelOptions() {
                 ${shuffleArray([...availableLocations]).map(location => `
                     <div class="location-option ${location.target ? 'correct' : 'incorrect'}" onclick="selectLocation('${location.name.replace(/'/g, "\\'")}')">
                         <h6>${location.name}${location.country ? ', ' + location.country : ''}</h6>
-                        <p>${location.description}</p>
+                        <p>${location.descriptionTarget || ""}</p>
                         <div class="location-info">
                             <p><i class='fas fa-map-marker-alt'></i> ${location.city ? location.city : ''}</p>
                             ${location.year && location.year !== 'null' ? `<p><strong>Año:</strong> ${location.year}</p>` : ''}
@@ -284,15 +284,17 @@ function showCaseComplete() {
     completeCard.className = 'location-card complete';
 
     if (window.selectedSuspect === nombreCulpable) {
-    completeCard.innerHTML = `
-        <div class="location-header">
-            <div class="location-icon">🎉</div>
-            <h5>¡Caso Resuelto!</h5>
-        </div>
-        <p class="location-description">¡Felicidades! Has resuelto el caso y capturado al ladrón.</p>
-        <button class="restart-button" onclick="restartCase()">Iniciar Nuevo Caso</button>
-    `;
+        completeCard.classList.add('success');
+        completeCard.innerHTML = `
+            <div class="location-header">
+                <div class="location-icon">🎉</div>
+                <h5>¡Caso Resuelto!</h5>
+            </div>
+            <p class="location-description">¡Felicidades! Has resuelto el caso y capturado al ladrón.</p>
+            <button class="restart-button" onclick="restartCase()">Iniciar Nuevo Caso</button>
+        `;
     } else {
+        completeCard.classList.add('failure');
         completeCard.innerHTML = `
             <div class="location-header">
                 <div class="location-icon">❌</div>

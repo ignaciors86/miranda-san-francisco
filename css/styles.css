@@ -739,6 +739,7 @@ p {
     justify-content: center;
     align-items: center;
     align-content: space-around;
+    flex-direction: column;
 }
 
 .location-option.correct {
@@ -1205,6 +1206,16 @@ p {
 
 .location-card.complete .location-icon {
     color: var(--accent);
+}
+
+.location-card.complete.success {
+    background-color: rgba(76, 175, 80, 0.1);
+    border: 2px solid #4CAF50;
+}
+
+.location-card.complete.failure {
+    background-color: rgba(244, 67, 54, 0.1);
+    border: 2px solid #F44336;
 }
 
 @media (max-width: 768px) {

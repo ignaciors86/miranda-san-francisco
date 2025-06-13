@@ -9,5 +9,6 @@ const cases = {
     "falsificador-arte": falsificadorArte,
     "hacker-creativo": hackerCreativo,
     "influencer-falso": influencerFalso,
-    "miranda": miranda
+    "miranda": miranda,
+    "ciberacoso": ciberacoso
 }; 

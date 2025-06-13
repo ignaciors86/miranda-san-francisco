@@ -47,20 +47,20 @@ const suspects = {
             "Especialista en proteger a usuarios jóvenes"
         ]
     },
-    "Jorge Ponce": {
-        name: "Jorge Ponce",
-        origin: "La Revuelta",
-        description: "Un influencer que ha encontrado en la magia de los filtros la forma perfecta de causar el caos. Su obsesión por los likes y su sonrisa sospechosa ocultan un plan para que los niños nunca se desconecten.",
+    "Savid Duárez": {
+        name: "Savid Duárez",
+        origin: "Teatro Príncipe Gran Vía",
+        description: "Un mago y cómico que ha encontrado en el humor la forma de causar el caos. Su obsesión por hacer reír a la gente le ha llevado a crear un plan para demostrar que el humor puede ser dañino.",
         distinctiveTraits: [
-            "Lleva ropa de marca y un anillo de luz",
-            "Siempre tiene un trípode para selfies",
-            "Deja hashtags por donde pasa"
+            "Lleva ropa de mago y un sombrero de copa",
+            "Siempre tiene una baraja de cartas",
+            "Deja chistes y bromas por donde pasa"
         ],
-        motivation: "Cree que la desconexión digital es una conspiración y está decidido a demostrarlo, incluso si eso significa crear contenido adictivo para niños.",
+        motivation: "Cree que el humor no tiene límites y está decidido a demostrarlo, incluso si eso significa hacer bromas que pueden herir a otros.",
         skills: [
-            "Experto en contenido viral",
-            "Conocedor de tendencias digitales",
-            "Especialista en crear adicción a las redes"
+            "Experto en magia y comedia",
+            "Conocedor de técnicas de manipulación",
+            "Especialista en crear controversia"
         ]
     },
     "El Profesor": {
@@ -141,6 +141,22 @@ const suspects = {
             "Experta en redes sociales",
             "Conocedora de filtros y edición",
             "Especialista en crear contenido viral"
+        ]
+    },
+    "Miranda San Francisco": {
+        name: "Miranda San Francisco",
+        origin: "Museo de la Educación",
+        description: "Una mente brillante que ha encontrado en el conocimiento la forma de desafiar al mundo. Su obsesión por los saberes le ha llevado a crear un plan para demostrar que el conocimiento debe ser compartido de manera diferente.",
+        distinctiveTraits: [
+            "Lleva una gabardina y una libreta llena de anotaciones",
+            "Siempre tiene un objeto legendario",
+            "Deja pistas de todas las materias por donde pasa"
+        ],
+        motivation: "Cree que el conocimiento debe ser compartido de una manera más interactiva y está decidida a demostrarlo, incluso si eso significa tomar prestados algunos objetos legendarios.",
+        skills: [
+            "Experta en todas las materias",
+            "Conocedora de técnicas de enseñanza innovadoras",
+            "Especialista en crear retos educativos"
         ]
     }
 };
