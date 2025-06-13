@@ -1,482 +1,318 @@
 const cientificoLoco = {
-    culpable: "Dr. Martínez",
+    culpable: "El Científico Loco",
     adventure: {
         step1: {
-            title: "El experimento perdido",
-            description: "¡Peligro en el Laboratorio Central de Biología! Un experimento revolucionario ha desaparecido y el caos amenaza con desatarse. El Dr. Martínez, un científico brillante pero impredecible, podría estar detrás de todo. ¿Podrás descifrar los enigmas científicos y evitar una catástrofe ecológica? Ponte la bata, ajusta las gafas y prepárate para una investigación llena de sorpresas. ¡La ciencia está en tus manos!"
+            title: "El misterio de las vacunas",
+            description: "¡Alerta en el laboratorio! Un científico está difundiendo información falsa sobre las vacunas. Los investigadores sospechan que está manipulando datos y creando miedo infundado. ¿Podrás seguir el rastro de sus afirmaciones y evitar que la desinformación se propague? ¡La salud pública necesita tu ayuda!"
         },
         step2: {
-            title: "Pistas en el Jardín Botánico",
-            description: "Las pistas te llevan al Jardín Botánico, donde se han encontrado plantas modificadas genéticamente. El Científico Loco está experimentando con la transferencia horizontal de genes, un proceso natural que permite a las bacterias compartir material genético. Tu objetivo: analizar las modificaciones genéticas y entender cómo afectan al ecosistema local."
+            title: "Pistas en el laboratorio",
+            description: "El laboratorio está lleno de notas y estudios sobre vacunas. Los investigadores buscan pistas sobre los métodos utilizados. Las pruebas sugieren que el científico está seleccionando datos de manera sesgada y realizando estudios sin los controles adecuados."
         },
         step3: {
-            title: "El misterio del Acuario",
-            description: "La investigación te lleva al Acuario, donde un pez modificado genéticamente ha sido robado. El pez, resultado de experimentos con genes de bioluminiscencia, podría alterar el equilibrio ecológico si se libera en la naturaleza. Tu tarea: estudiar los efectos de la modificación genética en especies acuáticas y prevenir un desastre ecológico."
+            title: "El enigma de los datos",
+            description: "Los registros contienen datos inconsistentes sobre efectos secundarios. El científico ha estado manipulando estadísticas sin documentar los cambios. Tu misión: analizar los datos, identificar los errores metodológicos y entender cómo deberían haberse realizado los estudios correctamente."
         },
         step4: {
-            title: "Viaje al CERN",
-            description: "El rastro científico te lleva hasta el CERN en Ginebra, donde se investiga la materia oscura. El Científico Loco busca utilizar la tecnología del Gran Colisionador de Hadrones para acelerar mutaciones genéticas. Tu misión: entender los principios de la física de partículas y cómo podrían afectar a los experimentos genéticos."
+            title: "Viaje al centro de investigación",
+            description: "Las pistas llevan a un centro de investigación médica. El científico planea presentar sus resultados en una conferencia internacional, pero sus métodos no siguen los estándares científicos. Tu reto: demostrar la importancia de la evidencia científica en la investigación de vacunas."
         },
         step5: {
-            title: "Desenlace en la Real Academia de Ciencias",
-            description: "La investigación culmina en la Real Academia de Ciencias, donde el Científico Loco planea presentar sus experimentos en una conferencia internacional. Tu objetivo final: utilizar todos los conocimientos científicos recopilados para exponer los riesgos de sus experimentos y prevenir un desastre ecológico."
+            title: "Desenlace en la conferencia médica",
+            description: "El científico planea presentar sus estudios en una conferencia internacional. Tu objetivo final: utilizar todos los conocimientos científicos recopilados para exponer los riesgos de la desinformación y prevenir un brote de enfermedades prevenibles."
         }
     },
     case: {
         startingLocation: {
-            name: "Laboratorio Central de Biología",
+            name: "Centro de Investigación en Vacunas",
             city: "Madrid",
             country: "España",
-            year: "1974",
-            description: "El Laboratorio Central de Biología es un hervidero de ideas, experimentos y descubrimientos. Pero hoy, la ciencia se mezcla con el misterio: un experimento crucial ha desaparecido y el futuro del medio ambiente está en juego. ¿Te atreves a entrar y descubrir qué mente brillante —o peligrosa— está detrás de todo?",
+            year: "2024",
+            description: "El Centro de Investigación en Vacunas es un lugar donde se desarrollan y prueban nuevas vacunas. Pero hoy, la ciencia se mezcla con el misterio: un estudio crucial ha sido manipulado y la salud pública está en juego. ¿Te atreves a entrar y descubrir qué mente brillante —o peligrosa— está detrás de todo?",
             witnesses: [
                 {
-                    name: "Dra. Vega",
-                    role: "Directora del laboratorio",
-                    area: "Oficina principal",
-                    testimony: "Hoy, al llegar, noté que la caja fuerte donde guardábamos el proyecto más avanzado estaba abierta. Solo unos pocos conocían la combinación.",
-                    clue: "En el suelo encontré un guante de látex con una mancha de tinta verde."
+                    name: "Dr. Martínez",
+                    role: "Director del centro",
+                    area: "Despacho",
+                    testimony: "Un estudio sobre vacunas ha sido manipulado. Necesitamos entender qué pasó y por qué se difundió información falsa.",
+                    clue: "Vi notas con resultados sesgados y estudios sin controles."
                 },
                 {
-                    name: "Luis",
+                    name: "Dra. García",
+                    role: "Epidemióloga",
+                    area: "Laboratorio",
+                    testimony: "Los datos no cuadran. Alguien ha estado seleccionando solo los casos negativos.",
+                    clue: "Encontré registros con estadísticas manipuladas."
+                },
+                {
+                    name: "Carlos",
                     role: "Técnico de laboratorio",
-                    area: "Sala de reactivos",
-                    testimony: "Ayer vi al Dr. Martínez revisando los cultivos de plantas modificadas. Parecía muy nervioso y anotaba cosas en una libreta.",
-                    clue: "En la mesa quedó una hoja con fórmulas químicas y un dibujo de un pez."
-                },
-                {
-                    name: "Marta",
-                    role: "Estudiante en prácticas",
-                    area: "Pasillo",
-                    testimony: "Escuché una discusión entre dos científicos sobre la seguridad del laboratorio. Después, vi a alguien salir apresurado por la puerta de emergencia.",
-                    clue: "Junto a la puerta encontré una tarjeta de acceso con las iniciales D.M."
+                    area: "Almacén",
+                    testimony: "Faltan muestras de control. Alguien ha estado realizando estudios sin los grupos necesarios.",
+                    clue: "Los inventarios no coinciden con los registros."
                 }
             ]
         },
         travels: [
-            // Paso 1
             {
                 locations: [
                     {
-                        name: "Laboratorio de Genética",
+                        name: "Verifico la evidencia científica",
                         target: true,
-                        city: "Madrid",
-                        country: "España",
-                        year: "1974",
-                        description: "Laboratorio especializado en investigación genética. Hay una demostración de técnicas de laboratorio.",
+                        description: "El científico ha dejado pistas sobre la importancia de la evidencia científica. ¿Qué deberías hacer?",
                         witnesses: [
                             {
-                                name: "Dr. García",
-                                role: "Investigador jefe",
-                                area: "Laboratorio principal",
-                                testimony: "El Dr. Martínez ha estado trabajando en un proyecto secreto. Últimamente ha estado muy nervioso.",
-                                clue: "Encontré notas sobre transferencia genética en plantas y peces."
+                                name: "Dra. López",
+                                role: "Experta en ensayos clínicos",
+                                area: "Laboratorio",
+                                testimony: "Siempre verifica los estudios publicados. Busca revisiones por pares.",
+                                clue: "La evidencia científica debe ser verificable."
                             },
                             {
-                                name: "Ana",
-                                role: "Técnica de laboratorio",
-                                area: "Sala de cultivos",
-                                testimony: "El Dr. Martínez ha estado haciendo experimentos con plantas y peces. Parece muy emocionado con algo.",
-                                clue: "Vi muestras de ADN modificado en el microscopio."
+                                name: "Dr. Sánchez",
+                                role: "Investigador",
+                                area: "Laboratorio",
+                                testimony: "Analiza los datos completos. No te quedes solo con casos aislados.",
+                                clue: "Los estudios deben ser completos y representativos."
                             },
                             {
-                                name: "Guardia de seguridad",
-                                role: "Vigilante",
-                                area: "Entrada",
-                                testimony: "El Dr. Martínez salió ayer tarde con una caja térmica. Parecía nervioso.",
-                                clue: "Encontré un plano del jardín botánico con marcas."
+                                name: "Dra. Ruiz",
+                                role: "Científica",
+                                area: "Laboratorio",
+                                testimony: "Consulta fuentes confiables. No te dejes llevar por rumores.",
+                                clue: "La información debe venir de fuentes verificadas."
                             }
                         ]
                     },
                     {
-                        name: "Cafetería del Instituto",
+                        name: "Me dejo llevar por testimonios aislados",
                         target: false,
-                        city: "Madrid",
-                        country: "España",
-                        year: "1974",
-                        description: "Cafetería para investigadores y estudiantes. Hoy hay un descuento especial en el menú del día.",
-                        witnesses: [
-                            {
-                                name: "Camarero",
-                                role: "Personal",
-                                area: "Barra",
-                                testimony: "Aquí solo vienen investigadores y estudiantes. Nada de misterios.",
-                                clue: "Todo normal en la cafetería."
-                            },
-                            {
-                                name: "Estudiante",
-                                role: "Cliente",
-                                area: "Mesa",
-                                testimony: "Solo vengo a estudiar. No he visto nada raro.",
-                                clue: "Aquí solo se habla de exámenes."
-                            },
-                            {
-                                name: "Profesor",
-                                role: "Cliente",
-                                area: "Esquina",
-                                testimony: "Lugar tranquilo para preparar clases. Nada más.",
-                                clue: "Solo vengo a trabajar."
-                            }
-                        ]
-                    },
-                    {
-                        name: "Biblioteca Científica",
-                        target: false,
-                        city: "Madrid",
-                        country: "España",
-                        year: "1974",
-                        description: "Biblioteca especializada en ciencias. Hoy hay una exposición sobre genética.",
-                        witnesses: [
-                            {
-                                name: "Bibliotecario",
-                                role: "Personal",
-                                area: "Mostrador",
-                                testimony: "Solo veo estudiantes e investigadores. Nada fuera de lo normal.",
-                                clue: "Todo tranquilo en la biblioteca."
-                            },
-                            {
-                                name: "Investigador",
-                                role: "Usuario",
-                                area: "Sala de lectura",
-                                testimony: "Lugar agradable para estudiar. Nada más que contar.",
-                                clue: "Solo vengo a investigar."
-                            },
-                            {
-                                name: "Estudiante",
-                                role: "Visitante",
-                                area: "Estanterías",
-                                testimony: "Hermosa biblioteca. Nada más que decir.",
-                                clue: "Solo vengo a hacer trabajos."
-                            }
-                        ]
-                    }
-                ]
-            },
-            // Paso 2
-            {
-                locations: [
-                    {
-                        name: "Jardín Botánico",
-                        target: true,
-                        city: "Madrid",
-                        country: "España",
-                        year: "1974",
-                        description: "Jardín histórico con gran variedad de plantas. Hoy hay una visita guiada sobre especies autóctonas.",
-                        witnesses: [
-                            {
-                                name: "Botánico",
-                                role: "Personal",
-                                area: "Invernadero",
-                                testimony: "El Dr. Martínez ha estado estudiando plantas modificadas. Dice que ha encontrado algo importante.",
-                                clue: "Encontré notas sobre transferencia genética en plantas."
-                            },
-                            {
-                                name: "Jardinero",
-                                role: "Personal",
-                                area: "Vivero",
-                                testimony: "El Dr. Martínez me mostró unas plantas extrañas. Parecía muy emocionado.",
-                                clue: "Vi muestras de plantas modificadas en el laboratorio."
-                            },
-                            {
-                                name: "Guardia",
-                                role: "Vigilante",
-                                area: "Entrada",
-                                testimony: "El Dr. Martínez viene a menudo a estudiar plantas. Últimamente ha estado tomando muchas muestras.",
-                                clue: "Encontré un plano del jardín con marcas en varias zonas."
-                            }
-                        ]
-                    }
-                ]
-            },
-            // Paso 3
-            {
-                locations: [
-                    {
-                        name: "Acuario principal",
-                        target: true,
-                        city: "Valencia",
-                        country: "España",
-                        year: "2023",
-                        description: "El mayor acuario de Europa, con especies de todo el mundo.",
+                        description: "El científico ha dejado pistas sobre los peligros de confiar en casos aislados. ¿Qué deberías hacer?",
                         witnesses: [
                             {
                                 name: "Dr. Torres",
-                                role: "Director del acuario",
-                                area: "Oficina",
-                                testimony: "Vi a una persona con bata blanca revisando los tanques de peces exóticos.",
-                                clue: "Falta un pez amazónico muy raro."
-                            },
-                            {
-                                name: "Marina",
-                                role: "Bióloga marina",
+                                role: "Experto en estadística",
                                 area: "Laboratorio",
-                                testimony: "Alguien dejó una nota con fórmulas químicas junto al tanque de los tiburones.",
-                                clue: "La nota menciona ADN y mutaciones."
+                                testimony: "Los casos aislados no son evidencia. Necesitas estudios completos.",
+                                clue: "Las anécdotas no reemplazan la evidencia científica."
                             },
                             {
-                                name: "Pablo",
-                                role: "Vigilante",
-                                area: "Entrada",
-                                testimony: "Vi a una figura con gafas oscuras salir apresurada con una caja de muestras.",
-                                clue: "La caja tenía símbolos de laboratorio."
+                                name: "Dra. Morales",
+                                role: "Investigadora",
+                                area: "Laboratorio",
+                                testimony: "Analiza los datos en contexto. No te centres en excepciones.",
+                                clue: "Los casos raros no invalidan la evidencia general."
+                            },
+                            {
+                                name: "Dr. Jiménez",
+                                role: "Científico",
+                                area: "Laboratorio",
+                                testimony: "Busca patrones, no excepciones. La ciencia se basa en datos.",
+                                clue: "La evidencia debe ser sistemática."
                             }
                         ]
                     },
                     {
-                        name: "Cafetería del Acuario",
+                        name: "Ignoro los estudios científicos",
                         target: false,
-                        city: "Valencia",
-                        country: "España",
-                        year: "2023",
-                        description: "Zona de descanso para visitantes y trabajadores.",
+                        description: "El científico ha dejado pistas sobre la importancia de la investigación científica. ¿Qué deberías hacer?",
                         witnesses: [
                             {
-                                name: "Raúl",
-                                role: "Camarero",
-                                area: "Barra",
-                                testimony: "Hoy solo han venido turistas y escolares. Nadie sospechoso.",
-                                clue: "No he visto a nadie con cajas ni batas."
+                                name: "Dra. Castro",
+                                role: "Experta en salud pública",
+                                area: "Laboratorio",
+                                testimony: "Los estudios científicos son la base. No los ignores.",
+                                clue: "La ciencia es la mejor herramienta para la salud."
                             },
                             {
-                                name: "Isabel",
-                                role: "Turista",
-                                area: "Mesa central",
-                                testimony: "He estado todo el rato con mi grupo. No he visto nada raro.",
-                                clue: "Quizá deberías buscar en el acuario principal."
+                                name: "Dr. Ortega",
+                                role: "Investigador",
+                                area: "Laboratorio",
+                                testimony: "La evidencia científica salva vidas. Confía en ella.",
+                                clue: "Las vacunas han erradicado enfermedades."
                             },
                             {
-                                name: "Tomás",
-                                role: "Profesor",
-                                area: "Terraza",
-                                testimony: "Solo he visto a mis alumnos y a otros profesores.",
-                                clue: "Nada fuera de lo común en la cafetería."
-                            }
-                        ]
-                    },
-                    {
-                        name: "Tienda del Acuario",
-                        target: false,
-                        city: "Valencia",
-                        country: "España",
-                        year: "2023",
-                        description: "Donde se venden recuerdos y libros de biología marina.",
-                        witnesses: [
-                            {
-                                name: "Carmen",
-                                role: "Dependienta",
-                                area: "Caja",
-                                testimony: "He vendido muchos libros de peces hoy, pero nada raro.",
-                                clue: "Nadie ha preguntado por especies exóticas."
-                            },
-                            {
-                                name: "Luis",
-                                role: "Cliente",
-                                area: "Estantería de libros",
-                                testimony: "Buscaba un regalo para mi hijo. No he visto nada extraño.",
-                                clue: "Solo libros y recuerdos."
-                            },
-                            {
-                                name: "Patricia",
-                                role: "Turista",
-                                area: "Mostrador",
-                                testimony: "He comprado una guía de Valencia. No he visto a nadie sospechoso.",
-                                clue: "Todo normal en la tienda."
+                                name: "Dra. Vega",
+                                role: "Científica",
+                                area: "Laboratorio",
+                                testimony: "La ciencia es clara sobre las vacunas. Sigue la evidencia.",
+                                clue: "La evidencia científica es contundente."
                             }
                         ]
                     }
                 ]
             },
-            // Paso 4
             {
                 locations: [
                     {
-                        name: "Laboratorio de física de partículas, CERN",
+                        name: "Analizo los beneficios y riesgos",
                         target: true,
-                        city: "Ginebra",
-                        country: "Suiza",
-                        year: "2023",
-                        description: "Donde se investiga la materia oscura y las partículas elementales.",
+                        description: "El científico ha dejado pistas sobre la importancia del análisis de riesgos. ¿Qué deberías hacer?",
                         witnesses: [
                             {
-                                name: "Dr. Müller",
-                                role: "Físico",
-                                area: "Sala de control",
-                                testimony: "Vi a una persona con bata blanca revisando los monitores de partículas.",
-                                clue: "Buscaba información sobre la partícula X."
+                                name: "Dr. Navarro",
+                                role: "Experto en seguridad de vacunas",
+                                area: "Laboratorio",
+                                testimony: "Evalúa beneficios y riesgos. Las vacunas son seguras.",
+                                clue: "Los beneficios superan ampliamente los riesgos."
                             },
                             {
-                                name: "Sophie",
-                                role: "Ingeniera",
-                                area: "Pasillo central",
-                                testimony: "Alguien preguntó por experimentos de materia oscura.",
-                                clue: "Mencionó cambiar el mundo con un nuevo descubrimiento."
+                                name: "Dra. Méndez",
+                                role: "Investigadora",
+                                area: "Laboratorio",
+                                testimony: "Compara con enfermedades prevenibles. Las vacunas salvan vidas.",
+                                clue: "Las enfermedades son más peligrosas que las vacunas."
                             },
                             {
-                                name: "Jean",
-                                role: "Vigilante",
-                                area: "Entrada",
-                                testimony: "Vi a una figura con gafas oscuras salir con una caja de muestras.",
-                                clue: "La caja tenía símbolos de laboratorio y física."
+                                name: "Dr. Silva",
+                                role: "Científico",
+                                area: "Laboratorio",
+                                testimony: "Estudia los datos completos. No te centres solo en riesgos.",
+                                clue: "El balance riesgo-beneficio es favorable."
                             }
                         ]
                     },
                     {
-                        name: "Cafetería del CERN",
+                        name: "Me centro solo en los riesgos",
                         target: false,
-                        city: "Ginebra",
-                        country: "Suiza",
-                        year: "2023",
-                        description: "Zona de descanso para científicos de todo el mundo.",
+                        description: "El científico ha dejado pistas sobre los peligros de enfocarse solo en riesgos. ¿Qué deberías hacer?",
                         witnesses: [
                             {
-                                name: "Raúl",
-                                role: "Camarero",
-                                area: "Barra",
-                                testimony: "Hoy solo han venido científicos y estudiantes. Nadie sospechoso.",
-                                clue: "No he visto a nadie con cajas ni batas."
+                                name: "Dra. Ríos",
+                                role: "Experta en salud pública",
+                                area: "Laboratorio",
+                                testimony: "No te centres solo en riesgos. Mira el panorama completo.",
+                                clue: "Los riesgos deben verse en contexto."
                             },
                             {
-                                name: "Isabel",
-                                role: "Turista",
-                                area: "Mesa central",
-                                testimony: "He estado todo el rato con mi grupo. No he visto nada raro.",
-                                clue: "Quizá deberías buscar en el laboratorio de física."
+                                name: "Dr. Pardo",
+                                role: "Investigador",
+                                area: "Laboratorio",
+                                testimony: "Compara con enfermedades. Las vacunas son seguras.",
+                                clue: "Las enfermedades son más peligrosas."
                             },
                             {
-                                name: "Tomás",
-                                role: "Profesor",
-                                area: "Terraza",
-                                testimony: "Solo he visto a mis alumnos y a otros profesores.",
-                                clue: "Nada fuera de lo común en la cafetería."
+                                name: "Dra. Soto",
+                                role: "Científica",
+                                area: "Laboratorio",
+                                testimony: "Analiza el balance completo. No te dejes llevar por el miedo.",
+                                clue: "La evidencia muestra que son seguras."
                             }
                         ]
                     },
                     {
-                        name: "Tienda del CERN",
+                        name: "Ignoro los efectos secundarios",
                         target: false,
-                        city: "Ginebra",
-                        country: "Suiza",
-                        year: "2023",
-                        description: "Donde se venden recuerdos y libros de física.",
+                        description: "El científico ha dejado pistas sobre la importancia de monitorear efectos secundarios. ¿Qué deberías hacer?",
                         witnesses: [
                             {
-                                name: "Carmen",
-                                role: "Dependienta",
-                                area: "Caja",
-                                testimony: "He vendido muchos libros de física hoy, pero nada raro.",
-                                clue: "Nadie ha preguntado por partículas extrañas."
+                                name: "Dr. Valdez",
+                                role: "Experto en farmacovigilancia",
+                                area: "Laboratorio",
+                                testimony: "Monitorea los efectos secundarios. Es parte del proceso.",
+                                clue: "La vigilancia es continua y rigurosa."
                             },
                             {
-                                name: "Luis",
-                                role: "Cliente",
-                                area: "Estantería de libros",
-                                testimony: "Buscaba un regalo para mi hijo. No he visto nada extraño.",
-                                clue: "Solo libros y recuerdos."
+                                name: "Dra. Luna",
+                                role: "Investigadora",
+                                area: "Laboratorio",
+                                testimony: "Reporta cualquier efecto. Es importante para la seguridad.",
+                                clue: "El monitoreo es parte de la seguridad."
                             },
                             {
-                                name: "Patricia",
-                                role: "Turista",
-                                area: "Mostrador",
-                                testimony: "He comprado una guía de Suiza. No he visto a nadie sospechoso.",
-                                clue: "Todo normal en la tienda."
+                                name: "Dr. Reyes",
+                                role: "Científico",
+                                area: "Laboratorio",
+                                testimony: "Sigue los protocolos de seguridad. Son esenciales.",
+                                clue: "La seguridad es prioritaria."
                             }
                         ]
                     }
                 ]
             },
-            // Paso 5
             {
                 locations: [
                     {
-                        name: "Salón de actos, Real Academia de Ciencias",
+                        name: "Consulto a expertos en salud",
                         target: true,
-                        city: "Madrid",
-                        country: "España",
-                        year: "2023",
-                        description: "Donde se celebran las conferencias científicas más importantes.",
+                        description: "El científico ha dejado pistas sobre la importancia de consultar expertos. ¿Qué deberías hacer?",
                         witnesses: [
                             {
-                                name: "Dr. García",
-                                role: "Presidente de la Academia",
-                                area: "Atril",
-                                testimony: "Vi a una figura con bata blanca preparando una presentación secreta.",
-                                clue: "El Científico Loco iba a mostrar su invento al mundo."
+                                name: "Dra. Mendoza",
+                                role: "Experta en inmunología",
+                                area: "Laboratorio",
+                                testimony: "Consulta a profesionales de la salud. Son los expertos.",
+                                clue: "Los expertos tienen la mejor información."
                             },
                             {
-                                name: "Marta",
-                                role: "Estudiante",
-                                area: "Fila central",
-                                testimony: "Escuché hablar de un invento revolucionario y de un experimento peligroso.",
-                                clue: "El Científico Loco planea huir tras la presentación."
+                                name: "Dr. Herrera",
+                                role: "Investigador",
+                                area: "Laboratorio",
+                                testimony: "Confía en los especialistas. Tienen la formación adecuada.",
+                                clue: "Los expertos conocen la evidencia."
                             },
                             {
-                                name: "Luis",
-                                role: "Vigilante",
-                                area: "Puerta principal",
-                                testimony: "Vi a la policía entrar justo a tiempo para detener al culpable.",
-                                clue: "El invento fue requisado y destruido."
+                                name: "Dra. Guzmán",
+                                role: "Científica",
+                                area: "Laboratorio",
+                                testimony: "Busca fuentes confiables. No te dejes llevar por mitos.",
+                                clue: "Los expertos son la mejor fuente."
                             }
                         ]
                     },
                     {
-                        name: "Cafetería de la Academia",
+                        name: "Confío en redes sociales",
                         target: false,
-                        city: "Madrid",
-                        country: "España",
-                        year: "2023",
-                        description: "Lugar de encuentro de científicos y estudiantes.",
+                        description: "El científico ha dejado pistas sobre los peligros de la desinformación. ¿Qué deberías hacer?",
                         witnesses: [
                             {
-                                name: "Clara",
-                                role: "Camarera",
-                                area: "Barra",
-                                testimony: "Hoy solo han venido estudiantes a repasar exámenes. Nadie sospechoso.",
-                                clue: "No he visto a nadie con inventos extraños."
+                                name: "Dr. Fuentes",
+                                role: "Experto en comunicación científica",
+                                area: "Laboratorio",
+                                testimony: "No confíes en redes sociales. Busca fuentes verificadas.",
+                                clue: "Las redes pueden difundir desinformación."
                             },
                             {
-                                name: "Pedro",
-                                role: "Profesor",
-                                area: "Mesa del fondo",
-                                testimony: "He corregido exámenes toda la tarde. Nada fuera de lo común.",
-                                clue: "Solo estudiantes y profesores."
+                                name: "Dra. Cortés",
+                                role: "Investigadora",
+                                area: "Laboratorio",
+                                testimony: "Verifica la información. No te dejes llevar por rumores.",
+                                clue: "La desinformación puede ser peligrosa."
                             },
                             {
-                                name: "Lucía",
-                                role: "Estudiante",
-                                area: "Terraza",
-                                testimony: "He estado estudiando con amigas. No he visto nada raro.",
-                                clue: "Todo normal en la cafetería."
+                                name: "Dr. Núñez",
+                                role: "Científico",
+                                area: "Laboratorio",
+                                testimony: "Busca fuentes confiables. No te dejes engañar.",
+                                clue: "La evidencia científica es la mejor guía."
                             }
                         ]
                     },
                     {
-                        name: "Parque del Retiro",
+                        name: "Ignoro las recomendaciones médicas",
                         target: false,
-                        city: "Madrid",
-                        country: "España",
-                        year: "2023",
-                        description: "El parque más famoso de Madrid, lleno de vida y turistas.",
+                        description: "El científico ha dejado pistas sobre la importancia de seguir recomendaciones. ¿Qué deberías hacer?",
                         witnesses: [
                             {
-                                name: "Javier",
-                                role: "Guía turístico",
-                                area: "Centro del parque",
-                                testimony: "He dado visitas guiadas todo el día. Nadie sospechoso.",
-                                clue: "Solo turistas y estudiantes."
+                                name: "Dra. Flores",
+                                role: "Experta en salud pública",
+                                area: "Laboratorio",
+                                testimony: "Sigue las recomendaciones médicas. Son basadas en evidencia.",
+                                clue: "Las recomendaciones salvan vidas."
                             },
                             {
-                                name: "María",
-                                role: "Vendedora de helados",
-                                area: "Puesto de helados",
-                                testimony: "He vendido helados a niños y familias. Nada fuera de lo común.",
-                                clue: "Todo normal en el parque."
+                                name: "Dr. Ramírez",
+                                role: "Investigador",
+                                area: "Laboratorio",
+                                testimony: "Confía en los profesionales. Tienen la mejor información.",
+                                clue: "Los médicos conocen la evidencia."
                             },
                             {
-                                name: "Andrés",
-                                role: "Estudiante",
-                                area: "Banco central",
-                                testimony: "He estado charlando con amigos. No he visto nada raro.",
-                                clue: "Solo estudiantes y turistas."
+                                name: "Dra. Vargas",
+                                role: "Científica",
+                                area: "Laboratorio",
+                                testimony: "Sigue los protocolos de salud. Son importantes.",
+                                clue: "Las recomendaciones son cruciales."
                             }
                         ]
                     }
