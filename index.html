@@ -24,17 +24,26 @@
         </div>
     </div>
 
-    <section class="hero">
+    <section class="hero" style="min-height: 100dvh;">
+        <div class="hero-bg"></div>
         <div class="hero-content">
-            <h1>Miranda San Francisco</h1>
-            <p class="subtitle">Aprende mientras resuelves misterios</p>
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/dL-13NZAXuE" allowfullscreen></iframe>
+            <h1 class="main-title"><span class="main-title-strong">Miranda</span> <span class="main-title-light">San Francisco</span></h1>
+            <p class="subtitle impact-subtitle">Aprende mientras resuelves misterios</p>
+            <div class="video-container fancy-video">
+                <div class="video-frame">
+                    <iframe src="https://www.youtube.com/embed/dL-13NZAXuE" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="hero-decor">
+                <div class="hero-glow"></div>
+                <div class="hero-stars"></div>
+                <div class="hero-plane">✈️</div>
             </div>
         </div>
     </section>
 
     <section class="features">
+        <h2 class="section-title">¿Cómo funciona la aventura?</h2>
         <div class="features-grid">
             <div class="feature-card">
                 <h3>Investigación Educativa</h3>
@@ -58,6 +67,7 @@
     </section>
 
     <section class="flow">
+        <h2 class="section-title">Tu Camino de Detective</h2>
         <div class="flow-container">
             <div class="flow-step">
                 <div class="step-number">01</div>
@@ -105,8 +115,16 @@
         </div>
     </section>
 
+    <section class="adventure-title-section">
+        <h2 class="adventure-title gradient-title">Tu <span class="adventure-title-strong">Aventura</span> <span class="adventure-title-strong2">Educativa</span></h2>
+        <div class="adventure-disclaimer">
+            <p class="disclaimer-main">¡Prepárate para una experiencia única!</p>
+            <p class="disclaimer-big">Resuelve misterios, viaja por el mundo y conviértete en el mejor detective educativo.</p>
+            <p class="disclaimer-action">Haz scroll o selecciona un caso para comenzar tu aventura.</p>
+        </div>
+    </section>
+
     <section class="adventure">
-        <h2 class="adventure-title">Tu Aventura Educativa</h2>
         <div class="character-selector">
             <select id="criminalSelect" class="character-select">
                 <option value="ciberacoso">El Caso del Ciberacoso</option>
@@ -190,6 +208,7 @@
     <audio id="bgMusic" src="assets/opening.mp3" loop></audio>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
     <script src="js/suspects.js"></script>
     <script src="js/cases/hombre-magico.js"></script>
     <script src="js/cases/genio-matematico.js"></script>

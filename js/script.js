@@ -448,6 +448,24 @@ function updateAdventureSteps() {
 
 // Event Listeners
 document.addEventListener('DOMContentLoaded', () => {
+    // Animación hero y título aventura educativa
+    if (window.gsap) {
+        gsap.set('.main-title', {opacity: 0, y: 60, scale: 0.95});
+        gsap.set('.impact-subtitle', {opacity: 0, y: 40});
+        gsap.set('.fancy-video', {opacity: 0, y: 40, scale: 0.95});
+        gsap.set('.hero-plane', {opacity: 0, x: 80, scale: 0.7});
+        gsap.set('.hero-glow', {opacity: 0});
+        gsap.set('.gradient-title', {opacity: 0, y: 40, scale: 0.95});
+
+        gsap.timeline()
+            .to('.main-title', {opacity: 1, y: 0, scale: 1, duration: 1, ease: 'expo.out'})
+            .to('.impact-subtitle', {opacity: 1, y: 0, duration: 0.7, ease: 'expo.out'}, '-=0.5')
+            .to('.fancy-video', {opacity: 1, y: 0, scale: 1, duration: 0.8, ease: 'expo.out'}, '-=0.4')
+            .to('.hero-glow', {opacity: 1, duration: 1.2, ease: 'power2.out'}, '-=0.7')
+            .to('.hero-plane', {opacity: 1, x: 0, scale: 1, duration: 1, ease: 'back.out(1.7)'}, '-=0.8')
+            .to('.gradient-title', {opacity: 1, y: 0, scale: 1, duration: 1, ease: 'expo.out'}, '-=0.7');
+    }
+
     // Inicializar el libro
     updateAdventureSteps();
     updateCaseDetails();
