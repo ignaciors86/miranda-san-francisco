@@ -336,6 +336,62 @@ function fadeOutCurrentPage(callback) {
     }
 }
 
+function animatePageHeight(callback) {
+    const pagesContainer = document.querySelector('.pages');
+    if (!pagesContainer) {
+        if (callback) callback();
+        return;
+    }
+
+    // Añadir clase de optimización para performance
+    pagesContainer.classList.add('animating');
+    
+    // Obtener altura actual del contenido
+    const currentHeight = pagesContainer.scrollHeight;
+    
+    // Establecer altura actual explícitamente
+    pagesContainer.style.height = currentHeight + 'px';
+    pagesContainer.style.overflow = 'hidden';
+    
+    // Animar a altura 0
+    requestAnimationFrame(() => {
+        pagesContainer.style.transition = 'height 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+        pagesContainer.style.height = '0px';
+        
+        setTimeout(() => {
+            // Ejecutar callback para cambiar contenido
+            if (callback) callback();
+            
+            // Obtener nueva altura después del cambio de contenido
+            pagesContainer.style.height = 'auto';
+            const newHeight = pagesContainer.scrollHeight;
+            pagesContainer.style.height = '0px';
+            
+            // Animar a la nueva altura
+            requestAnimationFrame(() => {
+                pagesContainer.style.height = newHeight + 'px';
+                
+                setTimeout(() => {
+                    // Limpiar estilos después de la animación
+                    pagesContainer.style.height = '';
+                    pagesContainer.style.overflow = '';
+                    pagesContainer.style.transition = '';
+                    pagesContainer.classList.remove('animating');
+                }, 300);
+                
+                // Scroll suave hacia abajo DESPUÉS de que todo esté completamente terminado
+                setTimeout(() => {
+                    // Hacer scroll hasta el final completo de la página
+                    window.scrollTo({
+                        top: document.documentElement.scrollHeight,
+                        behavior: 'smooth'
+                    });
+                }, 650); // 300ms contracción + 300ms expansión + 50ms buffer
+            });
+        }, 300);
+    });
+}
+
 function goToStep(stepNumber) {
     // Activar la pestaña visualmente de inmediato
     document.querySelectorAll('.bookmark').forEach(bookmark => {
@@ -344,8 +400,9 @@ function goToStep(stepNumber) {
             bookmark.classList.add('active');
         }
     });
-    // Luego fade-out y cambio de contenido
-    fadeOutCurrentPage(() => {
+    
+    // Animar altura y cambio de contenido
+    animatePageHeight(() => {
         document.querySelectorAll('.page').forEach(page => {
             page.classList.remove('active');
             if (parseInt(page.dataset.step) === stepNumber) {
@@ -360,7 +417,7 @@ function goToStep(stepNumber) {
 }
 
 function updateAdventureSteps() {
-    fadeOutCurrentPage(() => {
+    animatePageHeight(() => {
         const selectedCriminal = document.getElementById('criminalSelect').value;
         const data = cases[selectedCriminal].adventure;
         if (data) {
@@ -372,8 +429,19 @@ function updateAdventureSteps() {
                     document.getElementById(`step${i}Description`).textContent = stepData.description;
                 }
             }
-            // Reiniciar al primer paso con animación
-            goToStep(1);
+            // Activar la primera pestaña sin animación adicional
+            document.querySelectorAll('.bookmark').forEach(bookmark => {
+                bookmark.classList.remove('active');
+                if (parseInt(bookmark.dataset.step) === 1) {
+                    bookmark.classList.add('active');
+                }
+            });
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+                if (parseInt(page.dataset.step) === 1) {
+                    page.classList.add('active');
+                }
+            });
         }
     });
 }

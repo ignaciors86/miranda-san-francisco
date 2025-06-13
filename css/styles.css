@@ -529,6 +529,9 @@ p {
     background: none !important;
     overflow: visible;
     width: 100%;
+    /* Mejorar performance de la animación de altura */
+    will-change: height;
+    transform: translateZ(0); /* Forzar hardware acceleration */
 }
 
 .page {
@@ -536,6 +539,17 @@ p {
 }
 .page.active {
     display: block;
+}
+
+/* Optimización para animación de altura */
+.pages.animating {
+    will-change: height;
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+.pages.animating .page {
+    transform: translateZ(0);
 }
 
 @media (max-width: 768px) {
