@@ -65,9 +65,11 @@ function updateCaseDetails() {
                     <div class=\"witnesses-container\">
                         <div class=\"witnesses\">
                             ${data.startingLocation.witnesses.map((witness, idx) => `
-                                <div class=\"witness-card\">
+                                <div class=\"witness\" data-location=\"${data.startingLocation.name}\" data-idx=\"${idx}\" data-travel=\"-1\" onclick=\"handleClueClick(this, '${data.startingLocation.name}', -1)\" aria-label=\"Ver pista\">
+                                    <div class=\"witness-bombilla\">
+                                        <img src=\"assets/lightbulb.svg\" alt=\"Pista\" />
+                                    </div>
                                     <div class=\"witness-area\"><i class=\"fas fa-map-marker-alt\"></i> ${witness.area}</div>
-                                    <button class=\"clue-button\" data-location=\"${data.startingLocation.name}\" data-idx=\"${idx}\" data-travel=\"-1\" onclick=\"handleClueClick(this, '${data.startingLocation.name}', -1)\" aria-label=\"Ver pista\">\n                                        <img src=\"assets/lightbulb.svg\" alt=\"Pista\" width=\"32\" height=\"32\" style=\"display:block;margin:auto;\" />\n                                    </button>
                                 </div>
                             `).join('')}
                         </div>
@@ -93,7 +95,7 @@ function updateCaseDetails() {
         if (!location) return;
         const idx = parseInt(btn.getAttribute('data-idx'));
         const witness = location.witnesses[idx];
-        showClueModal(witness);
+        showClueOverlay(btn, witness);
 
         // Mostrar destinos solo la primera vez que se abre cualquier pista en startingLocation
         if (travelIdx === -1) {
@@ -182,7 +184,12 @@ function updateCaseDetails() {
                 }, 300);
             }
         }
+        // Cambiar el estilo de la pista completa y la bombilla para indicar que ya se abrió
         btn.classList.add('opened');
+        const bombilla = btn.querySelector('.witness-bombilla');
+        if (bombilla) {
+            bombilla.classList.add('opened');
+        }
     }
 }
 
@@ -246,11 +253,11 @@ function showLocation(location, travelIdx = currentTravel) {
             <div class="witnesses-container">
                 <div class="witnesses">
                     ${location.witnesses.map((witness, idx) => `
-                        <div class="witness-card">
+                        <div class="witness" data-location="${location.name}" data-idx="${idx}" data-travel="${travelIdx}" onclick="handleClueClick(this, '${location.name}', ${travelIdx})" aria-label="Ver pista">
+                            <div class="witness-bombilla">
+                                <img src="assets/lightbulb.svg" alt="Pista" />
+                            </div>
                             <div class="witness-area"><i class="fas fa-map-marker-alt"></i> ${witness.area}</div>
-                            <button class="clue-button" data-location="${location.name}" data-idx="${idx}" data-travel="${travelIdx}" onclick="handleClueClick(this, '${location.name}', ${travelIdx})" aria-label="Ver pista">
-                                <img src="assets/lightbulb.svg" alt="Pista" width="32" height="32" style="display:block;margin:auto;" />
-                            </button>
                         </div>
                     `).join('')}
                 </div>
@@ -511,24 +518,155 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Crear función para mostrar modal de pista
-function showClueModal(witness) {
-    // Eliminar cualquier modal anterior
-    const oldModal = document.getElementById('clue-modal');
-    if (oldModal) oldModal.remove();
+// Crear función para mostrar overlay de pista
+function showClueOverlay(witnessElement, witness) {
+    // Verificar si ya existe un overlay en este elemento
+    const existingOverlay = witnessElement.querySelector('.witness-overlay');
+    if (existingOverlay) {
+        return; // Ya está abierto
+    }
+
+    // Verificar si es la primera pista abierta en este paso
+    const currentStepContainer = witnessElement.closest('.step');
+    const isFirstClueInStep = !currentStepContainer || !currentStepContainer.querySelector('.witness.expanded');
+
     // Crear overlay
     const overlay = document.createElement('div');
-    overlay.id = 'clue-modal';
-    overlay.className = 'clue-modal-overlay';
+    overlay.className = 'witness-overlay';
     overlay.innerHTML = `
-      <div class='clue-modal-card'>
-        <button class='clue-modal-close' aria-label='Cerrar' onclick='document.getElementById("clue-modal").remove()'>×</button>
-        <div class='witness-area'><i class='fas fa-map-marker-alt'></i> ${witness.area}</div>
-        <div class='witness-id'><strong>${witness.name}</strong> <span class='witness-role'>- ${witness.role}</span></div>
-        <div class='testimony'><i class='fas fa-quote-left'></i> ${witness.testimony}</div>
-        <div class='clue-text'>${witness.clue}</div>
-      </div>
+        <button class='witness-overlay-close' aria-label='Cerrar'>×</button>
+        <div class='witness-overlay-content'>
+            <div class='witness-area'><i class='fas fa-map-marker-alt'></i></div>
+            <div class='witness-id'><strong>${witness.name}</strong></div>
+            <div class='witness-role'>${witness.role}</div>
+            <div class='testimony'>${witness.testimony}</div>
+            <div class='clue-text'>${witness.clue}</div>
+        </div>
     `;
-    document.body.appendChild(overlay);
-    setTimeout(() => overlay.classList.add('show'), 10);
+
+    // Obtener elementos para animación
+    const bombilla = witnessElement.querySelector('.witness-bombilla');
+    const witnessArea = witnessElement.querySelector('.witness-area');
+    
+    // Obtener altura inicial del contenedor
+    const initialHeight = witnessElement.offsetHeight;
+    
+    // Scroll suave hacia el elemento antes de expandir (solo si es la primera pista del paso)
+    if (isFirstClueInStep) {
+        witnessElement.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'center' 
+        });
+    }
+    
+    // Esperar un momento para que el scroll se complete antes de expandir (o ejecutar inmediatamente si no hay scroll)
+    setTimeout(() => {
+        // Crear timeline principal para animación secuenciada
+        const tl = gsap.timeline();
+        
+        // Añadir al elemento de la pista
+        witnessElement.appendChild(overlay);
+        
+        // Marcar como expandido
+        witnessElement.classList.add('expanded');
+        
+        // Obtener altura final del contenedor
+        const finalHeight = witnessElement.offsetHeight;
+        
+        // Secuencia de animación optimizada
+        tl.set(witnessElement, { height: initialHeight })
+          .set(overlay, { opacity: 0, y: 20 })
+          
+          // 1. Animar altura del contenedor elegantemente hacia automático
+          .to(witnessElement, {
+              duration: 1.0,
+              height: "auto",
+              ease: "power2.out",
+              onUpdate: isFirstClueInStep ? () => {
+                  witnessElement.scrollIntoView({ 
+                      behavior: 'smooth', 
+                      block: 'start',
+                      inline: 'nearest'
+                  });
+              } : undefined
+          })
+          
+          // 2. Mover bombilla a su posición final suavemente
+          .to(bombilla, {
+              duration: 0.8,
+              x: 0,
+              y: 0,
+              ease: "power2.out"
+          }, 0.2)
+          
+          // 3. Mantener texto área opaco y reposicionarlo
+          .to(witnessArea, {
+              duration: 0.6,
+              opacity: 1,
+              y: 0,
+              ease: "power2.out"
+          }, 0.4)
+          
+          // 4. Mostrar overlay con contenido
+          .to(overlay, {
+              duration: 1.0,
+              opacity: 1,
+              y: 0,
+              ease: "power3.out"
+          }, 0.6)
+          
+          // Scroll final si es necesario
+          .call(() => {
+              if (isFirstClueInStep) {
+                  setTimeout(() => {
+                      witnessElement.scrollIntoView({ 
+                          behavior: 'smooth', 
+                          block: 'start'
+                      });
+                  }, 100);
+              }
+          });
+        
+    }, isFirstClueInStep ? 300 : 50); // Delay de 300ms si hay scroll, 50ms si no
+
+    // Función para cerrar el overlay
+    function closeOverlay() {
+        // Obtener altura actual antes de cerrar
+        const currentHeight = witnessElement.offsetHeight;
+        
+        // Animar el cierre del overlay y la reducción de altura (más lento y suave)
+        const tl = gsap.timeline();
+        
+        tl.to(overlay, {
+            duration: 0.8,
+            opacity: 0,
+            rotateY: 15,
+            ease: "power2.in"
+        })
+        .to(witnessElement, {
+            duration: 1.0,
+            height: initialHeight,
+            ease: "power2.inOut",
+            onComplete: () => {
+                if (overlay.parentNode) {
+                    overlay.parentNode.removeChild(overlay);
+                    // Quitar clase expanded
+                    witnessElement.classList.remove('expanded');
+                    // Volver a altura automática
+                    gsap.set(witnessElement, { height: "auto" });
+                }
+            }
+        }, "-=0.4"); // Solapar las animaciones para mayor fluidez
+    }
+
+    // Event listener para el botón de cerrar
+    const closeBtn = overlay.querySelector('.witness-overlay-close');
+    closeBtn.addEventListener('click', closeOverlay);
+
+    // Prevenir que el clic en el overlay cierre la pista
+    overlay.addEventListener('click', (e) => {
+        e.stopPropagation();
+    });
+
+
 } 

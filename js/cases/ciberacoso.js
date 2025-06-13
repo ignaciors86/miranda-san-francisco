@@ -88,29 +88,57 @@ const ciberacoso = {
                     },
                     {
                         name: "Revisar historial de navegación",
-                        target: true,
-                        description: "Decides revisar el historial de navegación de los ordenadores del aula. Encuentras patrones interesantes de visitas a canales de YouTube y redes sociales...",
+                        target: false,
+                        description: "Decides revisar el historial de navegación, pero no encuentras nada relevante. Los técnicos te miran con decepción y murmuran que necesitas enfocar mejor tu investigación. Un estudiante pasa y comenta: 'Para encontrar al culpable, mejor analiza directamente los mensajes del grupo...'",
                         witnesses: [
                             {
                                 name: "Técnico de Red",
                                 role: "Personal",
                                 area: "Sala de Servidores",
-                                testimony: "Hay un canal de YouTube que está siendo visitado constantemente. Parece que promueve una visión muy particular de la masculinidad...",
-                                clue: "Las visitas repetidas pueden indicar influencia"
+                                testimony: "El historial está limpio, pero eso no significa nada. Los verdaderos culpables son más listos...",
+                                clue: "Esta no es la pista correcta"
                             },
                             {
                                 name: "Profesor de Ética",
                                 role: "Docente",
                                 area: "Aula",
-                                testimony: "He notado que algunos estudiantes están cambiando su comportamiento después de ver ciertos videos. Es preocupante...",
-                                clue: "El contenido puede influir en el comportamiento"
+                                testimony: "Estás perdiendo el tiempo. Deberías centrarte en lo que realmente importa...",
+                                clue: "Enfócate en los mensajes directos"
                             },
                             {
                                 name: "Estudiante de Psicología",
                                 role: "Compañero",
                                 area: "Biblioteca",
-                                testimony: "Los patrones de comportamiento que veo en el grupo coinciden con técnicas de manipulación que he estudiado...",
-                                clue: "La psicología puede revelar patrones de manipulación"
+                                testimony: "Necesitas ir a la fuente del problema. Los patrones están en los mensajes...",
+                                clue: "Los mensajes son la clave"
+                            }
+                        ]
+                    },
+                    {
+                        name: "Buscar en redes sociales",
+                        target: false,
+                        description: "Decides investigar perfiles de redes sociales al azar, pero te pierdes en la inmensidad de contenido. Los estudiantes te miran confundidos y uno comenta: '¿No deberías empezar por revisar los mensajes del grupo donde empezó todo?' Te das cuenta de que necesitas un enfoque más directo.",
+                        witnesses: [
+                            {
+                                name: "Bibliotecario",
+                                role: "Personal",
+                                area: "Biblioteca",
+                                testimony: "Veo que estás perdido en las redes. Para una investigación efectiva, necesitas empezar por los hechos concretos...",
+                                clue: "Las redes son demasiado extensas para empezar"
+                            },
+                            {
+                                name: "Estudiante Observador",
+                                role: "Compañero",
+                                area: "Aula de Informática",
+                                testimony: "Mi consejo: empieza por los mensajes del grupo. Ahí está la evidencia real...",
+                                clue: "Los mensajes del grupo son el punto de partida"
+                            },
+                            {
+                                name: "Consejero Estudiantil",
+                                role: "Personal",
+                                area: "Despacho",
+                                testimony: "Para resolver un caso de ciberacoso, debes ir directamente a donde ocurrió: el grupo de mensajes...",
+                                clue: "La investigación debe ser específica y directa"
                             }
                         ]
                     },
@@ -120,7 +148,7 @@ const ciberacoso = {
                         description: "Decides no involucrarte en el asunto. Los estudiantes te miran con desaprobación. Uno se acerca y te susurra: '¿Sabes? Hay un influencer que empezó así, ignorando el daño que causaba... y ahora nadie confía en él. Está solo, sin amigos, sin seguidores reales...'",
                         witnesses: [
                             {
-                                name: "Estudiante",
+                                name: "Estudiante Afectado",
                                 role: "Compañero",
                                 area: "Pasillo",
                                 testimony: "Ignorar el ciberacoso es como ser cómplice. ¿Sabes? He visto a ese influencer que siempre anda grabando, parece que le encanta crear drama sin importar a quién afecte...",
@@ -178,57 +206,57 @@ const ciberacoso = {
                     },
                     {
                         name: "Analizar contenido viral",
-                        target: true,
-                        description: "Decides revisar los videos que se están compartiendo. Encuentras patrones interesantes en la edición y el mensaje...",
+                        target: false,
+                        description: "Te enfocas en analizar videos virales en general, pero te pierdes en contenido irrelevante. Los técnicos te sugieren que te centres en datos más concretos. Un compañero comenta: 'Para encontrar al culpable, deberías revisar los logs de red, ahí están las huellas digitales reales...'",
                         witnesses: [
                             {
                                 name: "Editor de Video",
                                 role: "Profesional",
                                 area: "Sala de Medios",
-                                testimony: "Estos videos usan técnicas de edición muy específicas. Alguien con experiencia en producción...",
-                                clue: "El estilo de edición puede ser una firma"
+                                testimony: "Estás analizando demasiado contenido general. Necesitas ser más específico en tu búsqueda...",
+                                clue: "Enfócate en datos más específicos"
                             },
                             {
                                 name: "Psicólogo Digital",
                                 role: "Consultor",
                                 area: "Biblioteca",
-                                testimony: "El contenido está diseñado para crear adicción y polarización. Es una técnica conocida...",
-                                clue: "La manipulación psicológica deja huellas"
+                                testimony: "El análisis de contenido es útil, pero primero necesitas identificar la fuente. Los logs te darán esa información...",
+                                clue: "Los logs son la base de la investigación"
                             },
                             {
                                 name: "Experto en Redes Sociales",
                                 role: "Asesor",
                                 area: "Aula de Informática",
-                                testimony: "Los hashtags y la estrategia de viralización son muy profesionales. Alguien que sabe cómo funciona el algoritmo...",
-                                clue: "La estrategia de viralización es una pista"
+                                testimony: "Sin datos técnicos sólidos, tu análisis será superficial. Empieza por los registros de red...",
+                                clue: "Los datos técnicos son fundamentales"
                             }
                         ]
                     },
                     {
                         name: "Investigar comentarios",
-                        target: true,
-                        description: "Te centras en los comentarios de los videos. Encuentras patrones interesantes en las respuestas...",
+                        target: false,
+                        description: "Te sumerges en los comentarios de redes sociales, pero hay demasiados y no encuentras un patrón claro. Los analistas te advierten que sin datos técnicos base, esto es como buscar una aguja en un pajar. 'Deberías empezar por los logs de red', te sugiere un técnico, 'ahí están las pistas reales.'",
                         witnesses: [
                             {
                                 name: "Moderador de Redes",
                                 role: "Profesional",
                                 area: "Sala de Medios",
-                                testimony: "Los comentarios están siendo manipulados. Alguien está controlando la narrativa...",
-                                clue: "La moderación de comentarios puede ser una pista"
+                                testimony: "Los comentarios pueden ser engañosos. Necesitas datos más sólidos para empezar tu investigación...",
+                                clue: "Los comentarios son secundarios a los datos técnicos"
                             },
                             {
                                 name: "Analista de Sentimientos",
                                 role: "Consultor",
                                 area: "Biblioteca",
-                                testimony: "El tono de los comentarios ha cambiado drásticamente. Alguien está influyendo en la comunidad...",
-                                clue: "Los cambios en el tono pueden revelar manipulación"
+                                testimony: "Sin conocer la fuente original, analizar comentarios es inútil. Primero identifica quién está subiendo el contenido...",
+                                clue: "Identifica la fuente antes que los efectos"
                             },
                             {
                                 name: "Experto en Comunicación",
                                 role: "Asesor",
                                 area: "Aula de Informática",
-                                testimony: "Las respuestas están siendo guiadas hacia una dirección específica. Es una técnica de control...",
-                                clue: "La dirección de las conversaciones puede ser una pista"
+                                testimony: "Estás empezando por el final. Los logs de red te dirán quién está detrás de todo esto...",
+                                clue: "Empieza por la investigación técnica"
                             }
                         ]
                     }
@@ -268,57 +296,57 @@ const ciberacoso = {
                     },
                     {
                         name: "Confrontar al influencer",
-                        target: true,
-                        description: "Decides enfrentarte directamente al influencer. Encuentras a alguien que parece estar grabando constantemente...",
+                        target: false,
+                        description: "Decides enfrentarte directamente sin preparación. La confrontación se vuelve caótica y el influencer logra manipular la situación a su favor, creando más drama. Los estudiantes murmuran que necesitabas un plan más estructurado. 'Deberías haber organizado una asamblea con todas las pruebas', comenta un profesor.",
                         witnesses: [
                             {
                                 name: "Estudiante Afectado",
                                 role: "Víctima",
                                 area: "Pasillo",
-                                testimony: "Me ha estado grabando sin mi consentimiento. Sus videos me han hecho daño...",
-                                clue: "Las víctimas pueden proporcionar pruebas directas"
+                                testimony: "La confrontación directa solo empeoró las cosas. Ahora tengo más miedo...",
+                                clue: "Las confrontaciones improvisadas pueden backfire"
                             },
                             {
                                 name: "Testigo",
                                 role: "Compañero",
                                 area: "Patio",
-                                testimony: "He visto cómo manipula las situaciones para crear drama. Es muy hábil...",
-                                clue: "Los testigos pueden confirmar patrones"
+                                testimony: "Sin un plan estructurado, él te manipuló. Una asamblea habría sido mejor...",
+                                clue: "La planificación es clave para el éxito"
                             },
                             {
                                 name: "Ex Colaborador",
                                 role: "Antiguo Asistente",
                                 area: "Biblioteca",
-                                testimony: "Trabajé con él antes. Sé cómo manipula el contenido para crear controversia...",
-                                clue: "Los colaboradores pueden tener información valiosa"
+                                testimony: "Conozco sus tácticas. Necesitabas apoyo institucional para enfrentarlo correctamente...",
+                                clue: "El apoyo institucional es necesario"
                             }
                         ]
                     },
                     {
                         name: "Documentar pruebas",
-                        target: true,
-                        description: "Decides recopilar todas las pruebas antes de actuar. Encuentras patrones claros de manipulación...",
+                        target: false,
+                        description: "Te obsesionas con documentar cada detalle pero no tomas acción. Mientras recopilas pruebas infinitamente, la situación empeora y más estudiantes resultan afectados. Los profesores te advierten que las víctimas necesitan acción inmediata. 'Las pruebas sirven de poco si no las presentas públicamente en una asamblea', te dice la directora.",
                         witnesses: [
                             {
                                 name: "Experto en Derecho Digital",
                                 role: "Asesor",
                                 area: "Biblioteca",
-                                testimony: "Hay suficientes pruebas para demostrar la manipulación. El patrón es claro...",
-                                clue: "La evidencia digital es crucial"
+                                testimony: "Documentar es importante, pero la inacción permite que continúe el daño. Necesitas presentar las pruebas ya...",
+                                clue: "La acción es tan importante como la evidencia"
                             },
                             {
                                 name: "Analista de Redes",
                                 role: "Profesional",
                                 area: "Sala de Servidores",
-                                testimony: "Los patrones de comportamiento en línea son consistentes. Alguien está coordinando esto...",
-                                clue: "Los patrones de comportamiento son reveladores"
+                                testimony: "Tienes suficientes pruebas desde hace tiempo. El análisis paralelo no ayuda a las víctimas...",
+                                clue: "No caigas en parálisis por análisis"
                             },
                             {
                                 name: "Experto en Ética Digital",
                                 role: "Consultor",
                                 area: "Aula de Informática",
-                                testimony: "La manipulación de menores es un delito grave. Tenemos que actuar...",
-                                clue: "Las implicaciones éticas son importantes"
+                                testimony: "La ética no solo es sobre tener razón, sino sobre actuar cuando se necesita. Organiza la asamblea ya...",
+                                clue: "La acción ética requiere valor para actuar"
                             }
                         ]
                     }

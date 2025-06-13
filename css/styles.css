@@ -3,7 +3,7 @@
     --clan-dark: #2C4B6B;      /* Azul oscuro más claro */
     --clan-light: #4A7AB8;     /* Azul medio más claro */
     --clan-lighter: #6B9ED9;   /* Azul claro */
-    --clan-accent: #FF4D00;    /* Naranja Clan */
+    --clan-accent: #ff4d007a;    /* Naranja Clan */
     --carmen: #8B0000;         /* Burdeos Carmen */
     --carmen-light: #A52A2A;   /* Burdeos claro */
     --text-light: #FFFFFF;     /* Texto blanco */
@@ -723,6 +723,7 @@ p {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 1rem;
 }
 
 .location-option {
@@ -1131,37 +1132,22 @@ p {
     box-shadow: 0 4px 12px rgba(0, 184, 148, 0.3);
 }
 
-.clue-button {
-    width: 4.5rem;
-    height: 4.5rem;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--dossier-color), var(--dossier-accent));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 1.2rem auto 0 auto;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
-    border: none;
-    cursor: pointer;
-    transition: transform 0.15s;
-    animation: cluePulse 1.2s infinite alternate;
-}
-.clue-button:hover {
-    transform: scale(1.08);
-    filter: brightness(1.1);
-}
 @keyframes cluePulse {
-    0% { box-shadow: 0 0 0 0 var(--dossier-accent, #00B894, 0.18); }
-    100% { box-shadow: 0 0 0 12px rgba(0,184,148,0); }
+    0% { box-shadow: 0 0 0 0 rgba(255,214,0,0.4); }
+    100% { box-shadow: 0 0 0 12px rgba(255,214,0,0); }
 }
-.clue-button.opened {
-    animation: none !important;
-    box-shadow: none !important;
-}
-.clue-button img {
-    width: 40px;
-    height: 40px;
-    display: block;
+
+@keyframes witnessBackgroundPulse {
+    0% { 
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(255, 214, 0, 0.6);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    100% { 
+        background: rgba(255, 214, 0, 0.12);
+        border-color: rgba(255, 214, 0, 0.9);
+        box-shadow: 0 4px 16px rgba(255,214,0,0.15);
+    }
 }
 
 .clue-content {
@@ -1387,31 +1373,104 @@ p {
     margin-top: 1.5rem;
     background: rgba(0, 0, 0, 0.15);
     border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 1rem;
 }
 
 .witnesses {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 2.2rem 1.5rem;
-    justify-content: space-evenly;
+    gap: 15px;
     width: 100%;
-    border-radius: 2rem;
 }
 
 .witness {
     flex: 1;
-    background: rgba(255, 255, 255, 0.05);
-    padding: 1.5rem;
-    
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.08);
+    border: 2px solid rgba(255, 214, 0, 0.6);
+    border-radius: 16px;
+    padding: 24px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    position: relative;
+    animation: witnessBackgroundPulse 2s infinite alternate;
+    min-height: 120px;
 }
 
 .witness:hover {
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 214, 0, 0.15);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 16px rgba(255,214,0,0.10);
+    border-color: rgba(255, 214, 0, 0.8);
+}
+
+.witness-bombilla {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 12px;
+    background: radial-gradient(circle at 60% 40%, #FFD600 60%, #FFA000 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(255, 214, 0, 0.3);
+    animation: cluePulse 1.2s infinite alternate;
+}
+
+.witness.opened {
+    animation: none;
+    background: var(--clan-lighter);
+    color: var(--clan-dark);
+    opacity: 0.6;
+}
+
+.witness.expanded {
+    animation: none;
+    cursor: default;
+    justify-content: flex-start;
+}
+
+.witness.opened .witness-area {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.witness.opened .witness-area i {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.witness-bombilla.opened {
+    animation: none;
+    opacity: 0.4;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.witness-bombilla img {
+    width: 32px;
+    height: 32px;
+    filter: brightness(0) invert(0);
+}
+
+.witness-area {
+    font-family: var(--title-font);
+    font-weight: 600;
+    color: #FFD600;
+    font-size: 1.1em;
+    text-align: center;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    letter-spacing: 0.01em;
+}
+
+.witness-area i {
+    font-size: 1.1rem;
+    color: #FFD600;
 }
 
 .witness-id {
@@ -1794,8 +1853,8 @@ input:checked + .slider:before {
 
 body.no-hints .location-option.correct,
 body.no-hints .location-option.incorrect {
-    background: var(--surface) !important;
-    border-color: var(--surface) !important;
+    background: var(--clan-accent) !important;
+    border-color: var(--clan-accent) !important;
     color: var(--text) !important;
     transition: background 0.4s, border-color 0.4s, color 0.4s;
 }
@@ -1868,7 +1927,28 @@ body.no-hints .location-option.incorrect {
   }
   .witness {
     min-width: 0;
-    padding: 1rem;
+    padding: 16px 8px;
+    min-height: 120px;
+  }
+
+  .witnesses {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .witness-bombilla {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 8px;
+  }
+
+  .witness-bombilla img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .witness-area {
+    font-size: 0.95em;
   }
 }
 
@@ -2905,5 +2985,134 @@ a:hover {
         padding: 0.8rem 1.8rem;
         font-size: 1rem;
         margin: 0 1rem 1.5rem;
+    }
+}
+
+.witness-overlay {
+    position: relative;
+    background: linear-gradient(135deg, 
+        rgba(44, 75, 107, 0.95), 
+        rgba(74, 122, 184, 0.85));
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin-top: 15px;
+    opacity: 0;
+    transform: rotateY(-15deg);
+    backdrop-filter: blur(10px);
+    border: 2px solid var(--dossier-accent);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    min-height: 200px;
+}
+
+.witness-overlay.show {
+    opacity: 1;
+    transform: rotateY(0deg);
+}
+
+.witness-overlay-content {
+    text-align: center;
+    color: white;
+    width: 100%;
+}
+
+.witness-overlay .witness-id {
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.witness-overlay .witness-role {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.witness-overlay .witness-area {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+}
+
+.witness-overlay .witness-area i {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.witness-overlay .testimony {
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.95);
+    margin: 1rem 0;
+    font-size: 1.05rem;
+    line-height: 1.4;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.witness-overlay .clue-text {
+    background: linear-gradient(135deg, 
+        rgba(0, 184, 148, 0.3), 
+        rgba(255, 255, 255, 0.1));
+    border-radius: 12px;
+    padding: 1rem;
+    color: #ffffff;
+    font-size: 1.05rem;
+    font-style: italic;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--dossier-accent);
+}
+
+.witness-overlay-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--error);
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: white;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.witness-overlay-close:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+@media (max-width: 600px) {
+    .witness-overlay {
+        padding: 15px;
+    }
+    
+    .witness-overlay .witness-id {
+        font-size: 1.1rem;
+    }
+    
+    .witness-overlay .testimony {
+        font-size: 1rem;
+    }
+    
+    .witness-overlay .clue-text {
+        font-size: 1rem;
+        padding: 0.8rem;
     }
 }
