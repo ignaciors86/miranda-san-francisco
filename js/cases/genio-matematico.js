@@ -31,416 +31,288 @@ const genioMatematico = {
             description: "La familia Alcántara se reúne preocupada: han desaparecido los libros de matemáticas y la hucha de Carlos. Antonio sospecha que alguien quiere confundir a los vecinos con números y promesas falsas. ¿Te atreves a investigar desde el corazón del barrio?",
             witnesses: [
                 {
-                    name: "Antonio Alcántara",
+                    name: "Antonio",
                     role: "Padre de familia",
-                    area: "Despacho",
-                    testimony: "Esta mañana, al revisar mis cuentas, noté que faltaban los papeles más importantes. Sin ellos, no puedo demostrar que Don Pablo está engañando a los vecinos.",
-                    clue: "Encontré una hoja con sumas mal hechas y una dirección de la imprenta local."
+                    area: "Salón",
+                    testimony: "Alguien está engañando a los vecinos con promesas de dinero fácil. Necesitamos entender cómo funcionan realmente los números.",
+                    clue: "Vi a un hombre con una carpeta llena de gráficos y números. Decía que podía multiplicar el dinero."
                 },
                 {
-                    name: "Mercedes Alcántara",
+                    name: "Mercedes",
                     role: "Madre de familia",
                     area: "Cocina",
-                    testimony: "Antonio está muy preocupado. Anoche escuché ruidos en el patio y vi una sombra con un maletín. Seguro que tiene que ver con los papeles desaparecidos.",
-                    clue: "Vi una carta con acertijos matemáticos y el sello de la imprenta."
+                    testimony: "Los vecinos están recibiendo cartas con ofertas extrañas. Algo no cuadra en los números.",
+                    clue: "Las cartas prometen ganancias imposibles. Los números no tienen sentido."
                 },
                 {
-                    name: "Carlos Alcántara",
-                    role: "Hijo",
-                    area: "Entrada",
-                    testimony: "Hoy, al ir al colegio, vi que la hucha estaba vacía y la puerta del despacho abierta. Papá nunca la deja así.",
-                    clue: "En el felpudo encontré un trozo de papel con números y un logotipo de la imprenta."
+                    name: "Carlos",
+                    role: "Estudiante",
+                    area: "Habitación",
+                    testimony: "Mi hucha ha desaparecido. Alguien dijo que podía hacer crecer mis ahorros.",
+                    clue: "Un hombre con calculadora me mostró números que no entendí."
                 }
             ]
         },
         travels: [
-            // Paso 1
             {
                 locations: [
                     {
-                        name: "Imprenta Universal",
+                        name: "Analizo los números de una inversión",
                         target: true,
-                        city: "San Genaro",
-                        country: "España",
-                        year: "1974",
-                        description: "La imprenta del barrio está llena de panfletos con acertijos y anuncios de inversiones. Hoy hay una demostración de impresión para los niños del colegio.",
+                        description: "Don Pablo ha dejado pistas sobre cómo analizar una inversión. ¿Qué deberías hacer?",
                         witnesses: [
                             {
-                                name: "Desi",
-                                role: "Vecino y amigo de Antonio",
-                                area: "Mostrador",
-                                testimony: "Vi a un hombre trajeado discutiendo con el dueño. Revisaban papeles llenos de números y gráficos. Hablaban de inversiones y de cómo ganar dinero fácil.",
-                                clue: "Uno de los papeles tenía un acertijo matemático y la dirección de un banco en Madrid."
+                                name: "Don Ramón",
+                                role: "Banquero",
+                                area: "Sucursal bancaria",
+                                testimony: "Siempre verifica los números. Las ganancias prometidas deben ser realistas.",
+                                clue: "Los intereses altos suelen indicar mayor riesgo."
                             },
                             {
-                                name: "Mercedes Alcántara",
-                                role: "Esposa de Antonio",
+                                name: "Doña Carmen",
+                                role: "Contadora",
                                 area: "Oficina",
-                                testimony: "Antonio está convencido de que los papeles de la imprenta son la clave. Ayer vi a un hombre con traje caro merodeando por el portal.",
-                                clue: "Encontré una factura con sumas incorrectas y un sello sospechoso."
+                                testimony: "Lee la letra pequeña. Los costes ocultos pueden cambiar todo.",
+                                clue: "Las comisiones y gastos reducen las ganancias reales."
                             },
                             {
-                                name: "Tinín",
-                                role: "Tabernero",
-                                area: "Entrada",
-                                testimony: "Un señor con traje viene mucho últimamente. Siempre trae papeles con números y habla de inversiones milagrosas.",
-                                clue: "Vi un recibo de banco con operaciones que no cuadran."
+                                name: "Don José",
+                                role: "Inversor",
+                                area: "Sala de reuniones",
+                                testimony: "Compara con otras opciones. No te dejes llevar por promesas.",
+                                clue: "Si suena demasiado bueno para ser verdad, probablemente lo sea."
                             }
                         ]
                     },
                     {
-                        name: "Bar San Genaro",
+                        name: "Confío en las promesas de ganancias",
                         target: false,
-                        city: "San Genaro",
-                        country: "España",
-                        year: "1974",
-                        description: "El bar más popular del barrio. Hoy hay partido de fútbol y charla sobre la quiniela.",
+                        description: "Don Pablo ha dejado pistas sobre los peligros de confiar en promesas. ¿Qué deberías hacer?",
                         witnesses: [
                             {
-                                name: "Tinín",
-                                role: "Tabernero",
-                                area: "Barra",
-                                testimony: "Aquí solo se habla de fútbol y tapas. Si buscas a alguien misterioso, tendrás que probar en otro sitio.",
-                                clue: "No he visto a nadie con papeles raros por aquí."
+                                name: "Doña María",
+                                role: "Experta en finanzas",
+                                area: "Consultoría",
+                                testimony: "Las promesas de ganancias seguras suelen ser engañosas.",
+                                clue: "No hay inversiones sin riesgo."
                             },
                             {
-                                name: "Mariano",
-                                role: "Cliente habitual",
-                                area: "Mesa del fondo",
-                                testimony: "Hoy solo hemos tenido parroquianos de siempre. Nadie con maletín ni prisas.",
-                                clue: "Quizá tu sospechoso prefiera otro ambiente."
+                                name: "Don Manuel",
+                                role: "Asesor financiero",
+                                area: "Oficina",
+                                testimony: "Investiga antes de invertir. No te dejes llevar por la emoción.",
+                                clue: "Las decisiones emocionales suelen ser malas decisiones."
                             },
                             {
-                                name: "Josete",
-                                role: "Amigo de Carlos",
-                                area: "Máquina de tabaco",
-                                testimony: "Si buscas aventuras, este no es el lugar. Todo tranquilo.",
-                                clue: "Aquí solo se habla de fútbol y tapas."
+                                name: "Doña Ana",
+                                role: "Economista",
+                                area: "Despacho",
+                                testimony: "Pide explicaciones claras. Si no las entiendes, no inviertas.",
+                                clue: "La confusión suele ser una señal de alerta."
                             }
                         ]
                     },
                     {
-                        name: "Parroquia de San Genaro",
+                        name: "Ignoro los costes ocultos",
                         target: false,
-                        city: "San Genaro",
-                        country: "España",
-                        year: "1974",
-                        description: "La iglesia del barrio. Hoy hay misa y reunión de vecinos.",
+                        description: "Don Pablo ha dejado pistas sobre la importancia de los costes. ¿Qué deberías hacer?",
                         witnesses: [
                             {
-                                name: "Herminia",
-                                role: "Abuela",
-                                area: "Banco central",
-                                testimony: "Solo he visto a los vecinos rezando. Nadie extraño se ha acercado hoy.",
-                                clue: "Quizá deberías buscar en un sitio más bullicioso."
+                                name: "Don Luis",
+                                role: "Experto en finanzas",
+                                area: "Consultoría",
+                                testimony: "Los costes ocultos pueden arruinar una inversión.",
+                                clue: "Lee todos los documentos antes de firmar."
                             },
                             {
-                                name: "Don Anselmo",
-                                role: "Sacerdote",
-                                area: "Sacristía",
-                                testimony: "No ha venido nadie nuevo a confesarse ni a pedir ayuda.",
-                                clue: "Todo está en calma en la iglesia."
+                                name: "Doña Isabel",
+                                role: "Asesora financiera",
+                                area: "Oficina",
+                                testimony: "Pregunta por todos los gastos. No te quedes con dudas.",
+                                clue: "Las comisiones reducen las ganancias reales."
                             },
                             {
-                                name: "Pili",
-                                role: "Monaguilla",
-                                area: "Altar",
-                                testimony: "Hoy solo hemos preparado misas y flores. Ningún forastero.",
-                                clue: "Aquí no hay misterios, solo rezos."
+                                name: "Don Pedro",
+                                role: "Analista financiero",
+                                area: "Despacho",
+                                testimony: "Calcula el rendimiento neto. Incluye todos los costes.",
+                                clue: "Las ganancias prometidas suelen ser brutas, no netas."
                             }
                         ]
                     }
                 ]
             },
-            // Paso 2
             {
                 locations: [
                     {
-                        name: "Banco Hispano Americano",
+                        name: "Comparo diferentes opciones de inversión",
                         target: true,
-                        city: "Madrid",
-                        country: "España",
-                        year: "1974",
-                        description: "Sucursal bancaria en el centro de Madrid. Hoy hay una charla sobre ahorro y cuentas para jóvenes.",
+                        description: "Don Pablo ha dejado pistas sobre cómo comparar inversiones. ¿Qué deberías hacer?",
                         witnesses: [
                             {
-                                name: "Toni Alcántara",
-                                role: "Hijo mayor, periodista",
-                                area: "Vestíbulo",
-                                testimony: "He conseguido ver los movimientos de una cuenta sospechosa. Hay transferencias a nombre de un pueblo de La Mancha.",
-                                clue: "Un recibo bancario tiene sumas que no cuadran y el nombre de Sagrillas."
+                                name: "Doña Rosa",
+                                role: "Experta en inversiones",
+                                area: "Consultoría",
+                                testimony: "Compara el riesgo y la rentabilidad. No todo es ganancia.",
+                                clue: "Mayor rentabilidad suele significar mayor riesgo."
                             },
                             {
-                                name: "Paquita",
-                                role: "Cuñada de Antonio",
-                                area: "Cajero",
-                                testimony: "Vi a un hombre con traje oscuro hablando con el director del banco. Parecían muy serios.",
-                                clue: "Escuché que mencionaban inversiones y terrenos en Sagrillas."
+                                name: "Don Francisco",
+                                role: "Asesor financiero",
+                                area: "Oficina",
+                                testimony: "Diversifica tus inversiones. No pongas todos los huevos en una cesta.",
+                                clue: "La diversificación reduce el riesgo."
                             },
                             {
-                                name: "Herminia",
-                                role: "Abuela",
-                                area: "Sala de espera",
-                                testimony: "No me gusta nada ese banco, siempre pasan cosas raras. Un señor salió de allí con una sonrisa sospechosa.",
-                                clue: "Llevaba un sobre con números y gráficos extraños."
+                                name: "Doña Pilar",
+                                role: "Analista financiera",
+                                area: "Despacho",
+                                testimony: "Considera el plazo de la inversión. No todo es a corto plazo.",
+                                clue: "Las inversiones a largo plazo suelen ser más estables."
                             }
                         ]
                     },
                     {
-                        name: "Mercado de San Genaro",
+                        name: "Invierto todo en una sola opción",
                         target: false,
-                        city: "San Genaro",
-                        country: "España",
-                        year: "1974",
-                        description: "El mercado donde Mercedes hace la compra. Ambiente bullicioso, pero nada fuera de lo común últimamente.",
+                        description: "Don Pablo ha dejado pistas sobre los peligros de concentrar inversiones. ¿Qué deberías hacer?",
                         witnesses: [
                             {
-                                name: "Mercedes Alcántara",
-                                role: "Vendedora de verduras",
-                                area: "Puesto 7",
-                                testimony: "Hoy solo he vendido patatas y tomates. Nadie ha preguntado por inversiones ni ha traído papeles raros.",
-                                clue: "Aquí no hay pistas, solo verduras frescas."
+                                name: "Don Juan",
+                                role: "Experto en finanzas",
+                                area: "Consultoría",
+                                testimony: "No concentres todo tu dinero. Es muy arriesgado.",
+                                clue: "La diversificación protege tu inversión."
                             },
                             {
-                                name: "Desi",
-                                role: "Vecino",
-                                area: "Puesto de embutidos",
-                                testimony: "He visto a Don Pablo pasar por aquí, pero no se ha parado a hablar con nadie.",
-                                clue: "Quizá deberías buscar en el banco."
+                                name: "Doña Luisa",
+                                role: "Asesora financiera",
+                                area: "Oficina",
+                                testimony: "Considera diferentes opciones. No te limites a una.",
+                                clue: "Cada tipo de inversión tiene sus ventajas y desventajas."
                             },
                             {
-                                name: "Josete",
-                                role: "Ayudante",
-                                area: "Carrito de la compra",
-                                testimony: "He ayudado a Mercedes a llevar la compra, pero no he visto nada raro.",
-                                clue: "Todo tranquilo en el mercado."
+                                name: "Don Miguel",
+                                role: "Analista financiero",
+                                area: "Despacho",
+                                testimony: "Evalúa el riesgo total. No te dejes llevar por una sola opción.",
+                                clue: "La concentración aumenta el riesgo de pérdida."
                             }
                         ]
                     },
                     {
-                        name: "Colegio San Genaro",
+                        name: "Ignoro el plazo de la inversión",
                         target: false,
-                        city: "San Genaro",
-                        country: "España",
-                        year: "1974",
-                        description: "El colegio del barrio. Hoy hay clase de matemáticas y juegos en el patio.",
+                        description: "Don Pablo ha dejado pistas sobre la importancia del plazo. ¿Qué deberías hacer?",
                         witnesses: [
                             {
-                                name: "Carlos Alcántara",
-                                role: "Alumno",
-                                area: "Aula de matemáticas",
-                                testimony: "Hoy la profe ha dicho que faltan los libros de matemáticas. Sin ellos, no podemos hacer los ejercicios.",
-                                clue: "Quizá los libros estén en otro sitio."
+                                name: "Doña Carmen",
+                                role: "Experta en finanzas",
+                                area: "Consultoría",
+                                testimony: "Considera cuándo necesitarás el dinero. No lo bloquees sin plan.",
+                                clue: "El plazo afecta a la liquidez de tu inversión."
                             },
                             {
-                                name: "Pili",
-                                role: "Compañera de clase",
-                                area: "Patio",
-                                testimony: "Hoy hemos jugado a las canicas, pero nadie ha hablado de inversiones ni de bancos.",
-                                clue: "Aquí solo hay juegos y risas."
+                                name: "Don Antonio",
+                                role: "Asesor financiero",
+                                area: "Oficina",
+                                testimony: "Piensa a largo plazo. No todo es ganancia inmediata.",
+                                clue: "Las inversiones a largo plazo suelen ser más rentables."
                             },
                             {
-                                name: "Herminia",
-                                role: "Abuela",
-                                area: "Puerta del colegio",
-                                testimony: "He venido a recoger a Carlos, pero no he visto nada raro.",
-                                clue: "Todo normal en el colegio."
+                                name: "Doña María",
+                                role: "Analista financiera",
+                                area: "Despacho",
+                                testimony: "Evalúa tu horizonte temporal. No inviertas sin plan.",
+                                clue: "El plazo determina el tipo de inversión adecuada."
                             }
                         ]
                     }
                 ]
             },
-            // Paso 3
             {
                 locations: [
                     {
-                        name: "Sagrillas - Plaza Mayor",
+                        name: "Verifico la información financiera",
                         target: true,
-                        city: "Sagrillas",
-                        country: "España",
-                        year: "1974",
-                        description: "La plaza del pueblo de los Alcántara. Hoy hay mercado y reunión de agricultores.",
+                        description: "Don Pablo ha dejado pistas sobre cómo verificar información financiera. ¿Qué deberías hacer?",
                         witnesses: [
                             {
-                                name: "Antonio Alcántara",
-                                role: "Padre de familia",
-                                area: "Ayuntamiento",
-                                testimony: "Don Pablo está intentando convencer a los agricultores con gráficos y tablas. Pero los números no cuadran.",
-                                clue: "Encontré una tabla con errores y sumas imposibles."
+                                name: "Don José",
+                                role: "Experto en finanzas",
+                                area: "Consultoría",
+                                testimony: "Verifica las fuentes. No confíes en información no contrastada.",
+                                clue: "La información verificada es más confiable."
                             },
                             {
-                                name: "Mercedes Alcántara",
-                                role: "Madre de familia",
-                                area: "Puesto de flores",
-                                testimony: "Los vecinos están confundidos con tantos papeles. Nadie entiende nada.",
-                                clue: "Vi un gráfico con datos inventados."
+                                name: "Doña Ana",
+                                role: "Asesora financiera",
+                                area: "Oficina",
+                                testimony: "Consulta con expertos. No tomes decisiones solo.",
+                                clue: "Los expertos pueden identificar riesgos ocultos."
                             },
                             {
-                                name: "Desi",
-                                role: "Vecino",
-                                area: "Fuente",
-                                testimony: "Don Pablo habla muy bien, pero sus cuentas no convencen a nadie.",
-                                clue: "Un agricultor encontró un error en los cálculos de Don Pablo."
+                                name: "Don Manuel",
+                                role: "Analista financiero",
+                                area: "Despacho",
+                                testimony: "Investiga a fondo. No te dejes llevar por la primera impresión.",
+                                clue: "La investigación detallada evita sorpresas."
                             }
                         ]
                     },
                     {
-                        name: "Casa de Herminia",
+                        name: "Confío en la primera oferta",
                         target: false,
-                        city: "Sagrillas",
-                        country: "España",
-                        year: "1974",
-                        description: "La casa de la abuela Herminia. Hoy hay merienda y charla familiar.",
+                        description: "Don Pablo ha dejado pistas sobre los peligros de confiar en la primera oferta. ¿Qué deberías hacer?",
                         witnesses: [
                             {
-                                name: "Herminia",
-                                role: "Abuela",
-                                area: "Cocina",
-                                testimony: "Aquí solo se habla de recetas y recuerdos. Nada de bancos ni de inversiones.",
-                                clue: "Aquí no hay pistas, solo bizcocho."
+                                name: "Doña Isabel",
+                                role: "Experta en finanzas",
+                                area: "Consultoría",
+                                testimony: "Compara varias ofertas. No te conformes con la primera.",
+                                clue: "La comparación ayuda a encontrar mejores opciones."
                             },
                             {
-                                name: "Carlos Alcántara",
-                                role: "Nieto",
-                                area: "Salón",
-                                testimony: "He jugado con mis primos toda la tarde. Nadie ha hablado de Don Pablo.",
-                                clue: "Todo tranquilo en casa de la abuela."
+                                name: "Don Luis",
+                                role: "Asesor financiero",
+                                area: "Oficina",
+                                testimony: "Tómate tu tiempo. No te presiones a decidir rápido.",
+                                clue: "Las decisiones apresuradas suelen ser malas."
                             },
                             {
-                                name: "Pili",
-                                role: "Nieta",
-                                area: "Patio",
-                                testimony: "Hoy hemos jugado al escondite. Nadie ha traído papeles raros.",
-                                clue: "Aquí solo hay juegos y risas."
+                                name: "Doña Rosa",
+                                role: "Analista financiera",
+                                area: "Despacho",
+                                testimony: "Investiga otras opciones. No te limites a una oferta.",
+                                clue: "Siempre hay alternativas mejores."
                             }
                         ]
                     },
                     {
-                        name: "Estación de tren",
+                        name: "Ignoro los riesgos de la inversión",
                         target: false,
-                        city: "Sagrillas",
-                        country: "España",
-                        year: "1974",
-                        description: "La estación de tren del pueblo. Hoy llegan visitantes para la feria.",
+                        description: "Don Pablo ha dejado pistas sobre la importancia de evaluar riesgos. ¿Qué deberías hacer?",
                         witnesses: [
                             {
-                                name: "Don Anselmo",
-                                role: "Sacerdote",
-                                area: "Andén",
-                                testimony: "He visto llegar a mucha gente, pero nadie con maletines ni papeles sospechosos.",
-                                clue: "Todo normal en la estación."
+                                name: "Don Pedro",
+                                role: "Experto en finanzas",
+                                area: "Consultoría",
+                                testimony: "Evalúa los riesgos. No ignores las advertencias.",
+                                clue: "Cada inversión tiene sus riesgos."
                             },
                             {
-                                name: "Desi",
-                                role: "Vecino",
-                                area: "Taquilla",
-                                testimony: "He comprado un billete para Madrid, pero no he visto nada raro.",
-                                clue: "Nadie sospechoso en la taquilla."
+                                name: "Doña Carmen",
+                                role: "Asesora financiera",
+                                area: "Oficina",
+                                testimony: "Considera el peor escenario. No solo pienses en ganancias.",
+                                clue: "La preparación para lo peor es importante."
                             },
                             {
-                                name: "Paquita",
-                                role: "Vecina",
-                                area: "Sala de espera",
-                                testimony: "Solo he visto a familias y viajeros. Nadie con gráficos ni papeles.",
-                                clue: "Todo tranquilo en la estación."
-                            }
-                        ]
-                    }
-                ]
-            },
-            // Paso 4
-            {
-                locations: [
-                    {
-                        name: "Feria del Campo - Madrid",
-                        target: true,
-                        city: "Madrid",
-                        country: "España",
-                        year: "1974",
-                        description: "La gran feria agrícola y ganadera. Hoy hay una charla sobre inversiones y tecnología.",
-                        witnesses: [
-                            {
-                                name: "Don Pablo",
-                                role: "Sospechoso principal",
-                                area: "Escenario principal",
-                                testimony: "Presenta gráficos y fórmulas para impresionar a los asistentes. Habla de inversiones milagrosas y ganancias rápidas.",
-                                clue: "Sus fórmulas tienen errores y los datos no coinciden con la realidad."
-                            },
-                            {
-                                name: "Antonio Alcántara",
-                                role: "Padre de familia",
-                                area: "Zona de expositores",
-                                testimony: "He revisado los papeles de Don Pablo y he encontrado muchas inconsistencias.",
-                                clue: "Las sumas y los porcentajes no cuadran."
-                            },
-                            {
-                                name: "Mercedes Alcántara",
-                                role: "Madre de familia",
-                                area: "Pabellón de alimentos",
-                                testimony: "Los vecinos están confundidos con tantos números. Hay que explicarles la verdad.",
-                                clue: "Un gráfico muestra ganancias imposibles."
-                            }
-                        ]
-                    },
-                    {
-                        name: "Museo de Ciencias",
-                        target: false,
-                        city: "Madrid",
-                        country: "España",
-                        year: "1974",
-                        description: "El museo de ciencias de Madrid. Hoy hay una exposición sobre inventos y matemáticas divertidas.",
-                        witnesses: [
-                            {
-                                name: "Carlos Alcántara",
-                                role: "Hijo",
-                                area: "Sala de inventos",
-                                testimony: "He aprendido mucho sobre matemáticas y ciencia, pero no he visto a Don Pablo.",
-                                clue: "Aquí solo hay experimentos y juegos."
-                            },
-                            {
-                                name: "Pili",
-                                role: "Compañera de clase",
-                                area: "Taller de matemáticas",
-                                testimony: "Hoy hemos hecho juegos de lógica y acertijos, pero nadie ha hablado de inversiones.",
-                                clue: "Aquí solo hay diversión y aprendizaje."
-                            },
-                            {
-                                name: "Herminia",
-                                role: "Abuela",
-                                area: "Cafetería",
-                                testimony: "He tomado un chocolate caliente y he charlado con otras abuelas. Nada de bancos ni de papeles raros.",
-                                clue: "Todo tranquilo en el museo."
-                            }
-                        ]
-                    },
-                    {
-                        name: "Parque del Retiro",
-                        target: false,
-                        city: "Madrid",
-                        country: "España",
-                        year: "1974",
-                        description: "El parque más famoso de Madrid. Hoy hay juegos y paseos en barca.",
-                        witnesses: [
-                            {
-                                name: "Desi",
-                                role: "Vecino",
-                                area: "Lago",
-                                testimony: "He dado un paseo en barca, pero no he visto nada raro.",
-                                clue: "Aquí solo hay patos y barcas."
-                            },
-                            {
-                                name: "Josete",
-                                role: "Amigo de Carlos",
-                                area: "Zona de juegos",
-                                testimony: "Hoy hemos jugado al fútbol y a las canicas. Nada de bancos ni de inversiones.",
-                                clue: "Solo juegos y diversión en el parque."
-                            },
-                            {
-                                name: "Paquita",
-                                role: "Vecina",
-                                area: "Paseo de coches",
-                                testimony: "He paseado con mi hijo, pero no he visto a Don Pablo ni a nadie sospechoso.",
-                                clue: "Todo normal en el Retiro."
+                                name: "Don Juan",
+                                role: "Analista financiero",
+                                area: "Despacho",
+                                testimony: "Analiza todos los escenarios. No te centres solo en lo positivo.",
+                                clue: "La evaluación de riesgos es crucial."
                             }
                         ]
                     }

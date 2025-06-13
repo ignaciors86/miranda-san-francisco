@@ -2646,3 +2646,253 @@ a:hover {
 .table tr:hover td {
     background: var(--clan-light);
 }
+
+/* Estilos para el modal de detalles del sospechoso */
+.suspect-details-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    padding: 2rem;
+    backdrop-filter: blur(5px);
+}
+
+.suspect-details-content {
+    background: var(--surface);
+    border-radius: 20px;
+    width: 100%;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 2px solid var(--dossier-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.suspect-details-header {
+    background: linear-gradient(135deg, var(--dossier-color), var(--dossier-accent));
+    padding: 2.5rem 2rem;
+    text-align: center;
+    border-radius: 18px 18px 0 0;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.suspect-details-image {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+    border: 4px solid var(--surface);
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.suspect-details-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent 70%, rgba(0, 0, 0, 0.3));
+}
+
+.suspect-details-header h2 {
+    color: var(--text-light);
+    font-size: 2.2rem;
+    margin: 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    font-family: var(--title-font);
+    letter-spacing: 0.5px;
+}
+
+.suspect-origin {
+    color: var(--text-light);
+    opacity: 0.9;
+    font-size: 1.2rem;
+    margin: 0.5rem 0 0;
+    font-style: italic;
+}
+
+.suspect-details-body {
+    padding: 2.5rem;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.suspect-section {
+    margin-bottom: 2.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.suspect-section:last-child {
+    margin-bottom: 0;
+}
+
+.suspect-section h3 {
+    color: var(--dossier-color);
+    font-size: 1.5rem;
+    margin: 0 0 1rem;
+    font-family: var(--title-font);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.suspect-section h3::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 1.2em;
+    background: var(--dossier-accent);
+    border-radius: 2px;
+}
+
+.suspect-section p {
+    color: var(--text);
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.suspect-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.suspect-section li {
+    color: var(--text);
+    font-size: 1.1rem;
+    padding: 0.7rem 0;
+    padding-left: 1.8rem;
+    position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.suspect-section li:last-child {
+    border-bottom: none;
+}
+
+.suspect-section li:before {
+    content: "•";
+    color: var(--dossier-accent);
+    position: absolute;
+    left: 0;
+    font-size: 1.4rem;
+    top: 0.5rem;
+}
+
+.close-suspect-details {
+    background: var(--dossier-color);
+    color: var(--text-light);
+    border: none;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 0 auto 2rem;
+    transition: all 0.3s ease;
+    font-family: var(--title-font);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    line-height: 1;
+}
+
+.close-suspect-details::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.close-suspect-details:hover {
+    background: var(--dossier-accent);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.close-suspect-details:hover::before {
+    left: 100%;
+}
+
+@media (max-width: 768px) {
+    .suspect-details-modal {
+        padding: 1rem;
+    }
+    
+    .suspect-details-content {
+        max-height: 95vh;
+    }
+    
+    .suspect-details-header {
+        padding: 2rem 1.5rem;
+    }
+    
+    .suspect-details-image {
+        width: 140px;
+        height: 140px;
+    }
+    
+    .suspect-details-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .suspect-origin {
+        font-size: 1.1rem;
+    }
+    
+    .suspect-details-body {
+        padding: 1.5rem;
+    }
+    
+    .suspect-section {
+        padding: 1.2rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .suspect-section h3 {
+        font-size: 1.3rem;
+    }
+    
+    .suspect-section p,
+    .suspect-section li {
+        font-size: 1rem;
+    }
+    
+    .close-suspect-details {
+        padding: 0.8rem 1.8rem;
+        font-size: 1rem;
+        margin: 0 1rem 1.5rem;
+    }
+}

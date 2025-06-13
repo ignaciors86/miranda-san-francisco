@@ -1,55 +1,55 @@
 const influencerFalso = {
-    culpable: "La Influencer Falsa",
+    culpable: "La Influencer",
     adventure: {
         step1: {
-            title: "El bulo viral en redes sociales",
-            description: "¡Las redes sociales arden! Un rumor falso sobre un famoso ha causado un auténtico terremoto digital. La policía sospecha de una influencer con millones de seguidores y un talento especial para el engaño. El bulo se ha propagado usando técnicas avanzadas de marketing digital y bots automatizados. ¿Serás capaz de desenmascarar la verdad y restaurar la confianza en la información? ¡El mundo virtual necesita tu astucia!"
+            title: "El misterio de los mensajes falsos",
+            description: "¡Las redes sociales arden! Un grupo de niños está recibiendo mensajes anónimos y acosadores en sus perfiles. La policía sospecha de una influencer con millones de seguidores que está usando su popularidad para crear contenido dañino. Los mensajes se han propagado usando técnicas de manipulación y perfiles falsos. ¿Serás capaz de desenmascarar la verdad y ayudar a los niños a navegar de forma segura? ¡El mundo virtual necesita tu astucia!"
         },
         step2: {
-            title: "Pistas en la redacción del periódico",
-            description: "Se han recibido correos anónimos con noticias falsas. Los periodistas buscan el origen del bulo. Las pistas sugieren que la influencer está usando técnicas de deepfake y manipulación de imágenes para crear contenido viral. Los correos contienen enlaces a perfiles falsos y cuentas bot que difunden la desinformación."
+            title: "Pistas en el aula digital",
+            description: "Se han encontrado perfiles falsos y mensajes sospechosos. Los profesores buscan el origen del acoso. Las pistas sugieren que la influencer está usando técnicas de manipulación y perfiles falsos para crear contenido viral. Los mensajes contienen enlaces a perfiles falsos y cuentas bot que difunden el acoso."
         },
         step3: {
-            title: "El misterio en la televisión",
-            description: "Un programa de televisión ha difundido información manipulada. El culpable deja mensajes en clave en los subtítulos. Las imágenes del programa han sido alteradas usando inteligencia artificial, y los hashtags en pantalla llevan a perfiles falsos que amplifican el bulo. El objetivo parece ser crear una campaña de desinformación coordinada."
+            title: "El misterio en las redes sociales",
+            description: "Un grupo de mensajería ha difundido información manipulada. El culpable deja mensajes en clave en los perfiles. Las imágenes han sido alteradas usando filtros y edición, y los hashtags llevan a perfiles falsos que amplifican el acoso. El objetivo parece ser crear una campaña de intimidación coordinada."
         },
         step4: {
-            title: "Viaje a Silicon Valley",
-            description: "El rastro lleva hasta una empresa de redes sociales. La Influencer Falsa planea lanzar una campaña viral internacional usando algoritmos de tendencias y bots automatizados. Su objetivo es demostrar cómo se puede manipular la opinión pública a través de las redes sociales, creando una red de desinformación que se propaga como un virus digital."
+            title: "Viaje al centro de redes sociales",
+            description: "El rastro lleva hasta una empresa de redes sociales. La Influencer planea lanzar una campaña viral internacional usando algoritmos de tendencias y bots automatizados. Su objetivo es demostrar cómo se puede manipular la opinión pública a través de las redes sociales, creando una red de acoso que se propaga como un virus digital."
         },
         step5: {
-            title: "Desenlace en la Feria del Libro",
-            description: "La Influencer Falsa planea presentar un libro lleno de bulos. El libro contiene técnicas avanzadas de manipulación digital y ejemplos de cómo crear campañas virales falsas. Hay que desenmascararla antes de que engañe a miles de lectores, pero también hay que entender su mensaje sobre la importancia de la alfabetización digital y el pensamiento crítico en la era de las redes sociales."
+            title: "Desenlace en la conferencia de seguridad digital",
+            description: "La Influencer planea presentar un libro sobre cómo conseguir likes. El libro contiene técnicas avanzadas de manipulación digital y ejemplos de cómo crear campañas virales falsas. Hay que desenmascararla antes de que engañe a miles de jóvenes, pero también hay que entender su mensaje sobre la importancia de la alfabetización digital y el pensamiento crítico en la era de las redes sociales."
         }
     },
     case: {
         startingLocation: {
-            name: "Redacción de El Diario",
+            name: "Aula Digital",
             city: "Madrid",
             country: "España",
-            year: "2023",
-            description: "La redacción de El Diario bulle de actividad, noticias y primicias. Pero hoy, el ambiente es diferente: un bulo viral ha puesto en jaque a periodistas y lectores. El rumor se ha propagado usando técnicas avanzadas de marketing digital, bots automatizados y manipulación de imágenes. Solo un investigador audaz podrá desenredar la maraña de mentiras y devolver la verdad a la portada. ¿Te atreves a aceptar el reto?",
+            year: "2024",
+            description: "El aula digital bulle de actividad, pantallas y mensajes. Pero hoy, el ambiente es diferente: un caso de ciberacoso ha puesto en jaque a estudiantes y profesores. Los mensajes se han propagado usando técnicas de manipulación, perfiles falsos y bots automatizados. Solo un investigador audaz podrá desenredar la maraña de mentiras y devolver la seguridad a las redes. ¿Te atreves a aceptar el reto?",
             witnesses: [
                 {
-                    name: "Laura",
-                    role: "Jefa de redacción",
-                    area: "Oficina central",
-                    testimony: "Esta mañana, las redes sociales explotaron con un rumor falso. Nadie sabe quién lo inició, pero la noticia se propagó como la pólvora. Lo más extraño es que se usaron técnicas de deepfake y bots automatizados para difundir el bulo.",
-                    clue: "En la impresora encontré un correo anónimo con enlaces sospechosos y hashtags virales. El correo contiene código para bots automatizados y técnicas de manipulación de tendencias."
+                    name: "Dra. Ramos",
+                    role: "Profesora de Tecnología",
+                    area: "Mesa de trabajo",
+                    testimony: "Vi a alguien enviando mensajes anónimos con contenido dañino. Estaba usando técnicas de manipulación y perfiles falsos para crear contenido viral.",
+                    clue: "Faltan documentos sobre seguridad digital y hay un USB sospechoso con herramientas de manipulación de imágenes y código para bots automatizados."
                 },
                 {
-                    name: "Carlos",
-                    role: "Periodista",
-                    area: "Sala de prensa",
-                    testimony: "Recibí un mensaje directo de una influencer famosa. Decía que tenía información exclusiva, pero algo no cuadraba. La imagen del perfil parece haber sido generada por inteligencia artificial, y los mensajes usan patrones de bot.",
-                    clue: "El mensaje incluía una imagen manipulada con deepfake y un número de teléfono extranjero que lleva a una red de cuentas falsas."
+                    name: "Jorge",
+                    role: "Estudiante",
+                    area: "Computadora",
+                    testimony: "Alguien dejó un mensaje con contenido manipulado. Los mensajes contienen imágenes alteradas con filtros y código para bots automatizados.",
+                    clue: "El mensaje tenía una etiqueta con símbolos de redes sociales y código para manipulación de tendencias."
                 },
                 {
-                    name: "Raúl",
-                    role: "Técnico de redes",
-                    area: "Cabina de servidores",
-                    testimony: "Detecté un pico de actividad inusual en las cuentas del periódico. Alguien programó bots para difundir el bulo usando técnicas avanzadas de marketing digital y manipulación de algoritmos.",
-                    clue: "En el registro de acceso aparece el nombre de usuario 'FakeStar' y código para bots automatizados que manipulan tendencias."
+                    name: "Lucía",
+                    role: "Consejera escolar",
+                    area: "Pasillo central",
+                    testimony: "Vi a una persona con móvil y portátil salir apresurada. Estaba usando técnicas de manipulación para crear contenido viral.",
+                    clue: "Llevaba una carpeta con mensajes y perfiles falsos, y código para bots automatizados."
                 }
             ]
         },

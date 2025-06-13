@@ -2,144 +2,144 @@ const suspects = {
     "Ruperta": {
         name: "Ruperta",
         origin: "Barrio Sésamo",
-        description: "Una profesora de matemáticas que ha encontrado en los números una forma de entender el mundo. Su carácter dulce y didáctico oculta una mente brillante que ha descubierto patrones matemáticos en los monumentos antiguos.",
+        description: "Una profesora de informática que ha encontrado en las redes sociales una forma de conectar con sus estudiantes. Su carácter dulce y didáctico oculta una mente brillante que ha descubierto patrones de comportamiento en línea que podrían ayudar a los niños a navegar de forma segura.",
         distinctiveTraits: [
-            "Lleva un delantal de profesora",
-            "Siempre tiene una pizarra portátil",
-            "Deja tizas de colores por donde pasa"
+            "Lleva una tablet educativa",
+            "Siempre tiene un manual de seguridad digital",
+            "Deja pistas sobre privacidad en línea por donde pasa"
         ],
-        motivation: "Cree que ha descubierto un método para enseñar matemáticas a través de los monumentos antiguos y está dispuesta a demostrarlo, incluso si eso significa tomar prestados algunos artefactos.",
+        motivation: "Cree que ha descubierto un método para enseñar seguridad digital a través de las redes sociales y está dispuesta a demostrarlo, incluso si eso significa tomar prestados algunos datos de ejemplo.",
         skills: [
-            "Experta en didáctica matemática",
-            "Conocedora de juegos educativos",
-            "Especialista en hacer las matemáticas divertidas"
+            "Experta en seguridad digital",
+            "Conocedora de herramientas educativas en línea",
+            "Especialista en hacer la tecnología divertida y segura"
         ]
     },
     "Don Pablo": {
         name: "Don Pablo",
         origin: "Cuéntame cómo pasó",
-        description: "Un empresario sin escrúpulos que ha encontrado en los monumentos antiguos la oportunidad perfecta para su última estafa. Tras el fracaso de Construcciones Nueva York, ha ideado un plan para vender participaciones en una supuesta empresa de explotación turística de yacimientos arqueológicos.",
+        description: "Un empresario sin escrúpulos que ha encontrado en las redes sociales la oportunidad perfecta para su última estafa. Tras el fracaso de su app educativa, ha ideado un plan para vender datos de niños a empresas de publicidad.",
         distinctiveTraits: [
-            "Lleva trajes caros y gafas de sol",
-            "Siempre tiene un maletín lleno de documentos",
-            "Deja facturas y contratos por donde pasa"
+            "Lleva ropa de marca y gafas de sol",
+            "Siempre tiene un smartphone último modelo",
+            "Deja anuncios personalizados por donde pasa"
         ],
-        motivation: "Busca recuperar el dinero perdido en sus anteriores estafas y ha encontrado en los monumentos antiguos la excusa perfecta para engañar a nuevos inversores. Su plan es vender participaciones en una empresa fantasma que supuestamente explotará los yacimientos arqueológicos.",
+        motivation: "Busca recuperar el dinero perdido en sus anteriores estafas y ha encontrado en los datos de los niños la excusa perfecta para engañar a nuevos inversores.",
         skills: [
-            "Experto en estafas piramidales",
-            "Conocedor de leyes y contratos",
-            "Especialista en engañar a inversores"
+            "Experto en publicidad dirigida",
+            "Conocedor de privacidad en línea",
+            "Especialista en engañar a usuarios jóvenes"
         ]
     },
     "Curro Jiménez": {
         name: "Curro Jiménez",
         origin: "Curro Jiménez",
-        description: "Un bandolero andaluz que ha encontrado en los mapas antiguos la clave para sus robos. Su conocimiento de los caminos y su astucia le han permitido descubrir que los monumentos antiguos esconden un tesoro matemático.",
+        description: "Un hacker ético que ha encontrado en los grupos de mensajería la clave para proteger a los niños. Su conocimiento de la seguridad digital y su astucia le han permitido descubrir patrones de ciberacoso.",
         distinctiveTraits: [
-            "Lleva sombrero de ala ancha y fajín rojo",
-            "Siempre tiene un mapa antiguo",
-            "Deja huellas de caballo por donde pasa"
+            "Lleva una sudadera con capucha y auriculares",
+            "Siempre tiene un portátil de seguridad",
+            "Deja pistas sobre ciberacoso por donde pasa"
         ],
-        motivation: "Ha descubierto que los antiguos observatorios esconden un tesoro matemático que podría hacerle rico. Sigue un patrón de robos que le llevará a encontrar el botín más grande de su vida.",
+        motivation: "Ha descubierto que los grupos de mensajería esconden patrones de ciberacoso que podría ayudar a prevenir. Sigue un patrón de investigación que le llevará a encontrar la solución más efectiva.",
         skills: [
-            "Experto en rutas antiguas",
-            "Conocedor de escondites secretos",
-            "Especialista en evadir a la guardia civil"
+            "Experto en seguridad en línea",
+            "Conocedor de patrones de ciberacoso",
+            "Especialista en proteger a usuarios jóvenes"
         ]
     },
     "Jorge Ponce": {
         name: "Jorge Ponce",
         origin: "La Revuelta",
-        description: "Un presentador de televisión que ha encontrado en la magia la forma perfecta de causar el caos. Su obsesión por el desorden y su sonrisa sospechosa ocultan un plan para que los niños nunca se vayan a la cama.",
+        description: "Un influencer que ha encontrado en la magia de los filtros la forma perfecta de causar el caos. Su obsesión por los likes y su sonrisa sospechosa ocultan un plan para que los niños nunca se desconecten.",
         distinctiveTraits: [
-            "Lleva zapatillas de deporte",
-            "Siempre tiene una sonrisa sospechosa",
-            "Deja polvo mágico por donde pasa"
+            "Lleva ropa de marca y un anillo de luz",
+            "Siempre tiene un trípode para selfies",
+            "Deja hashtags por donde pasa"
         ],
-        motivation: "Cree que la hora de irse a la cama es una conspiración y está decidido a demostrarlo, incluso si eso significa secuestrar al Hombre Mágico y causar el caos en La Revuelta.",
+        motivation: "Cree que la desconexión digital es una conspiración y está decidido a demostrarlo, incluso si eso significa crear contenido adictivo para niños.",
         skills: [
-            "Experto en causar el caos",
-            "Conocedor de trucos de magia",
-            "Especialista en hacer que los niños se vuelvan salvajes"
+            "Experto en contenido viral",
+            "Conocedor de tendencias digitales",
+            "Especialista en crear adicción a las redes"
         ]
     },
     "El Profesor": {
         name: "El Profesor",
         origin: "La Casa de Papel",
-        description: "Un genio de la historia que ha encontrado en los monumentos antiguos la clave para su próximo atraco. Su conocimiento de la historia y su mente brillante le han permitido descubrir que los monumentos esconden un tesoro histórico.",
+        description: "Un genio de la programación que ha encontrado en los videojuegos la clave para su próximo plan. Su conocimiento de la gamificación y su mente brillante le han permitido descubrir que los juegos pueden ser educativos.",
         distinctiveTraits: [
-            "Lleva un traje rojo",
-            "Siempre tiene un plan",
-            "Deja pistas históricas por donde pasa"
+            "Lleva una camiseta de programación",
+            "Siempre tiene un plan de gamificación",
+            "Deja pistas sobre programación por donde pasa"
         ],
-        motivation: "Ha descubierto que los monumentos antiguos esconden un tesoro histórico que podría financiar su próximo atraco. Sigue un patrón de robos que le llevará a encontrar el botín más grande de su vida.",
+        motivation: "Ha descubierto que los videojuegos pueden ser una herramienta educativa poderosa y está decidido a demostrarlo, incluso si eso significa hackear algunos juegos populares.",
         skills: [
-            "Experto en historia",
-            "Conocedor de monumentos antiguos",
-            "Especialista en planes perfectos"
+            "Experto en programación educativa",
+            "Conocedor de gamificación",
+            "Especialista en hacer el aprendizaje divertido"
         ]
     },
     "Dr. Jekyll": {
         name: "Dr. Jekyll",
         origin: "El Extraño Caso del Dr. Jekyll y Mr. Hyde",
-        description: "Un científico loco que ha encontrado en la química la forma de transformar la realidad. Su experimento con una poción mágica ha desatado el caos en el laboratorio.",
+        description: "Un científico loco que ha encontrado en la inteligencia artificial la forma de transformar la educación. Su experimento con un algoritmo de aprendizaje ha desatado el caos en las aulas digitales.",
         distinctiveTraits: [
-            "Lleva una bata de laboratorio",
-            "Siempre tiene una poción en la mano",
-            "Deja manchas de poción por donde pasa"
+            "Lleva una bata de laboratorio digital",
+            "Siempre tiene un algoritmo en desarrollo",
+            "Deja código por donde pasa"
         ],
-        motivation: "Cree que su poción mágica puede transformar la realidad y está dispuesto a probarla en cualquier cosa, incluso si eso significa causar el caos en el laboratorio.",
+        motivation: "Cree que su algoritmo de IA puede revolucionar la educación y está dispuesto a probarlo en cualquier plataforma, incluso si eso significa causar el caos en las aulas digitales.",
         skills: [
-            "Experto en química",
-            "Conocedor de pociones mágicas",
-            "Especialista en transformaciones"
+            "Experto en IA educativa",
+            "Conocedor de algoritmos de aprendizaje",
+            "Especialista en transformar la educación digital"
         ]
     },
     "El Falsificador": {
         name: "El Falsificador",
         origin: "La Casa de Papel",
-        description: "Un artista genial que ha encontrado en el arte la forma perfecta de engañar al mundo. Su habilidad para copiar obras maestras le ha permitido crear falsificaciones perfectas.",
+        description: "Un artista digital que ha encontrado en los deepfakes la forma perfecta de engañar al mundo. Su habilidad para crear contenido falso le ha permitido crear noticias falsas perfectas.",
         distinctiveTraits: [
-            "Lleva una boina de artista",
-            "Siempre tiene un pincel",
-            "Deja manchas de pintura por donde pasa"
+            "Lleva una tablet de diseño",
+            "Siempre tiene un software de edición",
+            "Deja deepfakes por donde pasa"
         ],
-        motivation: "Cree que el arte es una ilusión y está decidido a demostrarlo, incluso si eso significa crear falsificaciones perfectas de las obras más famosas.",
+        motivation: "Cree que los deepfakes son un arte y está decidido a demostrarlo, incluso si eso significa crear contenido falso que pueda confundir a los niños.",
         skills: [
-            "Experto en arte",
-            "Conocedor de técnicas de falsificación",
-            "Especialista en copiar obras maestras"
+            "Experto en edición digital",
+            "Conocedor de deepfakes",
+            "Especialista en crear contenido falso"
         ]
     },
     "El Hacker": {
         name: "El Hacker",
         origin: "Mr. Robot",
-        description: "Un genio de la informática que ha encontrado en el código la forma de hackear la realidad. Su habilidad para programar le ha permitido crear un virus que puede transformar el mundo digital.",
+        description: "Un genio de la ciberseguridad que ha encontrado en el código la forma de proteger a los niños. Su habilidad para programar le ha permitido crear herramientas de seguridad para menores.",
         distinctiveTraits: [
             "Lleva una sudadera con capucha",
-            "Siempre tiene un portátil",
-            "Deja código por donde pasa"
+            "Siempre tiene un portátil de seguridad",
+            "Deja herramientas de protección por donde pasa"
         ],
-        motivation: "Cree que el mundo digital necesita ser hackeado y está decidido a demostrarlo, incluso si eso significa crear un virus que puede transformar la realidad.",
+        motivation: "Cree que la seguridad digital es fundamental para los niños y está decidido a demostrarlo, incluso si eso significa hackear sistemas para exponer vulnerabilidades.",
         skills: [
-            "Experto en programación",
-            "Conocedor de seguridad informática",
-            "Especialista en hackear sistemas"
+            "Experto en ciberseguridad",
+            "Conocedor de protección infantil",
+            "Especialista en herramientas de seguridad"
         ]
     },
     "La Influencer": {
         name: "La Influencer",
         origin: "Black Mirror",
-        description: "Una estrella de las redes sociales que ha encontrado en los filtros la forma de transformar la realidad. Su obsesión por los likes le ha llevado a crear un mundo perfecto en Instagram.",
+        description: "Una estrella de las redes sociales que ha encontrado en los filtros la forma de transformar la realidad. Su obsesión por los likes le ha llevado a crear un mundo perfecto en Instagram que puede ser dañino para los niños.",
         distinctiveTraits: [
-            "Lleva ropa de marca",
-            "Siempre tiene un móvil",
-            "Deja hashtags por donde pasa"
+            "Lleva ropa de marca y un anillo de luz",
+            "Siempre tiene un smartphone",
+            "Deja filtros por donde pasa"
         ],
-        motivation: "Cree que los likes son lo más importante y está decidida a conseguirlos, incluso si eso significa crear un mundo falso en las redes sociales.",
+        motivation: "Cree que la imagen perfecta es lo más importante y está decidida a conseguirlo, incluso si eso significa crear expectativas irreales para los niños.",
         skills: [
             "Experta en redes sociales",
-            "Conocedora de filtros",
+            "Conocedora de filtros y edición",
             "Especialista en crear contenido viral"
         ]
     }
@@ -179,6 +179,7 @@ function renderSuspects() {
             suspectElement.classList.add('selected');
             window.selectedSuspect = suspect.name;
             renderSuspects(); // Para actualizar la pegatina WANTED
+            showSuspectDetails(suspect); // Mostrar los detalles del sospechoso
         });
         suspectsSelector.appendChild(suspectElement);
     });
@@ -336,4 +337,10 @@ function checkSuspect() {
     
     const isCorrect = window.selectedSuspect === window.cases[window.selectedCriminal].culpable;
     showFinalMessage(isCorrect);
+}
+
+// Función para mostrar los detalles del sospechoso
+function showSuspectDetails(suspect) {
+    // Implementa la lógica para mostrar los detalles del sospechoso aquí
+    console.log("Detalles del sospechoso:", suspect);
 } 
